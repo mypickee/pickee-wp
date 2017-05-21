@@ -18,7 +18,8 @@
  * @package WordPress
  */
 
-$db = parse_url(getenv('DATABASE_URL'));
+$db_env_var = getenv('DATABASE_PROVIDER_VAR') ?: 'DATABASE_URL';
+$db = parse_url(getenv($db_env_var));
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
