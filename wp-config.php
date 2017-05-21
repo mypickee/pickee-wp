@@ -18,8 +18,7 @@
  * @package WordPress
  */
 
-//$db = parse_url(getenv('CLEARDB_DATABASE_URL'));
-$db = parse_url('mysql://pickee_wp_admin:password@localhost/pickee_wp_development');
+$db = parse_url(getenv('DATABASE_URL'));
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
