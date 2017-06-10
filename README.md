@@ -50,64 +50,80 @@
   brew install php70 --with-debug
   php -v
   php-fpm -v
-  brew services restart php70
   ```
 
-  If `php-fpm` not showing php 7, make sure `/usr/local/sbin` is before `/usr/sbin`.
+  If `php-fpm` doesn't output php 7, make sure `/usr/local/sbin` is before `/usr/sbin`.
+
+* Allow environment variables to reach FPM worker processes:
+  edit `/usr/local/etc/php/7.0/php-fpm.d/www.conf` and turn on
+  ```
+  clear_env = no
+  ```
 
 ### Install nginx
 
 * Install nginx via Homebrew:
   ```
   brew install nginx
-  mkdir -p /usr/local/etc/nginx/sites-available /usr/local/etc/nginx/sites-enabled
   ```
 
-* Edit `/usr/local/etc/nginx/nginx.conf` and `include sites-enabled/*` at the end.
-* Create `/usr/local/etc/nginx/sites-available/pickee-wp` with config like:
-  ```
-  server {
-      listen       7070;
-      server_name  localhost;
+* Follow Debian's `sites-available` and `sites-enabled` convention for virtual hosts
+  definition:
 
-      root /Users/starsirius/Code/pickee-wp;
-      index index.php;
+  * Create the folders
+    ```
+    mkdir -p /usr/local/etc/nginx/sites-available /usr/local/etc/nginx/sites-enabled
+    ```
 
-      # show access in console; useful for development
-      access_log /dev/stdout;
+  * Edit `/usr/local/etc/nginx/nginx.conf` and add `include sites-enabled/*` at the end.
+  * Create `/usr/local/etc/nginx/sites-available/pickee-wp` with config like:
+    ```
+    server {
+        listen       7070;
+        server_name  localhost;
 
-      location / {
-          # This is cool because no php is touched for static content.
-          # include the "?$args" part so non-default permalinks doesn't break when using query string
-          try_files $uri $uri/ /index.php?$args;
-      }
+        root /Users/starsirius/Code/pickee-wp;
+        index index.php;
 
-      location = /favicon.ico {
-          log_not_found off;
-          access_log off;
-      }
+        # show access in console; useful for development
+        access_log /dev/stdout;
 
-      location = /robots.txt {
-          allow all;
-          log_not_found off;
-          access_log off;
-      }
+        location / {
+            # This is cool because no php is touched for static content.
+            # include the "?$args" part so non-default permalinks doesn't break when using query string
+            try_files $uri $uri/ /index.php?$args;
+        }
 
-      # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-      #
-      location ~ \.php$ {
-          fastcgi_pass   127.0.0.1:9000;
-          fastcgi_index  index.php;
-          include        fastcgi.conf;
-      }
+        location = /favicon.ico {
+            log_not_found off;
+            access_log off;
+        }
 
-      location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
-          expires max;
-          log_not_found off;
-      }
-  }
-  ```
-* `ln -s /usr/local/etc/nginx/sites-available/pickee-wp /usr/local/etc/nginx/sites-enabled/pickee-wp`
+        location = /robots.txt {
+            allow all;
+            log_not_found off;
+            access_log off;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        location ~ \.php$ {
+            fastcgi_pass   127.0.0.1:9000;
+            fastcgi_index  index.php;
+            include        fastcgi.conf;
+        }
+
+        location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+            expires max;
+            log_not_found off;
+        }
+    }
+    ```
+
+  * Create symbolic link in `sites-enabled` for `pickee-wp`:
+    ```
+    ln -s /usr/local/etc/nginx/sites-available/pickee-wp /usr/local/etc/nginx/sites-enabled/pickee-wp
+    ```
 
 #### Notes
 
@@ -120,24 +136,35 @@
 
 * Config files
   ```
+  /usr/local/etc/nginx/sites-available/pickee-wp
   /usr/local/etc/nginx/fastcgi.conf
   /usr/local/etc/php/7.0/php.ini
   /usr/local/etc/php/7.0/php-fpm.conf
   /usr/local/etc/php/7.0/php-fpm.d/www.conf
   ```
 
-#### Caveat
-I have to run php-fpm as root `sudo brew services restart php70` to avoid a 502 Bad Gateway error.
-
 ### Fork and clone this repo
 TODO
 
 ### Configure
-TODO
+* Copy over `.env.example` to `.env` and make necessary changes:
+  ```
+  cp .env.example .env
+  # Make necessary changes
+  ```
 
-Now you can run the following to run nginx in non-daemon mode:
-```
-nginx -g 'daemon off; error_log /dev/stderr debug;'
-```
+* Start FPM and nginx in non-daemon mode:
+  ```
+  foreman start -f Procfile.dev
+  ```
 
 ### Install Wordpress.
+Visit [http://localhost:7070/wp-admin](http://localhost:7070/wp-admin) and follow the steps to install Wordpress.
+
+### Caveat
+Occasiaonally nginx will raise 502 Bad Gateway error with message like:
+```
+2017/06/10 18:08:04 [error] 2462#0: *2 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /wp-admin/update-core.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "localhost:7070", referrer: "http://localhost:7070/wp-admin/"
+```
+Refreshing the page a few times would work again, but not sure what exactly the cause was.
+
