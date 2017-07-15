@@ -1,0 +1,3 @@
+#use phpdotenv(https://packagist.org/packages/vlucas/phpdotenv) to load environment variables from .env
+require:
+  - dotenv_loader.php
