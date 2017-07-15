@@ -153,6 +153,11 @@ TODO
   # Make necessary changes
   ```
 
+* Start MySQL service:
+  ```
+  brew services start mysql
+  ```
+
 * Start FPM and nginx in non-daemon mode:
   ```
   foreman start -f Procfile.dev
