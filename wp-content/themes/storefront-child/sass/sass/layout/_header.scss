@@ -6,6 +6,10 @@
 }
 
 .woocommerce-active .site-header {
+  a {
+    color: $pickee-blue;
+    font-weight: 600;
+  }
   .main-navigation {
     width: 100%;
     margin-right: 0;

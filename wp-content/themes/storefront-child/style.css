@@ -18,7 +18,13 @@ Template: storefront
   z-index: 999;
 }
 
-/* line 2, sass/sass/override/_menu.scss */
+/* line 1, sass/sass/override/_menu.scss */
+ul.menu li a {
+  color: #0F529B;
+  font-weight: 600;
+}
+
+/* line 6, sass/sass/override/_menu.scss */
 .main-navigation .menu-toggle {
   display: none;
 }
@@ -29,7 +35,7 @@ Template: storefront
   position: relative;
   overflow: visible;
   z-index: 1000;
-  background-color: #0E529B;
+  background-color: #0F529B;
   color: #fff;
 }
 
@@ -85,7 +91,7 @@ Template: storefront
   line-height: 4em;
   z-index: 1003;
   cursor: pointer;
-  color: #0E529B;
+  color: #0F529B;
   font-size: 1em;
   font-weight: 600;
   visibility: hidden;
@@ -119,7 +125,7 @@ Template: storefront
 /* line 81, sass/sass/layout/_topbar.scss */
 .topbar .topbar-menu .topbar-menu-close svg .line {
   stroke-width: 2px;
-  stroke: #0E529B;
+  stroke: #0F529B;
 }
 /* line 87, sass/sass/layout/_topbar.scss */
 .topbar .topbar-menu .topbar-menu-header {
@@ -131,7 +137,7 @@ Template: storefront
   line-height: 1.5em;
   background: #ffffff;
   font-size: 1em;
-  border-bottom: solid 1px #0E529B;
+  border-bottom: solid 1px #0F529B;
 }
 /* line 98, sass/sass/layout/_topbar.scss */
 .topbar .topbar-menu .topbar-menu-footer {
@@ -144,11 +150,11 @@ Template: storefront
   background: #ffffff;
   font-size: 1em;
   text-align: center;
-  color: #0E529B;
+  color: #0F529B;
 }
 /* line 109, sass/sass/layout/_topbar.scss */
 .topbar .topbar-menu .topbar-menu-footer a {
-  color: #0E529B;
+  color: #0F529B;
   font-weight: 500;
 }
 /* line 113, sass/sass/layout/_topbar.scss */
@@ -188,7 +194,7 @@ Template: storefront
   line-height: 4em;
   text-align: center;
   font-size: 1em;
-  border-bottom: solid 1px #0E529B;
+  border-bottom: solid 1px #0F529B;
 }
 /* line 145, sass/sass/layout/_topbar.scss */
 .topbar .topbar-menu .handheld-navigation ul li a:focus {
@@ -335,7 +341,7 @@ body.cart-open {
   float: right;
   height: 2.875em;
   width: 2.875em;
-  background-color: #F03C1E;
+  background-color: #EF4025;
   z-index: 1001;
 }
 /* line 272, sass/sass/layout/_topbar.scss */
@@ -556,7 +562,7 @@ body.cart-open {
 /* line 469, sass/sass/layout/_topbar.scss */
 .topbar-cart .widget_shopping_cart .cart-pannel-bottom a.button {
   background-color: transparent;
-  color: #0E529B;
+  color: #0F529B;
   box-shadow: none;
 }
 /* line 473, sass/sass/layout/_topbar.scss */
@@ -565,7 +571,7 @@ body.cart-open {
 }
 /* line 477, sass/sass/layout/_topbar.scss */
 .topbar-cart .widget_shopping_cart .cart-pannel-bottom a.button.checkout {
-  background-color: #0E529B;
+  background-color: #0F529B;
   color: #ffffff;
 }
 /* line 480, sass/sass/layout/_topbar.scss */
@@ -581,27 +587,32 @@ body.cart-open {
 }
 
 /* line 9, sass/sass/layout/_header.scss */
+.woocommerce-active .site-header a {
+  color: #0F529B;
+  font-weight: 600;
+}
+/* line 13, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .main-navigation {
   width: 100%;
   margin-right: 0;
   text-align: center;
 }
-/* line 13, sass/sass/layout/_header.scss */
+/* line 17, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .main-navigation ul.menu > li > a, .woocommerce-active .site-header .main-navigation ul.nav-menu > li > a {
   padding: 1em 1em;
 }
-/* line 18, sass/sass/layout/_header.scss */
+/* line 22, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-branding {
   text-align: center;
   margin: 0 auto !important;
   float: none !important;
 }
-/* line 24, sass/sass/layout/_header.scss */
+/* line 28, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-branding {
   width: 10em;
   height: 4.5em;
 }
-/* line 27, sass/sass/layout/_header.scss */
+/* line 31, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-branding svg {
   max-width: 100%;
 }
@@ -631,7 +642,7 @@ body.cart-open {
   height: 4em;
   bottom: 0;
   padding: 0;
-  background: #0E529B;
+  background: #0F529B;
 }
 /* line 23, sass/sass/layout/_footer.scss */
 .storefront-handheld-footer-bar ul li.search .site-search form:before {
