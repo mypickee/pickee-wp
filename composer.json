@@ -1,0 +1,15 @@
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "wp-cli/wp-cli": "~0.22",
+    "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1.11.4"
+  },
+  "scripts": {
+    "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified"
+  }
+}
