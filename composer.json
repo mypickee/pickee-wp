@@ -6,6 +6,7 @@
     }
   ],
   "require": {
+    "php": "~7.0.0",
     "wp-cli/wp-cli": "~0.22",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1.11.4"
   },
