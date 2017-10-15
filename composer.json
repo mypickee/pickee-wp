@@ -9,9 +9,10 @@
     "php": "~7.0.0",
     "wp-cli/wp-cli": "~0.22",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1.11.4",
-    "wpackagist-plugin/woocommerce": "~3.2.1"
+    "wpackagist-plugin/woocommerce": "~3.2.1",
+    "wpackagist-theme/storefront": "~2.2.5"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified woocommerce"
+    "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified woocommerce; wp theme activate storefront"
   }
 }
