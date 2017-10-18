@@ -1,0 +1,35 @@
+
+.storefront-primary-navigation {
+  @include breakpoint($screen-sm) {
+    background-color: transparent;
+  }
+}
+
+.woocommerce-active .site-header {
+  a {
+    color: $pickee-blue;
+    font-weight: 600;
+  }
+  .main-navigation {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+    ul.menu > li > a, ul.nav-menu > li > a {
+      padding: 1em 1em;
+    }
+  }
+
+  .site-branding {
+    text-align: center;
+    margin: 0 auto !important;
+    float: none !important;
+  }
+
+  .site-branding {
+    width: 10em;
+    height: 4.5em;
+    svg {
+      max-width: 100%;
+    }
+  }
+}

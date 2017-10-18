@@ -1,0 +1,689 @@
+/*!
+Theme Name: Storefront Child
+Version: 1.0
+Description: Child theme for Storefront.
+Author: Woo
+Author URI: http://woocommerce.com
+Template: storefront
+*/
+/* line 1, sass/sass/base/_components.scss */
+.self_clear:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* line 1, sass/sass/override/_admin-bar.scss */
+#wpadminbar {
+  z-index: 999;
+}
+
+/* line 1, sass/sass/override/_menu.scss */
+ul.menu li a {
+  color: #0F529B;
+  font-weight: 600;
+}
+
+/* line 6, sass/sass/override/_menu.scss */
+.main-navigation .menu-toggle {
+  display: none;
+}
+
+/* line 4, sass/sass/layout/_topbar.scss */
+#topbar {
+  height: 2.5em;
+  position: relative;
+  overflow: visible;
+  z-index: 1000;
+  background-color: #0F529B;
+  color: #fff;
+}
+
+/* line 14, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu-button {
+  float: left;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding-left: 2em;
+  font-weight: 600;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  /* line 14, sass/sass/layout/_topbar.scss */
+  .topbar .topbar-menu-button {
+    display: none;
+  }
+}
+/* line 25, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1001;
+  visibility: hidden;
+  overflow-y: hidden;
+  background: #ffffff;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+@media (min-width: 768px) {
+  /* line 25, sass/sass/layout/_topbar.scss */
+  .topbar .topbar-menu {
+    display: none;
+  }
+}
+/* line 44, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu.visible {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 48, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .topbar-menu-back {
+  position: absolute;
+  height: 4em;
+  padding-left: 1em;
+  line-height: 4em;
+  z-index: 1003;
+  cursor: pointer;
+  color: #0F529B;
+  font-size: 1em;
+  font-weight: 600;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  transition-delay: 0.1s;
+}
+/* line 62, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .topbar-menu-back.visible {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 67, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .topbar-menu-close {
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 1003;
+}
+/* line 75, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .topbar-menu-close svg {
+  position: absolute;
+  top: 1.3em;
+  right: 1.3em;
+  width: 1.4em;
+  height: 1.4em;
+}
+/* line 81, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .topbar-menu-close svg .line {
+  stroke-width: 2px;
+  stroke: #0F529B;
+}
+/* line 87, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .topbar-menu-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4em;
+  width: 100%;
+  line-height: 1.5em;
+  background: #ffffff;
+  font-size: 1em;
+  border-bottom: solid 1px #0F529B;
+}
+/* line 98, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .topbar-menu-footer {
+  position: absolute;
+  bottom: 4em;
+  left: 0;
+  height: 4em;
+  width: 100%;
+  line-height: 4em;
+  background: #ffffff;
+  font-size: 1em;
+  text-align: center;
+  color: #0F529B;
+}
+/* line 109, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .topbar-menu-footer a {
+  color: #0F529B;
+  font-weight: 500;
+}
+/* line 113, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .topbar-menu-footer span {
+  padding: 0 1em;
+}
+/* line 117, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .handheld-navigation {
+  position: relative;
+  margin-top: 4em;
+  max-height: 100%;
+  height: calc(100% - 8em);
+  overflow: hidden;
+  background-color: #eeeeee;
+}
+/* line 124, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .handheld-navigation ul {
+  display: block;
+  height: 100%;
+  overflow-y: scroll;
+}
+/* line 129, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .handheld-navigation > ul {
+  height: calc(100% - 4em);
+  background-color: white;
+  transition: 0.3s;
+  transition-delay: 0.1s;
+}
+/* line 134, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .handheld-navigation > ul.expand {
+  background-color: rgba(255, 255, 255, 0);
+}
+/* line 138, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .handheld-navigation ul li a {
+  display: block;
+  height: 4em;
+  line-height: 4em;
+  text-align: center;
+  font-size: 1em;
+  border-bottom: solid 1px #0F529B;
+}
+/* line 145, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .handheld-navigation ul li a:focus {
+  outline-style: none;
+}
+/* line 149, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .handheld-navigation .menu ul.sub-menu {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.1s;
+  z-index: 1003;
+}
+/* line 158, sass/sass/layout/_topbar.scss */
+.topbar .topbar-menu .handheld-navigation .menu ul.sub-menu.expand {
+  transform: translate(-100%, 0);
+}
+/* line 165, sass/sass/layout/_topbar.scss */
+.topbar .site-search {
+  float: right;
+  clear: none;
+  margin-bottom: 0;
+  padding-top: 0.56em;
+  font-size: 1em;
+  color: #ffffff;
+  display: none;
+}
+@media (min-width: 768px) {
+  /* line 165, sass/sass/layout/_topbar.scss */
+  .topbar .site-search {
+    display: block;
+  }
+}
+/* line 176, sass/sass/layout/_topbar.scss */
+.topbar .site-search .widget_product_search {
+  font-size: 0.875em;
+  float: left;
+  margin: 0;
+}
+/* line 180, sass/sass/layout/_topbar.scss */
+.topbar .site-search .widget_product_search form:before {
+  top: 0.33em;
+  left: 1em;
+  width: 1em;
+  height: 1em;
+  color: #ffffff;
+}
+/* line 187, sass/sass/layout/_topbar.scss */
+.topbar .site-search .widget_product_search input[type=search], .topbar .site-search .widget_product_search input[type=text] {
+  padding: 0.2em 0.5em 0 2.5em;
+  background-color: transparent;
+  color: #ffffff;
+  box-shadow: none;
+  width: 7em;
+  transition: width 0.5s;
+}
+/* line 194, sass/sass/layout/_topbar.scss */
+.topbar .site-search .widget_product_search input[type=search]:focus, .topbar .site-search .widget_product_search input[type=text]:focus {
+  width: 12em;
+}
+/* line 197, sass/sass/layout/_topbar.scss */
+.topbar .site-search .widget_product_search input[type=search]::placeholder, .topbar .site-search .widget_product_search input[type=text]::placeholder {
+  color: #ffffff;
+}
+/* line 202, sass/sass/layout/_topbar.scss */
+.topbar .site-search .search-clear-btn {
+  float: right;
+  margin-right: 0.75em;
+  width: 0.75em;
+  height: 0.75em;
+  cursor: pointer;
+}
+/* line 209, sass/sass/layout/_topbar.scss */
+.topbar .site-search .search-clear-btn.hidden svg {
+  display: none;
+}
+/* line 213, sass/sass/layout/_topbar.scss */
+.topbar .site-search .search-clear-btn svg {
+  width: 100%;
+  height: 100%;
+}
+/* line 216, sass/sass/layout/_topbar.scss */
+.topbar .site-search .search-clear-btn svg .line {
+  stroke: #ffffff;
+}
+/* line 223, sass/sass/layout/_topbar.scss */
+.topbar .links {
+  display: none;
+  list-style: none;
+  float: right;
+  padding: 0.45em 0 0 0;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  /* line 223, sass/sass/layout/_topbar.scss */
+  .topbar .links {
+    display: block;
+  }
+}
+/* line 232, sass/sass/layout/_topbar.scss */
+.topbar .links li {
+  display: block;
+  float: right;
+  position: relative;
+  list-style: none;
+  padding: 0 0.75em;
+  color: #ffffff;
+  font-weight: 400;
+}
+/* line 240, sass/sass/layout/_topbar.scss */
+.topbar .links li a {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 0.875em;
+}
+/* line 245, sass/sass/layout/_topbar.scss */
+.topbar .links li:before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 0.6em;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 0.6em;
+  right: 0;
+}
+
+/* line 259, sass/sass/layout/_topbar.scss */
+body.cart-open {
+  overflow: hidden;
+}
+@media (min-width: 992px) {
+  /* line 259, sass/sass/layout/_topbar.scss */
+  body.cart-open {
+    overflow: visible;
+  }
+}
+
+/* line 266, sass/sass/layout/_topbar.scss */
+.topbar-cart {
+  float: right;
+  height: 2.875em;
+  width: 2.875em;
+  background-color: #EF4025;
+  z-index: 1001;
+}
+/* line 272, sass/sass/layout/_topbar.scss */
+.topbar-cart .topbar-cart-content {
+  padding: 0;
+  display: block;
+  position: relative;
+  background-color: transparent;
+  height: auto;
+  width: auto;
+  text-indent: 0;
+  line-height: 3.25em;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  background: url(assets/svg/shopping_bag.svg);
+  background-size: 2.875em 2.875em;
+}
+/* line 287, sass/sass/layout/_topbar.scss */
+.topbar-cart .topbar-cart-content .amount {
+  display: none;
+}
+/* line 291, sass/sass/layout/_topbar.scss */
+.topbar-cart .topbar-cart-content .count {
+  font-size: 0.875em;
+  font-weight: 400;
+}
+/* line 297, sass/sass/layout/_topbar.scss */
+.topbar-cart .topbar-cart-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1002;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 310, sass/sass/layout/_topbar.scss */
+.topbar-cart.visible .topbar-cart-overlay {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s;
+}
+/* line 316, sass/sass/layout/_topbar.scss */
+.topbar-cart .topbar-cart-panel {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 1003;
+  box-sizing: border-box;
+  cursor: default;
+  visibility: hidden;
+  overflow-y: hidden;
+  background: #ffffff;
+  color: #333333;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+@media (min-width: 768px) {
+  /* line 316, sass/sass/layout/_topbar.scss */
+  .topbar-cart .topbar-cart-panel {
+    width: 23.438em;
+  }
+}
+/* line 338, sass/sass/layout/_topbar.scss */
+.topbar-cart .topbar-cart-panel .topbar-cart-panel-title {
+  position: absolute;
+  top: 1em;
+  left: 1.5em;
+  line-height: 1.5em;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+/* line 347, sass/sass/layout/_topbar.scss */
+.topbar-cart .topbar-cart-panel .topbar-cart-close {
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 1003;
+}
+/* line 355, sass/sass/layout/_topbar.scss */
+.topbar-cart .topbar-cart-panel .topbar-cart-close svg {
+  position: absolute;
+  top: 1.3em;
+  right: 1.3em;
+  width: 1.4em;
+  height: 1.4em;
+}
+/* line 361, sass/sass/layout/_topbar.scss */
+.topbar-cart .topbar-cart-panel .topbar-cart-close svg .line {
+  stroke-width: 2px;
+}
+/* line 367, sass/sass/layout/_topbar.scss */
+.topbar-cart.visible .topbar-cart-panel {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s;
+}
+/* line 373, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart {
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding-top: 4.4em;
+}
+/* line 380, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart h2.widgettitle {
+  display: none;
+}
+/* line 384, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .widget_shopping_cart_content {
+  height: 100%;
+  position: relative;
+}
+/* line 389, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .product_list_widget {
+  max-height: calc(100% - 10em);
+  overflow-y: scroll;
+  padding: 0 1.5em 0 1.5em;
+}
+/* line 395, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .product_list_widget li {
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: .875em;
+}
+/* line 400, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .product_list_widget li:last-child {
+  border-bottom: none;
+}
+/* line 404, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .product_list_widget li .item-thumbmail {
+  float: left;
+  width: 3.75em;
+  text-align: left;
+}
+/* line 408, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .product_list_widget li .item-thumbmail img {
+  float: left;
+  width: 3.75em;
+  max-width: 100%;
+}
+/* line 415, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .product_list_widget li .item-data {
+  float: left;
+  width: calc(100% - 7.5em);
+  padding-left: 1em;
+  padding-right: 1em;
+  color: #666666;
+}
+/* line 421, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .product_list_widget li .item-data .title {
+  color: #000000;
+}
+/* line 426, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .product_list_widget li .item-subtotal {
+  float: left;
+  width: 3.75em;
+  text-align: right;
+}
+/* line 432, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .product_list_widget li a.remove {
+  position: relative;
+  float: left;
+  top: auto;
+  text-indent: 0;
+  width: auto;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* line 440, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .product_list_widget li a.remove:before {
+  content: "";
+}
+/* line 447, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .cart-pannel-bottom {
+  position: absolute;
+  height: 10em;
+  width: 100%;
+  padding: 0 1.5em 0 1.5em;
+  bottom: 0;
+}
+/* line 453, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .cart-pannel-bottom .total {
+  padding-top: 1em;
+  text-align: left;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+/* line 457, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .cart-pannel-bottom .total .total-label {
+  width: 24.36975%;
+  float: left;
+  margin-right: 0.84034%;
+  color: #999999;
+}
+/* line 461, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .cart-pannel-bottom .total .total-content {
+  width: 24.36975%;
+  float: right;
+  margin-right: 0;
+  text-align: right;
+  color: #333333;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+/* line 469, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .cart-pannel-bottom a.button {
+  background-color: transparent;
+  color: #0F529B;
+  box-shadow: none;
+}
+/* line 473, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .cart-pannel-bottom a.button:after {
+  content: "";
+}
+/* line 477, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .cart-pannel-bottom a.button.checkout {
+  background-color: #0F529B;
+  color: #ffffff;
+}
+/* line 480, sass/sass/layout/_topbar.scss */
+.topbar-cart .widget_shopping_cart .cart-pannel-bottom a.button.checkout:after {
+  content: "";
+}
+
+@media (min-width: 768px) {
+  /* line 2, sass/sass/layout/_header.scss */
+  .storefront-primary-navigation {
+    background-color: transparent;
+  }
+}
+
+/* line 9, sass/sass/layout/_header.scss */
+.woocommerce-active .site-header a {
+  color: #0F529B;
+  font-weight: 600;
+}
+/* line 13, sass/sass/layout/_header.scss */
+.woocommerce-active .site-header .main-navigation {
+  width: 100%;
+  margin-right: 0;
+  text-align: center;
+}
+/* line 17, sass/sass/layout/_header.scss */
+.woocommerce-active .site-header .main-navigation ul.menu > li > a, .woocommerce-active .site-header .main-navigation ul.nav-menu > li > a {
+  padding: 1em 1em;
+}
+/* line 22, sass/sass/layout/_header.scss */
+.woocommerce-active .site-header .site-branding {
+  text-align: center;
+  margin: 0 auto !important;
+  float: none !important;
+}
+/* line 28, sass/sass/layout/_header.scss */
+.woocommerce-active .site-header .site-branding {
+  width: 10em;
+  height: 4.5em;
+}
+/* line 31, sass/sass/layout/_header.scss */
+.woocommerce-active .site-header .site-branding svg {
+  max-width: 100%;
+}
+
+/* line 1, sass/sass/layout/_footer.scss */
+.storefront-handheld-footer-bar {
+  visibility: hidden;
+  height: 0;
+}
+/* line 5, sass/sass/layout/_footer.scss */
+.storefront-handheld-footer-bar.visible ul li.search .site-search {
+  visibility: visible;
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  /* line 5, sass/sass/layout/_footer.scss */
+  .storefront-handheld-footer-bar.visible ul li.search .site-search {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+/* line 14, sass/sass/layout/_footer.scss */
+.storefront-handheld-footer-bar ul li.search .site-search {
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1em;
+  height: 4em;
+  bottom: 0;
+  padding: 0;
+  background: #0F529B;
+}
+/* line 23, sass/sass/layout/_footer.scss */
+.storefront-handheld-footer-bar ul li.search .site-search form:before {
+  top: 0.8em;
+  left: 0.75em;
+  width: 1em;
+  height: 1em;
+  color: #ffffff;
+  font-size: 1.6em;
+}
+/* line 32, sass/sass/layout/_footer.scss */
+.storefront-handheld-footer-bar ul li.search .site-search input[type=search], .storefront-handheld-footer-bar ul li.search .site-search input[type=text] {
+  background-color: transparent;
+  color: #ffffff;
+  box-shadow: none;
+  transition: width 0.5s;
+}
+/* line 37, sass/sass/layout/_footer.scss */
+.storefront-handheld-footer-bar ul li.search .site-search input[type=search]::placeholder, .storefront-handheld-footer-bar ul li.search .site-search input[type=text]::placeholder {
+  color: #ffffff;
+}
+/* line 42, sass/sass/layout/_footer.scss */
+.storefront-handheld-footer-bar ul li.search .site-search .search-clear-btn {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  width: 3em;
+  height: 3em;
+  padding: 0.9em;
+  cursor: pointer;
+}
+/* line 51, sass/sass/layout/_footer.scss */
+.storefront-handheld-footer-bar ul li.search .site-search .search-clear-btn.hidden svg {
+  display: none;
+}
+/* line 55, sass/sass/layout/_footer.scss */
+.storefront-handheld-footer-bar ul li.search .site-search .search-clear-btn svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+/* line 58, sass/sass/layout/_footer.scss */
+.storefront-handheld-footer-bar ul li.search .site-search .search-clear-btn svg .line {
+  stroke: #ffffff;
+}
