@@ -1,0 +1,92 @@
+.storefront-full-width-content.single-product div.product {
+  overflow: inherit;
+  .woocommerce-product-gallery {
+    @include span(7 of 12);
+    .flex-control-thumbs {
+      float: left;
+      @include layout(7 1/2);
+      @include span(1 of 7);
+      li {
+        margin-bottom: 0.8rem;
+        img.flex-active {
+          box-sizing: border-box;
+          border-bottom: 2px solid $pickee-red;
+        }
+      }
+    }
+    .flex-viewport {
+      float: right;
+      @include layout(7 1/2);
+      @include span(last 6 of 7);
+    }
+  }
+  .summary {
+    padding-top: 4rem;
+    text-align: center;
+    .pwb-single-product-brands a {
+      color: #000000;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    p.price {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    form.cart {
+      .quantity {
+        overflow: auto;
+        width: 100%
+      }
+      button {
+        margin-top: 1em;
+        background-color: $pickee-blue;
+      }
+    }
+  }
+
+  .summary {
+    @include span(last 5 of 12);
+  }
+
+  .woocommerce-product-rating {
+    .star-rating {
+      overflow: auto;
+      width: 100%;
+      display: inline;
+    }
+  }
+
+  .product-description-block {
+    clear: both;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background-color: $pickee-blue;
+    padding: 3rem 0;
+    color: #ffffff;
+    h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.2rem;
+    }
+    .description-left {
+      @include span(6 of 12);
+    }
+    .description-right {
+      @include span(last 6 of 12);
+    }
+    .attribute-column {
+      &.column-1 {
+        @include span(6 of 12);
+      }
+      &.column-2 {
+        @include span(last 6 of 12);
+      }
+    }
+    .attribute-name {
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+  }
+}

@@ -12,4 +12,7 @@
 .env
 
 /vendor
-/wp-content
+/wp-content/*
+!/wp-content/themes
+/wp-content/themes/storefront
+!/wp-content/themes/storefront-child

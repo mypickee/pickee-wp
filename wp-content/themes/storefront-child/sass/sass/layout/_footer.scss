@@ -1,0 +1,65 @@
+.storefront-handheld-footer-bar {
+  visibility: hidden;
+  height: 0;
+  &.visible {
+    ul li.search .site-search {
+      visibility: visible;
+      opacity: 1;
+      @include breakpoint($screen-sm) {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+  ul li.search .site-search {
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1em;
+    height: 4em;
+    bottom: 0;
+    padding: 0;
+    background: $pickee-blue;
+
+    form:before {
+      top: 0.8em;
+      left: 0.75em;
+      width: 1em;
+      height: 1em;
+      color: #ffffff;
+      font-size: 1.6em;
+    }
+
+    input[type=search], input[type=text] {
+      margin: 0.5rem 1rem;
+      background-color: transparent;
+      color: #ffffff;
+      box-shadow: none;
+      transition: width 0.5s;
+      &::placeholder {
+        color: #ffffff;
+      }
+    }
+
+    .search-clear-btn {
+      position: absolute;
+      right: 0.5em;
+      top: 0.5em;
+      width: 3em;
+      height: 3em;
+      padding: 0.9em;
+      cursor: pointer;
+      &.hidden {
+        svg {
+          display :none;
+        }
+      }
+      svg {
+        width: 1.2em;
+        height: 1.2em;
+        .line {
+          stroke:#ffffff;
+        }
+      }
+    }
+  }
+}

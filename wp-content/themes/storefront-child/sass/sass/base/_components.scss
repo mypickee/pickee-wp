@@ -1,0 +1,9 @@
+.self_clear:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+img {
+  border-radius: 0;
+}
