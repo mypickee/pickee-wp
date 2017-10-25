@@ -10,9 +10,11 @@
     "wp-cli/wp-cli": "~0.22",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1.11.4",
     "wpackagist-plugin/woocommerce": "~3.2.1",
-    "wpackagist-theme/storefront": "~2.2.5"
+    "wpackagist-theme/storefront": "~2.2.5",
+    "wpackagist-plugin/insert-html-snippet": "^1.2",
+    "wpackagist-plugin/perfect-woocommerce-brands": "^1.5"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified woocommerce; wp theme activate storefront"
+    "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands; wp theme activate storefront-child"
   }
 }
