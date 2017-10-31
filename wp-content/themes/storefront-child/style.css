@@ -81,32 +81,51 @@ ul.menu li a {
 }
 /* line 32, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .summary p.price {
-  font-size: 1.5rem;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 100;
 }
-/* line 37, sass/sass/override/_single-product.scss */
+/* line 39, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .summary form.cart .quantity {
   overflow: auto;
   width: 100%;
 }
-/* line 41, sass/sass/override/_single-product.scss */
+/* line 43, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .summary form.cart button {
   margin-top: 1em;
   background-color: #0F529B;
 }
-/* line 48, sass/sass/override/_single-product.scss */
+/* line 50, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .summary {
   width: 40%;
   float: right;
   margin-right: 0;
 }
-/* line 53, sass/sass/override/_single-product.scss */
-.storefront-full-width-content.single-product div.product .woocommerce-product-rating .star-rating {
-  overflow: auto;
-  width: 100%;
-  display: inline;
+/* line 54, sass/sass/override/_single-product.scss */
+.storefront-full-width-content.single-product div.product .woocommerce-product-rating {
+  margin-bottom: 0;
+}
+/* line 56, sass/sass/override/_single-product.scss */
+.storefront-full-width-content.single-product div.product .woocommerce-product-rating .hearts {
+  padding: 0.5rem 0 0;
+  line-height: 2rem;
+  display: inline-block;
 }
 /* line 60, sass/sass/override/_single-product.scss */
+.storefront-full-width-content.single-product div.product .woocommerce-product-rating .hearts svg {
+  display: inline-block;
+  width: 1rem;
+  margin: 0.25rem;
+  vertical-align: middle;
+}
+/* line 67, sass/sass/override/_single-product.scss */
+.storefront-full-width-content.single-product div.product .woocommerce-product-rating .woocommerce-review-link {
+  text-decoration: none;
+  color: #333333;
+  font-size: 1.2rem;
+}
+/* line 74, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block {
   clear: both;
   margin-left: calc(-50vw + 50%);
@@ -115,38 +134,38 @@ ul.menu li a {
   padding: 3rem 0;
   color: #ffffff;
 }
-/* line 67, sass/sass/override/_single-product.scss */
+/* line 81, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block h4 {
   color: #ffffff;
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.2rem;
 }
-/* line 73, sass/sass/override/_single-product.scss */
+/* line 87, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block .description-left {
   width: 48.57143%;
   float: left;
   margin-right: 2.85714%;
 }
-/* line 76, sass/sass/override/_single-product.scss */
+/* line 90, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block .description-right {
   width: 48.57143%;
   float: right;
   margin-right: 0;
 }
-/* line 80, sass/sass/override/_single-product.scss */
+/* line 94, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block .attribute-column.column-1 {
   width: 48.57143%;
   float: left;
   margin-right: 2.85714%;
 }
-/* line 83, sass/sass/override/_single-product.scss */
+/* line 97, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block .attribute-column.column-2 {
   width: 48.57143%;
   float: right;
   margin-right: 0;
 }
-/* line 87, sass/sass/override/_single-product.scss */
+/* line 101, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block .attribute-name {
   display: inline-block;
   margin-right: 0.5em;
@@ -1201,7 +1220,7 @@ body.home .site-content .col-full {
   stroke: #ffffff;
 }
 
-/* line 1, sass/sass/component/button.scss */
+/* line 1, sass/sass/component/_button.scss */
 .btn {
   display: inline-block;
   font-weight: 600;
@@ -1219,7 +1238,7 @@ body.home .site-content .col-full {
   transition: all .15s ease-in-out;
   text-transform: uppercase;
 }
-/* line 17, sass/sass/component/button.scss */
+/* line 17, sass/sass/component/_button.scss */
 .btn.btn-secondary {
   border: 2px solid #0F529B;
   color: #0F529B;
