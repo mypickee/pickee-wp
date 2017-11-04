@@ -76,3 +76,27 @@ function single_product_discription()
     </div>
   <?php
 }
+
+add_action( 'woocommerce_after_single_product_summary', 'single_product_reviews', 10);
+/*
+ * Reference to woocommerc/templates/single-product-reviews
+ */
+function single_product_reviews()
+{
+  ?>
+    <div class="product-review">
+      <?php
+        comments_template();
+      ?>
+    </div>
+  <?php
+}
+
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+
+//Move review rating hearts form "woocommerce_review_before_comment_meta" to "woocommerce_review_meta"
+remove_action('woocommerce_review_before_comment_meta', 'woocommerce_review_display_rating');
+add_action('woocommerce_review_meta', 'woocommerce_review_display_rating', 20);
+
+//remove product data tabs from single-product page.
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs');

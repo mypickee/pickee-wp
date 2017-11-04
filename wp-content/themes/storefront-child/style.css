@@ -171,6 +171,175 @@ ul.menu li a {
   margin-right: 0.5em;
 }
 
+/* line 109, sass/sass/override/_single-product.scss */
+#reviews h2 {
+  margin-top: 3rem;
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+}
+/* line 115, sass/sass/override/_single-product.scss */
+#reviews .commentlist {
+  margin-top: 2rem;
+}
+/* line 117, sass/sass/override/_single-product.scss */
+#reviews .commentlist li {
+  display: block;
+  float: left;
+  width: 50%;
+  clear: none;
+  padding: 1rem;
+}
+/* line 123, sass/sass/override/_single-product.scss */
+#reviews .commentlist li p.meta {
+  margin-bottom: 0;
+}
+/* line 126, sass/sass/override/_single-product.scss */
+#reviews .commentlist li .hearts {
+  line-height: 2rem;
+  display: inline-block;
+}
+/* line 129, sass/sass/override/_single-product.scss */
+#reviews .commentlist li .hearts svg {
+  display: inline-block;
+  width: 1rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+/* line 138, sass/sass/override/_single-product.scss */
+#reviews .comment-form-rating label {
+  line-height: 2rem;
+  height: 2rem;
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+/* line 145, sass/sass/override/_single-product.scss */
+#review-form-trigger {
+  display: inline-block;
+  height: 3rem;
+  line-height: 3rem;
+  color: #0F529B;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* line 153, sass/sass/override/_single-product.scss */
+#review_form_wrapper {
+  clear: both;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  background-color: #f9f9f9;
+  padding: 1rem 0;
+}
+/* line 159, sass/sass/override/_single-product.scss */
+#review_form_wrapper.hidden {
+  display: none;
+}
+/* line 162, sass/sass/override/_single-product.scss */
+#review_form_wrapper #respond {
+  background-color: transparent;
+}
+
+/* line 166, sass/sass/override/_single-product.scss */
+.review-form-inner-wrapper {
+  position: relative;
+}
+
+/* line 169, sass/sass/override/_single-product.scss */
+.review-form-close {
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  top: 2rem;
+  right: 0;
+  cursor: pointer;
+  z-index: 1003;
+}
+/* line 177, sass/sass/override/_single-product.scss */
+.review-form-close svg .line {
+  stroke-width: 2px;
+  stroke: #0F529B;
+}
+
+/* line 182, sass/sass/override/_single-product.scss */
+#review_form {
+  margin: 0 auto;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  /* line 182, sass/sass/override/_single-product.scss */
+  #review_form {
+    width: 600px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 182, sass/sass/override/_single-product.scss */
+  #review_form {
+    width: 600px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 182, sass/sass/override/_single-product.scss */
+  #review_form {
+    width: 768px;
+  }
+}
+@media (min-width: 1440px) {
+  /* line 182, sass/sass/override/_single-product.scss */
+  #review_form {
+    width: 960px;
+  }
+}
+
+/* line 204, sass/sass/override/_single-product.scss */
+p.stars {
+  vertical-align: middle;
+}
+/* line 206, sass/sass/override/_single-product.scss */
+p.stars a {
+  height: 1.5rem;
+  width: 2rem;
+  outline: 0;
+}
+/* line 210, sass/sass/override/_single-product.scss */
+p.stars a:before {
+  width: 1.5em;
+  height: 1.5em;
+  content: url(/wp-content/themes/storefront-child/assets/svg/heart_outline.svg);
+  opacity: 1;
+}
+/* line 217, sass/sass/override/_single-product.scss */
+p.stars a:hover ~ a:before {
+  content: url(/wp-content/themes/storefront-child/assets/svg/heart_outline.svg);
+  opacity: 1;
+}
+/* line 221, sass/sass/override/_single-product.scss */
+p.stars:hover a:before {
+  content: url(/wp-content/themes/storefront-child/assets/svg/heart_fillled.svg);
+  opacity: 1;
+}
+/* line 226, sass/sass/override/_single-product.scss */
+p.stars.selected a.active:before {
+  content: url(/wp-content/themes/storefront-child/assets/svg/heart_fillled.svg);
+  opacity: 1;
+}
+/* line 230, sass/sass/override/_single-product.scss */
+p.stars.selected a.active ~ a:before {
+  content: url(/wp-content/themes/storefront-child/assets/svg/heart_outline.svg);
+  opacity: 1;
+}
+/* line 234, sass/sass/override/_single-product.scss */
+p.stars.selected a:not(.active):before {
+  content: url(/wp-content/themes/storefront-child/assets/svg/heart_fillled.svg);
+  opacity: 1;
+}
+
+/* line 240, sass/sass/override/_single-product.scss */
+p.comment-form-comment {
+  margin-top: 2rem;
+}
+
 /* line 1, sass/sass/override/_other.scss */
 .woocommerce-breadcrumb {
   margin-bottom: 1em;
@@ -1239,6 +1408,12 @@ body.home .site-content .col-full {
   text-transform: uppercase;
 }
 /* line 17, sass/sass/component/_button.scss */
+.btn.btn-primary {
+  padding: 0.8rem 2rem;
+  background-color: #0F529B;
+  color: #ffffff;
+}
+/* line 22, sass/sass/component/_button.scss */
 .btn.btn-secondary {
   border: 2px solid #0F529B;
   color: #0F529B;
