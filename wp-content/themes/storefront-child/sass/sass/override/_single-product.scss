@@ -194,6 +194,10 @@
   @include breakpoint($screen-xl) {
     width: 960px;
   }
+  textarea {
+    background-color: #ffffff;
+    box-shadow: none;
+  }
 }
 @mixin content-heart-filled {
   content: url(/wp-content/themes/storefront-child/assets/svg/heart_fillled.svg);
