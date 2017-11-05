@@ -1,0 +1,83 @@
+
+.storefront-primary-navigation {
+  @include breakpoint($screen-sm) {
+    background-color: transparent;
+  }
+}
+
+.woocommerce-active .site-header {
+  border-bottom: none;
+
+  a {
+    color: $pickee-blue;
+    font-weight: 600;
+  }
+  .storefront-primary-navigation {
+    float: right;
+    clear: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 520px;
+  }
+  .main-navigation {
+    width: 100%;
+    margin-right: 0;
+    ul.menu {
+      text-align: right;
+    }
+    ul.menu > li > a, ul.nav-menu > li > a {
+      padding: 1em 1em;
+    }
+  }
+
+  .site-branding {
+    float: left;
+    width: 8em;
+    height: 4em;
+    text-align: center;
+    svg {
+      max-width: 100%;
+    }
+  }
+}
+
+//header for homepage
+.woocommerce-active.home .site-header {
+  border-bottom: none;
+
+  a {
+    color: $pickee-blue;
+    font-weight: 600;
+  }
+
+  .storefront-primary-navigation {
+    float: none;
+    clear: both;
+    width: 100%;
+  }
+
+  .main-navigation {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+    ul.menu {
+      text-align: center;
+    }
+    ul.menu > li > a, ul.nav-menu > li > a {
+      padding: 1em 1em;
+    }
+  }
+
+  .site-branding {
+    margin: 0 auto !important;
+    float: none !important;
+    width: 10em;
+    height: 4.5em;
+    text-align: center;
+    svg {
+      max-width: 100%;
+    }
+  }
+}
