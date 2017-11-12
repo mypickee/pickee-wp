@@ -39,6 +39,8 @@
       appendArrows: '.carousel-controls',
       asNavFor: '.carousel-images'
     });
-
+    $('.review-form-toggle').click(function(e){
+      $("#review_form_wrapper").toggleClass('hidden');
+    });
   });
 })(jQuery);

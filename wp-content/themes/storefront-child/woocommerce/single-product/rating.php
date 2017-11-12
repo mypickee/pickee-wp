@@ -33,8 +33,20 @@ $average      = $product->get_average_rating();
 if ( $rating_count > 0 ) : ?>
 
   <div class="woocommerce-product-rating">
-    <?php echo wc_get_rating_html( $average, $rating_count ); ?>
-    <?php if ( comments_open() ) : ?><a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a><?php endif ?>
+      <div class="hearts">
+      <?php
+        $heart_types = ['heart_fillled', 'heart_half', 'heart_outline'];
+        $hearts['heart_fillled'] = (int)$average;
+        $hearts['heart_half'] = (int)(($average - $hearts['heart_fillled']) / 0.5);
+        $hearts['heart_outline'] = 5 - $hearts['heart_fillled'] - $hearts['heart_half'];
+        foreach ($hearts as $key => $val) {
+          for ($i = 0; $i < $val; $i++) {
+            echo file_get_contents(get_stylesheet_directory().'/assets/svg/'.$key.'.svg');
+          }
+        }
+      ?>
+      <?php if (comments_open()) : ?><a href="#reviews" class="woocommerce-review-link" rel="nofollow"><?php echo "($rating_count)";?></a><?php endif ?>
+    </div>
   </div>
 
 <?php endif; ?>
