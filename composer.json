@@ -16,5 +16,8 @@
   },
   "scripts": {
     "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands; wp theme activate storefront-child"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
   }
 }
