@@ -1662,15 +1662,15 @@
         },
         {
             "name": "wpackagist-plugin/woocommerce",
-            "version": "3.2.1",
+            "version": "3.2.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/woocommerce/",
-                "reference": "tags/3.2.1"
+                "reference": "tags/3.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce.3.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce.3.2.3.zip",
                 "reference": null,
                 "shasum": null
             },
