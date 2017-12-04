@@ -1,0 +1,6 @@
+.woocommerce-breadcrumb {
+  text-align: center;
+  @include breakpoint($screen-sm) {
+    text-align: left;
+  }
+}

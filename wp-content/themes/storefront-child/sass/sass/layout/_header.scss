@@ -7,6 +7,12 @@
 
 .woocommerce-active .site-header {
   border-bottom: none;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  @include breakpoint($screen-sm) {
+    padding-top: 1.618rem;
+    padding-bottom: 1.618rem;
+  }
 
   a {
     color: $pickee-blue;
@@ -33,14 +39,23 @@
   }
 
   .site-branding {
-    float: left;
-    width: 8em;
-    height: 4em;
+    margin: 0 auto !important;
+    float: none !important;
+    width: 40%;
+    height: 3em;
+    max-width: 8em;
     text-align: center;
+    @include breakpoint($screen-sm) {
+      float: left !important;
+      width: 9em;
+      height: 4.5em;
+    }
     svg {
+      max-height: 100%;
       max-width: 100%;
     }
   }
+
 }
 
 //header for homepage

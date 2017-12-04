@@ -1,9 +1,17 @@
-.self_clear:after {
+.clearfix:after, .self_clear:after {
   content: "";
   clear: both;
-  display: table;
+  display: block;
 }
 
 img {
   border-radius: 0;
+}
+
+@mixin self_clear {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
 }
