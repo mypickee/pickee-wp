@@ -1,2 +1,2 @@
 fpm: php-fpm --nodaemonize
-web: nginx -g 'daemon off; error_log /dev/stderr debug;'
+web: php config/nginx/pickee-wp.php > config/nginx/pickee-wp && nginx -c ${PWD}/config/nginx/nginx.conf -g 'daemon off; error_log /dev/stderr debug;'
