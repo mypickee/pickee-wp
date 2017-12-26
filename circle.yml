@@ -26,3 +26,9 @@ dependencies:
 test:
   override:
     - composer test
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: pickee-wp-staging
