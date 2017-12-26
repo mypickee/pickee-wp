@@ -1,4 +1,4 @@
-# Pickee WordPress
+# Pickee WordPress [![CircleCI](https://circleci.com/gh/takoman/pickee-wp.svg?style=svg)](https://circleci.com/gh/takoman/pickee-wp)
 
 ## Meta
 
@@ -6,7 +6,7 @@
 * __Production:__
 * __Staging:__ [http://pickee-wp-staging.herokuapp.com/](http://pickee-wp-staging.herokuapp.com/) | [Heroku](https://dashboard.heroku.com/apps/pickee-wp-staging/resources)
 * __Github:__ [https://github.com/takoman/pickee-wp](https://github.com/takoman/pickee-wp)
-* __CI/Deploys:__
+* __CI/Deploys:__ [CircleCI](https://circleci.com/gh/takoman/pickee-wp); merged PRs to master branch are automatically deployed to staging
 
 ## Set-Up
 
@@ -54,8 +54,10 @@
 
   If `php-fpm` doesn't output php 7, make sure `/usr/local/sbin` is before `/usr/sbin`.
 
-* Allow environment variables to reach FPM worker processes:
-  edit `/usr/local/etc/php/7.0/php-fpm.d/www.conf` and turn on
+* We will use our own [config files](config/php-fpm) for running php-fpm locally.
+
+* Allow environment variables to reach FPM worker processes by making sure `clear_env` is
+  set to `no` in `config/php-fpm/php-fpm.d/www.conf`.
   ```
   clear_env = no
   ```
@@ -67,63 +69,7 @@
   brew install nginx
   ```
 
-* Follow Debian's `sites-available` and `sites-enabled` convention for virtual hosts
-  definition:
-
-  * Create the folders
-    ```
-    mkdir -p /usr/local/etc/nginx/sites-available /usr/local/etc/nginx/sites-enabled
-    ```
-
-  * Edit `/usr/local/etc/nginx/nginx.conf` and add `include sites-enabled/*` at the end.
-  * Create `/usr/local/etc/nginx/sites-available/pickee-wp` with config like:
-    ```
-    server {
-        listen       7070;
-        server_name  localhost;
-
-        root /Users/starsirius/Code/pickee-wp;
-        index index.php;
-
-        # show access in console; useful for development
-        access_log /dev/stdout;
-
-        location / {
-            # This is cool because no php is touched for static content.
-            # include the "?$args" part so non-default permalinks doesn't break when using query string
-            try_files $uri $uri/ /index.php?$args;
-        }
-
-        location = /favicon.ico {
-            log_not_found off;
-            access_log off;
-        }
-
-        location = /robots.txt {
-            allow all;
-            log_not_found off;
-            access_log off;
-        }
-
-        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-        #
-        location ~ \.php$ {
-            fastcgi_pass   127.0.0.1:9000;
-            fastcgi_index  index.php;
-            include        fastcgi.conf;
-        }
-
-        location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
-            expires max;
-            log_not_found off;
-        }
-    }
-    ```
-
-  * Create symbolic link in `sites-enabled` for `pickee-wp`:
-    ```
-    ln -s /usr/local/etc/nginx/sites-available/pickee-wp /usr/local/etc/nginx/sites-enabled/pickee-wp
-    ```
+* We will use our own [config files](config/nginx) for running nginx locally.
 
 #### Notes
 
@@ -136,11 +82,7 @@
 
 * Config files
   ```
-  /usr/local/etc/nginx/sites-available/pickee-wp
-  /usr/local/etc/nginx/fastcgi.conf
   /usr/local/etc/php/7.0/php.ini
-  /usr/local/etc/php/7.0/php-fpm.conf
-  /usr/local/etc/php/7.0/php-fpm.d/www.conf
   ```
 
 ### Fork and clone this repo
@@ -158,13 +100,14 @@ TODO
   foreman start -f Procfile.dev
   ```
 
-### Install Wordpress.
+### Install Wordpress
 Visit [http://localhost:7070/wp-admin](http://localhost:7070/wp-admin) and follow the steps to install Wordpress.
 
 ### Caveat
-Occasiaonally nginx will raise 502 Bad Gateway error with message like:
-```
-2017/06/10 18:08:04 [error] 2462#0: *2 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /wp-admin/update-core.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "localhost:7070", referrer: "http://localhost:7070/wp-admin/"
-```
-Refreshing the page a few times would work again, but not sure what exactly the cause was.
+* Occasiaonally nginx will raise 502 Bad Gateway error with message like:
+  ```
+  2017/06/10 18:08:04 [error] 2462#0: *2 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /wp-admin/update-core.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "localhost:7070", referrer: "http://localhost:7070/wp-admin/"
+  ```
+  Refreshing the page a few times would work again, but not sure what exactly the cause was.
 
+* Using `Ctrl-C` to exit foreman might not kill php-fpm processes gracefully and we need to find the process IDs and kill them manually.
