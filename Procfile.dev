@@ -1,2 +1,2 @@
-fpm: php-fpm --nodaemonize
-web: nginx -g 'daemon off; error_log /dev/stderr debug;'
+fpm: ./script/start_local_php-fpm.sh
+web: ./script/start_local_nginx.sh
