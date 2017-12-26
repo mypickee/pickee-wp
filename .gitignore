@@ -16,3 +16,6 @@
 !/wp-content/themes
 /wp-content/themes/storefront
 !/wp-content/themes/storefront-child
+
+config/nginx/pickee-wp
+config/php-fpm/php-fpm.conf
