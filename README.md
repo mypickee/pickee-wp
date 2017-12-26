@@ -1,4 +1,4 @@
-# Pickee WordPress [![CircleCI](https://circleci.com/gh/takoman/pickee-wp.svg?style=svg)](https://circleci.com/gh/takoman/pickee-wp)
+# Pickee WordPress [![CircleCI](https://circleci.com/gh/takoman/pickee-wp.svg?style=svg&circle-token=062cdeb675f1b4643eb831a22f04e69a61aa1b8b)](https://circleci.com/gh/takoman/pickee-wp)
 
 ## Meta
 
