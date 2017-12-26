@@ -20,8 +20,6 @@ dependencies:
     - sudo mv wp-cli.phar /usr/local/bin/wp
     # Install Wordpress
     - wp core install --admin_name=pickee_wp_admin --admin_password=password --admin_email=info@mypickee.com --url=http://127.0.0.1 --title=Pickee
-  override:
-    - composer install
 
 test:
   override:
