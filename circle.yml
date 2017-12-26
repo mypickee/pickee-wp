@@ -1,0 +1,32 @@
+machine:
+  php:
+    version: 7.0.20
+  services:
+    - mysql
+  environment:
+    DATABASE_URL: "mysql://pickee_wp_admin:password@127.0.0.1/pickee_wp_test"
+
+dependencies:
+  pre:
+    # Create MySQL user and database
+    - mysql -u ubuntu -e "
+      CREATE DATABASE pickee_wp_test;
+      CREATE USER pickee_wp_admin@localhost IDENTIFIED BY 'password';
+      GRANT ALL PRIVILEGES ON pickee_wp_test.* TO pickee_wp_admin@localhost;
+      FLUSH PRIVILEGES;"
+    # Install wp-cli
+    - curl -O "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar"
+    - chmod +x wp-cli.phar
+    - sudo mv wp-cli.phar /usr/local/bin/wp
+    # Install Wordpress
+    - wp core install --admin_name=pickee_wp_admin --admin_password=password --admin_email=info@mypickee.com --url=http://127.0.0.1 --title=Pickee
+
+test:
+  override:
+    - composer test
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: pickee-wp-staging
