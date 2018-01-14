@@ -8,11 +8,7 @@ server {
     # show access in console; useful for development
     access_log /dev/stdout;
 
-    location / {
-        # This is cool because no php is touched for static content.
-        # include the "?$args" part so non-default permalinks doesn't break when using query string
-        try_files $uri $uri/ /index.php?$args;
-    }
+    include location_root.conf;
 
     location = /favicon.ico {
         log_not_found off;
