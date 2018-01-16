@@ -1,8 +1,8 @@
 <?php
 /**
- * Related Products
+ * Single Product Up-Sells
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product/related.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product/up-sells.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -20,21 +20,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( $related_products ) : ?>
+if ( $upsells ) : ?>
 
-	<section class="related products">
+	<section class="up-sells upsells products">
 
-		<h2><?php esc_html_e( 'Related products', 'woocommerce' ); ?></h2>
+		<h2><?php esc_html_e( 'You may also like&hellip;', 'woocommerce' ) ?></h2>
 
-    <?php if (count($related_products) > 1):?>
+    <?php if (count($upsells) > 1):?>
     <div class="hidden-sm-down">
     <?php endif;?>
 		<?php woocommerce_product_loop_start(); ?>
 
-			<?php foreach ( $related_products as $related_product ) : ?>
+			<?php foreach ( $upsells as $upsell ) : ?>
 
 				<?php
-				 	$post_object = get_post( $related_product->get_id() );
+				 	$post_object = get_post( $upsell->get_id() );
 
 					setup_postdata( $GLOBALS['post'] =& $post_object );
 
@@ -43,15 +43,15 @@ if ( $related_products ) : ?>
 			<?php endforeach; ?>
 
 		<?php woocommerce_product_loop_end(); ?>
-    <?php if (count($related_products) > 1):?>
+    <?php if (count($upsells) > 1):?>
     </div>
 
     <ul class="products-carousel">
 
-      <?php foreach ( $related_products as $related_product ) : ?>
+      <?php foreach ( $upsells as $upsell ) : ?>
 
         <?php
-          $post_object = get_post( $related_product->get_id() );
+          $post_object = get_post( $upsell->get_id() );
 
           setup_postdata( $GLOBALS['post'] =& $post_object );
 
@@ -59,11 +59,12 @@ if ( $related_products ) : ?>
 
       <?php endforeach; ?>
 
+
     </ul>
 
     <?php endif;?>
 
-  </section>
+	</section>
 
 <?php endif;
 

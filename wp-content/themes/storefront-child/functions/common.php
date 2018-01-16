@@ -244,6 +244,22 @@ function product_variation_title_should_not_include_attributes() {
   return false;
 }
 
+//Remove "Add to cart" button from product loop
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+
+//Remove rating from product loop
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+
+//Remove sale tag flash from product loop
+add_filter('woocommerce_sale_flash', 'woocommerce_custom_hide_sales_flash');
+function woocommerce_custom_hide_sales_flash()
+{
+  return false;
+}
+
+//Change number of products per row to 4
+add_filter( 'storefront_loop_columns', function() { return 4; });
+
 //load customized js
 function custom_scripts() {
   wp_enqueue_script('custom', get_stylesheet_directory_uri().'/js/custom.js', array('jquery'), 1.0, true);

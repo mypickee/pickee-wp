@@ -1,0 +1,11 @@
+.hidden-sm-down {
+  display: none;
+  @include breakpoint($screen-sm) {
+    display: block;
+  }
+}
+.hidden-md-up {
+  @include breakpoint($screen-sm) {
+    display: none;
+  }
+}

@@ -12,6 +12,7 @@ Template: storefront
 @import "base/breakpoints";
 @import "base/variables";
 @import "base/components";
+@import "base/responsive";
 @import "override/override";
 @import "layout/layout";
 @import "component/component";
