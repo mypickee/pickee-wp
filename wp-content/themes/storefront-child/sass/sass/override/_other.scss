@@ -4,3 +4,22 @@
 .woocommerce-breadcrumb a:first-of-type:before {
   display: none;
 }
+
+.storefront-full-width-content .woocommerce-products-header {
+  float: left;
+}
+
+.storefront-sorting {
+  float: right;
+  .woocommerce-ordering {
+    width: 16rem;
+    float: right;
+  }
+  select {
+    width: 100%;
+    visibility: hidden;
+  }
+  .woocommerce-result-count {
+    display: none;
+  }
+}
