@@ -51,5 +51,9 @@
       prevArrow: '<button type="button" class="control-btn btn-prev"></button>',
       nextArrow: '<button type="button" class="control-btn btn-next"></button>',
     });
+
+    $('select.orderby').select2({
+      minimumResultsForSearch: -1,
+    });
   });
 })(jQuery);
