@@ -1563,6 +1563,32 @@ body.brand-page .entry-header {
 body.brand-page .woocommerce-breadcrumb {
   display: none;
 }
+/* line 227, sass/sass/layout/_content.scss */
+body.brand-page .brand-page-header {
+  clear: both;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+/* line 232, sass/sass/layout/_content.scss */
+body.brand-page .brand-logo-block {
+  position: relative;
+  width: 100%;
+  top: -60px;
+  padding-top: 40px;
+  background-color: #ffffff;
+  text-align: center;
+}
+/* line 239, sass/sass/layout/_content.scss */
+body.brand-page .brand-logo-block img {
+  margin: 0 auto;
+  width: 90px;
+}
+/* line 243, sass/sass/layout/_content.scss */
+body.brand-page .brand-logo-block h1 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  font-weight: 800;
+}
 
 /* line 1, sass/sass/layout/_footer.scss */
 .storefront-handheld-footer-bar {
