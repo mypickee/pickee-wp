@@ -216,3 +216,34 @@ body.home .site-content .col-full {
     }
   }
 }
+
+body.brand-page {
+  .entry-header {
+    display: none;
+  }
+  .woocommerce-breadcrumb {
+    display: none;
+  }
+  .brand-page-header {
+    clear: both;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  .brand-logo-block {
+    position: relative;
+    width: 100%;
+    top: -60px;
+    padding-top: 40px;
+    background-color: #ffffff;
+    text-align: center;
+    img {
+      margin: 0 auto;
+      width: 90px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      font-weight: 800;
+    }
+  }
+}

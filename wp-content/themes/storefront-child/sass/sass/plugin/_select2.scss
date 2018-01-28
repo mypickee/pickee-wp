@@ -1,0 +1,31 @@
+.select2-container {
+  .select2-selection--single {
+    height: 2.5rem;
+    border-radius: 0;
+    .select2-selection__rendered {
+      line-height: 2.5rem;
+      padding-left: 1rem;
+      padding-right: 1.5rem;
+    }
+    .select2-selection__arrow {
+      height: 2.5rem;
+      width: 3rem;
+      b {
+        border: solid #666666;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: .25rem;
+        margin-left: -.2rem;
+        margin-top: -.4rem;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    }
+  }
+  &.select2-container--open .select2-selection--single .select2-selection__arrow b{
+    border: solid #666666;
+    border-width: 0 1px 1px 0;
+    transform: rotate(-135deg);
+    margin-top: 0rem;
+  }
+}

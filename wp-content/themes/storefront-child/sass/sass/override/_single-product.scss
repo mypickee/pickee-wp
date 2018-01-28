@@ -300,21 +300,45 @@ p.comment-form-comment {
 
 .storefront-full-width-content.single-product {
   .related, .upsells {
-    ul.products {
+    margin-bottom: 2rem;
+    h2, &.products>h2:first-child {
+      text-align: center;
       @include breakpoint($screen-sm) {
+        text-align: left;
+      }
+    }
+    li.product {
+      img {
         width: 100%;
-        li.product {
-          clear: none;
-          width: 22% !important;
-          margin-right: 4%;
-        }
+      }
+      h2 {
+        text-align: center;
+      }
+    }
+    .products-carousel {
+      @include breakpoint($screen-sm) {
+        display: none;
       }
       li.product {
-        width: 22% !important;
-        float: left;
-        margin-right: 4%;
-        &.last {
-          margin-right: 0!important;
+        margin: 0 20px;
+      }
+    }
+    ul.products {
+      width: 60%;
+      margin: 0 auto;
+      @include breakpoint($screen-sm) {
+        width: 100%;
+      }
+      li.product {
+        width: 100%;
+        margin: 0;
+        @include breakpoint($screen-sm) {
+          width: 22% !important;
+          float: left;
+          margin-right: 4%;
+          &.last {
+            margin-right: 0!important;
+          }
         }
       }
     }
