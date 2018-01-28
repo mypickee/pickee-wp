@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "280a4cb79003e3af1e95999f63f15961",
+    "content-hash": "044468de4e77f15328fc60086e525a55",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -776,16 +776,16 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/jsonlint.git",
-                "reference": "9b355654ea99460397b89c132b5c1087b6bf4473"
+                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/9b355654ea99460397b89c132b5c1087b6bf4473",
-                "reference": "9b355654ea99460397b89c132b5c1087b6bf4473",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/d15f59a67ff805a44c50ea0516d2341740f81a38",
+                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38",
                 "shasum": ""
             },
             "require": {
@@ -821,7 +821,7 @@
                 "parser",
                 "validator"
             ],
-            "time": "2018-01-03T12:13:57+00:00"
+            "time": "2018-01-24T12:46:19+00:00"
         },
         {
             "name": "seld/phar-utils",
@@ -1602,16 +1602,16 @@
         },
         {
             "name": "wpackagist-plugin/insert-html-snippet",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/insert-html-snippet/",
-                "reference": "tags/1.2.2"
+                "reference": "tags/1.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/insert-html-snippet.1.2.2.zip",
-                "reference": "tags/1.2.2",
+                "url": "https://downloads.wordpress.org/plugin/insert-html-snippet.1.2.3.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -1671,7 +1671,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/woocommerce.3.2.6.zip",
-                "reference": null,
+                "reference": "tags/3.2.6",
                 "shasum": null
             },
             "require": {
@@ -1682,16 +1682,16 @@
         },
         {
             "name": "wpackagist-theme/storefront",
-            "version": "2.2.5",
+            "version": "2.2.7",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/storefront/",
-                "reference": "2.2.5"
+                "reference": "2.2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/storefront.2.2.5.zip",
-                "reference": "2.2.5",
+                "url": "https://downloads.wordpress.org/theme/storefront.2.2.7.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -1959,16 +1959,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "4.2.0",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "66465776cfc249844bde6d117abff1d22e06c2da"
+                "reference": "94fd0001232e47129dd3504189fa1c7225010d08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/66465776cfc249844bde6d117abff1d22e06c2da",
-                "reference": "66465776cfc249844bde6d117abff1d22e06c2da",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/94fd0001232e47129dd3504189fa1c7225010d08",
+                "reference": "94fd0001232e47129dd3504189fa1c7225010d08",
                 "shasum": ""
             },
             "require": {
@@ -2006,7 +2006,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2017-11-27T17:38:31+00:00"
+            "time": "2017-11-30T07:14:17+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
