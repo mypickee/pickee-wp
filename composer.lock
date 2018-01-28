@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "044468de4e77f15328fc60086e525a55",
+    "content-hash": "9db61f8c379a68e95b00a6f48593aca7",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1611,7 +1611,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/insert-html-snippet.1.2.3.zip",
-                "reference": null,
+                "reference": "tags/1.2.3",
                 "shasum": null
             },
             "require": {
@@ -1681,6 +1681,26 @@
             "homepage": "https://wordpress.org/plugins/woocommerce/"
         },
         {
+            "name": "wpackagist-plugin/woocommerce-gateway-stripe",
+            "version": "4.0.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woocommerce-gateway-stripe/",
+                "reference": "tags/4.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce-gateway-stripe.4.0.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce-gateway-stripe/"
+        },
+        {
             "name": "wpackagist-theme/storefront",
             "version": "2.2.7",
             "source": {
@@ -1691,7 +1711,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/theme/storefront.2.2.7.zip",
-                "reference": null,
+                "reference": "2.2.7",
                 "shasum": null
             },
             "require": {
