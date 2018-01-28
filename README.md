@@ -1,12 +1,12 @@
-# Pickee WordPress [![CircleCI](https://circleci.com/gh/takoman/pickee-wp.svg?style=svg&circle-token=062cdeb675f1b4643eb831a22f04e69a61aa1b8b)](https://circleci.com/gh/takoman/pickee-wp)
+# Pickee WordPress [![CircleCI](https://circleci.com/gh/mypickee/pickee-wp.svg?style=svg&circle-token=062cdeb675f1b4643eb831a22f04e69a61aa1b8b)](https://circleci.com/gh/mypickee/pickee-wp)
 
 ## Meta
 
 * __State:__ development
 * __Production:__
 * __Staging:__ [http://pickee-wp-staging.herokuapp.com/](http://pickee-wp-staging.herokuapp.com/) | [Heroku](https://dashboard.heroku.com/apps/pickee-wp-staging/resources)
-* __Github:__ [https://github.com/takoman/pickee-wp](https://github.com/takoman/pickee-wp)
-* __CI/Deploys:__ [CircleCI](https://circleci.com/gh/takoman/pickee-wp); merged PRs to master branch are automatically deployed to staging
+* __Github:__ [https://github.com/mypickee/pickee-wp](https://github.com/mypickee/pickee-wp)
+* __CI/Deploys:__ [CircleCI](https://circleci.com/gh/mypickee/pickee-wp); merged PRs to master branch are automatically deployed to staging
 
 ## Set-Up
 
