@@ -8,17 +8,18 @@
   "require": {
     "php": "~7.0.0",
     "wp-cli/wp-cli": "~0.22",
+    "wpackagist-plugin/insert-html-snippet": "~1.2.2",
+    "wpackagist-plugin/perfect-woocommerce-brands": "~1.6.0",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1.11.4",
     "wpackagist-plugin/woocommerce": "~3.2.1",
-    "wpackagist-theme/storefront": "~2.2.5",
-    "wpackagist-plugin/insert-html-snippet": "^1.2",
-    "wpackagist-plugin/perfect-woocommerce-brands": "^1.5"
+    "wpackagist-plugin/woocommerce-gateway-stripe": "~4.0.3",
+    "wpackagist-theme/storefront": "~2.2.5"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
-    "phpunit/phpunit": "^6.5"
+    "phpunit/phpunit": "~6.5.0"
   }
 }
