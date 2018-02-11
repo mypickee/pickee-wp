@@ -93,3 +93,6 @@ require_once(ABSPATH . 'wp-settings.php');
 
 /** Disable all updates.  */
 define('AUTOMATIC_UPDATER_DISABLED', true);
+
+define('DBI_AWS_ACCESS_KEY_ID', getenv('DBI_AWS_ACCESS_KEY_ID'));
+define('DBI_AWS_SECRET_ACCESS_KEY', getenv('DBI_AWS_SECRET_ACCESS_KEY'));
