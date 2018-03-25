@@ -1,0 +1,15 @@
+.input-text,
+input[type=email],
+input[type=password],
+input[type=text],
+input[type=url],
+textarea {
+  background-color: transparent;
+  color: #000000;
+  box-shadow: none;
+  padding: 0.8rem 2rem;
+  line-height: 1.25;
+  -webkit-box-shadow:inset 0px 0px 0px 1px #000000;
+  -moz-box-shadow:inset 0px 0px 0px 1px #000000;
+  box-shadow:inset 0px 0px 0px 1px #000000;
+}

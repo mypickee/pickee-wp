@@ -1,0 +1,93 @@
+body.woocommerce-cart {
+  .woocommerce-breadcrumb {
+    display: none;
+  }
+  table.cart {
+    border-top: 2px solid #000000;
+    margin-bottom: 1rem;
+    th {
+      padding: 1.2rem;
+      background-color: transparent;
+      //border-bottom: 1px solid #000000;
+      color: #000000;
+    }
+    td {
+      padding: 1.2rem;
+      line-height: 5rem;
+      border-top: 1px solid #000000;
+    }
+    td.product-thumbnail {
+      padding-left: 0;
+      padding-right: 0;
+      width: 5rem;
+    }
+    tr:first-child td.product-remove {
+      border-top-width: 1px;
+    }
+    .product-thumbnail img {
+      margin: 0;
+      max-width: 5rem;
+    }
+    .product-quantity {
+      width: 4.5rem;
+      padding-right: 0;
+    }
+    a.remove {
+      text-indent: 0;
+      display: inline;
+      font-size: 1rem;
+      color: #000000;
+      text-decoration: underline;
+      &:before {
+        content: "";
+        display: none;
+      }
+    }
+    .product-subtotal {
+      text-align: right;
+    }
+  }
+  .coupon-block {
+    @include span(8 of 12);
+    input[name="update_cart"] {
+      margin-left: 1rem;
+    }
+  }
+  .cart-collaterals {
+    @include span(last 4 of 12);
+    .shop_table {
+      th {
+        padding: 0.5rem 1rem;
+        background-color: transparent;
+      }
+      td {
+        padding: 0.5rem 1rem;
+        text-align: right;
+      }
+      a {
+        text-decoration: underline;
+      }
+      tr.order-total {
+        border-top: 1px solid #000000;
+      }
+    }
+  }
+  .cart-collaterals .cart_totals,
+  .cart-collaterals .shipping_calculator {
+    @include breakpoint($screen-md) {
+      width: 100%;
+    }
+  }
+
+  .cross-sells {
+    margin-top: 3rem;
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+.storefront-full-width-content.woocommerce-cart .entry-header {
+  text-align: left;
+  padding-bottom: 2rem;
+}

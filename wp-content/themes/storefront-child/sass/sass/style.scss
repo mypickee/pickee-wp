@@ -8,11 +8,12 @@ Template: storefront
 */
 @import "susy";
 @import "breakpoint";
+@import "base/base";
 @import "base/grids";
 @import "base/breakpoints";
 @import "base/variables";
 @import "base/font";
-@import "base/components";
+@import "base/utilities";
 @import "base/responsive";
 @import "override/override";
 @import "layout/layout";

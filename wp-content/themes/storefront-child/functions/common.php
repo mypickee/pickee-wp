@@ -258,7 +258,25 @@ function woocommerce_custom_hide_sales_flash()
 }
 
 //Change number of products per row to 4
-add_filter( 'storefront_loop_columns', function() { return 4; });
+add_filter('storefront_loop_columns', function() { return 4; });
+
+// Remove Cross Sells From Default Position
+remove_action('woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
+
+// Add them back UNDER the Cart Table
+add_action('woocommerce_after_cart_table', 'woocommerce_cross_sell_display');
+
+// Set cross-sells columns to 4
+add_filter('woocommerce_cross_sells_columns', 'change_cross_sells_columns');
+function change_cross_sells_columns($columns) {
+  return 4;
+}
+
+// Display 4 cross-sell products in cart
+add_filter( 'woocommerce_cross_sells_total', 'change_cross_sells_product_no');
+function change_cross_sells_product_no($columns) {
+  return 4;
+}
 
 //load customized js
 function custom_scripts() {

@@ -3,14 +3,11 @@
   font-weight: 600;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 2px solid transparent;
   padding: 0.8rem 2rem;
-  font-size: 0.8rem;
   line-height: 1.25;
   transition: all .15s ease-in-out;
   text-transform: uppercase;
@@ -20,7 +17,9 @@
     color: #ffffff;
   }
   &.btn-secondary {
+    padding: 0.5rem 1.5rem;
     border: 2px solid $pickee-blue;
     color: $pickee-blue;
+    font-size: 0.8rem;
   }
 }

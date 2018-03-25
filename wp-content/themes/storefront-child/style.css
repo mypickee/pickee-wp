@@ -6,47 +6,31 @@ Author: Woo
 Author URI: http://woocommerce.com
 Template: storefront
 */
-@font-face {
-  font-family: Maax;
-  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Regular.ttf") format("truetype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: Maax;
-  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Light.ttf") format("truetype");
-  font-weight: 300;
-}
-@font-face {
-  font-family: Maax;
-  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Medium.ttf") format("truetype");
-  font-weight: 500;
-}
-@font-face {
-  font-family: Maax;
-  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Bold.ttf") format("truetype");
-  font-weight: 700;
-}
-@font-face {
-  font-family: Maax;
-  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Black.ttf") format("truetype");
-  font-weight: 900;
-}
-/* line 26, sass/sass/base/_font.scss */
-body, button, input, textarea {
-  color: #222222;
-  font-family: Maax, "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+/* line 1, sass/sass/base/_base.scss */
+img {
+  border-radius: 0;
 }
 
-/* line 1, sass/sass/base/_components.scss */
+/* line 1, sass/sass/base/_utilities.scss */
 .clearfix:after, .self_clear:after {
   content: "";
   clear: both;
   display: block;
 }
 
-/* line 7, sass/sass/base/_components.scss */
-img {
-  border-radius: 0;
+/* line 23, sass/sass/base/_utilities.scss */
+.float-left {
+  float: left !important;
+}
+
+/* line 26, sass/sass/base/_utilities.scss */
+.float-right {
+  float: right !important;
+}
+
+/* line 29, sass/sass/base/_utilities.scss */
+.float-none {
+  float: none !important;
 }
 
 /* line 1, sass/sass/base/_responsive.scss */
@@ -563,6 +547,120 @@ p.comment-form-comment {
   .storefront-full-width-content.single-product .related ul.products li.product.last, .storefront-full-width-content.single-product .upsells ul.products li.product.last {
     margin-right: 0 !important;
   }
+}
+
+/* line 2, sass/sass/override/_cart.scss */
+body.woocommerce-cart .woocommerce-breadcrumb {
+  display: none;
+}
+/* line 5, sass/sass/override/_cart.scss */
+body.woocommerce-cart table.cart {
+  border-top: 2px solid #000000;
+  margin-bottom: 1rem;
+}
+/* line 8, sass/sass/override/_cart.scss */
+body.woocommerce-cart table.cart th {
+  padding: 1.2rem;
+  background-color: transparent;
+  color: #000000;
+}
+/* line 14, sass/sass/override/_cart.scss */
+body.woocommerce-cart table.cart td {
+  padding: 1.2rem;
+  line-height: 5rem;
+  border-top: 1px solid #000000;
+}
+/* line 19, sass/sass/override/_cart.scss */
+body.woocommerce-cart table.cart td.product-thumbnail {
+  padding-left: 0;
+  padding-right: 0;
+  width: 5rem;
+}
+/* line 24, sass/sass/override/_cart.scss */
+body.woocommerce-cart table.cart tr:first-child td.product-remove {
+  border-top-width: 1px;
+}
+/* line 27, sass/sass/override/_cart.scss */
+body.woocommerce-cart table.cart .product-thumbnail img {
+  margin: 0;
+  max-width: 5rem;
+}
+/* line 31, sass/sass/override/_cart.scss */
+body.woocommerce-cart table.cart .product-quantity {
+  width: 4.5rem;
+  padding-right: 0;
+}
+/* line 35, sass/sass/override/_cart.scss */
+body.woocommerce-cart table.cart a.remove {
+  text-indent: 0;
+  display: inline;
+  font-size: 1rem;
+  color: #000000;
+  text-decoration: underline;
+}
+/* line 41, sass/sass/override/_cart.scss */
+body.woocommerce-cart table.cart a.remove:before {
+  content: "";
+  display: none;
+}
+/* line 46, sass/sass/override/_cart.scss */
+body.woocommerce-cart table.cart .product-subtotal {
+  text-align: right;
+}
+/* line 50, sass/sass/override/_cart.scss */
+body.woocommerce-cart .coupon-block {
+  width: 65.71429%;
+  float: left;
+  margin-right: 2.85714%;
+}
+/* line 52, sass/sass/override/_cart.scss */
+body.woocommerce-cart .coupon-block input[name="update_cart"] {
+  margin-left: 1rem;
+}
+/* line 56, sass/sass/override/_cart.scss */
+body.woocommerce-cart .cart-collaterals {
+  width: 31.42857%;
+  float: right;
+  margin-right: 0;
+}
+/* line 59, sass/sass/override/_cart.scss */
+body.woocommerce-cart .cart-collaterals .shop_table th {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+/* line 63, sass/sass/override/_cart.scss */
+body.woocommerce-cart .cart-collaterals .shop_table td {
+  padding: 0.5rem 1rem;
+  text-align: right;
+}
+/* line 67, sass/sass/override/_cart.scss */
+body.woocommerce-cart .cart-collaterals .shop_table a {
+  text-decoration: underline;
+}
+/* line 70, sass/sass/override/_cart.scss */
+body.woocommerce-cart .cart-collaterals .shop_table tr.order-total {
+  border-top: 1px solid #000000;
+}
+@media (min-width: 992px) {
+  /* line 75, sass/sass/override/_cart.scss */
+  body.woocommerce-cart .cart-collaterals .cart_totals,
+  body.woocommerce-cart .cart-collaterals .shipping_calculator {
+    width: 100%;
+  }
+}
+/* line 82, sass/sass/override/_cart.scss */
+body.woocommerce-cart .cross-sells {
+  margin-top: 3rem;
+}
+/* line 84, sass/sass/override/_cart.scss */
+body.woocommerce-cart .cross-sells h2 {
+  text-align: center;
+}
+
+/* line 90, sass/sass/override/_cart.scss */
+.storefront-full-width-content.woocommerce-cart .entry-header {
+  text-align: left;
+  padding-bottom: 2rem;
 }
 
 /* line 1, sass/sass/override/_other.scss */
@@ -1586,21 +1684,21 @@ body.home .site-content .col-full {
   color: #0E529C;
 }
 
-/* line 221, sass/sass/layout/_content.scss */
+/* line 220, sass/sass/layout/_content.scss */
 body.brand-page .entry-header {
   display: none;
 }
-/* line 224, sass/sass/layout/_content.scss */
+/* line 223, sass/sass/layout/_content.scss */
 body.brand-page .woocommerce-breadcrumb {
   display: none;
 }
-/* line 227, sass/sass/layout/_content.scss */
+/* line 226, sass/sass/layout/_content.scss */
 body.brand-page .brand-page-header {
   clear: both;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 }
-/* line 232, sass/sass/layout/_content.scss */
+/* line 231, sass/sass/layout/_content.scss */
 body.brand-page .brand-logo-block {
   position: relative;
   width: 100%;
@@ -1609,12 +1707,12 @@ body.brand-page .brand-logo-block {
   background-color: #ffffff;
   text-align: center;
 }
-/* line 239, sass/sass/layout/_content.scss */
+/* line 238, sass/sass/layout/_content.scss */
 body.brand-page .brand-logo-block img {
   margin: 0 auto;
   width: 90px;
 }
-/* line 243, sass/sass/layout/_content.scss */
+/* line 242, sass/sass/layout/_content.scss */
 body.brand-page .brand-logo-block h1 {
   font-size: 1.4rem;
   margin-top: 2rem;
@@ -1699,28 +1797,44 @@ body.brand-page .brand-logo-block h1 {
   font-weight: 600;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 2px solid transparent;
   padding: 0.8rem 2rem;
-  font-size: 0.8rem;
   line-height: 1.25;
   transition: all .15s ease-in-out;
   text-transform: uppercase;
 }
-/* line 17, sass/sass/component/_button.scss */
+/* line 14, sass/sass/component/_button.scss */
 .btn.btn-primary {
   padding: 0.8rem 2rem;
   background-color: #0E529C;
   color: #ffffff;
 }
-/* line 22, sass/sass/component/_button.scss */
+/* line 19, sass/sass/component/_button.scss */
 .btn.btn-secondary {
+  padding: 0.5rem 1.5rem;
   border: 2px solid #0E529C;
   color: #0E529C;
+  font-size: 0.8rem;
+}
+
+/* line 1, sass/sass/component/_form.scss */
+.input-text,
+input[type=email],
+input[type=password],
+input[type=text],
+input[type=url],
+textarea {
+  background-color: transparent;
+  color: #000000;
+  box-shadow: none;
+  padding: 0.8rem 2rem;
+  line-height: 1.25;
+  -webkit-box-shadow: inset 0px 0px 0px 1px #000000;
+  -moz-box-shadow: inset 0px 0px 0px 1px #000000;
+  box-shadow: inset 0px 0px 0px 1px #000000;
 }
 
 /* line 2, sass/sass/component/_pickee-carousel.scss */

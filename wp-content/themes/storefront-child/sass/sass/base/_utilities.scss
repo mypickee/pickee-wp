@@ -1,0 +1,31 @@
+.clearfix:after, .self_clear:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+@mixin self_clear {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+@mixin float-left {
+  float: left !important;
+}
+@mixin float-right {
+  float: right !important;
+}
+@mixin float-none {
+  float: none !important;
+}
+.float-left {
+  @include float-left;
+}
+.float-right {
+  @include float-right;
+}
+.float-none {
+  @include float-none;
+}
