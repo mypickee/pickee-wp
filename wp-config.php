@@ -97,4 +97,29 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 /** Set up amazon-web-services and amazon-s3-and-cloudfront plugins. */
 define('DBI_AWS_ACCESS_KEY_ID', getenv('DBI_AWS_ACCESS_KEY_ID'));
 define('DBI_AWS_SECRET_ACCESS_KEY', getenv('DBI_AWS_SECRET_ACCESS_KEY'));
-define('AS3CF_BUCKET', getenv('AS3CF_BUCKET'));
+define('WPOS3_SETTINGS', serialize(array(
+    // S3 bucket to upload files
+    'bucket' => getenv('DBI_AS3CF_BUCKET'),
+    // S3 bucket region (e.g. 'us-west-1' - leave blank for default region)
+    'region' => '',
+    // Automatically copy files to S3 on upload
+    'copy-to-s3' => true,
+    // Rewrite file URLs to S3
+    'serve-from-s3' => true,
+    // S3 URL format to use ('path', 'cloudfront')
+    'domain' => 'cloudfront',
+    // Custom domain if 'domain' set to 'cloudfront'
+    'cloudfront' => getenv('DBI_AS3CF_CLOUDFRONT_DOMAIN'),
+    // Enable object prefix, useful if you use your bucket for other files
+    'enable-object-prefix' => true,
+    // Object prefix to use if 'enable-object-prefix' is 'true'
+    'object-prefix' => 'wp-content/uploads/',
+    // Organize S3 files into YYYY/MM directories
+    'use-yearmonth-folders' => true,
+    // Serve files over HTTPS
+    'force-https' => false,
+    // Remove the local file version once offloaded to S3
+    'remove-local-file' => false,
+    // Append a timestamped folder to path of files offloaded to S3
+    'object-versioning' => true,
+)));
