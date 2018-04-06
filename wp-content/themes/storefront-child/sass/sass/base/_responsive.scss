@@ -1,11 +1,127 @@
-.hidden-sm-down {
-  display: none;
-  @include breakpoint($screen-sm) {
-    display: block;
+@mixin hidden-xs-up {
+  display: none !important;
+}
+
+
+@mixin hidden-xs-down {
+  @media (max-width: $screen-xs - 1px) {
+    display: none !important;
   }
 }
-.hidden-md-up {
-  @include breakpoint($screen-sm) {
-    display: none;
+
+@mixin hidden-sm-up {
+  @media (min-width: $screen-xs) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-sm-down {
+  @media (max-width: $screen-sm - 1px) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-md-up {
+  @media (min-width: $screen-sm) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-md-down {
+  @media (max-width: $screen-md - 1px) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-lg-up {
+  @media (min-width: $screen-md) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-lg-down {
+  @media (max-width: $screen-lg - 1px) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-xl-up {
+  @media (min-width: $screen-lg) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-xl-down {
+  @media (max-width: $screen-xl - 1px) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-xxl-up {
+  @media (min-width: $screen-xl) {
+    display: none !important;
+  }
+}
+
+.hidden-xs-up {
+  display: none !important;
+}
+
+@media (max-width: $screen-xs - 1px) {
+  .hidden-xs-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: $screen-xs) {
+  .hidden-sm-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: $screen-sm - 1px) {
+  .hidden-sm-down {
+    display: none !important;
+  }
+}
+@media (min-width: $screen-sm) {
+  .hidden-md-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: $screen-md - 1px) {
+  .hidden-md-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: $screen-md) {
+  .hidden-lg-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: $screen-lg - 1px) {
+  .hidden-lg-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .hidden-xl-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: $screen-xl - 1px) {
+  .hidden-xl-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .hidden-xxl-up {
+    display: none !important;
   }
 }

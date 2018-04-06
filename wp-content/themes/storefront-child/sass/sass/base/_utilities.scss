@@ -29,3 +29,17 @@
 .float-none {
   @include float-none;
 }
+/** Aling **/
+@mixin align-baseline    { vertical-align: baseline !important; } // Browser default
+@mixin align-top         { vertical-align: top !important; }
+@mixin align-middle      { vertical-align: middle !important; }
+@mixin align-bottom      { vertical-align: bottom !important; }
+@mixin align-text-bottom { vertical-align: text-bottom !important; }
+@mixin align-text-top    { vertical-align: text-top !important; }
+
+.align-baseline    { @include align-baseline }
+.align-top         { @include align-top }
+.align-middle      { @include align-middle }
+.align-bottom      { @include align-bottom }
+.align-text-bottom { @include align-text-bottom }
+.align-text-top    { @include align-text-top }
