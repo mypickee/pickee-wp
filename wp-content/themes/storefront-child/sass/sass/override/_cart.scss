@@ -46,7 +46,7 @@ body.woocommerce-cart {
         border-bottom: 1px solid #000000;
         >.item-column {
           display: table;
-          min-height: 8rem;
+          min-height: 9rem;
           padding: 1rem 0;
           @include align-middle;
           @include breakpoint($screen-sm) {
@@ -99,7 +99,7 @@ body.woocommerce-cart {
             @include span(14 of 20);
             .item-column {
               display: table;
-              min-height: 8rem;
+              min-height: 9rem;
               padding: 1rem 0;
               @include breakpoint($screen-sm) {
                 padding: 0;
@@ -203,4 +203,7 @@ body.woocommerce-cart {
 .storefront-full-width-content.woocommerce-cart .entry-header {
   text-align: left;
   padding-bottom: 2rem;
+  h1 {
+    margin-bottom: 0;
+  }
 }

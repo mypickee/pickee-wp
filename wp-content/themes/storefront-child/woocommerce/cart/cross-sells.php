@@ -22,10 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $cross_sells ) : ?>
 
-	<div class="cross-sells columns-4">
+	<div class="cross-sells columns-4 products-carousel-wrap">
 
 		<h2><?php _e( 'You May Also Like', 'woocommerce' ) ?></h2>
 
+    <?php if (count($cross_sells) > 1):?>
+    <div class="hidden-sm-down">
+    <?php endif;?>
 		<?php woocommerce_product_loop_start(); ?>
 
 			<?php foreach ( $cross_sells as $cross_sell ) : ?>
@@ -40,6 +43,20 @@ if ( $cross_sells ) : ?>
 			<?php endforeach; ?>
 
 		<?php woocommerce_product_loop_end(); ?>
+
+    <?php if (count($cross_sells) > 1):?>
+    </div>
+
+    <ul class="products-carousel">
+      <?php foreach ( $cross_sells as $cross_sell ) : ?>
+        <?php
+          $post_object = get_post( $cross_sell->get_id() );
+          setup_postdata( $GLOBALS['post'] =& $post_object );
+          wc_get_template_part( 'content', 'product' ); ?>
+      <?php endforeach; ?>
+    </ul>
+
+    <?php endif;?>
 
 	</div>
 
