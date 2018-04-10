@@ -14,26 +14,26 @@ body.woocommerce-cart {
         display: table-cell;
         height: 4rem;
         @include align-middle;
-        font-weight: 600;
+        font-weight: 500;
       }
       .head-product {
         @include span(8 of 12);
         @include breakpoint($screen-sm) {
-          @include span(10 of 20);
+          @include span(6.4 of 12 3/7);
         }
       }
       .head-price {
         @include hidden-sm-down;
-        @include span(2.5 of 20);
+        @include span(2 of 12 3/7);
       }
       .head-quantity {
         @include hidden-sm-down;
-        @include span(2.5 of 20);
+        @include span(2 of 12 3/7);
       }
       .head-total {
         @include span(last 4 of 12);
         @include breakpoint($screen-sm) {
-          @include span(last 5 of 20);
+          @include span(last 1.6 of 12 3/7);
         }
         .item-wrap {
           text-align: right;
@@ -61,9 +61,9 @@ body.woocommerce-cart {
           }
         }
         .item-thumbnail {
-          @include span(2.5 of 10);
+          @include span(2.5 of 12);
           @include breakpoint($screen-sm) {
-            @include span(3 of 20);
+            @include span(1.5 of 12 3/7);
           }
           .wp-post-image {
             margin-bottom: 0;
@@ -87,7 +87,7 @@ body.woocommerce-cart {
           a.remove {
             text-indent: 0;
             display: inline;
-            font-size: 1rem;
+            font-size: 0.75rem;
             color: #000000;
             text-decoration: underline;
             &:before {
@@ -96,7 +96,7 @@ body.woocommerce-cart {
             }
           }
           @include breakpoint($screen-sm) {
-            @include span(14 of 20);
+            @include span(9 of 12 3/7);
             .item-column {
               display: table;
               min-height: 9rem;
@@ -107,14 +107,14 @@ body.woocommerce-cart {
               @include align-middle;
             }
             .product-name {
-              @include span(6 of 12);
+              @include span(5 of 9 3/7);
             }
             .product-price {
-              @include span(2 of 12);
+              @include span(2 of 9 3/7);
               @include hidden-sm-down;
             }
             .product-quantity {
-              @include span(last 4 of 12);
+              @include span(last 2 of 9 3/7);
             }
           }
         }
@@ -124,7 +124,7 @@ body.woocommerce-cart {
           }
           @include span(last 2 of 10);
           @include breakpoint($screen-sm) {
-            @include span(last 3 of 20);
+            @include span(last 1.5 of 12 3/7);
           }
         }
       }
