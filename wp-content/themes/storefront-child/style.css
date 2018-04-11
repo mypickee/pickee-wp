@@ -6,6 +6,37 @@ Author: Woo
 Author URI: http://woocommerce.com
 Template: storefront
 */
+@font-face {
+  font-family: Maax;
+  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Maax;
+  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: Maax;
+  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Maax;
+  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Maax;
+  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Black.ttf") format("truetype");
+  font-weight: 900;
+}
+/* line 26, sass/sass/base/_font.scss */
+body, button, input, textarea {
+  color: #222222;
+  font-family: Maax, "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
 /* line 1, sass/sass/base/_components.scss */
 .clearfix:after, .self_clear:after {
   content: "";
