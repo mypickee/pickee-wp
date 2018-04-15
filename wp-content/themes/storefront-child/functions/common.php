@@ -234,9 +234,13 @@ function init_homepage() {
 //Initialize homepage rendering
 add_action('wp', 'init_homepage', 10);
 
-//Change the order of buttons in mini cart
-remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 10);
-add_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 30);
+# Remove button which link to check out page directly in mini-cart
+remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20);
+
+# Change display text of button form 'view cart' to 'Check Out' which link to cart page in mini-cart
+function woocommerce_widget_shopping_cart_button_view_cart() {
+  echo '<a href="' . esc_url( wc_get_cart_url() ) . '" class="button wc-forward">' . esc_html__( 'Check Out', 'woocommerce' ) . '</a>';
+}
 
 //Variable product title should not include variance attributes.
 add_filter('woocommerce_product_variation_title_include_attributes', 'product_variation_title_should_not_include_attributes');

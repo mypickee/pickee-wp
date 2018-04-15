@@ -5,7 +5,7 @@ body.woocommerce-cart {
   .cart {
     .head {
       @include self-clear;
-      border-top: 2px solid #000000;
+      border-top: 4px solid #000000;
       border-bottom: 1px solid #000000;
       > div {
         display: table;
@@ -163,6 +163,7 @@ body.woocommerce-cart {
       th {
         padding: 0.5rem 0;
         background-color: transparent;
+        font-weight: 400;
       }
       td {
         padding: 0.5rem 0;
@@ -174,7 +175,7 @@ body.woocommerce-cart {
       tr.order-total {
         th, td {
           padding-top: 2rem;
-          border-top: 1px solid #000000;
+          border-top: 2px solid #222222;
         }
       }
       span.selection {
