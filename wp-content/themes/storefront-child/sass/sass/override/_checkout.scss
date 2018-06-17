@@ -1,0 +1,114 @@
+.woocommerce-billing-fields {
+  padding: 1rem 0;
+  border-top: solid 4px #222222;
+}
+.col-right {
+  @include breakpoint($screen-sm) {
+    float: right;
+    width: 41.1764705882%;
+  }
+  .checkout-login {
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    border-top: solid 4px #222222;
+    a {
+      text-decoration: underline;
+    }
+  }
+  .woocommerce-checkout-review-order {
+    padding: 1rem 0;
+    border-top: solid 4px #222222;
+    table {
+      border-collapse: collapse;
+      td, th {
+        padding: 0.25em 0;
+        background-color: transparent;
+      }
+      tbody {
+        border-bottom: solid 1px #222222;
+        tr:last-child {
+          th, td {
+            padding-bottom: 1rem;
+          }
+        }
+        td.product-name {
+          font-weight: bold;
+        }
+        td.product-total {
+          text-align: right;
+        }
+      }
+      tfoot {
+        padding-top: 1rem;
+        tr:first-child {
+          th, td {
+            padding-top: 1rem;
+          }
+        }
+        th {
+          font-weight: normal;
+        }
+        td {
+          text-align: right;
+        }
+        tr:nth-last-child(2) {
+          th, td {
+            padding-bottom: 1rem;
+          }
+        }
+        tr:last-child {
+          th, td {
+            padding-top: 1rem;
+            border-top: solid 1px #222222;
+          }
+        }
+        .includes_tax {
+          display: block;
+        }
+      }
+    }
+  }
+}
+form.checkout {
+  @include breakpoint($screen-sm) {
+    width: 52.9411764706%;
+    float: left;
+    margin-right: 5.8823529412%;
+  }
+  .col2-set {
+    width: 100%;
+    float: none;
+    margin-right: 0;
+  }
+}
+#payment {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: solid 4px #222222;
+  .payment_methods {
+    > li:not(.woocommerce-notice) {
+      background-color: transparent;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    > .wc_payment_method > label, > .woocommerce-PaymentMethod > label {
+      padding: 0;
+    }
+    li .payment_box {
+      padding: 0;
+      background-color: transparent;
+    }
+    li p {
+      margin-top: 1rem;
+    }
+  }
+  .stripe-pf {
+    display: none;
+  }
+  .place-order {
+    padding: 0;
+    background-color: transparent;
+  }
+}

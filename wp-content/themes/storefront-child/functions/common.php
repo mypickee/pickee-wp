@@ -277,10 +277,34 @@ function change_cross_sells_columns($columns) {
 }
 
 // Display 4 cross-sell products in cart
-add_filter( 'woocommerce_cross_sells_total', 'change_cross_sells_product_no');
+add_filter('woocommerce_cross_sells_total', 'change_cross_sells_product_no');
 function change_cross_sells_product_no($columns) {
   return 4;
 }
+
+function adjust_checkout_fields($fields) {
+    $fields['first_name']['class'] = ['form-row-wide'];
+    $fields['last_name']['class'] = ['form-row-wide'];
+    unset($fields['company']);
+    return $fields;
+}
+add_filter('woocommerce_default_address_fields', 'adjust_checkout_fields');
+
+function adjust_checkout_phone_email_fields($fields) {
+    $fields['billing_phone']['class'] = ['form-row-wide'];
+    $fields['billing_email']['class'] = ['form-row-wide'];
+    return $fields;
+}
+add_filter('woocommerce_billing_fields', 'adjust_checkout_phone_email_fields');
+
+// move payment method block from the right column to the bottom of the left column
+remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
+add_action('woocommerce_after_order_notes', 'woocommerce_checkout_payment', 20);
+
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
+
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10);
+add_action('woocommerce_checkout_before_order_review', 'woocommerce_checkout_login_form', 10);
 
 //load customized js
 function custom_scripts() {

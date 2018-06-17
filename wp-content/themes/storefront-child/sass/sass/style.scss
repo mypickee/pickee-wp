@@ -6,11 +6,12 @@ Author: Woo
 Author URI: http://woocommerce.com
 Template: storefront
 */
+@import "base/variables";
 @import "susy";
 @import "breakpoint";
+@import "base/base";
 @import "base/grids";
 @import "base/breakpoints";
-@import "base/variables";
 @import "base/font";
 @import "base/utilities";
 @import "base/responsive";
