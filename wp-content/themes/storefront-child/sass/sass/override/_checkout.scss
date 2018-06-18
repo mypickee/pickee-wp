@@ -8,11 +8,19 @@
     width: 41.1764705882%;
   }
   .checkout-login {
-    margin-bottom: 1rem;
-    padding: 1rem 0;
+    padding: 1rem 0 1.5rem 0;
     border-top: solid 4px #222222;
     a {
       text-decoration: underline;
+    }
+    .form-row {
+      width: 100%;
+    }
+    .woocommerce-form-login {
+      margin-bottom: 0;
+    }
+    .lost_password {
+      margin: 0.5rem 0;
     }
   }
   .woocommerce-checkout-review-order {

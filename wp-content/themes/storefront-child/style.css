@@ -80,79 +80,95 @@ body, button, input, textarea {
   float: none !important;
 }
 
-/** Aling **/
+/** Text Alignment **/
+/* line 34, sass/sass/base/_utilities.scss */
+.text-left {
+  text-align: left !important;
+}
+
+/* line 37, sass/sass/base/_utilities.scss */
+.text-center {
+  text-align: center !important;
+}
+
 /* line 40, sass/sass/base/_utilities.scss */
+.text-right {
+  text-align: right !important;
+}
+
+/** Aling **/
+/* line 52, sass/sass/base/_utilities.scss */
 .align-baseline {
   vertical-align: baseline !important;
 }
 
-/* line 41, sass/sass/base/_utilities.scss */
+/* line 53, sass/sass/base/_utilities.scss */
 .align-top {
   vertical-align: top !important;
 }
 
-/* line 42, sass/sass/base/_utilities.scss */
+/* line 54, sass/sass/base/_utilities.scss */
 .align-middle {
   vertical-align: middle !important;
 }
 
-/* line 43, sass/sass/base/_utilities.scss */
+/* line 55, sass/sass/base/_utilities.scss */
 .align-bottom {
   vertical-align: bottom !important;
 }
 
-/* line 44, sass/sass/base/_utilities.scss */
+/* line 56, sass/sass/base/_utilities.scss */
 .align-text-bottom {
   vertical-align: text-bottom !important;
 }
 
-/* line 45, sass/sass/base/_utilities.scss */
+/* line 57, sass/sass/base/_utilities.scss */
 .align-text-top {
   vertical-align: text-top !important;
 }
 
 /** font-weight**/
-/* line 48, sass/sass/base/_utilities.scss */
+/* line 60, sass/sass/base/_utilities.scss */
 .fw-100 {
   font-weight: 100;
 }
 
-/* line 49, sass/sass/base/_utilities.scss */
+/* line 61, sass/sass/base/_utilities.scss */
 .fw-200 {
   font-weight: 200;
 }
 
-/* line 50, sass/sass/base/_utilities.scss */
+/* line 62, sass/sass/base/_utilities.scss */
 .fw-300 {
   font-weight: 300;
 }
 
-/* line 51, sass/sass/base/_utilities.scss */
+/* line 63, sass/sass/base/_utilities.scss */
 .fw-400 {
   font-weight: 400;
 }
 
-/* line 52, sass/sass/base/_utilities.scss */
+/* line 64, sass/sass/base/_utilities.scss */
 .fw-500 {
   font-weight: 500;
 }
 
-/* line 53, sass/sass/base/_utilities.scss */
+/* line 65, sass/sass/base/_utilities.scss */
 .fw-600 {
   font-weight: 600;
 }
 
-/* line 54, sass/sass/base/_utilities.scss */
+/* line 66, sass/sass/base/_utilities.scss */
 .fw-700 {
   font-weight: 700;
 }
 
-/* line 55, sass/sass/base/_utilities.scss */
+/* line 67, sass/sass/base/_utilities.scss */
 .fw-800 {
   font-weight: 800;
 }
 
-/* line 56, sass/sass/base/_utilities.scss */
+/* line 68, sass/sass/base/_utilities.scss */
 .fw-900 {
   font-weight: 900;
 }
@@ -1039,121 +1055,132 @@ body.woocommerce-cart .cross-sells h2 {
 }
 /* line 10, sass/sass/override/_checkout.scss */
 .col-right .checkout-login {
-  margin-bottom: 1rem;
-  padding: 1rem 0;
+  padding: 1rem 0 1.5rem 0;
   border-top: solid 4px #222222;
 }
-/* line 14, sass/sass/override/_checkout.scss */
+/* line 13, sass/sass/override/_checkout.scss */
 .col-right .checkout-login a {
   text-decoration: underline;
 }
-/* line 18, sass/sass/override/_checkout.scss */
+/* line 16, sass/sass/override/_checkout.scss */
+.col-right .checkout-login .form-row {
+  width: 100%;
+}
+/* line 19, sass/sass/override/_checkout.scss */
+.col-right .checkout-login .woocommerce-form-login {
+  margin-bottom: 0;
+}
+/* line 22, sass/sass/override/_checkout.scss */
+.col-right .checkout-login .lost_password {
+  margin: 0.5rem 0;
+}
+/* line 26, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order {
   padding: 1rem 0;
   border-top: solid 4px #222222;
 }
-/* line 21, sass/sass/override/_checkout.scss */
+/* line 29, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table {
   border-collapse: collapse;
 }
-/* line 23, sass/sass/override/_checkout.scss */
+/* line 31, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table td, .col-right .woocommerce-checkout-review-order table th {
   padding: 0.25em 0;
   background-color: transparent;
 }
-/* line 27, sass/sass/override/_checkout.scss */
+/* line 35, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tbody {
   border-bottom: solid 1px #222222;
 }
-/* line 30, sass/sass/override/_checkout.scss */
+/* line 38, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tbody tr:last-child th, .col-right .woocommerce-checkout-review-order table tbody tr:last-child td {
   padding-bottom: 1rem;
 }
-/* line 34, sass/sass/override/_checkout.scss */
+/* line 42, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tbody td.product-name {
   font-weight: bold;
 }
-/* line 37, sass/sass/override/_checkout.scss */
+/* line 45, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tbody td.product-total {
   text-align: right;
 }
-/* line 41, sass/sass/override/_checkout.scss */
+/* line 49, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tfoot {
   padding-top: 1rem;
 }
-/* line 44, sass/sass/override/_checkout.scss */
+/* line 52, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tfoot tr:first-child th, .col-right .woocommerce-checkout-review-order table tfoot tr:first-child td {
   padding-top: 1rem;
 }
-/* line 48, sass/sass/override/_checkout.scss */
+/* line 56, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tfoot th {
   font-weight: normal;
 }
-/* line 51, sass/sass/override/_checkout.scss */
+/* line 59, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tfoot td {
   text-align: right;
 }
-/* line 55, sass/sass/override/_checkout.scss */
+/* line 63, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tfoot tr:nth-last-child(2) th, .col-right .woocommerce-checkout-review-order table tfoot tr:nth-last-child(2) td {
   padding-bottom: 1rem;
 }
-/* line 60, sass/sass/override/_checkout.scss */
+/* line 68, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tfoot tr:last-child th, .col-right .woocommerce-checkout-review-order table tfoot tr:last-child td {
   padding-top: 1rem;
   border-top: solid 1px #222222;
 }
-/* line 65, sass/sass/override/_checkout.scss */
+/* line 73, sass/sass/override/_checkout.scss */
 .col-right .woocommerce-checkout-review-order table tfoot .includes_tax {
   display: block;
 }
 
 @media (min-width: 768px) {
-  /* line 72, sass/sass/override/_checkout.scss */
+  /* line 80, sass/sass/override/_checkout.scss */
   form.checkout {
     width: 52.9411764706%;
     float: left;
     margin-right: 5.8823529412%;
   }
 }
-/* line 78, sass/sass/override/_checkout.scss */
+/* line 86, sass/sass/override/_checkout.scss */
 form.checkout .col2-set {
   width: 100%;
   float: none;
   margin-right: 0;
 }
 
-/* line 84, sass/sass/override/_checkout.scss */
+/* line 92, sass/sass/override/_checkout.scss */
 #payment {
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: solid 4px #222222;
 }
-/* line 89, sass/sass/override/_checkout.scss */
+/* line 97, sass/sass/override/_checkout.scss */
 #payment .payment_methods > li:not(.woocommerce-notice) {
   background-color: transparent;
 }
-/* line 91, sass/sass/override/_checkout.scss */
+/* line 99, sass/sass/override/_checkout.scss */
 #payment .payment_methods > li:not(.woocommerce-notice):hover {
   background-color: transparent;
 }
-/* line 96, sass/sass/override/_checkout.scss */
+/* line 104, sass/sass/override/_checkout.scss */
 #payment .payment_methods > .wc_payment_method > label, #payment .payment_methods > .woocommerce-PaymentMethod > label {
   padding: 0;
 }
-/* line 99, sass/sass/override/_checkout.scss */
+/* line 107, sass/sass/override/_checkout.scss */
 #payment .payment_methods li .payment_box {
   padding: 0;
   background-color: transparent;
 }
-/* line 103, sass/sass/override/_checkout.scss */
+/* line 111, sass/sass/override/_checkout.scss */
 #payment .payment_methods li p {
   margin-top: 1rem;
 }
-/* line 107, sass/sass/override/_checkout.scss */
+/* line 115, sass/sass/override/_checkout.scss */
 #payment .stripe-pf {
   display: none;
 }
-/* line 110, sass/sass/override/_checkout.scss */
+/* line 118, sass/sass/override/_checkout.scss */
 #payment .place-order {
   padding: 0;
   background-color: transparent;
@@ -2290,7 +2317,7 @@ body.brand-page .brand-logo-block h1 {
   padding: 0.8rem 2rem;
   line-height: 1.25;
   transition: all .15s ease-in-out;
-  text-transform: uppercase;
+  text-transform: none;
 }
 /* line 14, sass/sass/component/_button.scss */
 .btn.btn-primary {
@@ -2304,6 +2331,11 @@ body.brand-page .brand-logo-block h1 {
   border: 2px solid #0E529C;
   color: #0E529C;
   font-size: 0.8rem;
+}
+/* line 25, sass/sass/component/_button.scss */
+.btn.btn-block {
+  display: block;
+  width: 100%;
 }
 
 /* line 1, sass/sass/component/_form.scss */
@@ -2328,22 +2360,27 @@ button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submi
   background-color: #0E529C;
   border-color: #0E529C;
 }
+/* line 20, sass/sass/component/_form.scss */
+button.alt:hover, input[type="button"].alt:hover, input[type="reset"].alt:hover, input[type="submit"].alt:hover, .button.alt:hover, .added_to_cart.alt:hover, .widget-area .widget a.button.alt:hover, .added_to_cart:hover, .widget a.button.checkout:hover {
+  background-color: #0E529C;
+  border-color: #0E529C;
+}
 
 /* Hide arrows from number input */
-/* line 23, sass/sass/component/_form.scss */
+/* line 27, sass/sass/component/_form.scss */
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 29, sass/sass/component/_form.scss */
+/* line 33, sass/sass/component/_form.scss */
 input[type=number] {
   -moz-appearance: textfield;
 }
 
 /* Form group */
-/* line 34, sass/sass/component/_form.scss */
+/* line 38, sass/sass/component/_form.scss */
 .input-group {
   position: relative;
   display: -webkit-box;
@@ -2357,7 +2394,7 @@ input[type=number] {
   width: 100%;
 }
 
-/* line 46, sass/sass/component/_form.scss */
+/* line 50, sass/sass/component/_form.scss */
 .input-group > .custom-file, .input-group > .custom-select, .input-group > .form-control {
   position: relative;
   -webkit-box-flex: 1;
@@ -2367,19 +2404,19 @@ input[type=number] {
   margin-bottom: 0;
 }
 
-/* line 54, sass/sass/component/_form.scss */
+/* line 58, sass/sass/component/_form.scss */
 .input-group-append, .input-group-prepend {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 61, sass/sass/component/_form.scss */
+/* line 65, sass/sass/component/_form.scss */
 .form-row.woocommerce-invalid input.input-text, .form-row.woocommerce-validated input.input-text {
   box-shadow: inset 0px 0px 0px 1px #000000;
 }
 
-/* line 66, sass/sass/component/_form.scss */
+/* line 70, sass/sass/component/_form.scss */
 .star-rating span:before, .quantity .plus, .quantity .minus, p.stars a:hover:after, p.stars a:after, .star-rating span:before, #payment .payment_methods li input[type=radio]:first-child:checked + label:before {
   color: #0E529C;
 }

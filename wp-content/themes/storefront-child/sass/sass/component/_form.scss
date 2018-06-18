@@ -17,6 +17,10 @@ textarea {
 button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .added_to_cart.alt, .widget-area .widget a.button.alt, .added_to_cart, .widget a.button.checkout {
   background-color: $pickee-blue;
   border-color: $pickee-blue;
+  &:hover {
+    background-color: $pickee-blue;
+    border-color: $pickee-blue;
+  }
 }
 
 /* Hide arrows from number input */
