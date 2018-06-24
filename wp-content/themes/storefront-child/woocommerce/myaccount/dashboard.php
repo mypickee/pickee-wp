@@ -21,25 +21,70 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+$user = wp_get_current_user();
+?>
+<div class="u-columns woocommerce-Addresses col2-set addresses">
+  <div class="u-column col-1 accout-info">
+    <header class="woocommerce-Address-title title">
+      <h3>Account Info</h3>
+      <a href="<?php echo esc_url(wc_customer_edit_account_url()); ?>" class="edit"><?php _e('Edit', 'woocommerce'); ?></a>
+    </header>
+    <p>
+      <?php echo esc_attr($user->first_name.' '.$user->last_name); ?><br>
+      <?php echo esc_attr($user->user_email); ?>
+    </p>
+  </div>
+  <div class="u-column col-2 accout-info">
+    <header class="woocommerce-Address-title title">
+      <h3>Password</h3>
+      <a href="<?php echo esc_url(wc_customer_edit_account_url()); ?>" class="edit"><?php _e('Edit', 'woocommerce'); ?></a>
+    </header>
+    <p>
+      *************
+    </p>
+  </div>
+</div>
+<?php
+$customer_id = get_current_user_id();
+
+if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
+  $get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
+    'billing' => __( 'Billing address', 'woocommerce' ),
+    'shipping' => __( 'Shipping address', 'woocommerce' ),
+  ), $customer_id );
+} else {
+  $get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
+    'billing' => __( 'Billing address', 'woocommerce' ),
+  ), $customer_id );
+}
+
+$oldcol = 1;
+$col    = 1;
 ?>
 
-<p><?php
-	/* translators: 1: user display name 2: logout url */
-	printf(
-		__( 'Hello %1$s (not %1$s? <a href="%2$s">Log out</a>)', 'woocommerce' ),
-		'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
-		esc_url( wc_logout_url( wc_get_page_permalink( 'myaccount' ) ) )
-	);
-?></p>
+<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
+  <div class="u-columns woocommerce-Addresses col2-set addresses">
+<?php endif; ?>
 
-<p><?php
-	printf(
-		__( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">shipping and billing addresses</a> and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' ),
-		esc_url( wc_get_endpoint_url( 'orders' ) ),
-		esc_url( wc_get_endpoint_url( 'edit-address' ) ),
-		esc_url( wc_get_endpoint_url( 'edit-account' ) )
-	);
-?></p>
+<?php foreach ( $get_addresses as $name => $title ) : ?>
+
+  <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
+    <header class="woocommerce-Address-title title">
+      <h3><?php echo $title; ?></h3>
+      <a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit"><?php _e( 'Edit', 'woocommerce' ); ?></a>
+    </header>
+    <p><?php
+      $address = wc_get_account_formatted_address( $name );
+      echo $address ? wp_kses_post( $address ) : esc_html_e( 'You have not set up this type of address yet.', 'woocommerce' );
+    ?></p>
+  </div>
+
+<?php endforeach; ?>
+
+<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
+  </div>
+<?php endif;
+?>
 
 <?php
 	/**

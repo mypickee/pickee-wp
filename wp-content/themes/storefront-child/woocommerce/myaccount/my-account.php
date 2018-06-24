@@ -19,7 +19,14 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
+?>
+<div class="account-jumbotron">
+  <div class="center">
+    <h3><strong>Hi <?php echo esc_html($current_user->first_name)?>!</strong></h3>
+    <a href="<?php echo esc_url(wc_logout_url(wc_get_page_permalink('myaccount')))?>">Log out</a>
+  </div>
+</div>
+<?php
 wc_print_notices();
 
 /**

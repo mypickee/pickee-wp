@@ -306,6 +306,25 @@ remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_f
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10);
 add_action('woocommerce_checkout_before_order_review', 'woocommerce_checkout_login_form', 10);
 
+add_filter('woocommerce_account_menu_items', 'remove_my_account_links');
+function remove_my_account_links($menu_links) {
+  //unset( $menu_links['edit-address'] ); // Addresses
+  //unset( $menu_links['dashboard'] ); // Dashboard
+  //unset( $menu_links['payment-methods'] ); // Payment Methods
+  //unset( $menu_links['orders'] ); // Orders
+  unset($menu_links['downloads']); // Downloads
+  //unset( $menu_links['edit-account'] ); // Account details
+  unset($menu_links['customer-logout']); // Logout
+  return $menu_links;
+}
+
+# Change 'View' to 'View Details' in /my-account/orders
+function change_my_acccount_orders_action_name($actions, $order) {
+  $actions['view']['name'] = __('View Details', 'woocommerce');
+  return $actions;
+}
+add_filter('woocommerce_my_account_my_orders_actions', 'change_my_acccount_orders_action_name', 10, 2);
+
 //load customized js
 function custom_scripts() {
   wp_enqueue_script('custom', get_stylesheet_directory_uri().'/js/custom.js', array('jquery'), 1.0, true);

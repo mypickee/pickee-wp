@@ -80,79 +80,95 @@ body, button, input, textarea {
   float: none !important;
 }
 
-/** Aling **/
+/** Text Alignment **/
+/* line 34, sass/sass/base/_utilities.scss */
+.text-left {
+  text-align: left !important;
+}
+
+/* line 37, sass/sass/base/_utilities.scss */
+.text-center {
+  text-align: center !important;
+}
+
 /* line 40, sass/sass/base/_utilities.scss */
+.text-right {
+  text-align: right !important;
+}
+
+/** Aling **/
+/* line 52, sass/sass/base/_utilities.scss */
 .align-baseline {
   vertical-align: baseline !important;
 }
 
-/* line 41, sass/sass/base/_utilities.scss */
+/* line 53, sass/sass/base/_utilities.scss */
 .align-top {
   vertical-align: top !important;
 }
 
-/* line 42, sass/sass/base/_utilities.scss */
+/* line 54, sass/sass/base/_utilities.scss */
 .align-middle {
   vertical-align: middle !important;
 }
 
-/* line 43, sass/sass/base/_utilities.scss */
+/* line 55, sass/sass/base/_utilities.scss */
 .align-bottom {
   vertical-align: bottom !important;
 }
 
-/* line 44, sass/sass/base/_utilities.scss */
+/* line 56, sass/sass/base/_utilities.scss */
 .align-text-bottom {
   vertical-align: text-bottom !important;
 }
 
-/* line 45, sass/sass/base/_utilities.scss */
+/* line 57, sass/sass/base/_utilities.scss */
 .align-text-top {
   vertical-align: text-top !important;
 }
 
 /** font-weight**/
-/* line 48, sass/sass/base/_utilities.scss */
+/* line 60, sass/sass/base/_utilities.scss */
 .fw-100 {
   font-weight: 100;
 }
 
-/* line 49, sass/sass/base/_utilities.scss */
+/* line 61, sass/sass/base/_utilities.scss */
 .fw-200 {
   font-weight: 200;
 }
 
-/* line 50, sass/sass/base/_utilities.scss */
+/* line 62, sass/sass/base/_utilities.scss */
 .fw-300 {
   font-weight: 300;
 }
 
-/* line 51, sass/sass/base/_utilities.scss */
+/* line 63, sass/sass/base/_utilities.scss */
 .fw-400 {
   font-weight: 400;
 }
 
-/* line 52, sass/sass/base/_utilities.scss */
+/* line 64, sass/sass/base/_utilities.scss */
 .fw-500 {
   font-weight: 500;
 }
 
-/* line 53, sass/sass/base/_utilities.scss */
+/* line 65, sass/sass/base/_utilities.scss */
 .fw-600 {
   font-weight: 600;
 }
 
-/* line 54, sass/sass/base/_utilities.scss */
+/* line 66, sass/sass/base/_utilities.scss */
 .fw-700 {
   font-weight: 700;
 }
 
-/* line 55, sass/sass/base/_utilities.scss */
+/* line 67, sass/sass/base/_utilities.scss */
 .fw-800 {
   font-weight: 800;
 }
 
-/* line 56, sass/sass/base/_utilities.scss */
+/* line 68, sass/sass/base/_utilities.scss */
 .fw-900 {
   font-weight: 900;
 }
@@ -1157,6 +1173,145 @@ form.checkout .col2-set {
 #payment .place-order {
   padding: 0;
   background-color: transparent;
+}
+
+/* line 1, sass/sass/override/_account.scss */
+.account-jumbotron {
+  clear: both;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  background-color: #0E529C;
+  padding: 5rem 0;
+  color: #ffffff;
+}
+/* line 6, sass/sass/override/_account.scss */
+.account-jumbotron .center {
+  margin: 0 auto;
+  width: 100px;
+  overflow: visible;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 13, sass/sass/override/_account.scss */
+.account-jumbotron h3 {
+  color: #ffffff;
+  margin: 0;
+}
+/* line 17, sass/sass/override/_account.scss */
+.account-jumbotron a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* line 22, sass/sass/override/_account.scss */
+.woocommerce-MyAccount-navigation {
+  clear: both;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  float: none;
+}
+@media (min-width: 768px) {
+  /* line 22, sass/sass/override/_account.scss */
+  .woocommerce-MyAccount-navigation {
+    width: auto;
+    float: none;
+    background-color: #f9f9f9;
+  }
+}
+/* line 30, sass/sass/override/_account.scss */
+.woocommerce-MyAccount-navigation ul {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-top: none;
+}
+/* line 40, sass/sass/override/_account.scss */
+.woocommerce-MyAccount-navigation ul li {
+  border-bottom: 3px solid #f9f9f9;
+}
+/* line 42, sass/sass/override/_account.scss */
+.woocommerce-MyAccount-navigation ul li a {
+  display: block;
+  padding: 1rem 1rem;
+  color: #222222;
+  font-weight: 600;
+}
+/* line 47, sass/sass/override/_account.scss */
+.woocommerce-MyAccount-navigation ul li a:before {
+  display: none;
+}
+/* line 51, sass/sass/override/_account.scss */
+.woocommerce-MyAccount-navigation ul li.is-active {
+  border-bottom: 3px solid #EF4025;
+}
+/* line 53, sass/sass/override/_account.scss */
+.woocommerce-MyAccount-navigation ul li.is-active a {
+  color: #EF4025;
+}
+
+/* line 60, sass/sass/override/_account.scss */
+.woocommerce-MyAccount-content {
+  padding-top: 4rem;
+}
+@media (min-width: 768px) {
+  /* line 60, sass/sass/override/_account.scss */
+  .woocommerce-MyAccount-content {
+    width: 100%;
+    float: none;
+  }
+}
+/* line 66, sass/sass/override/_account.scss */
+.woocommerce-MyAccount-content .woocommerce-Address {
+  border-top: 4px solid #222222;
+}
+@media (min-width: 768px) {
+  /* line 66, sass/sass/override/_account.scss */
+  .woocommerce-MyAccount-content .woocommerce-Address {
+    border-bottom: 1px solid #222222;
+  }
+}
+/* line 72, sass/sass/override/_account.scss */
+.woocommerce-MyAccount-content .accout-info {
+  border-top: 4px solid #222222;
+}
+@media (min-width: 768px) {
+  /* line 76, sass/sass/override/_account.scss */
+  .woocommerce-MyAccount-content .col2-set .col-1, .woocommerce-MyAccount-content .col2-set .col-2 {
+    width: 49%;
+    margin-right: 0;
+  }
+}
+
+/* line 85, sass/sass/override/_account.scss */
+.addresses header.title, .accout-info header.title {
+  margin-top: 0.6rem;
+}
+/* line 88, sass/sass/override/_account.scss */
+.addresses header.title a:before, .accout-info header.title a:before {
+  display: none;
+}
+@media (min-width: 768px) {
+  /* line 87, sass/sass/override/_account.scss */
+  .addresses header.title a, .accout-info header.title a {
+    width: auto;
+    height: auto;
+    text-indent: inherit;
+    margin-top: 0;
+  }
+  /* line 96, sass/sass/override/_account.scss */
+  .addresses header.title a:before, .accout-info header.title a:before {
+    display: none;
+  }
+}
+
+/* line 104, sass/sass/override/_account.scss */
+table.woocommerce-MyAccount-orders td.woocommerce-orders-table__cell-order-actions {
+  text-align: right;
 }
 
 /* line 1, sass/sass/override/_other.scss */
@@ -2382,6 +2537,18 @@ input[type=number] {
 /* line 66, sass/sass/component/_form.scss */
 .star-rating span:before, .quantity .plus, .quantity .minus, p.stars a:hover:after, p.stars a:after, .star-rating span:before, #payment .payment_methods li input[type=radio]:first-child:checked + label:before {
   color: #0E529C;
+}
+
+/* line 1, sass/sass/component/_table.scss */
+table th {
+  background-color: transparent;
+  font-weight: 500;
+}
+
+/* line 5, sass/sass/component/_table.scss */
+table thead th {
+  border-top: 4px solid #222222;
+  border-bottom: 1px solid #222222;
 }
 
 /* line 2, sass/sass/component/_pickee-carousel.scss */

@@ -29,6 +29,18 @@
 .float-none {
   @include float-none;
 }
+
+/** Text Alignment **/
+.text-left {
+  text-align: left!important;
+}
+.text-center {
+  text-align: center!important;
+}
+.text-right {
+  text-align: right!important;
+}
+
 /** Aling **/
 @mixin align-baseline    { vertical-align: baseline !important; } // Browser default
 @mixin align-top         { vertical-align: top !important; }
@@ -54,3 +66,9 @@
 .fw-700 { font-weight: 700; }
 .fw-800 { font-weight: 800; }
 .fw-900 { font-weight: 900; }
+
+@mixin full-width-block {
+  clear: both;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
