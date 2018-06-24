@@ -234,9 +234,13 @@ function init_homepage() {
 //Initialize homepage rendering
 add_action('wp', 'init_homepage', 10);
 
-//Change the order of buttons in mini cart
-remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 10);
-add_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 30);
+# Remove button which link to check out page directly in mini-cart
+remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20);
+
+# Change display text of button form 'view cart' to 'Check Out' which link to cart page in mini-cart
+function woocommerce_widget_shopping_cart_button_view_cart() {
+  echo '<a href="' . esc_url( wc_get_cart_url() ) . '" class="button wc-forward">' . esc_html__( 'Check Out', 'woocommerce' ) . '</a>';
+}
 
 //Variable product title should not include variance attributes.
 add_filter('woocommerce_product_variation_title_include_attributes', 'product_variation_title_should_not_include_attributes');
@@ -258,7 +262,49 @@ function woocommerce_custom_hide_sales_flash()
 }
 
 //Change number of products per row to 4
-add_filter( 'storefront_loop_columns', function() { return 4; });
+add_filter('storefront_loop_columns', function() { return 4; });
+
+// Remove Cross Sells From Default Position
+remove_action('woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
+
+// Add them back UNDER the Cart Table
+add_action('woocommerce_after_cart_table', 'woocommerce_cross_sell_display');
+
+// Set cross-sells columns to 4
+add_filter('woocommerce_cross_sells_columns', 'change_cross_sells_columns');
+function change_cross_sells_columns($columns) {
+  return 4;
+}
+
+// Display 4 cross-sell products in cart
+add_filter('woocommerce_cross_sells_total', 'change_cross_sells_product_no');
+function change_cross_sells_product_no($columns) {
+  return 4;
+}
+
+function adjust_checkout_fields($fields) {
+    $fields['first_name']['class'] = ['form-row-wide'];
+    $fields['last_name']['class'] = ['form-row-wide'];
+    unset($fields['company']);
+    return $fields;
+}
+add_filter('woocommerce_default_address_fields', 'adjust_checkout_fields');
+
+function adjust_checkout_phone_email_fields($fields) {
+    $fields['billing_phone']['class'] = ['form-row-wide'];
+    $fields['billing_email']['class'] = ['form-row-wide'];
+    return $fields;
+}
+add_filter('woocommerce_billing_fields', 'adjust_checkout_phone_email_fields');
+
+// move payment method block from the right column to the bottom of the left column
+remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
+add_action('woocommerce_after_order_notes', 'woocommerce_checkout_payment', 20);
+
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
+
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10);
+add_action('woocommerce_checkout_before_order_review', 'woocommerce_checkout_login_form', 10);
 
 //load customized js
 function custom_scripts() {

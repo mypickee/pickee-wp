@@ -1,8 +1,8 @@
 <?php
 /**
- * Related Products
+ * Cross-sells
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product/related.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/cart/cross-sells.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -20,21 +20,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( $related_products ) : ?>
+if ( $cross_sells ) : ?>
 
-	<section class="related products products-carousel-wrap">
+	<div class="cross-sells columns-4 products-carousel-wrap">
 
-		<h2><?php esc_html_e( 'Related products', 'woocommerce' ); ?></h2>
+		<h2><?php _e( 'You May Also Like', 'woocommerce' ) ?></h2>
 
-    <?php if (count($related_products) > 1):?>
+    <?php if (count($cross_sells) > 1):?>
     <div class="hidden-sm-down">
     <?php endif;?>
 		<?php woocommerce_product_loop_start(); ?>
 
-			<?php foreach ( $related_products as $related_product ) : ?>
+			<?php foreach ( $cross_sells as $cross_sell ) : ?>
 
 				<?php
-				 	$post_object = get_post( $related_product->get_id() );
+				 	$post_object = get_post( $cross_sell->get_id() );
 
 					setup_postdata( $GLOBALS['post'] =& $post_object );
 
@@ -43,27 +43,22 @@ if ( $related_products ) : ?>
 			<?php endforeach; ?>
 
 		<?php woocommerce_product_loop_end(); ?>
-    <?php if (count($related_products) > 1):?>
+
+    <?php if (count($cross_sells) > 1):?>
     </div>
 
     <ul class="products-carousel">
-
-      <?php foreach ( $related_products as $related_product ) : ?>
-
+      <?php foreach ( $cross_sells as $cross_sell ) : ?>
         <?php
-          $post_object = get_post( $related_product->get_id() );
-
+          $post_object = get_post( $cross_sell->get_id() );
           setup_postdata( $GLOBALS['post'] =& $post_object );
-
           wc_get_template_part( 'content', 'product' ); ?>
-
       <?php endforeach; ?>
-
     </ul>
 
     <?php endif;?>
 
-  </section>
+	</div>
 
 <?php endif;
 

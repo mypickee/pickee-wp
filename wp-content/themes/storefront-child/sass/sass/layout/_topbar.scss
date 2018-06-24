@@ -467,14 +467,6 @@ body.cart-open {
         }
       }
       a.button {
-        background-color: transparent;
-        color: $pickee-blue;
-        box-shadow: none;
-        &:after {
-          content: "";
-        }
-      }
-      a.button.checkout {
         background-color: $pickee-blue;
         color: #ffffff;
         &:after {

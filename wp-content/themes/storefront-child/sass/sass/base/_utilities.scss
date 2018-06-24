@@ -1,0 +1,68 @@
+.clearfix:after, .self_clear:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+@mixin self_clear {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+@mixin float-left {
+  float: left !important;
+}
+@mixin float-right {
+  float: right !important;
+}
+@mixin float-none {
+  float: none !important;
+}
+.float-left {
+  @include float-left;
+}
+.float-right {
+  @include float-right;
+}
+.float-none {
+  @include float-none;
+}
+
+/** Text Alignment **/
+.text-left {
+  text-align: left!important;
+}
+.text-center {
+  text-align: center!important;
+}
+.text-right {
+  text-align: right!important;
+}
+
+/** Aling **/
+@mixin align-baseline    { vertical-align: baseline !important; } // Browser default
+@mixin align-top         { vertical-align: top !important; }
+@mixin align-middle      { vertical-align: middle !important; }
+@mixin align-bottom      { vertical-align: bottom !important; }
+@mixin align-text-bottom { vertical-align: text-bottom !important; }
+@mixin align-text-top    { vertical-align: text-top !important; }
+
+.align-baseline    { @include align-baseline }
+.align-top         { @include align-top }
+.align-middle      { @include align-middle }
+.align-bottom      { @include align-bottom }
+.align-text-bottom { @include align-text-bottom }
+.align-text-top    { @include align-text-top }
+
+/** font-weight**/
+.fw-100 { font-weight: 100; }
+.fw-200 { font-weight: 200; }
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+.fw-800 { font-weight: 800; }
+.fw-900 { font-weight: 900; }

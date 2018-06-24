@@ -1,0 +1,72 @@
+.input-text,
+input[type=email],
+input[type=password],
+input[type=text],
+input[type=url],
+textarea {
+  background-color: transparent;
+  color: #000000;
+  box-shadow: none;
+  padding: 0.8rem;
+  line-height: 1.25;
+  -webkit-box-shadow:inset 0px 0px 0px 1px #000000;
+  -moz-box-shadow:inset 0px 0px 0px 1px #000000;
+  box-shadow:inset 0px 0px 0px 1px #000000;
+}
+
+button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .added_to_cart.alt, .widget-area .widget a.button.alt, .added_to_cart, .widget a.button.checkout {
+  background-color: $pickee-blue;
+  border-color: $pickee-blue;
+  &:hover {
+    background-color: $pickee-blue;
+    border-color: $pickee-blue;
+  }
+}
+
+/* Hide arrows from number input */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+/* Form group */
+.input-group {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+}
+.input-group>.custom-file, .input-group>.custom-select, .input-group>.form-control {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
+.input-group-append, .input-group-prepend {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.form-row.woocommerce-invalid, .form-row.woocommerce-validated {
+  input.input-text {
+    box-shadow: inset 0px 0px 0px 1px #000000;
+  }
+}
+
+.star-rating span:before, .quantity .plus, .quantity .minus, p.stars a:hover:after, p.stars a:after, .star-rating span:before, #payment .payment_methods li input[type=radio]:first-child:checked+label:before {
+    color: $pickee-blue;
+}
