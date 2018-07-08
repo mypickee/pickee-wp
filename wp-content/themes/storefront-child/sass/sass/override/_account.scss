@@ -60,7 +60,7 @@
 .woocommerce-MyAccount-content {
   padding-top: 4rem;
   @include breakpoint($screen-sm) {
-    width: 100%;
+    @include span(isolate 8 at 3 of 12);
     float: none;
   }
   .woocommerce-Address {

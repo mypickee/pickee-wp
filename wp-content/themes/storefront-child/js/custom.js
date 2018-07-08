@@ -55,5 +55,17 @@
     $('select.orderby').select2({
       minimumResultsForSearch: -1,
     });
+
+    /**
+     * Click 'Edit' to show edit forms in /my-account page
+     */
+    $('.myaccount-edit-link').click(function(e){
+      e.preventDefault();
+      var type = $(this).data('type');
+      $(this).addClass('d-none');
+      $('#my-'+type+'-block').addClass('d-none');
+      $('#my-'+type+'-form').removeClass('d-none');
+      $('.country_select, .state_select').selectWoo();
+    });
   });
 })(jQuery);
