@@ -306,6 +306,94 @@ remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_f
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10);
 add_action('woocommerce_checkout_before_order_review', 'woocommerce_checkout_login_form', 10);
 
+add_filter('woocommerce_account_menu_items', 'remove_my_account_links');
+function remove_my_account_links($menu_links) {
+  unset($menu_links['edit-address']); // Addresses
+  unset($menu_links['downloads']); // Downloads
+  unset($menu_links['edit-account']); // Account details
+  unset($menu_links['customer-logout']); // Logout
+  $menu_links['dashboard'] = __('Account Details', 'woocommerce'); // Reset 'Dashboard' to 'Account Details'
+  return $menu_links;
+}
+
+# Change 'View' to 'View Details' in /my-account/orders
+function change_my_acccount_orders_action_name($actions, $order) {
+  $actions['view']['name'] = __('View Details', 'woocommerce');
+  return $actions;
+}
+add_filter('woocommerce_my_account_my_orders_actions', 'change_my_acccount_orders_action_name', 10, 2);
+
+/**
+ * Override woocommerce_account_content() in /woocommerce/includes/wc-template-functions.php
+ */
+function woocommerce_account_content() {
+  global $wp;
+
+  if (!empty($wp->query_vars)) {
+    foreach ($wp->query_vars as $key => $value) {
+      // Ignore pagename param.
+      if ('pagename' === $key) {
+        continue;
+      }
+
+      if (has_action( 'woocommerce_account_' . $key . '_endpoint')) {
+        do_action('woocommerce_account_' . $key . '_endpoint', $value);
+        return;
+      }
+    }
+  }
+  // No endpoint found? Default to dashboard.
+
+  // Enqueue scripts
+  wp_enqueue_script('wc-country-select');
+  wp_enqueue_script('wc-address-i18n');
+
+  $address_types = ['billing', 'shipping'];
+
+  foreach ($address_types as $load_address) {
+    $load_address = sanitize_key($load_address);
+
+    $address = WC()->countries->get_address_fields(get_user_meta(get_current_user_id(), $load_address . '_country', true), $load_address . '_');
+
+    // Prepare values
+    foreach ($address as $key => $field) {
+
+      $value = get_user_meta( get_current_user_id(), $key, true);
+
+      if (!$value) {
+        switch ($key) {
+          case 'billing_email' :
+          case 'shipping_email' :
+            $value = $current_user->user_email;
+          break;
+          case 'billing_country' :
+          case 'shipping_country' :
+            $value = WC()->countries->get_base_country();
+          break;
+          case 'billing_state' :
+          case 'shipping_state' :
+            $value = WC()->countries->get_base_state();
+          break;
+        }
+      }
+
+      $address[$key]['value'] = apply_filters('woocommerce_my_account_edit_address_field_value', $value, $key, $load_address);
+    }
+    $addresses[$load_address] = apply_filters('woocommerce_address_to_edit', $address, $load_address);
+  }
+
+  wc_get_template('myaccount/dashboard.php', array(
+    'current_user' => get_user_by('id', get_current_user_id()),
+    'addresses' => $addresses,
+  ));
+}
+
+function redirect_after_customer_save_address() {
+  wp_safe_redirect(wc_get_page_permalink('myaccount'));
+  exit;
+}
+add_action('woocommerce_customer_save_address', 'redirect_after_customer_save_address', 5);
+
 //load customized js
 function custom_scripts() {
   wp_enqueue_script('custom', get_stylesheet_directory_uri().'/js/custom.js', array('jquery'), 1.0, true);

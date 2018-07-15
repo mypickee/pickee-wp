@@ -1,0 +1,107 @@
+.account-jumbotron {
+  @include full-width-block;
+  background-color: $pickee-blue;
+  padding: 5rem 0;
+  color: #ffffff;
+  .center {
+    margin: 0 auto;
+    width: 100px;
+    overflow: visible;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  h3 {
+    color: #ffffff;
+    margin: 0;
+  }
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+.woocommerce-MyAccount-navigation {
+  @include full-width-block;
+  float: none;
+  @include breakpoint($screen-sm) {
+    width: auto;
+    float: none;
+    background-color: $light-gray;
+  }
+  ul {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center!important;
+    justify-content: center!important;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    border-top: none;
+    li {
+      border-bottom: 3px solid $light-gray;
+      a {
+        display: block;
+        padding: 1rem 1rem;
+        color: #222222;
+        font-weight: 600;
+        &:before {
+          display: none;
+        }
+      }
+      &.is-active {
+        border-bottom: 3px solid $pickee-red;
+        a {
+          color: $pickee-red;
+        }
+      }
+    }
+  }
+}
+.woocommerce-MyAccount-content {
+  padding-top: 4rem;
+  @include breakpoint($screen-sm) {
+    @include span(isolate 8 at 3 of 12);
+    float: none;
+  }
+  .woocommerce-Address {
+    border-top: 4px solid #222222;
+    @include breakpoint($screen-sm) {
+      border-bottom: 1px solid #222222;
+    }
+  }
+  .accout-info {
+    border-top: 4px solid #222222;
+  }
+  .col2-set {
+    .col-1, .col-2 {
+      @include breakpoint($screen-sm) {
+        width: 49%;
+        margin-right: 0;
+      }
+    }
+  }
+}
+.addresses , .accout-info {
+  header.title {
+    margin-top: 0.6rem;
+    a {
+      &:before {
+        display: none;
+      }
+      @include breakpoint($screen-sm) {
+        width: auto;
+        height: auto;
+        text-indent: inherit;
+        margin-top: 0;
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+table.woocommerce-MyAccount-orders {
+  td.woocommerce-orders-table__cell-order-actions {
+    text-align: right;
+  }
+}
