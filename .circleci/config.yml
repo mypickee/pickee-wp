@@ -59,7 +59,7 @@ jobs:
           name: Deploy master to Heroku
           command: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/pickee-wp-staging.git master
 
-workflow:
+workflows:
   version: 2
   build_deploy:
     jobs:
