@@ -38,25 +38,23 @@
 
 * Install PHP via Homebrew:
   ```
-  brew tap homebrew/homebrew-php
-  brew install php72 --with-debug
-  php -v # Should output PHP 7
-  php-fpm -v # Should output PHP 7
+  brew install php@7.2
   ```
 
-  If `php-fpm -v` doesn't output PHP 7, make sure `/usr/local/sbin` is before `/usr/sbin` in your `PATH`.
+* Verify the right version. You might want to open a new terminal window and pick up the new `PATH`.
+  ```
+  php -v
+  php-fpm -v
+  ```
 
-* We will use our own [config files](config/php-fpm) for running php-fpm locally.
+  If they don't output PHP 7.2, make sure `/usr/local/sbin` is before `/usr/sbin` in your `PATH`.
+
+* Run `php --ini` to list config files. We will use our own [config files](config/php-fpm) for running php-fpm locally.
 
 * Allow environment variables to reach FPM worker processes by making sure `clear_env` is
   set to `no` in `config/php-fpm/php-fpm.d/www.conf`.
   ```
   clear_env = no
-  ```
-* PHP config files
-  ```
-  /usr/local/etc/php/7.2/php.ini
-  ```
 
 * Default log files
   ```
