@@ -59,12 +59,12 @@
     /**
      * Click 'Edit' to show edit forms in /my-account page
      */
-    $('.myaccount-edit-link').click(function(e){
+    $('.myaccount-edit-link, .myaccount-cancel-link').click(function(e){
       e.preventDefault();
       var type = $(this).data('type');
-      $(this).addClass('d-none');
-      $('#my-'+type+'-block').addClass('d-none');
-      $('#my-'+type+'-form').removeClass('d-none');
+      $('#my-'+type+'-edit').toggleClass('d-none');
+      $('#my-'+type+'-block').toggleClass('d-none');
+      $('#my-'+type+'-form').toggleClass('d-none');
       $('.country_select, .state_select').selectWoo();
     });
   });
