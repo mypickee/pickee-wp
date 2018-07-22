@@ -14,7 +14,7 @@
     "wpackagist-plugin/perfect-woocommerce-brands": "~1.6.5",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1.11.4",
     "wpackagist-plugin/woocommerce": "~3.4.3",
-    "wpackagist-plugin/woocommerce-gateway-stripe": "~4.1.7",
+    "wpackagist-plugin/woocommerce-gateway-stripe": "~4.1.8",
     "wpackagist-theme/storefront": "~2.2.5"
   },
   "scripts": {
