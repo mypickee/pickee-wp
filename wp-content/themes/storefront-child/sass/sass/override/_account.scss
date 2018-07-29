@@ -63,6 +63,28 @@
     @include span(isolate 8 at 3 of 12);
     float: none;
   }
+  h2 {
+    font-size: inherit;
+    font-weight: 700;
+    float: left;
+  }
+  header.title {
+    margin-top: 0.6rem;
+    @include self_clear;
+    a {
+      padding: 0;
+      float: right;
+      &:before {
+        display: none;
+      }
+      @include breakpoint($screen-sm) {
+        width: auto;
+        height: auto;
+        text-indent: inherit;
+        margin-top: 0;
+      }
+    }
+  }
   .woocommerce-Address {
     border-top: 4px solid #222222;
     @include breakpoint($screen-sm) {
@@ -77,25 +99,6 @@
       @include breakpoint($screen-sm) {
         width: 49%;
         margin-right: 0;
-      }
-    }
-  }
-}
-.addresses , .accout-info {
-  header.title {
-    margin-top: 0.6rem;
-    a {
-      &:before {
-        display: none;
-      }
-      @include breakpoint($screen-sm) {
-        width: auto;
-        height: auto;
-        text-indent: inherit;
-        margin-top: 0;
-        &:before {
-          display: none;
-        }
       }
     }
   }
