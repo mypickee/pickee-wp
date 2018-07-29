@@ -59,6 +59,7 @@ $user = wp_get_current_user();
         <?php wp_nonce_field( 'save_account_details' ); ?>
         <input type="submit" class="woocommerce-Button button btn btn-primary btn-block" name="save_account_details" value="<?php esc_attr_e( 'Apply', 'woocommerce' ); ?>" />
         <input type="hidden" name="action" value="save_account_details" />
+        <a href="#" class="myaccount-cancel-link btn btn-block mt-2" data-type="account">Cancel</a>
       </p>
 
       <?php do_action( 'woocommerce_edit_account_form_end' ); ?>
@@ -97,6 +98,7 @@ $user = wp_get_current_user();
         <?php wp_nonce_field( 'save_account_details' ); ?>
         <input type="submit" class="woocommerce-Button button btn btn-primary btn-block" name="save_account_details" value="<?php esc_attr_e( 'Apply', 'woocommerce' ); ?>" />
         <input type="hidden" name="action" value="save_account_details" />
+        <a href="#" class="myaccount-cancel-link btn btn-block mt-2" data-type="password">Cancel</a>
       </p>
 
       <?php do_action( 'woocommerce_edit_account_form_end' ); ?>
@@ -158,6 +160,7 @@ $col    = 1;
           <input type="submit" class="button btn btn-primary btn-block" name="save_address" value="<?php esc_attr_e('Save address', 'woocommerce'); ?>" />
           <?php wp_nonce_field( 'woocommerce-edit_address' ); ?>
           <input type="hidden" name="action" value="edit_address" />
+          <a href="#" class="myaccount-cancel-link btn btn-block mt-2" data-type="<?php echo $name;?>">Cancel</a>
         </p>
       </div>
 
