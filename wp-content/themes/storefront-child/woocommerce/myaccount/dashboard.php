@@ -26,7 +26,7 @@ $user = wp_get_current_user();
 <div class="u-columns woocommerce-Addresses col2-set addresses">
   <div class="u-column col-1 accout-info">
     <header class="woocommerce-Address-title title">
-      <h3>Account Info</h3>
+      <h2>Account Info</h2>
       <a href="#" id="my-account-edit" class="edit myaccount-edit-link" data-type="account"><?php _e('Edit', 'woocommerce'); ?></a>
     </header>
     <p id="my-account-block">
@@ -59,7 +59,7 @@ $user = wp_get_current_user();
         <?php wp_nonce_field( 'save_account_details' ); ?>
         <input type="submit" class="woocommerce-Button button btn btn-primary btn-block" name="save_account_details" value="<?php esc_attr_e( 'Apply', 'woocommerce' ); ?>" />
         <input type="hidden" name="action" value="save_account_details" />
-        <a href="#" class="myaccount-cancel-link btn btn-block mt-2" data-type="account">Cancel</a>
+        <a href="#" class="myaccount-cancel-link btn btn-block btn-link mt-2" data-type="account">Cancel</a>
       </p>
 
       <?php do_action( 'woocommerce_edit_account_form_end' ); ?>
@@ -67,7 +67,7 @@ $user = wp_get_current_user();
   </div>
   <div class="u-column col-2 accout-info">
     <header class="woocommerce-Address-title title">
-      <h3>Password</h3>
+      <h2>Password</h2>
       <a href="#" id="my-password-edit" class="edit myaccount-edit-link" data-type="password"><?php _e('Edit', 'woocommerce'); ?></a>
     </header>
     <p id="my-password-block">
@@ -98,7 +98,7 @@ $user = wp_get_current_user();
         <?php wp_nonce_field( 'save_account_details' ); ?>
         <input type="submit" class="woocommerce-Button button btn btn-primary btn-block" name="save_account_details" value="<?php esc_attr_e( 'Apply', 'woocommerce' ); ?>" />
         <input type="hidden" name="action" value="save_account_details" />
-        <a href="#" class="myaccount-cancel-link btn btn-block mt-2" data-type="password">Cancel</a>
+        <a href="#" class="myaccount-cancel-link btn btn-block btn-link mt-2" data-type="password">Cancel</a>
       </p>
 
       <?php do_action( 'woocommerce_edit_account_form_end' ); ?>
@@ -131,7 +131,7 @@ $col    = 1;
 
   <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo (($oldcol = $oldcol * -1) < 0) ? 1 : 2; ?> woocommerce-Address">
     <header class="woocommerce-Address-title title">
-      <h3><?php echo $title; ?></h3>
+      <h2><?php echo $title; ?></h2>
       <a href="#" id="my-<?php echo $name;?>-edit" class="edit myaccount-edit-link" data-type="<?php echo $name;?>"><?php _e('Edit', 'woocommerce'); ?></a>
     </header>
     <p id="my-<?php echo $name;?>-block"><?php
@@ -160,7 +160,7 @@ $col    = 1;
           <input type="submit" class="button btn btn-primary btn-block" name="save_address" value="<?php esc_attr_e('Save address', 'woocommerce'); ?>" />
           <?php wp_nonce_field( 'woocommerce-edit_address' ); ?>
           <input type="hidden" name="action" value="edit_address" />
-          <a href="#" class="myaccount-cancel-link btn btn-block mt-2" data-type="<?php echo $name;?>">Cancel</a>
+          <a href="#" class="myaccount-cancel-link btn btn-block btn-link mt-2" data-type="<?php echo $name;?>">Cancel</a>
         </p>
       </div>
 
