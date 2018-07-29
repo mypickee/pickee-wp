@@ -22,7 +22,7 @@
     background-color: $pickee-blue;
   }
   &.disabled, &:disabled {
-    background-color: $gray;
+    background-color: $gray-light;
   }
   &.btn-block {
     display: block;
@@ -59,7 +59,7 @@
       content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_blue.svg);
     }
     &.disabled, &:disabled {
-      color: $gray;
+      color: $gray-light;
       &.btn-arrow::after{
         content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_gray.svg);
       }

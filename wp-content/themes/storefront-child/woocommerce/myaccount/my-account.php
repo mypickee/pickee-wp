@@ -22,8 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <div class="account-jumbotron">
   <div class="center">
-    <h3><strong>Hi <?php echo esc_html($current_user->first_name)?>!</strong></h3>
-    <a href="<?php echo esc_url(wc_logout_url(wc_get_page_permalink('myaccount')))?>">Log out</a>
+    <h1>Hi <?php echo esc_html($current_user->first_name)?>!</h1>
+    <a href="<?php echo esc_url(wc_logout_url(wc_get_page_permalink('myaccount')))?>"><small>log out</small></a>
   </div>
 </div>
 <?php
