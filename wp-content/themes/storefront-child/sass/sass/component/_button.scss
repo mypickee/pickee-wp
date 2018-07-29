@@ -1,29 +1,43 @@
-.btn {
+.added_to_cart, .button, button, input[type=button], input[type=reset], input[type=submit], .btn {
+  padding: 1.0625rem 5.625rem;
   display: inline-block;
-  font-weight: 600;
+  line-height: $line-height-small;
+  font-size: $font-size-small;
+  font-weight: 700;
   text-align: center;
   white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: 0.8rem 2rem;
-  line-height: 1.25;
   transition: all .15s ease-in-out;
   text-transform: none;
-  &.btn-primary {
-    padding: 0.8rem 2rem;
-    background-color: $pickee-blue;
+  background-color: $pickee-blue;
+  color: #ffffff;
+  &:hover{
+    background-color: $pickee-blue-dark;
     color: #ffffff;
   }
-  &.btn-secondary {
-    padding: 0.5rem 1.5rem;
-    border: 2px solid $pickee-blue;
-    color: $pickee-blue;
-    font-size: 0.8rem;
+  &:active{
+    background-color: $pickee-blue;
+  }
+  &.disabled, &:disabled {
+    background-color: $gray;
   }
   &.btn-block {
     display: block;
     width: 100%;
+  }
+  &.btn-arrow::after {
+    position: absolute;
+    content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow.svg);
+    margin-left: 0.5rem;
+    transition: all .15s ease-in-out;
+  }
+  &.btn-arrow:hover::after {
+    margin-left: 1rem;
+  }
+  &.btn-arrow:active::after{
+    margin-left: 0.5rem;
   }
 }
