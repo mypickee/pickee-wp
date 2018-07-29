@@ -3,4 +3,7 @@ img {
 }
 a {
   color: $pickee-blue;
+  &:hover{
+    color: $pickee-blue-dark;
+  }
 }

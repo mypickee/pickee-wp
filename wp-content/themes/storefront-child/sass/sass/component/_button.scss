@@ -40,4 +40,29 @@
   &.btn-arrow:active::after{
     margin-left: 0.5rem;
   }
+  &.btn-link {
+    background-color: transparent;
+    color: $pickee-blue;
+    &:hover{
+      color: $pickee-blue-dark;
+    }
+    &:active{
+      color: $pickee-blue;
+    }
+    &.btn-arrow::after {
+      content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_blue.svg);
+    }
+    &.btn-arrow:hover::after {
+      content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_darkblue.svg);
+    }
+    &.btn-arrow:active::after{
+      content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_blue.svg);
+    }
+    &.disabled, &:disabled {
+      color: $gray;
+      &.btn-arrow::after{
+        content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_gray.svg);
+      }
+    }
+  }
 }
