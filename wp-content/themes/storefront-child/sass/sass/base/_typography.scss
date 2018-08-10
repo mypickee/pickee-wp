@@ -25,9 +25,15 @@ h1, h2, h3, h4, h5, h6 {
 @mixin font-size-small {
   font-size: $font-size-small; // 0.875rem, 14px
 }
+@mixin font-size-big {
+  font-size: $font-size-big; // 1.125rem, 18px
+}
 
 @mixin line-height-small {
-  line-height: $line-height-small;
+  line-height: $line-height-small; // 22px
+}
+@mixin line-height-big {
+  line-height: $line-height-big; // 26px
 }
 
 .small, small {
@@ -35,6 +41,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 p.small {
   @include font-size-small; // 0.875rem, 14px
-  @include line-height-small
+  @include line-height-small; // 22px
+}
+
+.big, big {
+  @include font-size-big;  // 1.125rem, 18px
+}
+p.big {
+  @include font-size-big;  // 1.125rem, 18px
+  @include line-height-big;  // 26px
 }
 
