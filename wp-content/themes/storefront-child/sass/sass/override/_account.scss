@@ -116,3 +116,26 @@ table.woocommerce-MyAccount-paymentMethods {
     text-align: right;
   }
 }
+
+.view-order__header {
+  @include breakpoint($screen-sm) {
+    & {
+      display: flex;
+      align-items: center;
+    }
+    .view-order__header__id {
+      flex: 0 0 150px;
+    }
+    .view-order__header__details {
+      flex: 1 0 0;
+      text-align: right;
+    }
+  }
+}
+.view-order__header__id {
+  font-size: 20px;
+  font-weight: bold;
+}
+.view-order__header__details {
+  font-size: 14px;
+}
