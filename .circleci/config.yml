@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/pickee-wp
     docker:
-      - image: circleci/php:7.2.7-fpm-stretch-node-browsers
+      - image: circleci/php:7.2-apache-stretch-node-browsers
         environment:
           DATABASE_URL: mysql://pickee_wp_admin:password@127.0.0.1/pickee_wp_test
       - image: mysql:5.7
