@@ -1,0 +1,54 @@
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0;
+}
+.h1, h1 {
+  font-size: 1.75rem; // 28px
+  line-height: 2rem;
+  font-weight: 700;
+}
+.h2, h2 {
+  font-size: 1.25rem; // 20px
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+.h3, h3 {
+  font-size: 1rem; // 16px
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+.h4, h4 {
+  font-size: $font-size-small; // 0.875rem, 14px
+  line-height: $line-height-small;
+  font-weight: 500;
+}
+
+@mixin font-size-small {
+  font-size: $font-size-small; // 0.875rem, 14px
+}
+@mixin font-size-big {
+  font-size: $font-size-big; // 1.125rem, 18px
+}
+
+@mixin line-height-small {
+  line-height: $line-height-small; // 22px
+}
+@mixin line-height-big {
+  line-height: $line-height-big; // 26px
+}
+
+.small, small {
+  @include font-size-small; // 0.875rem, 14px
+}
+p.small {
+  @include font-size-small; // 0.875rem, 14px
+  @include line-height-small; // 22px
+}
+
+.big, big {
+  @include font-size-big;  // 1.125rem, 18px
+}
+p.big {
+  @include font-size-big;  // 1.125rem, 18px
+  @include line-height-big;  // 26px
+}
+

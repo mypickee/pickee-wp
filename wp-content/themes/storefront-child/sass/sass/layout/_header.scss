@@ -1,4 +1,7 @@
-
+$cart-padding: 1.5rem;
+body.cart-open {
+  overflow: hidden;
+}
 .storefront-primary-navigation {
   @include breakpoint($screen-sm) {
     background-color: transparent;
@@ -9,6 +12,8 @@
   border-bottom: none;
   padding-top: 1rem;
   padding-bottom: 0;
+  color: $black;
+  @include font-size-small;
   @include breakpoint($screen-sm) {
     padding-top: 1.618rem;
     padding-bottom: 1.618rem;
@@ -19,36 +24,37 @@
     font-weight: 600;
   }
   .storefront-primary-navigation {
-    float: right;
+    float: left;
     clear: none;
-    margin-left: 0;
+    margin-left: 4.6rem;
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-    width: 520px;
   }
   .main-navigation {
     width: 100%;
     margin-right: 0;
-    ul.menu {
-      text-align: right;
-    }
     ul.menu > li > a, ul.nav-menu > li > a {
-      padding: 1em 1em;
+      line-height: 3rem;
+      padding: 0 1rem;
     }
   }
 
   .site-branding {
-    margin: 0 auto !important;
+    //margin: 0 auto !important;
+    position: absolute;
+    margin-left: 50%;
+    left: -3.34rem;
     float: none !important;
-    width: 40%;
-    height: 3em;
-    max-width: 8em;
+    width: 6.68rem;
+    height: 3rem;
     text-align: center;
     @include breakpoint($screen-sm) {
+      position: inherit;
+      left: 0;
       float: left !important;
-      width: 9em;
-      height: 4.5em;
+      margin-left: 3.5rem !important;
+      margin-right: 0;
     }
     svg {
       max-height: 100%;
@@ -56,9 +62,260 @@
     }
   }
 
+  ul.links {
+    @include breakpoint($screen-sm) {
+      display: block;
+    }
+    display: none;
+    list-style: none;
+    float: right;
+    padding: 1rem 0 0 0;
+    line-height: 1rem;
+    margin: 0;
+    li {
+      float: right;
+      position: relative;
+      display: block;
+      height: 1rem;
+      list-style: none;
+      padding: 0 0.75em;
+      color: $black;
+      font-weight: 500;
+      a {
+        color: $black;
+        font-weight: 500;
+        line-height: 1rem;
+      }
+      &:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 0.8rem;
+        background-color: $black;
+        position: absolute;
+        top: 0.2rem;
+        right: 0;
+      }
+    }
+  }
+  .site-search {
+    float: right;
+    width: auto;
+    clear: none;
+    margin-bottom: 0;
+    padding-top: 0.95rem;
+    line-height: 1rem;
+    color: $black;
+    display: none;
+    @include breakpoint($screen-sm) {
+      display: block;
+    }
+    .widget_product_search {
+      float: left;
+      margin: 0;
+      form:before {
+        top: 0.25rem;
+        left: 1rem;
+        width: 1rem;
+        height: 1rem;
+        color: $black;
+      }
+      input[type=search], input[type=text] {
+        padding: 0 0.5rem 0 2.5rem;
+        background-color: transparent;
+        color: $black;
+        font-weight: 500;
+        box-shadow: none;
+        width: 7rem;
+        transition: width 0.5s;
+        @include font-size-small;
+        &:focus {
+          width: 12rem;
+        }
+        &::placeholder {
+          color: $black;
+        }
+      }
+    }
+    .search-clear-btn {
+      float: right;
+      margin-right: 0.75rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      cursor: pointer;
+      &.hidden {
+        svg {
+          display :none;
+        }
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+        .line {
+          stroke-width: 2px;
+          stroke: $black;
+        }
+      }
+    }
+  }
+
+  .header-menu-button {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 2em;
+    color: $pickee-blue;
+    font-weight: 600;
+    cursor: pointer;
+    @include breakpoint($screen-sm) {
+      display: none;
+    }
+  }
+  .header-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1001;
+    visibility: hidden;
+    overflow-y: hidden;
+    background: #ffffff;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+    @include breakpoint($screen-sm) {
+      display: none;
+    }
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .header-menu-back {
+      position: absolute;
+      height: 4em;
+      padding-left: 1em;
+      line-height: 4em;
+      z-index: 1003;
+      cursor: pointer;
+      color: $pickee-blue;
+      font-size: 1em;
+      font-weight: 600;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s;
+      transition-delay: 0.1s;
+      &.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .header-menu-close {
+      position: absolute;
+      height: 4em;
+      width: 4em;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      z-index: 1003;
+      svg {
+        position: absolute;
+        top: 1.3em;
+        right: 1.3em;
+        width: 1.4em;
+        height: 1.4em;
+        .line {
+          stroke-width: 2px;
+          stroke: $pickee-blue;
+        }
+      }
+    }
+    .header-menu-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4em;
+      width: 100%;
+      line-height: 1.5em;
+      background: #ffffff;
+      font-size: 1em;
+      border-bottom: solid 1px $pickee-blue;
+    }
+    .header-menu-footer {
+      position: absolute;
+      bottom: 4em;
+      left: 0;
+      height: 4em;
+      width: 100%;
+      line-height: 4em;
+      background: #ffffff;
+      font-size: 1em;
+      text-align: center;
+      color: $pickee-blue;
+      & a {
+        color: $pickee-blue;
+        font-weight: 500;
+      }
+      & span {
+        padding : 0 1em;
+      }
+    }
+    .handheld-navigation {
+      position: relative;
+      margin-top: 4em;
+      max-height: 100%;
+      height: calc(100% - 8em);
+      overflow: hidden;
+      background-color: #eeeeee;
+      ul {
+        display: block;
+        height: 100%;
+        overflow-y: scroll;
+      }
+      > ul {
+        height: calc(100% - 4em);
+        background-color: rgba(255,255,255,1);
+        transition: 0.3s;
+        transition-delay: 0.1s;
+        &.expand {
+          background-color: rgba(255,255,255,0);
+        }
+      }
+      ul li a {
+        display: block;
+        height: 4em;
+        line-height: 4em;
+        text-align: center;
+        font-size: 1em;
+        border-bottom: solid 1px $pickee-blue;
+        &:focus {
+          outline-style: none;
+        }
+      }
+      .menu ul.sub-menu {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: rgba(255,255,255,1);
+        transition: 0.3s ease-in-out;
+        transition-delay: 0.1s;
+        z-index: 1003;
+        &.expand {
+          transform: translate(-100%, 0);
+        }
+      }
+    }
+
+  }
 }
 
+
 //header for homepage
+/*
 .woocommerce-active.home .site-header {
   border-bottom: none;
 
@@ -93,6 +350,231 @@
     text-align: center;
     svg {
       max-width: 100%;
+    }
+  }
+}
+*/
+.header-cart {
+  float: right;
+  margin-right: 2rem;
+  height: 3rem;
+  width: 3rem;
+  background-color: $pickee-red;
+  border-radius: 50%;
+  z-index: 1001;
+  @include breakpoint($screen-sm) {
+    margin-right: 2.5rem;
+  }
+  .header-cart-content {
+    padding: 0;
+    display: block;
+    position: relative;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    text-indent: 0;
+    line-height: 3rem;
+    padding-top: 0.151rem;
+    text-align: center;
+    cursor: pointer;
+    background: url(assets/svg/shopping_bag.svg);
+    background-size: 2.5rem 2.5rem;
+    background-position: 0.25rem 0.25rem;
+    background-repeat: no-repeat;
+    .amount {
+      display: none;
+    }
+    .count {
+      color: #ffffff;
+      font-size: 0.625rem;
+      font-weight: 500;
+    }
+  }
+
+  .header-cart-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1102;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  &.visible .header-cart-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s;
+  }
+
+  .header-cart-panel {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    @include breakpoint($screen-sm) {
+      width: 23.438rem;
+    }
+    padding: 0 $cart-padding 0 $cart-padding;
+    z-index: 1103;
+    box-sizing: border-box;
+    cursor: default;
+    visibility: hidden;
+    overflow-y: hidden;
+    background: #ffffff;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+
+    .header-cart-panel-title {
+      margin-top: 2.5rem;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .header-cart-close {
+      position: absolute;
+      height: 3.25rem;
+      width: 3.25rem;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      z-index: 1103;
+      background-color: $pickee-blue;
+      svg {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        .line {
+          stroke-width: 2px;
+        }
+      }
+    }
+  }
+  &.visible .header-cart-panel {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s;
+  }
+
+  .widget_shopping_cart {
+    display: block;
+    height: 100%;
+    margin: 2rem 0 0 0;
+    h2.widgettitle {
+      display: none;
+    }
+    .widget_shopping_cart_header {
+      height: 3.125rem;
+      font-weight: 500;
+      box-sizing: content-box;
+      border-top: 4px solid $black;
+      border-bottom: 1px solid $black;
+      .item {
+        float: left;
+        line-height: 3.125rem;
+      }
+      .price {
+        float: right;
+        line-height: 3.125rem;
+      }
+    }
+    .widget_shopping_cart_content {
+      height: calc(100% - 10rem);
+      position: relative;
+    }
+    .product_list_widget {
+      max-height: calc(100% - 10rem);
+      overflow-y: scroll;
+      li {
+        padding: 1.5rem 0;
+        font-size: .875rem;
+        border-bottom: 1px solid $gray;
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .item-thumbmail {
+          float: left;
+          width: 6.25rem;
+          text-align: left;
+          img {
+            float: left;
+            width: 6.25rem;
+            max-width: 100%;
+          }
+        }
+
+        .item-data {
+          float: left;
+          width: calc(100% - 10rem);
+          padding-left: 1rem;
+          padding-right: 1rem;
+          color: #666666;
+          .title {
+            font-weight: 500;
+            color: #000000;
+          }
+        }
+
+        .item-subtotal {
+          float:left;
+          width: 3.75rem;
+          text-align: right;
+        }
+
+        a.remove {
+          position: relative;
+          float: left;
+          top: auto;
+          text-indent: 0;
+          width: auto;
+          text-decoration: underline;
+          cursor: pointer;
+          &:before {
+            content: "";
+          }
+        }
+      }
+    }
+
+    .cart-pannel-bottom {
+      position: absolute;
+      height: 10rem;
+      width: 100%;
+      bottom: 0;
+      background-color: #ffffff;
+      .total {
+        padding-top: 1rem;
+        text-align: left;
+        border-top: 1px solid $gray;
+        .total-label {
+          @include span(6 of 12);
+          font-size: 1rem;
+          font-weight: bold;
+        }
+        .total-content {
+          @include span(6 of 12 last);
+          text-align: right;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+      a.button {
+        background-color: $pickee-blue;
+        color: #ffffff;
+        &:after {
+          content: "";
+        }
+      }
     }
   }
 }

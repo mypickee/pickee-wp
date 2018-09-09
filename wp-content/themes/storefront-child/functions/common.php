@@ -16,130 +16,65 @@ if (!function_exists('storefront_cart_link_fragment')) {
     $fragments['a.cart-contents'] = ob_get_clean();
 
     ob_start();
-    topbar_cart_panel_title();
-    $fragments['.topbar-cart-panel-title'] = ob_get_clean();
+    header_cart_panel_title();
+    $fragments['.header-cart-panel-title'] = ob_get_clean();
 
     ob_start();
-    topbar_cart_link();
-    $fragments['.topbar-cart-content'] = ob_get_clean();
+    header_cart_link();
+    $fragments['.header-cart-content'] = ob_get_clean();
     return $fragments;
   }
 }
 
-if (!function_exists('topbar_cart_link')) {
+if (!function_exists('site_branding_svg')) {
   /**
-   * Topbar Cart Link
-   * Displayed a link to the cart including the number of items present
+   * Display site branding svg in header
    *
    * @return void
    */
-  function topbar_cart_link() {
+  function site_branding_svg() {
     ?>
-      <div class="topbar-cart-content cart-contents" title="<?php esc_attr_e('View your shopping cart', 'storefront' ); ?>">
-        <span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span> <span class="count"><?php echo wp_kses_data(sprintf(WC()->cart->get_cart_contents_count())); ?></span>
-      </div>
-    <?php
-  }
-}
-
-if (!function_exists('topbar_cart_panel_title')) {
-  /**
-   * Displayed a title of shopping cart including the number of items present
-   *
-   * @return void
-   */
-  function topbar_cart_panel_title() {
-    ?>
-      <div class="topbar-cart-panel-title">
-        <?php if (!WC()->cart->is_empty()) : ?>
-          <?php echo wp_kses_data(sprintf(_n('%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront'), WC()->cart->get_cart_contents_count()));?> in Shopping Bag
-        <?php else:?>
-          No Items in Shopping Bag
-        <?php endif; ?>
-      </div>
-    <?php
-  }
-}
-
-if (!function_exists('topbar_cart')) {
-  /**
-   * Display topbar Cart
-   *
-   * @return void
-   */
-  function topbar_cart() {
-    ?>
-    <div id="topbar-cart" class="topbar-cart">
-      <?php if (apply_filters('woocommerce_widget_cart_is_hidden', is_cart() || is_checkout())) : ?>
-        <a class="cart-content-wrap"  href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', 'storefront'); ?>">
-          <?php topbar_cart_link(); ?>
-        </a>
-      <?php else: ?>
-        <div class="cart-content-wrap topbar-cart-toggle">
-          <?php topbar_cart_link(); ?>
-        </div>
-        <div id="topbar-cart-overlay" class="topbar-cart-overlay topbar-cart-toggle">
-        </div>
-        <div id="topbar-cart-panel" class="topbar-cart-panel">
-          <div class="topbar-cart-close topbar-cart-toggle">
-            <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?>
-          </div>
-          <?php topbar_cart_panel_title(); ?>
-          <?php the_widget('WC_Widget_Cart', 'title='); ?>
-        </div>
-      <?php endif;?>
+    <div class="site-branding">
+      <a href="<?php echo esc_url(home_url('/'));?>">
+        <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/pickee_logo.svg"); ?>
+      </a>
     </div>
     <?php
   }
 }
 
-if (!function_exists('topbar_product_search')) {
-  /**
-   * Display Product Search
-   *
-   * @return void
-   */
-  function topbar_product_search() {
-    ?>
-      <div class="site-search">
-        <?php the_widget('WC_Widget_Product_Search', 'title='); ?>
-        <div class="search-clear-btn hidden"><?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?></div>
-      </div>
-    <?php
-  }
-}
 
-if (!function_exists('topbar_handles_menu_button')) {
+if (!function_exists('header_handles_menu_button')) {
   /**
-   * Display handles_menu_button in topbar
+   * Display handles_menu_button in header
    *
    * @return void
    */
-  function topbar_handles_menu_button() {
+  function header_handles_menu_button() {
     ?>
-      <div id="topbar-menu-button" class="topbar-menu-button topbar-menu-toggle">
+      <div id="header-menu-button" class="header-menu-button header-menu-toggle">
         Menu
       </div>
     <?php
   }
 }
 
-if (!function_exists('topbar_handles_menu')) {
+if (!function_exists('header_handles_menu')) {
   /**
-   * Display handles_menu_button in topbar
+   * Display handles_menu_button in header
    *
    * @return void
    */
-  function topbar_handles_menu() {
+  function header_handles_menu() {
     ?>
-      <div id="topbar-menu" class="topbar-menu">
-        <div class="topbar-menu-back">
+      <div id="header-menu" class="header-menu">
+        <div class="header-menu-back">
           BACK
         </div>
-        <div class="topbar-menu-close topbar-menu-toggle">
+        <div class="header-menu-close header-menu-toggle">
           <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?>
         </div>
-        <div class="topbar-menu-header">
+        <div class="header-menu-header">
         </div>
         <?php
           wp_nav_menu(array(
@@ -147,7 +82,7 @@ if (!function_exists('topbar_handles_menu')) {
             'container_class' => 'handheld-navigation',
           ));
         ?>
-        <div class="topbar-menu-footer">
+        <div class="header-menu-footer">
           <?php if (is_user_logged_in()) : ?>
             <?php
               $user = wp_get_current_user();
@@ -164,66 +99,144 @@ if (!function_exists('topbar_handles_menu')) {
   }
 }
 
-if (!function_exists('topbar')) {
+if (!function_exists('header_login')) {
   /**
-   * Display topbar
+   * Display Sign-in button in header
    *
    * @return void
    */
-  function topbar() {
+  function header_login() {
     ?>
-    <div id="topbar" class="topbar">
-      <?php topbar_handles_menu_button();?>
-      <?php topbar_handles_menu();?>
-      <?php topbar_cart();?>
-      <?php topbar_product_search();?>
-      <ul class="links">
-        <?php if (is_user_logged_in()) : ?>
-          <li>
-            <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','woothemes'); ?>"><?php _e('My Account','woothemes'); ?></a>
-          </li>
-          <li><a href="<?php echo wp_logout_url(get_permalink(woocommerce_get_page_id('myaccount')));?>">Sign Out</a></li>
-          <?php
-            $user = wp_get_current_user();
-            echo "<li><b>Hi, ". $user->display_name ."</b></li>";
-          ?>
-        <?php else : ?>
-          <li>
-            <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login / Register','woothemes'); ?>"><?php _e('Login / Register','woothemes'); ?></a>
-          </li>
-        <?php endif;?>
-      </ul>
+    <ul class="links">
+      <?php if (is_user_logged_in()) : ?>
+        <li>
+          <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','woothemes'); ?>"><?php _e('My Account','woothemes'); ?></a>
+        </li>
+        <li>
+          <a href="<?php echo wp_logout_url(get_permalink(woocommerce_get_page_id('myaccount')));?>">Sign Out</a>
+        </li>
+        <?php
+          $user = wp_get_current_user();
+          echo "<li><b>Hi, ". $user->display_name ."</b></li>";
+        ?>
+      <?php else : ?>
+        <li>
+          <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Sign in','woothemes'); ?>"><?php _e('Sign in','woothemes'); ?></a>
+        </li>
+      <?php endif;?>
+    </ul>
+    <?php
+  }
+}
+
+if (!function_exists('header_product_search')) {
+  /**
+   * Display header product search
+   *
+   * @return void
+   */
+  function header_product_search() {
+    ?>
+      <div class="site-search">
+        <?php the_widget('WC_Widget_Product_Search', 'title='); ?>
+        <div class="search-clear-btn hidden"><?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?></div>
+      </div>
+    <?php
+  }
+}
+
+
+if (!function_exists('header_cart_link')) {
+  /**
+   * Displayed a link to the cart including the number of items present
+   *
+   * @return void
+   */
+  function header_cart_link() {
+    ?>
+      <div class="header-cart-content cart-contents" title="<?php esc_attr_e('View your shopping cart', 'storefront' ); ?>">
+        <span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span> <span class="count"><?php echo wp_kses_data(sprintf(WC()->cart->get_cart_contents_count())); ?></span>
+      </div>
+    <?php
+  }
+}
+
+if (!function_exists('header_cart_panel_title')) {
+  function header_cart_panel_title() {
+    ?>
+    <div class="header-cart-panel-title">
+      <?php if (!WC()->cart->is_empty()) : ?>
+        Shopping Bag (<?php echo WC()->cart->get_cart_contents_count();?>)
+      <?php else:?>
+        No Items in Shopping Bag
+      <?php endif; ?>
     </div>
     <?php
   }
 }
 
-if (!function_exists('site_branding_svg')) {
-  //display site branding svg
-  function site_branding_svg() {
+if (!function_exists('header_cart')) {
+  /**
+   * Display header Cart component
+   *
+   * @return void
+   */
+  function header_cart() {
     ?>
-    <div class="site-branding">
-      <a href="<?php echo esc_url(home_url('/'));?>">
-        <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/pickee_logo.svg"); ?>
-      </a>
+    <div id="header-cart" class="header-cart">
+      <?php if (apply_filters('woocommerce_widget_cart_is_hidden', is_cart() || is_checkout())) : ?>
+        <a class="cart-content-wrap"  href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', 'storefront'); ?>">
+          <?php header_cart_link(); ?>
+        </a>
+      <?php else: ?>
+        <div class="cart-content-wrap header-cart-toggle">
+          <?php header_cart_link(); ?>
+        </div>
+        <div id="header-cart-overlay" class="header-cart-overlay header-cart-toggle">
+        </div>
+        <div id="header-cart-panel" class="header-cart-panel">
+          <div class="header-cart-close header-cart-toggle">
+            <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?>
+          </div>
+          <?php header_cart_panel_title(); ?>
+          <?php //the_widget('WC_Widget_Cart', 'title='); ?>
+          <?php if (!WC()->cart->is_empty()) : ?>
+            <div class="widget woocommerce widget_shopping_cart">
+              <div class="widget_shopping_cart_header">
+                <div class="item">Item</div>
+                <div class="price">Total Price</div>
+              </div>
+              <?php
+                # Insert cart widget placeholder - code in woocommerce.js will update this on page load
+                echo '<div class="widget_shopping_cart_content"></div>';
+              ?>
+            </div>
+          <?php endif;?>
+        </div>
+      <?php endif;?>
     </div>
     <?php
   }
 }
 
 if (!function_exists('init_header')) {
-  //Initialize header rendering
+  # Initialize header rendering
   function init_header() {
+    # Remove unneeded components
     remove_action('storefront_header', 'storefront_site_branding', 20);
     remove_action('storefront_header', 'storefront_product_search', 40);
     remove_action('storefront_header', 'storefront_header_cart', 60);
-    //Add topbar before header
-    add_action('storefront_before_header', 'topbar', 20);
-    //Add site branding svg
+
+    # Add site header components
+    add_action('storefront_header', 'header_handles_menu_button', 10);
+    add_action('storefront_header', 'header_handles_menu', 15);
     add_action('storefront_header', 'site_branding_svg', 20);
+    add_action('storefront_header', 'header_cart', 70);
+    add_action('storefront_header', 'header_product_search', 80);
+    add_action('storefront_header', 'header_login', 90);
   }
 }
-//Initialize header rendering
+
 add_action('init', 'init_header', 10);
 
 function init_homepage() {
