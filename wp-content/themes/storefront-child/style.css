@@ -1865,33 +1865,39 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   display: none;
 }
 
+/* line 2, sass/sass/layout/_header.scss */
+body.cart-open {
+  overflow: hidden;
+}
+
 @media (min-width: 768px) {
-  /* line 2, sass/sass/layout/_header.scss */
+  /* line 5, sass/sass/layout/_header.scss */
   .storefront-primary-navigation {
     background-color: transparent;
   }
 }
 
-/* line 8, sass/sass/layout/_header.scss */
+/* line 11, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header {
   border-bottom: none;
   padding-top: 1rem;
   padding-bottom: 0;
+  color: #222222;
   font-size: 0.875rem;
 }
 @media (min-width: 768px) {
-  /* line 8, sass/sass/layout/_header.scss */
+  /* line 11, sass/sass/layout/_header.scss */
   .woocommerce-active .site-header {
     padding-top: 1.618rem;
     padding-bottom: 1.618rem;
   }
 }
-/* line 18, sass/sass/layout/_header.scss */
+/* line 22, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header a {
   color: #0E529C;
   font-weight: 600;
 }
-/* line 22, sass/sass/layout/_header.scss */
+/* line 26, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .storefront-primary-navigation {
   float: left;
   clear: none;
@@ -1900,17 +1906,17 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 30, sass/sass/layout/_header.scss */
+/* line 34, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .main-navigation {
   width: 100%;
   margin-right: 0;
 }
-/* line 33, sass/sass/layout/_header.scss */
+/* line 37, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .main-navigation ul.menu > li > a, .woocommerce-active .site-header .main-navigation ul.nav-menu > li > a {
   line-height: 3rem;
   padding: 0 1rem;
 }
-/* line 39, sass/sass/layout/_header.scss */
+/* line 43, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-branding {
   position: absolute;
   margin-left: 50%;
@@ -1921,7 +1927,7 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 39, sass/sass/layout/_header.scss */
+  /* line 43, sass/sass/layout/_header.scss */
   .woocommerce-active .site-header .site-branding {
     position: inherit;
     left: 0;
@@ -1930,12 +1936,12 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
     margin-right: 0;
   }
 }
-/* line 55, sass/sass/layout/_header.scss */
+/* line 59, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-branding svg {
   max-height: 100%;
   max-width: 100%;
 }
-/* line 61, sass/sass/layout/_header.scss */
+/* line 65, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header ul.links {
   display: none;
   list-style: none;
@@ -1945,12 +1951,12 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   margin: 0;
 }
 @media (min-width: 768px) {
-  /* line 61, sass/sass/layout/_header.scss */
+  /* line 65, sass/sass/layout/_header.scss */
   .woocommerce-active .site-header ul.links {
     display: block;
   }
 }
-/* line 71, sass/sass/layout/_header.scss */
+/* line 75, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header ul.links li {
   float: right;
   position: relative;
@@ -1961,13 +1967,13 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   color: #222222;
   font-weight: 500;
 }
-/* line 80, sass/sass/layout/_header.scss */
+/* line 84, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header ul.links li a {
   color: #222222;
   font-weight: 500;
   line-height: 1rem;
 }
-/* line 85, sass/sass/layout/_header.scss */
+/* line 89, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header ul.links li:before {
   content: "";
   display: block;
@@ -1978,7 +1984,7 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   top: 0.2rem;
   right: 0;
 }
-/* line 97, sass/sass/layout/_header.scss */
+/* line 101, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-search {
   float: right;
   width: auto;
@@ -1990,17 +1996,17 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   display: none;
 }
 @media (min-width: 768px) {
-  /* line 97, sass/sass/layout/_header.scss */
+  /* line 101, sass/sass/layout/_header.scss */
   .woocommerce-active .site-header .site-search {
     display: block;
   }
 }
-/* line 109, sass/sass/layout/_header.scss */
+/* line 113, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-search .widget_product_search {
   float: left;
   margin: 0;
 }
-/* line 112, sass/sass/layout/_header.scss */
+/* line 116, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-search .widget_product_search form:before {
   top: 0.25rem;
   left: 1rem;
@@ -2008,7 +2014,7 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   height: 1rem;
   color: #222222;
 }
-/* line 119, sass/sass/layout/_header.scss */
+/* line 123, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-search .widget_product_search input[type=search], .woocommerce-active .site-header .site-search .widget_product_search input[type=text] {
   padding: 0 0.5rem 0 2.5rem;
   background-color: transparent;
@@ -2019,15 +2025,15 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   transition: width 0.5s;
   font-size: 0.875rem;
 }
-/* line 128, sass/sass/layout/_header.scss */
+/* line 132, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-search .widget_product_search input[type=search]:focus, .woocommerce-active .site-header .site-search .widget_product_search input[type=text]:focus {
   width: 12rem;
 }
-/* line 131, sass/sass/layout/_header.scss */
+/* line 135, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-search .widget_product_search input[type=search]::placeholder, .woocommerce-active .site-header .site-search .widget_product_search input[type=text]::placeholder {
   color: #222222;
 }
-/* line 136, sass/sass/layout/_header.scss */
+/* line 140, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-search .search-clear-btn {
   float: right;
   margin-right: 0.75rem;
@@ -2035,21 +2041,21 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   height: 0.75rem;
   cursor: pointer;
 }
-/* line 143, sass/sass/layout/_header.scss */
+/* line 147, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-search .search-clear-btn.hidden svg {
   display: none;
 }
-/* line 147, sass/sass/layout/_header.scss */
+/* line 151, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-search .search-clear-btn svg {
   width: 100%;
   height: 100%;
 }
-/* line 150, sass/sass/layout/_header.scss */
+/* line 154, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .site-search .search-clear-btn svg .line {
   stroke-width: 2px;
   stroke: #222222;
 }
-/* line 158, sass/sass/layout/_header.scss */
+/* line 162, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu-button {
   float: left;
   height: 3rem;
@@ -2060,12 +2066,12 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  /* line 158, sass/sass/layout/_header.scss */
+  /* line 162, sass/sass/layout/_header.scss */
   .woocommerce-active .site-header .header-menu-button {
     display: none;
   }
 }
-/* line 170, sass/sass/layout/_header.scss */
+/* line 174, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu {
   position: fixed;
   top: 0;
@@ -2084,17 +2090,17 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   transition-delay: 0.1s;
 }
 @media (min-width: 768px) {
-  /* line 170, sass/sass/layout/_header.scss */
+  /* line 174, sass/sass/layout/_header.scss */
   .woocommerce-active .site-header .header-menu {
     display: none;
   }
 }
-/* line 189, sass/sass/layout/_header.scss */
+/* line 193, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu.visible {
   opacity: 1;
   visibility: visible;
 }
-/* line 193, sass/sass/layout/_header.scss */
+/* line 197, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .header-menu-back {
   position: absolute;
   height: 4em;
@@ -2110,12 +2116,12 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   transition: all 0.3s;
   transition-delay: 0.1s;
 }
-/* line 207, sass/sass/layout/_header.scss */
+/* line 211, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .header-menu-back.visible {
   opacity: 1;
   visibility: visible;
 }
-/* line 212, sass/sass/layout/_header.scss */
+/* line 216, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .header-menu-close {
   position: absolute;
   height: 4em;
@@ -2125,7 +2131,7 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   cursor: pointer;
   z-index: 1003;
 }
-/* line 220, sass/sass/layout/_header.scss */
+/* line 224, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .header-menu-close svg {
   position: absolute;
   top: 1.3em;
@@ -2133,12 +2139,12 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   width: 1.4em;
   height: 1.4em;
 }
-/* line 226, sass/sass/layout/_header.scss */
+/* line 230, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .header-menu-close svg .line {
   stroke-width: 2px;
   stroke: #0E529C;
 }
-/* line 232, sass/sass/layout/_header.scss */
+/* line 236, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .header-menu-header {
   position: absolute;
   top: 0;
@@ -2150,7 +2156,7 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   font-size: 1em;
   border-bottom: solid 1px #0E529C;
 }
-/* line 243, sass/sass/layout/_header.scss */
+/* line 247, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .header-menu-footer {
   position: absolute;
   bottom: 4em;
@@ -2163,16 +2169,16 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   text-align: center;
   color: #0E529C;
 }
-/* line 254, sass/sass/layout/_header.scss */
+/* line 258, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .header-menu-footer a {
   color: #0E529C;
   font-weight: 500;
 }
-/* line 258, sass/sass/layout/_header.scss */
+/* line 262, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .header-menu-footer span {
   padding: 0 1em;
 }
-/* line 262, sass/sass/layout/_header.scss */
+/* line 266, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .handheld-navigation {
   position: relative;
   margin-top: 4em;
@@ -2181,24 +2187,24 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   overflow: hidden;
   background-color: #eeeeee;
 }
-/* line 269, sass/sass/layout/_header.scss */
+/* line 273, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .handheld-navigation ul {
   display: block;
   height: 100%;
   overflow-y: scroll;
 }
-/* line 274, sass/sass/layout/_header.scss */
+/* line 278, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .handheld-navigation > ul {
   height: calc(100% - 4em);
   background-color: white;
   transition: 0.3s;
   transition-delay: 0.1s;
 }
-/* line 279, sass/sass/layout/_header.scss */
+/* line 283, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .handheld-navigation > ul.expand {
   background-color: rgba(255, 255, 255, 0);
 }
-/* line 283, sass/sass/layout/_header.scss */
+/* line 287, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .handheld-navigation ul li a {
   display: block;
   height: 4em;
@@ -2207,11 +2213,11 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   font-size: 1em;
   border-bottom: solid 1px #0E529C;
 }
-/* line 290, sass/sass/layout/_header.scss */
+/* line 294, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .handheld-navigation ul li a:focus {
   outline-style: none;
 }
-/* line 294, sass/sass/layout/_header.scss */
+/* line 298, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .handheld-navigation .menu ul.sub-menu {
   width: 100%;
   position: absolute;
@@ -2222,7 +2228,7 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   transition-delay: 0.1s;
   z-index: 1003;
 }
-/* line 303, sass/sass/layout/_header.scss */
+/* line 307, sass/sass/layout/_header.scss */
 .woocommerce-active .site-header .header-menu .handheld-navigation .menu ul.sub-menu.expand {
   transform: translate(-100%, 0);
 }
@@ -2266,7 +2272,7 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   }
 }
 */
-/* line 353, sass/sass/layout/_header.scss */
+/* line 357, sass/sass/layout/_header.scss */
 .header-cart {
   float: right;
   margin-right: 2rem;
@@ -2277,12 +2283,12 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   z-index: 1001;
 }
 @media (min-width: 768px) {
-  /* line 353, sass/sass/layout/_header.scss */
+  /* line 357, sass/sass/layout/_header.scss */
   .header-cart {
     margin-right: 2.5rem;
   }
 }
-/* line 364, sass/sass/layout/_header.scss */
+/* line 368, sass/sass/layout/_header.scss */
 .header-cart .header-cart-content {
   padding: 0;
   display: block;
@@ -2300,23 +2306,23 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   background-position: 0.25rem 0.25rem;
   background-repeat: no-repeat;
 }
-/* line 380, sass/sass/layout/_header.scss */
+/* line 384, sass/sass/layout/_header.scss */
 .header-cart .header-cart-content .amount {
   display: none;
 }
-/* line 383, sass/sass/layout/_header.scss */
+/* line 387, sass/sass/layout/_header.scss */
 .header-cart .header-cart-content .count {
   color: #ffffff;
   font-size: 0.625rem;
   font-weight: 500;
 }
-/* line 390, sass/sass/layout/_header.scss */
+/* line 394, sass/sass/layout/_header.scss */
 .header-cart .header-cart-overlay {
   position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1102;
   opacity: 0;
@@ -2324,26 +2330,26 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 403, sass/sass/layout/_header.scss */
+/* line 407, sass/sass/layout/_header.scss */
 .header-cart.visible .header-cart-overlay {
   opacity: 1;
   visibility: visible;
   transition: all 0.3s;
 }
-/* line 409, sass/sass/layout/_header.scss */
+/* line 413, sass/sass/layout/_header.scss */
 .header-cart .header-cart-panel {
   position: fixed;
   top: 0px;
   right: 0px;
   height: 100%;
   width: 100%;
+  padding: 0 1.5rem 0 1.5rem;
   z-index: 1103;
   box-sizing: border-box;
   cursor: default;
   visibility: hidden;
   overflow-y: hidden;
   background: #ffffff;
-  color: #333333;
   opacity: 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -2351,111 +2357,126 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   transition-delay: 0.1s;
 }
 @media (min-width: 768px) {
-  /* line 409, sass/sass/layout/_header.scss */
+  /* line 413, sass/sass/layout/_header.scss */
   .header-cart .header-cart-panel {
     width: 23.438rem;
   }
 }
-/* line 431, sass/sass/layout/_header.scss */
+/* line 435, sass/sass/layout/_header.scss */
 .header-cart .header-cart-panel .header-cart-panel-title {
-  position: absolute;
-  top: 1em;
-  left: 1.5rem;
-  line-height: 1.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+  margin-top: 2.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
-/* line 440, sass/sass/layout/_header.scss */
+/* line 441, sass/sass/layout/_header.scss */
 .header-cart .header-cart-panel .header-cart-close {
   position: absolute;
-  height: 4em;
-  width: 4em;
+  height: 3.25rem;
+  width: 3.25rem;
   top: 0;
   right: 0;
   cursor: pointer;
   z-index: 1103;
+  background-color: #0E529C;
 }
-/* line 448, sass/sass/layout/_header.scss */
+/* line 450, sass/sass/layout/_header.scss */
 .header-cart .header-cart-panel .header-cart-close svg {
   position: absolute;
-  top: 1.3em;
-  right: 1.3em;
-  width: 1.4em;
-  height: 1.4em;
+  top: 1rem;
+  right: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
-/* line 454, sass/sass/layout/_header.scss */
+/* line 456, sass/sass/layout/_header.scss */
 .header-cart .header-cart-panel .header-cart-close svg .line {
   stroke-width: 2px;
 }
-/* line 460, sass/sass/layout/_header.scss */
+/* line 462, sass/sass/layout/_header.scss */
 .header-cart.visible .header-cart-panel {
   opacity: 1;
   visibility: visible;
   transition: all 0.3s;
 }
-/* line 466, sass/sass/layout/_header.scss */
+/* line 468, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart {
   display: block;
   height: 100%;
-  margin: 0;
-  padding-top: 4.4rem;
+  margin: 2rem 0 0 0;
 }
-/* line 473, sass/sass/layout/_header.scss */
+/* line 472, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart h2.widgettitle {
   display: none;
 }
-/* line 477, sass/sass/layout/_header.scss */
+/* line 475, sass/sass/layout/_header.scss */
+.header-cart .widget_shopping_cart .widget_shopping_cart_header {
+  height: 3.125rem;
+  font-weight: 500;
+  box-sizing: content-box;
+  border-top: 4px solid #222222;
+  border-bottom: 1px solid #222222;
+}
+/* line 481, sass/sass/layout/_header.scss */
+.header-cart .widget_shopping_cart .widget_shopping_cart_header .item {
+  float: left;
+  line-height: 3.125rem;
+}
+/* line 485, sass/sass/layout/_header.scss */
+.header-cart .widget_shopping_cart .widget_shopping_cart_header .price {
+  float: right;
+  line-height: 3.125rem;
+}
+/* line 490, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .widget_shopping_cart_content {
-  height: 100%;
+  height: calc(100% - 10rem);
   position: relative;
 }
-/* line 482, sass/sass/layout/_header.scss */
+/* line 494, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .product_list_widget {
   max-height: calc(100% - 10rem);
   overflow-y: scroll;
-  padding: 0 1.5rem 0 1.5rem;
 }
-/* line 488, sass/sass/layout/_header.scss */
+/* line 497, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .product_list_widget li {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding: 1.5rem 0;
   font-size: .875rem;
+  border-bottom: 1px solid #999999;
 }
-/* line 493, sass/sass/layout/_header.scss */
+/* line 501, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .product_list_widget li:last-child {
   border-bottom: none;
 }
-/* line 497, sass/sass/layout/_header.scss */
+/* line 505, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .product_list_widget li .item-thumbmail {
   float: left;
-  width: 3.75rem;
+  width: 6.25rem;
   text-align: left;
 }
-/* line 501, sass/sass/layout/_header.scss */
+/* line 509, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .product_list_widget li .item-thumbmail img {
   float: left;
-  width: 3.75rem;
+  width: 6.25rem;
   max-width: 100%;
 }
-/* line 508, sass/sass/layout/_header.scss */
+/* line 516, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .product_list_widget li .item-data {
   float: left;
-  width: calc(100% - 7.5rem);
+  width: calc(100% - 10rem);
   padding-left: 1rem;
   padding-right: 1rem;
   color: #666666;
 }
-/* line 514, sass/sass/layout/_header.scss */
+/* line 522, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .product_list_widget li .item-data .title {
+  font-weight: 500;
   color: #000000;
 }
-/* line 519, sass/sass/layout/_header.scss */
+/* line 528, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .product_list_widget li .item-subtotal {
   float: left;
   width: 3.75rem;
   text-align: right;
 }
-/* line 525, sass/sass/layout/_header.scss */
+/* line 534, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .product_list_widget li a.remove {
   position: relative;
   float: left;
@@ -2465,47 +2486,47 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   text-decoration: underline;
   cursor: pointer;
 }
-/* line 533, sass/sass/layout/_header.scss */
+/* line 542, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .product_list_widget li a.remove:before {
   content: "";
 }
-/* line 540, sass/sass/layout/_header.scss */
+/* line 549, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .cart-pannel-bottom {
   position: absolute;
   height: 10rem;
   width: 100%;
-  padding: 0 1.5rem 0 1.5rem;
   bottom: 0;
+  background-color: #ffffff;
 }
-/* line 546, sass/sass/layout/_header.scss */
+/* line 555, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .cart-pannel-bottom .total {
   padding-top: 1rem;
   text-align: left;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid #999999;
 }
-/* line 550, sass/sass/layout/_header.scss */
+/* line 559, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .cart-pannel-bottom .total .total-label {
-  width: 85%;
+  width: 48.57143%;
   float: left;
-  margin-right: 5%;
-  color: #999999;
+  margin-right: 2.85714%;
+  font-size: 1rem;
+  font-weight: bold;
 }
-/* line 554, sass/sass/layout/_header.scss */
+/* line 564, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .cart-pannel-bottom .total .total-content {
-  width: 85%;
+  width: 48.57143%;
   float: right;
   margin-right: 0;
   text-align: right;
-  color: #333333;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
 }
-/* line 562, sass/sass/layout/_header.scss */
+/* line 571, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .cart-pannel-bottom a.button {
   background-color: #0E529C;
   color: #ffffff;
 }
-/* line 565, sass/sass/layout/_header.scss */
+/* line 574, sass/sass/layout/_header.scss */
 .header-cart .widget_shopping_cart .cart-pannel-bottom a.button:after {
   content: "";
 }

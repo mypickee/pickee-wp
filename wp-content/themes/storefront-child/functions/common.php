@@ -16,12 +16,12 @@ if (!function_exists('storefront_cart_link_fragment')) {
     $fragments['a.cart-contents'] = ob_get_clean();
 
     ob_start();
-    topbar_cart_panel_title();
-    $fragments['.topbar-cart-panel-title'] = ob_get_clean();
+    header_cart_panel_title();
+    $fragments['.header-cart-panel-title'] = ob_get_clean();
 
     ob_start();
-    topbar_cart_link();
-    $fragments['.topbar-cart-content'] = ob_get_clean();
+    header_cart_link();
+    $fragments['.header-cart-content'] = ob_get_clean();
     return $fragments;
   }
 }
@@ -161,6 +161,20 @@ if (!function_exists('header_cart_link')) {
   }
 }
 
+if (!function_exists('header_cart_panel_title')) {
+  function header_cart_panel_title() {
+    ?>
+    <div class="header-cart-panel-title">
+      <?php if (!WC()->cart->is_empty()) : ?>
+        Shopping Bag (<?php echo WC()->cart->get_cart_contents_count();?>)
+      <?php else:?>
+        No Items in Shopping Bag
+      <?php endif; ?>
+    </div>
+    <?php
+  }
+}
+
 if (!function_exists('header_cart')) {
   /**
    * Display header Cart component
@@ -184,14 +198,20 @@ if (!function_exists('header_cart')) {
           <div class="header-cart-close header-cart-toggle">
             <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?>
           </div>
-          <div class="header-cart-panel-title">
-            <?php if (!WC()->cart->is_empty()) : ?>
-              <?php echo wp_kses_data(sprintf(_n('%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront'), WC()->cart->get_cart_contents_count()));?> in Shopping Bag
-            <?php else:?>
-              No Items in Shopping Bag
-            <?php endif; ?>
-          </div>
-          <?php the_widget('WC_Widget_Cart', 'title='); ?>
+          <?php header_cart_panel_title(); ?>
+          <?php //the_widget('WC_Widget_Cart', 'title='); ?>
+          <?php if (!WC()->cart->is_empty()) : ?>
+            <div class="widget woocommerce widget_shopping_cart">
+              <div class="widget_shopping_cart_header">
+                <div class="item">Item</div>
+                <div class="price">Total Price</div>
+              </div>
+              <?php
+                # Insert cart widget placeholder - code in woocommerce.js will update this on page load
+                echo '<div class="widget_shopping_cart_content"></div>';
+              ?>
+            </div>
+          <?php endif;?>
         </div>
       <?php endif;?>
     </div>

@@ -1,4 +1,7 @@
 $cart-padding: 1.5rem;
+body.cart-open {
+  overflow: hidden;
+}
 .storefront-primary-navigation {
   @include breakpoint($screen-sm) {
     background-color: transparent;
@@ -9,6 +12,7 @@ $cart-padding: 1.5rem;
   border-bottom: none;
   padding-top: 1rem;
   padding-bottom: 0;
+  color: $black;
   @include font-size-small;
   @include breakpoint($screen-sm) {
     padding-top: 1.618rem;
@@ -389,10 +393,10 @@ $cart-padding: 1.5rem;
 
   .header-cart-overlay {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1102;
     opacity: 0;
@@ -415,13 +419,13 @@ $cart-padding: 1.5rem;
     @include breakpoint($screen-sm) {
       width: 23.438rem;
     }
+    padding: 0 $cart-padding 0 $cart-padding;
     z-index: 1103;
     box-sizing: border-box;
     cursor: default;
     visibility: hidden;
     overflow-y: hidden;
     background: #ffffff;
-    color: #333333;
     opacity: 0;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
@@ -429,28 +433,26 @@ $cart-padding: 1.5rem;
     transition-delay: 0.1s;
 
     .header-cart-panel-title {
-      position: absolute;
-      top: 1em;
-      left: $cart-padding;
-      line-height: 1.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
+      margin-top: 2.5rem;
+      font-size: 1.25rem;
+      font-weight: bold;
     }
 
     .header-cart-close {
       position: absolute;
-      height: 4em;
-      width: 4em;
+      height: 3.25rem;
+      width: 3.25rem;
       top: 0;
       right: 0;
       cursor: pointer;
       z-index: 1103;
+      background-color: $pickee-blue;
       svg {
         position: absolute;
-        top: 1.3em;
-        right: 1.3em;
-        width: 1.4em;
-        height: 1.4em;
+        top: 1rem;
+        right: 1rem;
+        width: 1.25rem;
+        height: 1.25rem;
         .line {
           stroke-width: 2px;
         }
@@ -466,52 +468,59 @@ $cart-padding: 1.5rem;
   .widget_shopping_cart {
     display: block;
     height: 100%;
-    margin: 0;
-    padding-top: 4.4rem;
-    //z-index: 999999;
-
+    margin: 2rem 0 0 0;
     h2.widgettitle {
       display: none;
     }
-
+    .widget_shopping_cart_header {
+      height: 3.125rem;
+      font-weight: 500;
+      box-sizing: content-box;
+      border-top: 4px solid $black;
+      border-bottom: 1px solid $black;
+      .item {
+        float: left;
+        line-height: 3.125rem;
+      }
+      .price {
+        float: right;
+        line-height: 3.125rem;
+      }
+    }
     .widget_shopping_cart_content {
-      height: 100%;
+      height: calc(100% - 10rem);
       position: relative;
     }
-
     .product_list_widget {
-
       max-height: calc(100% - 10rem);
       overflow-y: scroll;
-      padding: 0 $cart-padding 0 $cart-padding;
-
       li {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding: 1.5rem 0;
         font-size: .875rem;
-
+        border-bottom: 1px solid $gray;
         &:last-child {
           border-bottom: none;
         }
 
         .item-thumbmail {
           float: left;
-          width: 3.75rem;
+          width: 6.25rem;
           text-align: left;
           img {
             float: left;
-            width: 3.75rem;
+            width: 6.25rem;
             max-width: 100%;
           }
         }
 
         .item-data {
           float: left;
-          width: calc(100% - 7.5rem);
+          width: calc(100% - 10rem);
           padding-left: 1rem;
           padding-right: 1rem;
           color: #666666;
           .title {
+            font-weight: 500;
             color: #000000;
           }
         }
@@ -541,21 +550,21 @@ $cart-padding: 1.5rem;
       position: absolute;
       height: 10rem;
       width: 100%;
-      padding: 0 $cart-padding 0 $cart-padding;
       bottom: 0;
+      background-color: #ffffff;
       .total {
         padding-top: 1rem;
         text-align: left;
-        border-top: 1px solid rgba(0,0,0,.05);
+        border-top: 1px solid $gray;
         .total-label {
-          @include span(6);
-          color: #999999;
+          @include span(6 of 12);
+          font-size: 1rem;
+          font-weight: bold;
         }
         .total-content {
-          @include span(6 last);
+          @include span(6 of 12 last);
           text-align: right;
-          color: #333333;
-          font-size: 1.2rem;
+          font-size: 1rem;
           font-weight: 600;
         }
       }
