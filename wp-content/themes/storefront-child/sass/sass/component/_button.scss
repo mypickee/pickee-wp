@@ -28,17 +28,19 @@
     display: block;
     width: 100%;
   }
-  &.btn-arrow::after {
-    position: absolute;
-    content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow.svg);
-    margin-left: 0.5rem;
-    transition: all .15s ease-in-out;
-  }
-  &.btn-arrow:hover::after {
-    margin-left: 1rem;
-  }
-  &.btn-arrow:active::after{
-    margin-left: 0.5rem;
+  &.btn-arrow, &.single_add_to_cart_button {
+    &::after {
+      position: absolute;
+      content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow.svg);
+      margin-left: 0.5rem;
+      transition: all .15s ease-in-out;
+    }
+    &:hover::after {
+      margin-left: 1rem;
+    }
+     &:active::after{
+      margin-left: 0.5rem;
+    }
   }
   &.btn-link {
     background-color: transparent;
@@ -49,14 +51,16 @@
     &:active{
       color: $pickee-blue;
     }
-    &.btn-arrow::after {
-      content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_blue.svg);
-    }
-    &.btn-arrow:hover::after {
-      content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_darkblue.svg);
-    }
-    &.btn-arrow:active::after{
-      content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_blue.svg);
+    &.btn-arrow {
+      &::after {
+        content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_blue.svg);
+      }
+      &:hover::after {
+        content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_darkblue.svg);
+      }
+      &:active::after{
+        content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_blue.svg);
+      }
     }
     &.disabled, &:disabled {
       color: $gray-light;
