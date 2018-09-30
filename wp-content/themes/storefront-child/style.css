@@ -740,6 +740,7 @@ ul.menu li a {
 /* line 1, sass/sass/override/_breadcrumb.scss */
 .woocommerce-breadcrumb {
   text-align: center;
+  font-size: 0.75rem;
 }
 @media (min-width: 768px) {
   /* line 1, sass/sass/override/_breadcrumb.scss */
@@ -822,25 +823,28 @@ ul.menu li a {
   }
 }
 /* line 44, sass/sass/override/_single-product.scss */
+.storefront-full-width-content.single-product div.product .summary .pwb-single-product-brands {
+  margin-bottom: 1rem;
+}
+/* line 47, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .summary .pwb-single-product-brands a {
-  color: #000000;
+  color: #222222;
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0;
 }
-/* line 50, sass/sass/override/_single-product.scss */
+/* line 53, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .summary p.price {
   width: 40%;
   float: left;
   margin-right: 20%;
   text-align: left;
-  margin-top: 0.5rem;
+  margin-top: 0;
   margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: 100;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 @media (min-width: 768px) {
-  /* line 50, sass/sass/override/_single-product.scss */
+  /* line 53, sass/sass/override/_single-product.scss */
   .storefront-full-width-content.single-product div.product .summary p.price {
     width: 100%;
     float: left;
@@ -849,7 +853,7 @@ ul.menu li a {
     text-align: center;
   }
 }
-/* line 63, sass/sass/override/_single-product.scss */
+/* line 66, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .summary form.cart .quantity {
   width: 40%;
   float: right;
@@ -859,7 +863,7 @@ ul.menu li a {
   margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
-  /* line 63, sass/sass/override/_single-product.scss */
+  /* line 66, sass/sass/override/_single-product.scss */
   .storefront-full-width-content.single-product div.product .summary form.cart .quantity {
     width: 100%;
     float: left;
@@ -868,43 +872,44 @@ ul.menu li a {
     text-align: center;
   }
 }
-/* line 73, sass/sass/override/_single-product.scss */
+/* line 76, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .summary form.cart button {
   display: block;
   width: 100%;
   background-color: #0E529C;
 }
 @media (min-width: 768px) {
-  /* line 73, sass/sass/override/_single-product.scss */
+  /* line 76, sass/sass/override/_single-product.scss */
   .storefront-full-width-content.single-product div.product .summary form.cart button {
     display: inline-block;
     width: auto;
   }
 }
-/* line 85, sass/sass/override/_single-product.scss */
+/* line 88, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .woocommerce-product-rating {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
+  margin-top: 0;
 }
-/* line 87, sass/sass/override/_single-product.scss */
+/* line 91, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .woocommerce-product-rating .hearts {
-  padding: 0.5rem 0 0;
   line-height: 2rem;
   display: inline-block;
 }
-/* line 91, sass/sass/override/_single-product.scss */
+/* line 94, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .woocommerce-product-rating .hearts svg {
   display: inline-block;
   width: 1rem;
   margin: 0.25rem;
   vertical-align: middle;
 }
-/* line 98, sass/sass/override/_single-product.scss */
+/* line 101, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .woocommerce-product-rating .woocommerce-review-link {
+  font-size: 0.875rem;
+  color: #222222;
+  font-weight: 500;
   text-decoration: none;
-  color: #333333;
-  font-size: 1.2rem;
 }
-/* line 105, sass/sass/override/_single-product.scss */
+/* line 109, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block {
   clear: both;
   margin-left: calc(-50vw + 50%);
@@ -913,82 +918,84 @@ ul.menu li a {
   padding: 3rem 0;
   color: #ffffff;
 }
-/* line 112, sass/sass/override/_single-product.scss */
+/* line 116, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block h4 {
   color: #ffffff;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: bold;
   margin-top: 1.5rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
-  /* line 119, sass/sass/override/_single-product.scss */
+  /* line 124, sass/sass/override/_single-product.scss */
   .storefront-full-width-content.single-product div.product .product-description-block .description-left {
     width: 48.57143%;
     float: left;
     margin-right: 2.85714%;
   }
-  /* line 122, sass/sass/override/_single-product.scss */
+  /* line 127, sass/sass/override/_single-product.scss */
   .storefront-full-width-content.single-product div.product .product-description-block .description-right {
     width: 48.57143%;
     float: right;
     margin-right: 0;
   }
 }
-/* line 127, sass/sass/override/_single-product.scss */
+/* line 132, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block .attribute-list .attribute-item {
   display: flex;
   float: left;
   width: 100%;
 }
 @media (min-width: 768px) {
-  /* line 127, sass/sass/override/_single-product.scss */
+  /* line 132, sass/sass/override/_single-product.scss */
   .storefront-full-width-content.single-product div.product .product-description-block .attribute-list .attribute-item {
     width: 50%;
   }
 }
-/* line 134, sass/sass/override/_single-product.scss */
+/* line 139, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block .attribute-list .attribute-item .attribute-name {
   margin-right: 0.5em;
 }
-/* line 137, sass/sass/override/_single-product.scss */
+/* line 142, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block .attribute-list .attribute-item.full-width {
   width: 100%;
 }
-/* line 143, sass/sass/override/_single-product.scss */
+/* line 148, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block .attribute-column.column-1 {
   width: 48.57143%;
   float: left;
   margin-right: 2.85714%;
 }
-/* line 146, sass/sass/override/_single-product.scss */
+/* line 151, sass/sass/override/_single-product.scss */
 .storefront-full-width-content.single-product div.product .product-description-block .attribute-column.column-2 {
   width: 48.57143%;
   float: right;
   margin-right: 0;
 }
 
-/* line 153, sass/sass/override/_single-product.scss */
+/* line 158, sass/sass/override/_single-product.scss */
 #reviews {
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 153, sass/sass/override/_single-product.scss */
+  /* line 158, sass/sass/override/_single-product.scss */
   #reviews {
     text-align: left;
   }
 }
-/* line 158, sass/sass/override/_single-product.scss */
-#reviews h2 {
-  margin-top: 3rem;
+/* line 163, sass/sass/override/_single-product.scss */
+#reviews .review-form-toggle {
   display: block;
-  font-size: 2rem;
+  width: 200px;
+  margin: 0 auto;
   text-align: center;
+  font-size: 0.875rem;
 }
-/* line 164, sass/sass/override/_single-product.scss */
+/* line 170, sass/sass/override/_single-product.scss */
 #reviews .commentlist {
   margin-top: 2rem;
 }
-/* line 166, sass/sass/override/_single-product.scss */
+/* line 172, sass/sass/override/_single-product.scss */
 #reviews .commentlist li {
   display: block;
   float: left;
@@ -998,28 +1005,28 @@ ul.menu li a {
   text-align: left;
 }
 @media (min-width: 768px) {
-  /* line 166, sass/sass/override/_single-product.scss */
+  /* line 172, sass/sass/override/_single-product.scss */
   #reviews .commentlist li {
     width: 50%;
   }
 }
-/* line 176, sass/sass/override/_single-product.scss */
+/* line 182, sass/sass/override/_single-product.scss */
 #reviews .commentlist li p.meta {
   margin-bottom: 0;
 }
-/* line 179, sass/sass/override/_single-product.scss */
+/* line 185, sass/sass/override/_single-product.scss */
 #reviews .commentlist li .hearts {
   line-height: 2rem;
   display: inline-block;
 }
-/* line 182, sass/sass/override/_single-product.scss */
+/* line 188, sass/sass/override/_single-product.scss */
 #reviews .commentlist li .hearts svg {
   display: inline-block;
   width: 1rem;
   margin-right: 0.5rem;
   vertical-align: middle;
 }
-/* line 191, sass/sass/override/_single-product.scss */
+/* line 197, sass/sass/override/_single-product.scss */
 #reviews .comment-form-rating label {
   line-height: 2rem;
   height: 2rem;
@@ -1027,7 +1034,7 @@ ul.menu li a {
   margin-right: 1.5rem;
 }
 
-/* line 198, sass/sass/override/_single-product.scss */
+/* line 204, sass/sass/override/_single-product.scss */
 #review-form-trigger {
   display: inline-block;
   height: 3rem;
@@ -1037,7 +1044,7 @@ ul.menu li a {
   cursor: pointer;
 }
 
-/* line 206, sass/sass/override/_single-product.scss */
+/* line 212, sass/sass/override/_single-product.scss */
 #review_form_wrapper {
   clear: both;
   margin-left: calc(-50vw + 50%);
@@ -1045,21 +1052,21 @@ ul.menu li a {
   background-color: #f9f9f9;
   padding: 1rem 0;
 }
-/* line 212, sass/sass/override/_single-product.scss */
+/* line 218, sass/sass/override/_single-product.scss */
 #review_form_wrapper.hidden {
   display: none;
 }
-/* line 215, sass/sass/override/_single-product.scss */
+/* line 221, sass/sass/override/_single-product.scss */
 #review_form_wrapper #respond {
   background-color: transparent;
 }
 
-/* line 219, sass/sass/override/_single-product.scss */
+/* line 225, sass/sass/override/_single-product.scss */
 .review-form-inner-wrapper {
   position: relative;
 }
 
-/* line 222, sass/sass/override/_single-product.scss */
+/* line 228, sass/sass/override/_single-product.scss */
 .review-form-close {
   position: absolute;
   height: 3em;
@@ -1069,108 +1076,105 @@ ul.menu li a {
   cursor: pointer;
   z-index: 1003;
 }
-/* line 230, sass/sass/override/_single-product.scss */
+/* line 236, sass/sass/override/_single-product.scss */
 .review-form-close svg .line {
   stroke-width: 2px;
   stroke: #0E529C;
 }
 
-/* line 235, sass/sass/override/_single-product.scss */
+/* line 241, sass/sass/override/_single-product.scss */
 #review_form {
   margin: 0 auto;
   width: 100%;
 }
 @media (min-width: 768px) {
-  /* line 235, sass/sass/override/_single-product.scss */
+  /* line 241, sass/sass/override/_single-product.scss */
   #review_form {
     width: 600px;
   }
 }
 @media (min-width: 992px) {
-  /* line 235, sass/sass/override/_single-product.scss */
+  /* line 241, sass/sass/override/_single-product.scss */
   #review_form {
     width: 600px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 235, sass/sass/override/_single-product.scss */
+  /* line 241, sass/sass/override/_single-product.scss */
   #review_form {
     width: 768px;
   }
 }
 @media (min-width: 1440px) {
-  /* line 235, sass/sass/override/_single-product.scss */
+  /* line 241, sass/sass/override/_single-product.scss */
   #review_form {
     width: 960px;
   }
 }
-/* line 250, sass/sass/override/_single-product.scss */
+/* line 256, sass/sass/override/_single-product.scss */
 #review_form textarea {
   background-color: #ffffff;
   box-shadow: none;
 }
 
-/* line 261, sass/sass/override/_single-product.scss */
+/* line 267, sass/sass/override/_single-product.scss */
 p.stars {
   vertical-align: middle;
 }
-/* line 263, sass/sass/override/_single-product.scss */
+/* line 269, sass/sass/override/_single-product.scss */
 p.stars a {
   height: 1.5rem;
   width: 2rem;
   outline: 0;
 }
-/* line 267, sass/sass/override/_single-product.scss */
+/* line 273, sass/sass/override/_single-product.scss */
 p.stars a:before {
   width: 1.5em;
   height: 1.5em;
   content: url(/wp-content/themes/storefront-child/assets/svg/heart_outline.svg);
   opacity: 1;
 }
-/* line 274, sass/sass/override/_single-product.scss */
+/* line 280, sass/sass/override/_single-product.scss */
 p.stars a:hover ~ a:before {
   content: url(/wp-content/themes/storefront-child/assets/svg/heart_outline.svg);
   opacity: 1;
 }
-/* line 278, sass/sass/override/_single-product.scss */
+/* line 284, sass/sass/override/_single-product.scss */
 p.stars:hover a:before {
   content: url(/wp-content/themes/storefront-child/assets/svg/heart_fillled.svg);
   opacity: 1;
 }
-/* line 283, sass/sass/override/_single-product.scss */
+/* line 289, sass/sass/override/_single-product.scss */
 p.stars.selected a.active:before {
   content: url(/wp-content/themes/storefront-child/assets/svg/heart_fillled.svg);
   opacity: 1;
 }
-/* line 287, sass/sass/override/_single-product.scss */
+/* line 293, sass/sass/override/_single-product.scss */
 p.stars.selected a.active ~ a:before {
   content: url(/wp-content/themes/storefront-child/assets/svg/heart_outline.svg);
   opacity: 1;
 }
-/* line 291, sass/sass/override/_single-product.scss */
+/* line 297, sass/sass/override/_single-product.scss */
 p.stars.selected a:not(.active):before {
   content: url(/wp-content/themes/storefront-child/assets/svg/heart_fillled.svg);
   opacity: 1;
 }
 
-/* line 297, sass/sass/override/_single-product.scss */
+/* line 303, sass/sass/override/_single-product.scss */
 p.comment-form-comment {
   margin-top: 2rem;
 }
 
-/* line 302, sass/sass/override/_single-product.scss */
-.storefront-full-width-content.single-product .related, .storefront-full-width-content.single-product .upsells {
+/* line 308, sass/sass/override/_single-product.scss */
+.storefront-full-width-content.single-product #reviews, .storefront-full-width-content.single-product .related, .storefront-full-width-content.single-product .upsells {
   margin-bottom: 2rem;
 }
-/* line 304, sass/sass/override/_single-product.scss */
-.storefront-full-width-content.single-product .related h2, .storefront-full-width-content.single-product .related.products > h2:first-child, .storefront-full-width-content.single-product .upsells h2, .storefront-full-width-content.single-product .upsells.products > h2:first-child {
+/* line 310, sass/sass/override/_single-product.scss */
+.storefront-full-width-content.single-product #reviews h2, .storefront-full-width-content.single-product #reviews.products > h2:first-child, .storefront-full-width-content.single-product .related h2, .storefront-full-width-content.single-product .related.products > h2:first-child, .storefront-full-width-content.single-product .upsells h2, .storefront-full-width-content.single-product .upsells.products > h2:first-child {
+  margin-top: 3rem;
+  display: block;
+  font-size: 2rem;
   text-align: center;
-}
-@media (min-width: 768px) {
-  /* line 304, sass/sass/override/_single-product.scss */
-  .storefront-full-width-content.single-product .related h2, .storefront-full-width-content.single-product .related.products > h2:first-child, .storefront-full-width-content.single-product .upsells h2, .storefront-full-width-content.single-product .upsells.products > h2:first-child {
-    text-align: left;
-  }
 }
 
 /* line 2, sass/sass/override/_cart.scss */
@@ -2998,51 +3002,51 @@ body.brand-page .brand-logo-block h1 {
   display: block;
   width: 100%;
 }
-/* line 31, sass/sass/component/_button.scss */
-.added_to_cart.btn-arrow::after, .button.btn-arrow::after, button.btn-arrow::after, input[type=button].btn-arrow::after, input[type=reset].btn-arrow::after, input[type=submit].btn-arrow::after, .btn.btn-arrow::after {
+/* line 32, sass/sass/component/_button.scss */
+.added_to_cart.btn-arrow::after, .added_to_cart.single_add_to_cart_button::after, .button.btn-arrow::after, .button.single_add_to_cart_button::after, button.btn-arrow::after, button.single_add_to_cart_button::after, input[type=button].btn-arrow::after, input[type=button].single_add_to_cart_button::after, input[type=reset].btn-arrow::after, input[type=reset].single_add_to_cart_button::after, input[type=submit].btn-arrow::after, input[type=submit].single_add_to_cart_button::after, .btn.btn-arrow::after, .btn.single_add_to_cart_button::after {
   position: absolute;
   content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow.svg);
   margin-left: 0.5rem;
   transition: all .15s ease-in-out;
 }
-/* line 37, sass/sass/component/_button.scss */
-.added_to_cart.btn-arrow:hover::after, .button.btn-arrow:hover::after, button.btn-arrow:hover::after, input[type=button].btn-arrow:hover::after, input[type=reset].btn-arrow:hover::after, input[type=submit].btn-arrow:hover::after, .btn.btn-arrow:hover::after {
+/* line 38, sass/sass/component/_button.scss */
+.added_to_cart.btn-arrow:hover::after, .added_to_cart.single_add_to_cart_button:hover::after, .button.btn-arrow:hover::after, .button.single_add_to_cart_button:hover::after, button.btn-arrow:hover::after, button.single_add_to_cart_button:hover::after, input[type=button].btn-arrow:hover::after, input[type=button].single_add_to_cart_button:hover::after, input[type=reset].btn-arrow:hover::after, input[type=reset].single_add_to_cart_button:hover::after, input[type=submit].btn-arrow:hover::after, input[type=submit].single_add_to_cart_button:hover::after, .btn.btn-arrow:hover::after, .btn.single_add_to_cart_button:hover::after {
   margin-left: 1rem;
 }
-/* line 40, sass/sass/component/_button.scss */
-.added_to_cart.btn-arrow:active::after, .button.btn-arrow:active::after, button.btn-arrow:active::after, input[type=button].btn-arrow:active::after, input[type=reset].btn-arrow:active::after, input[type=submit].btn-arrow:active::after, .btn.btn-arrow:active::after {
+/* line 41, sass/sass/component/_button.scss */
+.added_to_cart.btn-arrow:active::after, .added_to_cart.single_add_to_cart_button:active::after, .button.btn-arrow:active::after, .button.single_add_to_cart_button:active::after, button.btn-arrow:active::after, button.single_add_to_cart_button:active::after, input[type=button].btn-arrow:active::after, input[type=button].single_add_to_cart_button:active::after, input[type=reset].btn-arrow:active::after, input[type=reset].single_add_to_cart_button:active::after, input[type=submit].btn-arrow:active::after, input[type=submit].single_add_to_cart_button:active::after, .btn.btn-arrow:active::after, .btn.single_add_to_cart_button:active::after {
   margin-left: 0.5rem;
 }
-/* line 43, sass/sass/component/_button.scss */
+/* line 45, sass/sass/component/_button.scss */
 .added_to_cart.btn-link, .button.btn-link, button.btn-link, input[type=button].btn-link, input[type=reset].btn-link, input[type=submit].btn-link, .btn.btn-link {
   background-color: transparent;
   color: #0E529C;
 }
-/* line 46, sass/sass/component/_button.scss */
+/* line 48, sass/sass/component/_button.scss */
 .added_to_cart.btn-link:hover, .button.btn-link:hover, button.btn-link:hover, input[type=button].btn-link:hover, input[type=reset].btn-link:hover, input[type=submit].btn-link:hover, .btn.btn-link:hover {
   color: #0c3c72;
 }
-/* line 49, sass/sass/component/_button.scss */
+/* line 51, sass/sass/component/_button.scss */
 .added_to_cart.btn-link:active, .button.btn-link:active, button.btn-link:active, input[type=button].btn-link:active, input[type=reset].btn-link:active, input[type=submit].btn-link:active, .btn.btn-link:active {
   color: #0E529C;
 }
-/* line 52, sass/sass/component/_button.scss */
+/* line 55, sass/sass/component/_button.scss */
 .added_to_cart.btn-link.btn-arrow::after, .button.btn-link.btn-arrow::after, button.btn-link.btn-arrow::after, input[type=button].btn-link.btn-arrow::after, input[type=reset].btn-link.btn-arrow::after, input[type=submit].btn-link.btn-arrow::after, .btn.btn-link.btn-arrow::after {
   content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_blue.svg);
 }
-/* line 55, sass/sass/component/_button.scss */
+/* line 58, sass/sass/component/_button.scss */
 .added_to_cart.btn-link.btn-arrow:hover::after, .button.btn-link.btn-arrow:hover::after, button.btn-link.btn-arrow:hover::after, input[type=button].btn-link.btn-arrow:hover::after, input[type=reset].btn-link.btn-arrow:hover::after, input[type=submit].btn-link.btn-arrow:hover::after, .btn.btn-link.btn-arrow:hover::after {
   content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_darkblue.svg);
 }
-/* line 58, sass/sass/component/_button.scss */
+/* line 61, sass/sass/component/_button.scss */
 .added_to_cart.btn-link.btn-arrow:active::after, .button.btn-link.btn-arrow:active::after, button.btn-link.btn-arrow:active::after, input[type=button].btn-link.btn-arrow:active::after, input[type=reset].btn-link.btn-arrow:active::after, input[type=submit].btn-link.btn-arrow:active::after, .btn.btn-link.btn-arrow:active::after {
   content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_blue.svg);
 }
-/* line 61, sass/sass/component/_button.scss */
+/* line 65, sass/sass/component/_button.scss */
 .added_to_cart.btn-link.disabled, .added_to_cart.btn-link:disabled, .button.btn-link.disabled, .button.btn-link:disabled, button.btn-link.disabled, button.btn-link:disabled, input[type=button].btn-link.disabled, input[type=button].btn-link:disabled, input[type=reset].btn-link.disabled, input[type=reset].btn-link:disabled, input[type=submit].btn-link.disabled, input[type=submit].btn-link:disabled, .btn.btn-link.disabled, .btn.btn-link:disabled {
   color: #cccccc;
 }
-/* line 63, sass/sass/component/_button.scss */
+/* line 67, sass/sass/component/_button.scss */
 .added_to_cart.btn-link.disabled.btn-arrow::after, .added_to_cart.btn-link:disabled.btn-arrow::after, .button.btn-link.disabled.btn-arrow::after, .button.btn-link:disabled.btn-arrow::after, button.btn-link.disabled.btn-arrow::after, button.btn-link:disabled.btn-arrow::after, input[type=button].btn-link.disabled.btn-arrow::after, input[type=button].btn-link:disabled.btn-arrow::after, input[type=reset].btn-link.disabled.btn-arrow::after, input[type=reset].btn-link:disabled.btn-arrow::after, input[type=submit].btn-link.disabled.btn-arrow::after, input[type=submit].btn-link:disabled.btn-arrow::after, .btn.btn-link.disabled.btn-arrow::after, .btn.btn-link:disabled.btn-arrow::after {
   content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_gray.svg);
 }
