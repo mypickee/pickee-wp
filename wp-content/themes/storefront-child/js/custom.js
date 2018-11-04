@@ -41,8 +41,8 @@
       asNavFor: '.carousel-captions'
     });
     $('.carousel-captions').slick({
-      prevArrow: '<button type="button" class="control-btn btn-prev">&larr;</button>',
-      nextArrow: '<button type="button" class="control-btn btn-next">&rarr;</button>',
+      prevArrow: '<a class="control-btn btn-prev"><span class="arrow arrow-left"></span></a>',
+      nextArrow: '<a class="control-btn btn-next"><span class="arrow arrow-right"></span></a>',
       appendArrows: '.carousel-controls',
       asNavFor: '.carousel-images'
     });
