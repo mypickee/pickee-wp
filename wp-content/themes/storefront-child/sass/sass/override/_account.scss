@@ -118,6 +118,7 @@ table.woocommerce-MyAccount-paymentMethods {
 }
 
 .view-order__header {
+  margin-bottom: 15px;
   @include breakpoint($screen-sm) {
     & {
       display: flex;

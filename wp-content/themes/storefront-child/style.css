@@ -1835,30 +1835,34 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   text-align: right;
 }
 
+/* line 120, sass/sass/override/_account.scss */
+.view-order__header {
+  margin-bottom: 15px;
+}
 @media (min-width: 768px) {
-  /* line 122, sass/sass/override/_account.scss */
+  /* line 123, sass/sass/override/_account.scss */
   .view-order__header {
     display: flex;
     align-items: center;
   }
-  /* line 126, sass/sass/override/_account.scss */
+  /* line 127, sass/sass/override/_account.scss */
   .view-order__header .view-order__header__id {
     flex: 0 0 150px;
   }
-  /* line 129, sass/sass/override/_account.scss */
+  /* line 130, sass/sass/override/_account.scss */
   .view-order__header .view-order__header__details {
     flex: 1 0 0;
     text-align: right;
   }
 }
 
-/* line 135, sass/sass/override/_account.scss */
+/* line 136, sass/sass/override/_account.scss */
 .view-order__header__id {
   font-size: 20px;
   font-weight: bold;
 }
 
-/* line 139, sass/sass/override/_account.scss */
+/* line 140, sass/sass/override/_account.scss */
 .view-order__header__details {
   font-size: 14px;
 }
