@@ -1903,6 +1903,18 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   font-size: 20px;
 }
 
+/* line 181, sass/sass/override/_account.scss */
+.order-details-billing-address,
+.order-details-shipping-address {
+  border-top: 4px solid #222222;
+  border-bottom: 2px solid #cccccc;
+}
+/* line 185, sass/sass/override/_account.scss */
+.order-details-billing-address address,
+.order-details-shipping-address address {
+  font-style: normal;
+}
+
 /* line 1, sass/sass/override/_other.scss */
 .woocommerce-breadcrumb {
   margin-bottom: 1em;

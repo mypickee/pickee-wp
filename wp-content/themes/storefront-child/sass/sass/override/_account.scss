@@ -177,3 +177,12 @@ table.woocommerce-MyAccount-paymentMethods {
     }
   }
 }
+
+.order-details-billing-address,
+.order-details-shipping-address {
+  border-top: 4px solid $black;
+  border-bottom: 2px solid $gray-light;
+  address {
+    font-style: normal;
+  }
+}
