@@ -41,8 +41,10 @@ if ( $show_downloads ) {
   <table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
     <thead>
       <tr>
-        <th class="woocommerce-table__product-name product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-        <th class="woocommerce-table__product-table product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
+        <th class="woocommerce-table__product-table product-name"><?php _e( 'Item', 'woocommerce' ); ?></th>
+        <th class="woocommerce-table__product-table product-unit-price"><?php _e( 'Item Price', 'woocommerce' ); ?></th>
+        <th class="woocommerce-table__product-table product-quantity"><?php _e( 'Qty', 'woocommerce' ); ?></th>
+        <th class="woocommerce-table__product-table product-total-price"><?php _e( 'Total Price', 'woocommerce' ); ?></th>
       </tr>
     </thead>
 
@@ -72,7 +74,9 @@ if ( $show_downloads ) {
         foreach ( $order->get_order_item_totals() as $key => $total ) {
           ?>
           <tr>
-            <th scope="row"><?php echo $total['label']; ?></th>
+            <td></td>
+            <td></td>
+            <td scope="row"><?php echo $total['label']; ?></td>
             <td><?php echo $total['value']; ?></td>
           </tr>
           <?php
