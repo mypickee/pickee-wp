@@ -1,2 +1,3 @@
 fpm: ./script/start_local_php-fpm.sh
 web: ./script/start_local_nginx.sh
+compass: compass watch wp-content/themes/storefront-child/sass
