@@ -1835,6 +1835,86 @@ table.woocommerce-MyAccount-paymentMethods td.payment-method-actions {
   text-align: right;
 }
 
+/* line 120, sass/sass/override/_account.scss */
+.view-order__header {
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  /* line 123, sass/sass/override/_account.scss */
+  .view-order__header {
+    display: flex;
+    align-items: center;
+  }
+  /* line 127, sass/sass/override/_account.scss */
+  .view-order__header .view-order__header__id {
+    flex: 0 0 150px;
+  }
+  /* line 130, sass/sass/override/_account.scss */
+  .view-order__header .view-order__header__details {
+    flex: 1 0 0;
+    text-align: right;
+  }
+}
+
+/* line 136, sass/sass/override/_account.scss */
+.view-order__header__id {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* line 140, sass/sass/override/_account.scss */
+.view-order__header__details {
+  font-size: 14px;
+}
+
+/* line 145, sass/sass/override/_account.scss */
+.order_details {
+  background-color: transparent;
+}
+/* line 147, sass/sass/override/_account.scss */
+.order_details th, .order_details td {
+  padding: 1em;
+}
+/* line 149, sass/sass/override/_account.scss */
+.order_details th:first-child, .order_details td:first-child {
+  padding-left: 0;
+}
+/* line 152, sass/sass/override/_account.scss */
+.order_details th:last-child, .order_details td:last-child {
+  padding-right: 0;
+  text-align: right;
+}
+/* line 158, sass/sass/override/_account.scss */
+.order_details tbody td {
+  border-bottom: solid 1px #cccccc;
+}
+/* line 162, sass/sass/override/_account.scss */
+.order_details tbody tr:last-child td {
+  border-bottom-color: #999999;
+}
+/* line 168, sass/sass/override/_account.scss */
+.order_details tfoot td {
+  padding: 0.8em;
+}
+/* line 172, sass/sass/override/_account.scss */
+.order_details tfoot tr:last-child td:nth-last-child(-n+2) {
+  border-top: solid 2px #222222;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* line 181, sass/sass/override/_account.scss */
+.order-details-billing-address,
+.order-details-shipping-address {
+  border-top: 4px solid #222222;
+  border-bottom: 2px solid #cccccc;
+}
+/* line 185, sass/sass/override/_account.scss */
+.order-details-billing-address address,
+.order-details-shipping-address address {
+  font-style: normal;
+}
+
 /* line 1, sass/sass/override/_other.scss */
 .woocommerce-breadcrumb {
   margin-bottom: 1em;
