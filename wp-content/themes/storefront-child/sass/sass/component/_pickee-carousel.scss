@@ -37,20 +37,27 @@
       flex: 1 1 640px;
     }
     .carousel-captions {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+      @include breakpoint($screen-md) {
+        padding-top: 0;
+      }
       .item {
-        margin: 1rem;
+        margin: 0 1rem;
         outline: none;
         @include breakpoint($screen-md) {
-          margin: 3rem 3rem 0;
+          margin: 0 3rem;
         }
         @include breakpoint($screen-lg) {
-          margin: 4rem 4rem 0;
+          margin: 0 4rem;
         }
         @include breakpoint($screen-xl) {
-          margin: 6rem 6rem 0;
+          margin: 0 6rem;
         }
         h2 {
-          margin-bottom: 0.5rem;
+          margin-bottom: 1rem;
           font-size: 2rem;
           font-weight: bold;
           line-height: 2.375rem;
@@ -66,21 +73,19 @@
     }
     .carousel-controls-wrap {
       width: 100%;
+      background-color: $light-gray;
       @include self_clear;
       @include breakpoint($screen-md) {
         position: absolute;
         bottom: 0;
-        background-color: $light-gray;
       }
     }
     .carousel-controls {
       position: relative;
+      float: right;
       width: 6rem;
       height: 3rem;
       background-color: $pickee-blue;
-      @include breakpoint($screen-md) {
-        float: right;
-      }
       .control-btn {
         float: left;
         display: block;
