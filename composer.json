@@ -8,13 +8,13 @@
   "require": {
     "php": "~7.2.0",
     "wp-cli/wp-cli": "~0.22",
-    "wpackagist-plugin/amazon-s3-and-cloudfront": "~1.4.2",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "~2.0",
     "wpackagist-plugin/amazon-web-services": "^1.0",
-    "wpackagist-plugin/insert-html-snippet": "~1.2.4",
-    "wpackagist-plugin/perfect-woocommerce-brands": "~1.6.5",
+    "wpackagist-plugin/insert-html-snippet": "~1.2.5",
+    "wpackagist-plugin/perfect-woocommerce-brands": "~1.7.0",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1.11.4",
-    "wpackagist-plugin/woocommerce": "~3.4.3",
-    "wpackagist-plugin/woocommerce-gateway-stripe": "~4.1.8",
+    "wpackagist-plugin/woocommerce": "~3.5.2",
+    "wpackagist-plugin/woocommerce-gateway-stripe": "~4.1.13",
     "wpackagist-theme/storefront": "~2.2.5"
   },
   "scripts": {
