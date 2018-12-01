@@ -11,6 +11,7 @@
     "wpackagist-plugin/amazon-s3-and-cloudfront": "~2.0",
     "wpackagist-plugin/amazon-web-services": "^1.0",
     "wpackagist-plugin/insert-html-snippet": "~1.2.5",
+    "wpackagist-plugin/akismet": "~4.1.0",
     "wpackagist-plugin/perfect-woocommerce-brands": "~1.7.0",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1.11.4",
     "wpackagist-plugin/woocommerce": "~3.5.2",
@@ -18,7 +19,7 @@
     "wpackagist-theme/storefront": "~2.2.5"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-web-services amazon-s3-and-cloudfront; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate akismet sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-web-services amazon-s3-and-cloudfront; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
