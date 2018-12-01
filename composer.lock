@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "31914f0294a44e1747b4037b30e14ed1",
+    "content-hash": "8efb851557a98fa930cb2ec4b40f8f1e",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1822,15 +1822,15 @@
         },
         {
             "name": "wpackagist-theme/storefront",
-            "version": "2.2.8",
+            "version": "2.3.5",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/storefront/",
-                "reference": "2.2.8"
+                "reference": "2.3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/storefront.2.2.8.zip",
+                "url": "https://downloads.wordpress.org/theme/storefront.2.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
