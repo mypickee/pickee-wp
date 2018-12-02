@@ -3366,71 +3366,50 @@ table thead th {
   transform: rotate(225deg);
 }
 
-/* line 3, sass/sass/component/_products-carousel.scss */
-.products-carousel-wrap li.product img {
-  width: 100%;
-}
-/* line 6, sass/sass/component/_products-carousel.scss */
-.products-carousel-wrap li.product h2 {
-  text-align: center;
-}
-/* line 10, sass/sass/component/_products-carousel.scss */
-.products-carousel-wrap ul.products {
-  width: 60%;
-  margin: 0 auto;
-}
-@media (min-width: 768px) {
-  /* line 10, sass/sass/component/_products-carousel.scss */
-  .products-carousel-wrap ul.products {
-    width: 100%;
-  }
-}
-/* line 16, sass/sass/component/_products-carousel.scss */
-.products-carousel-wrap ul.products li.product {
+/* line 3, sass/sass/component/_products.scss */
+.products-block ul.products li.product {
   width: 100%;
   margin: 0;
+  text-align: center;
+}
+/* line 7, sass/sass/component/_products.scss */
+.products-block ul.products li.product img {
+  width: 100%;
+}
+/* line 10, sass/sass/component/_products.scss */
+.products-block ul.products li.product h2 {
+  text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 16, sass/sass/component/_products-carousel.scss */
-  .products-carousel-wrap ul.products li.product {
-    width: 22% !important;
+  /* line 3, sass/sass/component/_products.scss */
+  .products-block ul.products li.product {
     float: left;
-    margin-right: 4%;
+    width: 22% !important;
+    margin-right: 4% !important;
   }
-  /* line 23, sass/sass/component/_products-carousel.scss */
-  .products-carousel-wrap ul.products li.product.last {
+  /* line 17, sass/sass/component/_products.scss */
+  .products-block ul.products li.product.last {
     margin-right: 0 !important;
   }
 }
 @media (min-width: 768px) {
-  /* line 29, sass/sass/component/_products-carousel.scss */
-  .products-carousel-wrap .products-carousel {
-    display: none;
+  /* line 23, sass/sass/component/_products.scss */
+  .products-block .products-carousel {
+    display: none !important;
   }
 }
-/* line 33, sass/sass/component/_products-carousel.scss */
-.products-carousel-wrap .products-carousel li.product {
-  margin: 0 20px;
-}
-/* line 37, sass/sass/component/_products-carousel.scss */
-.products-carousel-wrap .products-carousel {
+/* line 25, sass/sass/component/_products.scss */
+.products-block .products-carousel ul.products {
   clear: both;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 }
-@media (min-width: 768px) {
-  /* line 37, sass/sass/component/_products-carousel.scss */
-  .products-carousel-wrap .products-carousel {
-    display: none;
-  }
-}
-/* line 41, sass/sass/component/_products-carousel.scss */
-.products-carousel-wrap .products-carousel li.product {
+/* line 29, sass/sass/component/_products.scss */
+.products-block .products-carousel ul.products li.product {
   margin: 0 20px;
-  text-align: center;
 }
-/* line 48, sass/sass/component/_products-carousel.scss */
-.products-carousel-wrap .products-carousel .control-btn {
+/* line 32, sass/sass/component/_products.scss */
+.products-block .products-carousel ul.products .control-btn {
   position: absolute;
   top: 0;
   height: 100%;
@@ -3439,12 +3418,12 @@ table thead th {
   z-index: 100;
   background-color: transparent;
 }
-/* line 56, sass/sass/component/_products-carousel.scss */
-.products-carousel-wrap .products-carousel .control-btn.btn-prev {
+/* line 40, sass/sass/component/_products.scss */
+.products-block .products-carousel ul.products .control-btn.btn-prev {
   left: 0;
 }
-/* line 59, sass/sass/component/_products-carousel.scss */
-.products-carousel-wrap .products-carousel .control-btn.btn-next {
+/* line 43, sass/sass/component/_products.scss */
+.products-block .products-carousel ul.products .control-btn.btn-next {
   right: 0;
 }
 

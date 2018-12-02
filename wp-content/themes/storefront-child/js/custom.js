@@ -50,7 +50,7 @@
       $("#review_form_wrapper").toggleClass('hidden');
     });
 
-    $('.products-carousel').slick({
+    $('.products-carousel .products').slick({
       infinite: true,
       slidesToShow: 1,
       centerMode: true,

@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $related_products ) : ?>
 
-	<section class="related products products-carousel-wrap">
+	<section class="related products products-block">
 
 		<h2><?php esc_html_e( 'Related products', 'woocommerce' ); ?></h2>
 
@@ -45,8 +45,8 @@ if ( $related_products ) : ?>
 		<?php woocommerce_product_loop_end(); ?>
     <?php if (count($related_products) > 1):?>
     </div>
-
-    <ul class="products-carousel">
+    <div class="products-carousel">
+      <ul class="products">
 
       <?php foreach ( $related_products as $related_product ) : ?>
 
@@ -59,7 +59,8 @@ if ( $related_products ) : ?>
 
       <?php endforeach; ?>
 
-    </ul>
+      </ul>
+    </div>
 
     <?php endif;?>
 
