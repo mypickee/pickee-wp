@@ -1,10 +1,15 @@
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0;
+  color: $black;
 }
 .h1, h1 {
-  font-size: 1.75rem; // 28px
-  line-height: 2rem;
+  font-size: 1.5rem; // 24px
+  line-height: 1.75rem;
   font-weight: 700;
+  @include breakpoint($screen-sm) {
+    font-size: 1.75rem; // 28px
+    line-height: 2rem;  // 32px
+  }
 }
 .h2, h2 {
   font-size: 1.25rem; // 20px
@@ -22,6 +27,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
+@mixin font-size-xs {
+  font-size: $font-size-xs; // 0.875rem, 14px
+}
 @mixin font-size-small {
   font-size: $font-size-small; // 0.875rem, 14px
 }
@@ -29,11 +37,22 @@ h1, h2, h3, h4, h5, h6 {
   font-size: $font-size-big; // 1.125rem, 18px
 }
 
+@mixin line-height-xs {
+  line-height: $line-height-xs; // 18px
+}
 @mixin line-height-small {
   line-height: $line-height-small; // 22px
 }
 @mixin line-height-big {
   line-height: $line-height-big; // 26px
+}
+
+.xs {
+  @include font-size-small; // 0.75rem, 12px
+}
+p.xs {
+  @include font-size-xs;   // 0.75rem, 12px
+  @include line-height-xs; // 18px
 }
 
 .small, small {
@@ -51,4 +70,3 @@ p.big {
   @include font-size-big;  // 1.125rem, 18px
   @include line-height-big;  // 26px
 }
-

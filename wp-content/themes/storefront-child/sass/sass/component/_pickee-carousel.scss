@@ -1,56 +1,69 @@
-
 .pickee-carousel-section {
-  background-color: #fafafa;
+  background-color: #ffffff;
   margin: 0;
-  padding: 40px 0;
+  padding: 0;
 }
 
-.pickee-carousel {
-  position: relative;
+#homepage-carousel {
+  @include self_clear;
   @include breakpoint($screen-md) {
-    width: 768px;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
   }
-  @include breakpoint($screen-lg) {
-    width: 960px;
+  .carousel-images-wrap {
+    @include breakpoint($screen-md) {
+      @include span(5 of 9 last 0);
+    }
+    @include breakpoint($screen-xl) {
+      float: right;
+      width: 800px;
+      flex: 2 2 800px;
+    }
+    .carousel-images {
+      width: 100%;
+    }
   }
-  @include breakpoint($screen-xl) {
-    width: 1064px;
-  }
-  padding: 0 2.5em;
-  margin: 0 auto;
-  box-sizing: content-box;
 
   .carousel-captions-wrap {
     position: relative;
-    @include breakpoint($screen-md) {
-      position: absolute;
-      top: 200px;
-      left: -60px;
-      width: 320px;
-      height: 224px;
-    }
     background-color: #ffffff;
+    @include breakpoint($screen-md) {
+      @include span(4 of 9 0);
+    }
+    @include breakpoint($screen-xl) {
+      float: left;
+      width: 640px;
+      flex: 1 1 640px;
+    }
     .carousel-captions {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
       @include breakpoint($screen-md) {
-        width: 320px;
-        height: 224px;
-        overflow: hidden;
+        padding-top: 0;
       }
       .item {
-        padding: 2em;
-        padding-bottom: 3em;
+        margin: 0 1rem;
+        outline: none;
         @include breakpoint($screen-md) {
-          padding-bottom: 2em;
+          margin: 0 3rem;
         }
-        h3 {
-          font-size: 1em;
-          font-weight: 600;
-          margin-bottom: 0.2em;
+        @include breakpoint($screen-lg) {
+          margin: 0 4rem;
+        }
+        @include breakpoint($screen-xl) {
+          margin: 0 6rem;
+        }
+        h2 {
+          margin-bottom: 1rem;
+          font-size: 2rem;
+          font-weight: bold;
+          line-height: 2.375rem;
         }
         p.content {
-          margin-bottom: 0.2em;
-          font-size: 2em;
-          font-weight: 100;
+          margin-bottom: 1rem;
         }
         .link {
           font-weight: 600;
@@ -58,24 +71,57 @@
         }
       }
     }
-    .carousel-controls {
-      position: relative;
-      top: -20px;
+    .carousel-controls-wrap {
+      width: 100%;
+      background-color: $light-gray;
+      @include self_clear;
       @include breakpoint($screen-md) {
         position: absolute;
-        top: 208px;
-        left: 0;
+        bottom: 0;
       }
+    }
+    .carousel-controls {
+      position: relative;
+      float: right;
+      width: 6rem;
+      height: 3rem;
+      background-color: $pickee-blue;
       .control-btn {
-        display: block;
         float: left;
-        background-color: $pickee-blue;
-        color: #ffffff;
+        display: block;
+        width: 3rem;
+        height: 2rem;
+        margin-top: 0.5rem;
         padding-left: 1em;
         padding-right: 1em;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: $pickee-blue;
+        color: #ffffff;
         outline: 0;
+        cursor: pointer;
         &.btn-prev {
-          border-right: 1px solid #ffffff;
+          border-right: 1px solid #4175ae;
+        }
+        span.arrow {
+          position: relative;
+          display: block;
+          top: 0.5rem;
+          width: 1rem;
+          height: 1rem;
+          box-shadow: -1px 1px 0 rgb(255, 255, 255);
+          &.arrow-left {
+            left: 0.3rem;
+            transform: rotate(45deg);
+          }
+          &.arrow-right {
+            right: 0.3rem;
+            transform: rotate(225deg);
+          }
         }
       }
     }

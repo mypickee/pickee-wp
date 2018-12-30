@@ -28,7 +28,7 @@ if ( ! comments_open() ) {
 ?>
 <div id="reviews" class="woocommerce-Reviews">
 	<div id="comments">
-		<h2>Reviews</h2>
+		<h1>Reviews</h1>
 
     <?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
     <span id="review-form-trigger" class="review-form-toggle" href="#">WRITE A REVIEW</span>
@@ -84,7 +84,7 @@ if ( ! comments_open() ) {
 
   <?php else : ?>
 
-    <p class="woocommerce-verification-required"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'woocommerce' ); ?></p>
+    <p class="woocommerce-verification-required text-center"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'woocommerce' ); ?></p>
 
   <?php endif; ?>
 

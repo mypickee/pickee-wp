@@ -24,7 +24,7 @@ if ( $upsells ) : ?>
 
 	<section class="up-sells upsells products products-carousel-wrap">
 
-		<h2><?php esc_html_e( 'You may also like&hellip;', 'woocommerce' ) ?></h2>
+		<h1><?php esc_html_e( 'You may also like&hellip;', 'woocommerce' ) ?></h1>
 
     <?php if (count($upsells) > 1):?>
     <div class="hidden-sm-down">
