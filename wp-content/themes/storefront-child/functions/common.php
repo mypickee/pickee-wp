@@ -295,6 +295,25 @@ function change_cross_sells_product_no($columns) {
   return 4;
 }
 
+add_action('woocommerce_before_shop_loop_item_title', 'my_show_brands_in_loop');
+if (!function_exists('my_show_brands_in_loop')) {
+  function my_show_brands_in_loop() {
+    global $product;
+    $product_id = $product->get_id();
+    $product_brands =  wp_get_post_terms($product_id, 'pwb-brand');
+    if (!empty($product_brands)) {
+      echo '<div class="brands-in-loop">';
+      foreach ($product_brands as $brand) {
+        echo '<span>';
+        $url = get_permalink($product_id);
+        echo '<a href="'.$url.'">'.$brand->name.'</a>';
+        echo '</span>';
+      }
+      echo '</div>';
+    }
+  }
+}
+
 function adjust_checkout_fields($fields) {
     $fields['first_name']['class'] = ['form-row-wide'];
     $fields['last_name']['class'] = ['form-row-wide'];
