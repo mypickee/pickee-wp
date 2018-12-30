@@ -24,7 +24,7 @@ if ( $related_products ) : ?>
 
 	<section class="related products products-block">
 
-		<h2><?php esc_html_e( 'Related products', 'woocommerce' ); ?></h2>
+		<h1><?php esc_html_e( 'Related products', 'woocommerce' ); ?></h1>
 
     <?php if (count($related_products) > 1):?>
     <div class="hidden-sm-down">

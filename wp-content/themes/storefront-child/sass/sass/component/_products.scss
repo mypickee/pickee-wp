@@ -9,6 +9,11 @@
       }
       h2 {
         text-align: center;
+        @include font-size-small; // 0.875rem, 14px
+        font-weight: 500;
+      }
+      .price {
+        color: $black;
       }
       @include breakpoint($screen-sm) {
         float: left;
@@ -45,5 +50,13 @@
         }
       }
     }
+  }
+}
+
+.brands-in-loop {
+  height: 1.5rem;
+  @include font-size-xs;
+  a {
+    color: $black;
   }
 }

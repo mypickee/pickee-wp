@@ -65,53 +65,72 @@ body, button, input, textarea {
 /* line 1, sass/sass/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0;
+  color: #222222;
 }
 
-/* line 4, sass/sass/base/_typography.scss */
+/* line 5, sass/sass/base/_typography.scss */
 .h1, h1 {
-  font-size: 1.75rem;
-  line-height: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   font-weight: 700;
 }
+@media (min-width: 768px) {
+  /* line 5, sass/sass/base/_typography.scss */
+  .h1, h1 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+}
 
-/* line 9, sass/sass/base/_typography.scss */
+/* line 14, sass/sass/base/_typography.scss */
 .h2, h2 {
   font-size: 1.25rem;
   line-height: 1.5rem;
   font-weight: 700;
 }
 
-/* line 14, sass/sass/base/_typography.scss */
+/* line 19, sass/sass/base/_typography.scss */
 .h3, h3 {
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 700;
 }
 
-/* line 19, sass/sass/base/_typography.scss */
+/* line 24, sass/sass/base/_typography.scss */
 .h4, h4 {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 500;
 }
 
-/* line 39, sass/sass/base/_typography.scss */
+/* line 50, sass/sass/base/_typography.scss */
+.xs {
+  font-size: 0.875rem;
+}
+
+/* line 53, sass/sass/base/_typography.scss */
+p.xs {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+/* line 58, sass/sass/base/_typography.scss */
 .small, small {
   font-size: 0.875rem;
 }
 
-/* line 42, sass/sass/base/_typography.scss */
+/* line 61, sass/sass/base/_typography.scss */
 p.small {
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
 
-/* line 47, sass/sass/base/_typography.scss */
+/* line 66, sass/sass/base/_typography.scss */
 .big, big {
   font-size: 1.125rem;
 }
 
-/* line 50, sass/sass/base/_typography.scss */
+/* line 69, sass/sass/base/_typography.scss */
 p.big {
   font-size: 1.125rem;
   line-height: 1.625rem;
@@ -1165,15 +1184,22 @@ p.comment-form-comment {
   margin-top: 2rem;
 }
 
-/* line 308, sass/sass/override/_single-product.scss */
-.storefront-full-width-content.single-product #reviews, .storefront-full-width-content.single-product .related, .storefront-full-width-content.single-product .upsells {
-  margin-bottom: 2rem;
+/* line 309, sass/sass/override/_single-product.scss */
+.storefront-full-width-content.single-product #reviews h1, .storefront-full-width-content.single-product .related h1, .storefront-full-width-content.single-product .upsells h1 {
+  margin-top: 5.625rem;
+  text-align: center;
 }
-/* line 310, sass/sass/override/_single-product.scss */
-.storefront-full-width-content.single-product #reviews h2, .storefront-full-width-content.single-product #reviews.products > h2:first-child, .storefront-full-width-content.single-product .related h2, .storefront-full-width-content.single-product .related.products > h2:first-child, .storefront-full-width-content.single-product .upsells h2, .storefront-full-width-content.single-product .upsells.products > h2:first-child {
+/* line 313, sass/sass/override/_single-product.scss */
+.storefront-full-width-content.single-product #reviews h2, .storefront-full-width-content.single-product .related h2, .storefront-full-width-content.single-product .upsells h2 {
   margin-top: 3rem;
   display: block;
   font-size: 2rem;
+  text-align: center;
+}
+/* line 319, sass/sass/override/_single-product.scss */
+.storefront-full-width-content.single-product #reviews .products li h2, .storefront-full-width-content.single-product .related .products li h2, .storefront-full-width-content.single-product .upsells .products li h2 {
+  margin-top: 0;
+  display: block;
   text-align: center;
 }
 
@@ -2565,7 +2591,7 @@ body.home .entry-content > p {
 .content-container {
   margin-left: auto;
   margin-right: auto;
-  color: #333333;
+  color: #222222;
 }
 @media (min-width: 768px) {
   /* line 21, sass/sass/layout/_content.scss */
@@ -2798,19 +2824,23 @@ body.home .entry-content > p {
   }
 }
 
+/* line 173, sass/sass/layout/_content.scss */
+.homepage-product-picks {
+  padding-bottom: 4rem;
+}
 /* line 174, sass/sass/layout/_content.scss */
 .homepage-product-picks h1 {
   text-align: center;
   margin-bottom: 2.5rem;
 }
 
-/* line 180, sass/sass/layout/_content.scss */
+/* line 181, sass/sass/layout/_content.scss */
 .brand-section .brand-main {
   text-align: center;
   padding: 4rem 0 3rem;
 }
 @media (min-width: 768px) {
-  /* line 180, sass/sass/layout/_content.scss */
+  /* line 181, sass/sass/layout/_content.scss */
   .brand-section .brand-main {
     width: 40%;
     float: left;
@@ -2818,32 +2848,32 @@ body.home .entry-content > p {
     padding-top: 7.5rem;
   }
 }
-/* line 187, sass/sass/layout/_content.scss */
+/* line 188, sass/sass/layout/_content.scss */
 .brand-section .brand-main .brand-logo {
   height: 10rem;
   margin: 1rem 0;
 }
-/* line 190, sass/sass/layout/_content.scss */
+/* line 191, sass/sass/layout/_content.scss */
 .brand-section .brand-main .brand-logo img {
   max-width: 100%;
   max-height: 100%;
   margin: 0 auto;
 }
-/* line 196, sass/sass/layout/_content.scss */
+/* line 197, sass/sass/layout/_content.scss */
 .brand-section .brand-main .brand-description {
   padding: 0 2rem;
 }
-/* line 198, sass/sass/layout/_content.scss */
+/* line 199, sass/sass/layout/_content.scss */
 .brand-section .brand-main .brand-description .content-link {
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
-/* line 205, sass/sass/layout/_content.scss */
+/* line 206, sass/sass/layout/_content.scss */
 .brand-section .brand-image-1 {
   margin-bottom: 6rem;
 }
 @media (min-width: 768px) {
-  /* line 205, sass/sass/layout/_content.scss */
+  /* line 206, sass/sass/layout/_content.scss */
   .brand-section .brand-image-1 {
     width: 57.14286%;
     float: right;
@@ -2851,16 +2881,16 @@ body.home .entry-content > p {
     margin-top: 2.5rem;
   }
 }
-/* line 212, sass/sass/layout/_content.scss */
+/* line 213, sass/sass/layout/_content.scss */
 .brand-section .brand-row-2 {
   margin-top: 40px;
 }
-/* line 215, sass/sass/layout/_content.scss */
+/* line 216, sass/sass/layout/_content.scss */
 .brand-section .brand-image-2 {
   display: none;
 }
 @media (min-width: 768px) {
-  /* line 215, sass/sass/layout/_content.scss */
+  /* line 216, sass/sass/layout/_content.scss */
   .brand-section .brand-image-2 {
     display: block;
     width: 48.57143%;
@@ -2868,40 +2898,40 @@ body.home .entry-content > p {
     margin-right: 2.85714%;
   }
 }
-/* line 222, sass/sass/layout/_content.scss */
+/* line 223, sass/sass/layout/_content.scss */
 .brand-section .brand-image-3 {
   display: none;
 }
 @media (min-width: 768px) {
-  /* line 222, sass/sass/layout/_content.scss */
+  /* line 223, sass/sass/layout/_content.scss */
   .brand-section .brand-image-3 {
     width: 31.42857%;
     float: left;
     margin-right: 2.85714%;
     display: block;
   }
-  /* line 227, sass/sass/layout/_content.scss */
+  /* line 228, sass/sass/layout/_content.scss */
   .brand-section .brand-image-3 img {
     position: relative;
     top: -3rem;
   }
 }
 
-/* line 235, sass/sass/layout/_content.scss */
+/* line 236, sass/sass/layout/_content.scss */
 body.brand-page .entry-header {
   display: none;
 }
-/* line 238, sass/sass/layout/_content.scss */
+/* line 239, sass/sass/layout/_content.scss */
 body.brand-page .woocommerce-breadcrumb {
   display: none;
 }
-/* line 241, sass/sass/layout/_content.scss */
+/* line 242, sass/sass/layout/_content.scss */
 body.brand-page .brand-page-header {
   clear: both;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 }
-/* line 246, sass/sass/layout/_content.scss */
+/* line 247, sass/sass/layout/_content.scss */
 body.brand-page .brand-logo-block {
   position: relative;
   width: 100%;
@@ -2910,12 +2940,12 @@ body.brand-page .brand-logo-block {
   background-color: #ffffff;
   text-align: center;
 }
-/* line 253, sass/sass/layout/_content.scss */
+/* line 254, sass/sass/layout/_content.scss */
 body.brand-page .brand-logo-block img {
   margin: 0 auto;
   width: 90px;
 }
-/* line 257, sass/sass/layout/_content.scss */
+/* line 258, sass/sass/layout/_content.scss */
 body.brand-page .brand-logo-block h1 {
   font-size: 1.4rem;
   margin-top: 2rem;
@@ -3379,6 +3409,12 @@ table thead th {
 /* line 10, sass/sass/component/_products.scss */
 .products-block ul.products li.product h2 {
   text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+/* line 15, sass/sass/component/_products.scss */
+.products-block ul.products li.product .price {
+  color: #222222;
 }
 @media (min-width: 768px) {
   /* line 3, sass/sass/component/_products.scss */
@@ -3387,28 +3423,28 @@ table thead th {
     width: 22% !important;
     margin-right: 4% !important;
   }
-  /* line 17, sass/sass/component/_products.scss */
+  /* line 22, sass/sass/component/_products.scss */
   .products-block ul.products li.product.last {
     margin-right: 0 !important;
   }
 }
 @media (min-width: 768px) {
-  /* line 23, sass/sass/component/_products.scss */
+  /* line 28, sass/sass/component/_products.scss */
   .products-block .products-carousel {
     display: none !important;
   }
 }
-/* line 25, sass/sass/component/_products.scss */
+/* line 30, sass/sass/component/_products.scss */
 .products-block .products-carousel ul.products {
   clear: both;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 }
-/* line 29, sass/sass/component/_products.scss */
+/* line 34, sass/sass/component/_products.scss */
 .products-block .products-carousel ul.products li.product {
   margin: 0 20px;
 }
-/* line 32, sass/sass/component/_products.scss */
+/* line 37, sass/sass/component/_products.scss */
 .products-block .products-carousel ul.products .control-btn {
   position: absolute;
   top: 0;
@@ -3418,13 +3454,23 @@ table thead th {
   z-index: 100;
   background-color: transparent;
 }
-/* line 40, sass/sass/component/_products.scss */
+/* line 45, sass/sass/component/_products.scss */
 .products-block .products-carousel ul.products .control-btn.btn-prev {
   left: 0;
 }
-/* line 43, sass/sass/component/_products.scss */
+/* line 48, sass/sass/component/_products.scss */
 .products-block .products-carousel ul.products .control-btn.btn-next {
   right: 0;
+}
+
+/* line 56, sass/sass/component/_products.scss */
+.brands-in-loop {
+  height: 1.5rem;
+  font-size: 0.75rem;
+}
+/* line 59, sass/sass/component/_products.scss */
+.brands-in-loop a {
+  color: #222222;
 }
 
 /* Slider */
