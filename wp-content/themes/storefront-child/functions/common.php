@@ -315,17 +315,17 @@ if (!function_exists('my_show_brands_in_loop')) {
 }
 
 function adjust_checkout_fields($fields) {
-    $fields['first_name']['class'] = ['form-row-wide'];
-    $fields['last_name']['class'] = ['form-row-wide'];
-    unset($fields['company']);
-    return $fields;
+  $fields['first_name']['class'] = ['form-row-wide'];
+  $fields['last_name']['class'] = ['form-row-wide'];
+  unset($fields['company']);
+  return $fields;
 }
 add_filter('woocommerce_default_address_fields', 'adjust_checkout_fields');
 
 function adjust_checkout_phone_email_fields($fields) {
-    $fields['billing_phone']['class'] = ['form-row-wide'];
-    $fields['billing_email']['class'] = ['form-row-wide'];
-    return $fields;
+  $fields['billing_phone']['class'] = ['form-row-wide'];
+  $fields['billing_email']['class'] = ['form-row-wide'];
+  return $fields;
 }
 add_filter('woocommerce_billing_fields', 'adjust_checkout_phone_email_fields');
 

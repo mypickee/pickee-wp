@@ -1,11 +1,4 @@
-body.home .site-content .col-full {
-  max-width: inherit;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px;
-  box-sizing: content-box;
-}
-body.home .entry-content > p {
+.entry-content > p:first-child {
   margin: 0;
 }
 .content-section {
@@ -18,7 +11,7 @@ body.home .entry-content > p {
     background-color: #f9f9f9;
   }
 }
-.content-container {
+@mixin content-container {
   margin-left: auto;
   margin-right: auto;
   color: $black;
@@ -40,6 +33,11 @@ body.home .entry-content > p {
     }
   }
 }
+
+.content-container {
+  @include content-container;
+}
+
 .homepage-category-block1 {
   margin-top: 2.5rem;
   .category-image-1 {

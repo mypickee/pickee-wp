@@ -1,0 +1,31 @@
+.brands-landing-heading-wraper {
+  @include content-container;
+  .brands-landing-heading {
+    position: relative;
+    @include span(isolate 10 at 2 of 12);
+    top: -72px;
+    padding-top: 72px;
+    text-align: center;
+    background-color: #ffffff;
+  }
+}
+.pwb-all-brands {
+  @include content-container;
+  margin-top: 136px;
+  text-align: center;
+  .pwb-brands-cols-outer {
+    .pwb-brands-col3 {
+      width: 25%;
+      > p {
+        font-size: $font-size-small;
+        font-weight: 500;
+        > small {
+          display: none;
+        }
+      }
+    }
+  }
+  .pwb-pagination-wrapper {
+    border-top: none;
+  }
+}
