@@ -4,6 +4,18 @@
 @import "susy";
 
 $susy: (
-  columns: 24,
+  columns: 12,
   gutters: 1/4,
 );
+
+$mobile: (
+  gutter-position: inside-static,
+  container: 100%,
+  columns: 4,
+  column-width: 120px, // it doesn't matter what number this is...
+  gutters: 30px/120px,
+  debug: (
+    image: show,
+  ),
+);
+@include border-box-sizing;
