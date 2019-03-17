@@ -8,7 +8,7 @@ body.cart-open {
 }
 
 .storefront-primary-navigation {
-  @include breakpoint($screen-sm) {
+  @include breakpoint($screen-md) {
     background-color: transparent;
   }
 }
@@ -50,7 +50,7 @@ body.cart-open {
     height: 3rem;
     text-align: center;
     margin-bottom: 0;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       position: inherit;
       left: 0;
       float: left !important;
@@ -64,7 +64,7 @@ body.cart-open {
   }
 
   ul.links {
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       display: block;
     }
     display: none;
@@ -108,7 +108,7 @@ body.cart-open {
     line-height: 1rem;
     color: $black;
     display: none;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       display: block;
     }
     .widget_product_search {
@@ -168,7 +168,7 @@ body.cart-open {
     color: $pickee-blue;
     font-weight: 600;
     cursor: pointer;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       display: none;
     }
   }
@@ -188,7 +188,7 @@ body.cart-open {
     transition: all 0.3s;
     -webkit-transition-delay: 0.1s;
     transition-delay: 0.1s;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       display: none;
     }
     &.visible {
@@ -363,7 +363,7 @@ body.cart-open {
   background-color: $pickee-red;
   border-radius: 50%;
   z-index: 1001;
-  @include breakpoint($screen-sm) {
+  @include breakpoint($screen-md) {
     margin-right: 2.5rem;
   }
   .header-cart-content {
@@ -417,7 +417,7 @@ body.cart-open {
     right: 0px;
     height: 100%;
     width: 100%;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       width: 23.438rem;
     }
     padding: 0 $cart-padding 0 $cart-padding;

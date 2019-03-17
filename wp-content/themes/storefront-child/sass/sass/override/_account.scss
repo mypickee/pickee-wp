@@ -22,7 +22,7 @@
 .woocommerce-MyAccount-navigation {
   @include full-width-block;
   float: none;
-  @include breakpoint($screen-sm) {
+  @include breakpoint($screen-md) {
     width: auto;
     float: none;
     background-color: $light-gray;
@@ -61,7 +61,7 @@
 .woocommerce-MyAccount-content {
   padding-top: 4rem;
   @include font-size-small;
-  @include breakpoint($screen-sm) {
+  @include breakpoint($screen-md) {
     @include span(isolate 8 at 3 of 12);
     float: none;
   }
@@ -80,7 +80,7 @@
       &:before {
         display: none;
       }
-      @include breakpoint($screen-sm) {
+      @include breakpoint($screen-md) {
         width: auto;
         height: auto;
         text-indent: inherit;
@@ -90,7 +90,7 @@
   }
   .woocommerce-Address {
     border-top: 4px solid $black;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       border-bottom: 1px solid $gray;
     }
   }
@@ -99,7 +99,7 @@
   }
   .col2-set {
     .col-1, .col-2 {
-      @include breakpoint($screen-sm) {
+      @include breakpoint($screen-md) {
         width: 49%;
         margin-right: 0;
       }
@@ -119,7 +119,7 @@ table.woocommerce-MyAccount-paymentMethods {
 
 .view-order__header {
   margin-bottom: 15px;
-  @include breakpoint($screen-sm) {
+  @include breakpoint($screen-md) {
     & {
       display: flex;
       align-items: center;

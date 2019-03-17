@@ -5,7 +5,7 @@
     ul li.search .site-search {
       visibility: visible;
       opacity: 1;
-      @include breakpoint($screen-sm) {
+      @include breakpoint($screen-md) {
         visibility: hidden;
         opacity: 0;
       }

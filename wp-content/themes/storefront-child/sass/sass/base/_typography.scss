@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.5rem; // 24px
   line-height: 1.75rem;
   font-weight: 700;
-  @include breakpoint($screen-sm) {
+  @include breakpoint($screen-md) {
     font-size: 1.75rem; // 28px
     line-height: 2rem;  // 32px
   }

@@ -4,7 +4,7 @@
     img {
       width: 100%;
     }
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       @include span(7 of 12);
     }
     .flex-control-thumbs {
@@ -17,7 +17,7 @@
           border-bottom: 2px solid $pickee-red;
         }
       }
-      @include breakpoint($screen-sm) {
+      @include breakpoint($screen-md) {
         @include layout(7 1/2);
         @include span(1 of 7);
         li {
@@ -28,7 +28,7 @@
 
     .flex-viewport {
       margin-bottom: 1rem;
-      @include breakpoint($screen-sm) {
+      @include breakpoint($screen-md) {
         float: right;
         @include layout(7 1/2);
         @include span(last 6 of 7);
@@ -36,7 +36,7 @@
     }
   }
   .summary {
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       @include span(last 5 of 12);
     }
     padding-top: 4rem;
@@ -57,7 +57,7 @@
       margin-bottom: 1rem;
       font-size: 1.25rem;
       font-weight: bold;
-      @include breakpoint($screen-sm) {
+      @include breakpoint($screen-md) {
         @include span(1 of 1);
         text-align: center;
       }
@@ -68,7 +68,7 @@
         text-align: right;
         overflow: auto;
         margin-bottom: 1rem;
-        @include breakpoint($screen-sm) {
+        @include breakpoint($screen-md) {
           @include span(1 of 1);
           text-align: center;
         }
@@ -77,7 +77,7 @@
         display: block;
         width: 100%;
         background-color: $pickee-blue;
-        @include breakpoint($screen-sm) {
+        @include breakpoint($screen-md) {
           display: inline-block;
           width: auto;
         }
@@ -120,7 +120,7 @@
       margin-top: 1.5rem;
       margin-bottom: 1rem;
     }
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       .description-left {
         @include span(6 of 12);
       }
@@ -133,7 +133,7 @@
         display: flex;
         float: left;
         width: 100%;
-        @include breakpoint($screen-sm) {
+        @include breakpoint($screen-md) {
           width: 50%;
         }
         .attribute-name {
@@ -157,7 +157,7 @@
 
 #reviews {
   text-align: center;
-  @include breakpoint($screen-sm) {
+  @include breakpoint($screen-md) {
     text-align: left;
   }
   .review-form-toggle {
@@ -173,7 +173,7 @@
       display: block;
       float: left;
       width: 100%;
-      @include breakpoint($screen-sm) {
+      @include breakpoint($screen-md) {
         width: 50%;
       }
       clear: none;
@@ -241,16 +241,16 @@
 #review_form {
   margin: 0 auto;
   width: 100%;
-  @include breakpoint($screen-sm) {
-    width: 600px;
-  }
   @include breakpoint($screen-md) {
     width: 600px;
   }
   @include breakpoint($screen-lg) {
-    width: 768px;
+    width: 600px;
   }
   @include breakpoint($screen-xl) {
+    width: 768px;
+  }
+  @include breakpoint($screen-xxl) {
     width: 960px;
   }
   textarea {
