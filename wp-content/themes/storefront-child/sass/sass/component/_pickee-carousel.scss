@@ -6,16 +6,16 @@
 
 #homepage-carousel {
   @include self_clear;
-  @include breakpoint($screen-md) {
+  @include breakpoint($screen-lg) {
     display: flex;
     flex-direction: row-reverse;
     width: 100%;
   }
   .carousel-images-wrap {
-    @include breakpoint($screen-md) {
+    @include breakpoint($screen-lg) {
       @include span(5 of 9 last 0);
     }
-    @include breakpoint($screen-xl) {
+    @include breakpoint($screen-xxl) {
       float: right;
       width: 800px;
       flex: 2 2 800px;
@@ -28,10 +28,10 @@
   .carousel-captions-wrap {
     position: relative;
     background-color: #ffffff;
-    @include breakpoint($screen-md) {
+    @include breakpoint($screen-lg) {
       @include span(4 of 9 0);
     }
-    @include breakpoint($screen-xl) {
+    @include breakpoint($screen-xxl) {
       float: left;
       width: 640px;
       flex: 1 1 640px;
@@ -41,19 +41,19 @@
       display: flex;
       align-items: center;
       padding: 2rem 0;
-      @include breakpoint($screen-md) {
+      @include breakpoint($screen-lg) {
         padding-top: 0;
       }
       .item {
         margin: 0 1rem;
         outline: none;
-        @include breakpoint($screen-md) {
+        @include breakpoint($screen-lg) {
           margin: 0 3rem;
         }
-        @include breakpoint($screen-lg) {
+        @include breakpoint($screen-xl) {
           margin: 0 4rem;
         }
-        @include breakpoint($screen-xl) {
+        @include breakpoint($screen-xxl) {
           margin: 0 6rem;
         }
         h2 {
@@ -75,7 +75,7 @@
       width: 100%;
       background-color: $light-gray;
       @include self_clear;
-      @include breakpoint($screen-md) {
+      @include breakpoint($screen-lg) {
         position: absolute;
         bottom: 0;
       }

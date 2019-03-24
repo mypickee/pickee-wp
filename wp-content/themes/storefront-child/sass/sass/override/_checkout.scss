@@ -3,7 +3,7 @@
   border-top: solid 4px #222222;
 }
 .col-right {
-  @include breakpoint($screen-sm) {
+  @include breakpoint($screen-md) {
     float: right;
     width: 41.1764705882%;
   }
@@ -78,7 +78,7 @@
   }
 }
 form.checkout {
-  @include breakpoint($screen-sm) {
+  @include breakpoint($screen-md) {
     width: 52.9411764706%;
     float: left;
     margin-right: 5.8823529412%;

@@ -18,7 +18,7 @@ body.woocommerce-cart {
       }
       .head-product {
         @include span(8 of 12);
-        @include breakpoint($screen-sm) {
+        @include breakpoint($screen-md) {
           @include span(6.4 of 12 3/7);
         }
       }
@@ -32,7 +32,7 @@ body.woocommerce-cart {
       }
       .head-total {
         @include span(last 4 of 12);
-        @include breakpoint($screen-sm) {
+        @include breakpoint($screen-md) {
           @include span(last 1.6 of 12 3/7);
         }
         .item-wrap {
@@ -49,11 +49,11 @@ body.woocommerce-cart {
           min-height: 9rem;
           padding: 1rem 0;
           @include align-middle;
-          @include breakpoint($screen-sm) {
+          @include breakpoint($screen-md) {
             padding: 0;
           }
         }
-        @include breakpoint($screen-sm) {
+        @include breakpoint($screen-md) {
           .item-wrap {
             display: table-cell;
             height: 100%;
@@ -62,7 +62,7 @@ body.woocommerce-cart {
         }
         .item-thumbnail {
           @include span(2.5 of 12);
-          @include breakpoint($screen-sm) {
+          @include breakpoint($screen-md) {
             @include span(1.5 of 12 3/7);
           }
           .wp-post-image {
@@ -95,13 +95,13 @@ body.woocommerce-cart {
               display: none;
             }
           }
-          @include breakpoint($screen-sm) {
+          @include breakpoint($screen-md) {
             @include span(9 of 12 3/7);
             .item-column {
               display: table;
               min-height: 9rem;
               padding: 1rem 0;
-              @include breakpoint($screen-sm) {
+              @include breakpoint($screen-md) {
                 padding: 0;
               }
               @include align-middle;
@@ -123,7 +123,7 @@ body.woocommerce-cart {
             text-align: right;
           }
           @include span(last 2 of 10);
-          @include breakpoint($screen-sm) {
+          @include breakpoint($screen-md) {
             @include span(last 1.5 of 12 3/7);
           }
         }
@@ -134,14 +134,14 @@ body.woocommerce-cart {
     @include self-clear;
     padding: 2rem 0;
     border-bottom: 1px solid #000000;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       @include span(5 of 12);
       border-bottom: 0px;
     }
-    @include breakpoint($screen-md) {
+    @include breakpoint($screen-lg) {
       @include span(4 of 12);
     }
-    @include breakpoint($screen-lg) {
+    @include breakpoint($screen-xl) {
       @include span(3 of 12);
     }
     input[name="update_cart"] {
@@ -153,10 +153,10 @@ body.woocommerce-cart {
   }
   .cart-collaterals {
     padding: 2rem 0;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       @include span(last 5 of 12);
     }
-    @include breakpoint($screen-md) {
+    @include breakpoint($screen-lg) {
       @include span(last 4 of 12);
     }
     .shop_table {
@@ -188,7 +188,7 @@ body.woocommerce-cart {
   }
   .cart-collaterals .cart_totals,
   .cart-collaterals .shipping_calculator {
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       width: 100%;
     }
   }

@@ -1,4 +1,8 @@
 .products-block {
+  h1 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
   ul.products {
     li.product {
       width: 100%;
@@ -15,7 +19,7 @@
       .price {
         color: $black;
       }
-      @include breakpoint($screen-sm) {
+      @include breakpoint($screen-md) {
         float: left;
         width: 22% !important;
         margin-right: 4% !important;
