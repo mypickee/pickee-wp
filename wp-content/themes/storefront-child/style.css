@@ -3693,28 +3693,33 @@ table thead th {
   border-color: #222222;
 }
 
-/* line 1, sass/sass/pages/_brands-landing.scss */
+/* line 2, sass/sass/pages/_brands-landing.scss */
+.brands-landing-top-image img {
+  width: 100%;
+}
+
+/* line 6, sass/sass/pages/_brands-landing.scss */
 .brands-landing-heading-wraper {
   margin-left: auto;
   margin-right: auto;
   color: #222222;
 }
 @media (min-width: 768px) {
-  /* line 1, sass/sass/pages/_brands-landing.scss */
+  /* line 6, sass/sass/pages/_brands-landing.scss */
   .brands-landing-heading-wraper {
     width: 100%;
     padding: 0 1rem;
   }
 }
 @media (min-width: 1200px) {
-  /* line 1, sass/sass/pages/_brands-landing.scss */
+  /* line 6, sass/sass/pages/_brands-landing.scss */
   .brands-landing-heading-wraper {
     padding: 0;
     width: 960px;
   }
 }
 @media (min-width: 1440px) {
-  /* line 1, sass/sass/pages/_brands-landing.scss */
+  /* line 6, sass/sass/pages/_brands-landing.scss */
   .brands-landing-heading-wraper {
     width: 1170px;
   }
@@ -3729,7 +3734,7 @@ table thead th {
     padding: 0;
   }
 }
-/* line 3, sass/sass/pages/_brands-landing.scss */
+/* line 8, sass/sass/pages/_brands-landing.scss */
 .brands-landing-heading-wraper .brands-landing-heading {
   position: relative;
   width: 82.85714%;
@@ -3742,7 +3747,7 @@ table thead th {
   background-color: #ffffff;
 }
 
-/* line 12, sass/sass/pages/_brands-landing.scss */
+/* line 17, sass/sass/pages/_brands-landing.scss */
 .pwb-all-brands {
   margin-left: auto;
   margin-right: auto;
@@ -3751,21 +3756,21 @@ table thead th {
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 12, sass/sass/pages/_brands-landing.scss */
+  /* line 17, sass/sass/pages/_brands-landing.scss */
   .pwb-all-brands {
     width: 100%;
     padding: 0 1rem;
   }
 }
 @media (min-width: 1200px) {
-  /* line 12, sass/sass/pages/_brands-landing.scss */
+  /* line 17, sass/sass/pages/_brands-landing.scss */
   .pwb-all-brands {
     padding: 0;
     width: 960px;
   }
 }
 @media (min-width: 1440px) {
-  /* line 12, sass/sass/pages/_brands-landing.scss */
+  /* line 17, sass/sass/pages/_brands-landing.scss */
   .pwb-all-brands {
     width: 1170px;
   }
@@ -3780,20 +3785,20 @@ table thead th {
     padding: 0;
   }
 }
-/* line 17, sass/sass/pages/_brands-landing.scss */
+/* line 22, sass/sass/pages/_brands-landing.scss */
 .pwb-all-brands .pwb-brands-cols-outer .pwb-brands-col3 {
   width: 25%;
 }
-/* line 19, sass/sass/pages/_brands-landing.scss */
+/* line 24, sass/sass/pages/_brands-landing.scss */
 .pwb-all-brands .pwb-brands-cols-outer .pwb-brands-col3 > p {
   font-size: 0.875rem;
   font-weight: 500;
 }
-/* line 22, sass/sass/pages/_brands-landing.scss */
+/* line 27, sass/sass/pages/_brands-landing.scss */
 .pwb-all-brands .pwb-brands-cols-outer .pwb-brands-col3 > p > small {
   display: none;
 }
-/* line 28, sass/sass/pages/_brands-landing.scss */
+/* line 33, sass/sass/pages/_brands-landing.scss */
 .pwb-all-brands .pwb-pagination-wrapper {
   border-top: none;
 }
