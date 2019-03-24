@@ -29,3 +29,29 @@
     border-top: none;
   }
 }
+.brands-list-block {
+  @include content-container;
+  margin-top: 136px;
+  text-align: center;
+  .brands-list-wrapper {
+    .brands-list-col {
+      @include span(2 of $mobile);
+      @include breakpoint($screen-lg) {
+        @include span(3 of 12);
+      }
+      > p {
+        font-size: $font-size-small;
+        font-weight: 500;
+        > small {
+          display: none;
+        }
+        a {
+          color: $black;
+        }
+      }
+    }
+  }
+  .pwb-pagination-wrapper {
+    border-top: none;
+  }
+}
