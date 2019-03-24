@@ -434,3 +434,65 @@ function custom_scripts() {
   wp_enqueue_style('select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css', [], false, 'all');
 }
 add_action('wp_enqueue_scripts', 'custom_scripts', 5);
+
+//[brands_list] sortcode. It is a copy of pwb-all-brands short code from perfect-woocommerce-brands
+function brands_list_func($atts) {
+
+  $atts = shortcode_atts([
+    'per_page'       => "100",
+    'image_size'     => "thumbnail",
+    'hide_empty'     => false,
+    'order_by'       => 'name',
+    'order'          => 'ASC',
+    'title_position' => 'before'
+  ], $atts, 'brands-list');
+
+  $hide_empty = ($atts['hide_empty'] != 'true') ? false : true;
+
+  ob_start();
+
+  $brands = array();
+  if ($atts['order_by'] == 'rand') {
+    $brands = \Perfect_Woocommerce_Brands\Perfect_Woocommerce_Brands::get_brands($hide_empty);
+    shuffle($brands);
+  }else{
+    $brands = \Perfect_Woocommerce_Brands\Perfect_Woocommerce_Brands::get_brands($hide_empty, $atts['order_by'], $atts['order']);
+  }
+
+  ?>
+  <div class="brands-list-block">
+    <div class="brands-list-wrapper">
+      <?php
+      foreach($brands as $brand) {
+        $brand_id = $brand->term_id;
+        //echo $brand->slug;
+        $brand_name = $brand->name;
+        //$brand_link = get_term_link($brand_id);
+        $brand_link = get_permalink(get_page_by_path($brand_name));
+
+
+        $attachment_id = get_term_meta($brand_id, 'pwb_brand_image', 1);
+        $attachment_html = $brand_name;
+        if ($attachment_id != '') {
+          $attachment_html = wp_get_attachment_image($attachment_id, $image_size);
+        }
+
+        ?>
+        <div class="brands-list-col">
+          <div>
+            <a href="<?php echo $brand_link;?>" title="<?php echo $brand_name;?>"><?php echo $attachment_html;?></a>
+          </div>
+          <p>
+            <a href="<?php echo $brand_link;?>"><?php echo $brand_name;?></a>
+          </p>
+        </div>
+        <?php
+        }
+      ?>
+      </div>
+    </div>
+  <?php
+
+  return ob_get_clean();
+}
+add_shortcode('brands_list', 'brands_list_func');
