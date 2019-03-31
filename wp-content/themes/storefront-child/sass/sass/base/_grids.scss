@@ -18,4 +18,50 @@ $mobile: (
     image: show,
   ),
 );
+$desktop: (
+  gutter-position: inside-static,
+  container: 100%,
+  columns: 12,
+  column-width: 120px, // it doesn't matter what number this is...
+  gutters: 30px/120px,
+  debug: (
+    image: show,
+  ),
+);
 @include border-box-sizing;
+
+@mixin row {
+  @include breakpoint($screen-lg) {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  &:after, &:before {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear:both;
+  }
+}
+
+.row {
+  @include row;
+}
+
+@mixin container {
+  margin-right:auto;
+  margin-left:auto;
+  @include breakpoint($screen-md) {
+    width: 750px;
+  }
+  @include breakpoint($screen-lg) {
+    width: 970px;
+  }
+  @include breakpoint($screen-xl) {
+    width: 1170px;
+  }
+}
+
+.container {
+  @include container;
+}

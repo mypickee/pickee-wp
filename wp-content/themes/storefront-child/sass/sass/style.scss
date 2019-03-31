@@ -7,11 +7,11 @@ Author URI: http://woocommerce.com
 Template: storefront
 */
 @import "base/variables";
-@import "susy";
+@import "base/breakpoints";
 @import "breakpoint";
+@import "susy";
 @import "base/base";
 @import "base/grids";
-@import "base/breakpoints";
 @import "base/font";
 @import "base/typography";
 @import "base/utilities";
