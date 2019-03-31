@@ -461,32 +461,32 @@ function brands_list_func($atts) {
 
   ?>
   <div class="brands-list-block">
-    <div class="brands-list-wrapper">
+    <div class="row">
       <?php
-      foreach($brands as $brand) {
-        $brand_id = $brand->term_id;
-        //echo $brand->slug;
-        $brand_name = $brand->name;
-        //$brand_link = get_term_link($brand_id);
-        $brand_link = get_permalink(get_page_by_path($brand_name));
+        foreach($brands as $brand) {
+          $brand_id = $brand->term_id;
+          //echo $brand->slug;
+          $brand_name = $brand->name;
+          //$brand_link = get_term_link($brand_id);
+          $brand_link = get_permalink(get_page_by_path($brand_name));
 
 
-        $attachment_id = get_term_meta($brand_id, 'pwb_brand_image', 1);
-        $attachment_html = $brand_name;
-        if ($attachment_id != '') {
-          $attachment_html = wp_get_attachment_image($attachment_id, $image_size);
-        }
+          $attachment_id = get_term_meta($brand_id, 'pwb_brand_image', 1);
+          $attachment_html = $brand_name;
+          if ($attachment_id != '') {
+            $attachment_html = wp_get_attachment_image($attachment_id, $image_size);
+          }
 
-        ?>
-        <div class="brands-list-col">
-          <div>
-            <a href="<?php echo $brand_link;?>" title="<?php echo $brand_name;?>"><?php echo $attachment_html;?></a>
+          ?>
+          <div class="brands-list-col">
+            <div>
+              <a href="<?php echo $brand_link;?>" title="<?php echo $brand_name;?>"><?php echo $attachment_html;?></a>
+            </div>
+            <h4>
+              <a href="<?php echo $brand_link;?>"><?php echo $brand_name;?></a>
+            </h4>
           </div>
-          <p>
-            <a href="<?php echo $brand_link;?>"><?php echo $brand_name;?></a>
-          </p>
-        </div>
-        <?php
+          <?php
         }
       ?>
       </div>

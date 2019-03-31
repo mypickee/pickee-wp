@@ -1,22 +1,42 @@
 .brands-landing-top-image {
-  img {
-    width: 100%;
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+  @include breakpoint($screen-lg) {
+    height: 400px;
+  }
+  .bar-position {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include container;
+    .bar-wrapper {
+      @include span(4 of $mobile);
+      @include breakpoint($screen-lg) {
+        @include span(10 at 2 of $desktop isolate);
+      }
+      .bar {
+        height: 32px;
+        background-color: #ffffff;
+        @include breakpoint($screen-lg) {
+          height: 64px;
+        }
+      }
+    }
   }
 }
-.brands-landing-heading-wraper {
-  @include content-container;
-  .brands-landing-heading {
-    position: relative;
-    @include span(isolate 10 at 2 of 12);
-    top: -72px;
-    padding-top: 72px;
-    text-align: center;
-    background-color: #ffffff;
-  }
+
+.brands-landing-heading {
+  @include container;
+  margin-top: 16px;
+  text-align: center;
 }
+
 .pwb-all-brands {
-  @include content-container;
-  margin-top: 136px;
+  @include container;
+  margin-top: 64px;
   text-align: center;
   .pwb-brands-cols-outer {
     .pwb-brands-col3 {
@@ -35,23 +55,21 @@
   }
 }
 .brands-list-block {
-  @include content-container;
-  margin-top: 136px;
+  @include container;
+  margin-top: 64px;
   text-align: center;
-  .brands-list-wrapper {
+  .row {
     .brands-list-col {
       @include span(2 of $mobile);
       @include breakpoint($screen-lg) {
-        @include span(3 of 12);
+        @include span(3 of $desktop);
       }
-      > p {
-        font-size: $font-size-small;
-        font-weight: 500;
-        > small {
-          display: none;
-        }
+      > h4 {
+        margin: 0;
+        height: 4.375rem;
         a {
           color: $black;
+          font-weight: 500;
         }
       }
     }
