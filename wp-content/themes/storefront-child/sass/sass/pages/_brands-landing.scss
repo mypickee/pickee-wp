@@ -1,4 +1,4 @@
-.brands-landing-top-image {
+.brands-landing-top-image, .brand-page-top-image {
   position: relative;
   height: 200px;
   background-size: cover;
@@ -32,6 +32,10 @@
   @include container;
   margin-top: 16px;
   text-align: center;
+  h2 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
 }
 
 .pwb-all-brands {
