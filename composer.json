@@ -18,7 +18,7 @@
     "wpackagist-theme/storefront": "~2.3.5"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate akismet sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-web-services amazon-s3-and-cloudfront; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate akismet sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
