@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8efb851557a98fa930cb2ec4b40f8f1e",
+    "content-hash": "d01cfcfab5bab09c1c9047195032b2a6",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -722,6 +722,7 @@
                 "array_column",
                 "column"
             ],
+            "abandoned": true,
             "time": "2015-03-20T22:07:39+00:00"
         },
         {
@@ -1671,7 +1672,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/akismet.4.1.zip",
-                "reference": null,
+                "reference": "tags/4.1",
                 "shasum": null
             },
             "require": {
@@ -1682,15 +1683,15 @@
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
-            "version": "2.0",
+            "version": "2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/2.0"
+                "reference": "tags/2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.2.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1699,26 +1700,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
-        },
-        {
-            "name": "wpackagist-plugin/amazon-web-services",
-            "version": "1.0.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/amazon-web-services/",
-                "reference": "tags/1.0.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-web-services.1.0.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/amazon-web-services/"
         },
         {
             "name": "wpackagist-plugin/insert-html-snippet",
@@ -1731,7 +1712,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/insert-html-snippet.1.2.5.zip",
-                "reference": null,
+                "reference": "tags/1.2.5",
                 "shasum": null
             },
             "require": {
@@ -1751,7 +1732,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/perfect-woocommerce-brands.1.7.0.zip",
-                "reference": null,
+                "reference": "tags/1.7.0",
                 "shasum": null
             },
             "require": {
@@ -1771,7 +1752,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/sendgrid-email-delivery-simplified.1.11.8.zip",
-                "reference": null,
+                "reference": "tags/1.11.8",
                 "shasum": null
             },
             "require": {
@@ -1791,7 +1772,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/woocommerce.3.5.2.zip",
-                "reference": null,
+                "reference": "tags/3.5.2",
                 "shasum": null
             },
             "require": {
@@ -1811,7 +1792,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/woocommerce-gateway-stripe.4.1.13.zip",
-                "reference": null,
+                "reference": "tags/4.1.13",
                 "shasum": null
             },
             "require": {
@@ -1831,7 +1812,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/theme/storefront.2.3.5.zip",
-                "reference": null,
+                "reference": "2.3.5",
                 "shasum": null
             },
             "require": {
@@ -2651,6 +2632,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2018-08-09T05:50:03+00:00"
         },
         {
@@ -3301,6 +3283,26 @@
                 "validate"
             ],
             "time": "2018-01-29T19:49:41+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/amazon-web-services",
+            "version": "1.0.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/amazon-web-services/",
+                "reference": "tags/1.0.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-web-services.1.0.5.zip",
+                "reference": "tags/1.0.5",
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/amazon-web-services/"
         }
     ],
     "aliases": [],

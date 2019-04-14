@@ -8,8 +8,7 @@
   "require": {
     "php": "~7.2.0",
     "wp-cli/wp-cli": "~0.22",
-    "wpackagist-plugin/amazon-s3-and-cloudfront": "~2.0",
-    "wpackagist-plugin/amazon-web-services": "^1.0",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "~2.1",
     "wpackagist-plugin/insert-html-snippet": "~1.2.5",
     "wpackagist-plugin/akismet": "~4.1.0",
     "wpackagist-plugin/perfect-woocommerce-brands": "~1.7.0",
