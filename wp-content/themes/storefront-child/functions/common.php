@@ -53,7 +53,7 @@ if (!function_exists('header_handles_menu_button')) {
   function header_handles_menu_button() {
     ?>
       <div id="header-menu-button" class="header-menu-button header-menu-toggle">
-        Menu
+        <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/header_nav.svg"); ?>
       </div>
     <?php
   }

@@ -15,8 +15,8 @@ body.cart-open {
 
 .woocommerce-active .site-header {
   border-bottom: none;
-  padding-top: 1.618rem;
-  padding-bottom: 1.618rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   color: $black;
   @include font-size-small;
 
@@ -24,32 +24,22 @@ body.cart-open {
     color: $pickee-blue;
     font-weight: 500;
   }
-  .storefront-primary-navigation {
+  >.col-full {
     float: left;
-    clear: none;
-    margin-left: 4.6rem;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .main-navigation {
-    width: 100%;
-    margin-right: 0;
-    ul.menu > li > a, ul.nav-menu > li > a {
-      line-height: 3rem;
-      padding: 0 1rem;
-    }
+    margin: 0;
+    padding: 0;
   }
 
   .site-branding {
-    position: absolute;
-    margin-left: 50%;
-    left: -3.34rem;
     float: none !important;
+    position: absolute;
+    left: -3.34rem;
     width: 6.68rem;
     height: 3rem;
-    text-align: center;
+    margin-left: 50%;
     margin-bottom: 0;
+    padding-top: 0.75rem;
+    text-align: center;
     @include breakpoint($screen-md) {
       position: inherit;
       left: 0;
@@ -60,6 +50,26 @@ body.cart-open {
     svg {
       max-height: 100%;
       max-width: 100%;
+    }
+  }
+
+  .storefront-primary-navigation {
+    >.col-full {
+      padding: 0;
+    }
+    float: left;
+    clear: none;
+    margin-left: 4.5rem;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .main-navigation {
+    width: 100%;
+    margin-right: 0;
+    ul.menu > li > a, ul.nav-menu > li > a {
+      line-height: 3rem;
+      padding: 0 1rem;
     }
   }
 
@@ -163,10 +173,8 @@ body.cart-open {
   .header-menu-button {
     float: left;
     height: 3rem;
-    line-height: 3rem;
-    padding-left: 2em;
-    color: $pickee-blue;
-    font-weight: 600;
+    padding-left: 15px;
+    padding-top: 12px;
     cursor: pointer;
     @include breakpoint($screen-md) {
       display: none;
@@ -296,68 +304,36 @@ body.cart-open {
           outline-style: none;
         }
       }
-      .menu ul.sub-menu {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 100%;
-        background-color: rgba(255,255,255,1);
-        transition: 0.3s ease-in-out;
-        transition-delay: 0.1s;
-        z-index: 1003;
-        &.expand {
-          transform: translate(-100%, 0);
+      ul.menu {
+        li {
+          position: static;
+        }
+        .sub-menu {
+          // override the original settings
+          visibility: visible;
+          opacity: 100;
+          max-height: 100%;
+
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 100%;
+          background-color: rgba(255,255,255,1);
+          transition: 0.3s ease-in-out;
+          transition-delay: 0.1s;
+          z-index: 1003;
+          &.expand {
+            transform: translate(-100%, 0);
+          }
         }
       }
     }
-
   }
 }
 
-
-//header for homepage
-/*
-.woocommerce-active.home .site-header {
-  border-bottom: none;
-
-  a {
-    color: $pickee-blue;
-    font-weight: 600;
-  }
-
-  .storefront-primary-navigation {
-    float: none;
-    clear: both;
-    width: 100%;
-  }
-
-  .main-navigation {
-    width: 100%;
-    margin-right: 0;
-    text-align: center;
-    ul.menu {
-      text-align: center;
-    }
-    ul.menu > li > a, ul.nav-menu > li > a {
-      padding: 1em 1em;
-    }
-  }
-
-  .site-branding {
-    margin: 0 auto !important;
-    float: none !important;
-    width: 10em;
-    height: 4.5em;
-    text-align: center;
-    svg {
-      max-width: 100%;
-    }
-  }
-}
-*/
 .header-cart {
   float: right;
-  margin-right: 2rem;
+  margin-right: 15px;
   height: 3rem;
   width: 3rem;
   background-color: $pickee-red;
