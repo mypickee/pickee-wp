@@ -97,7 +97,7 @@ body.cart-open {
         font-weight: 500;
         line-height: 1rem;
       }
-      &:before {
+      /*&:before {
         content: "";
         display: block;
         width: 1px;
@@ -106,48 +106,86 @@ body.cart-open {
         position: absolute;
         top: 0.2rem;
         right: 0;
-      }
+      }*/
     }
   }
+  /*
   .site-search {
     float: right;
     width: auto;
     clear: none;
     margin-bottom: 0;
-    padding-top: 0.95rem;
-    line-height: 1rem;
-    color: $black;
+    padding: 0 1rem;
+    height: 3rem;
+    line-height: 3rem;
+    color: $pickee-blue;
     display: none;
     @include breakpoint($screen-md) {
       display: block;
     }
-    .widget_product_search {
-      float: left;
-      margin: 0;
-      form:before {
-        top: 0.25rem;
-        left: 1rem;
-        width: 1rem;
-        height: 1rem;
-        color: $black;
-      }
-      input[type=search], input[type=text] {
-        padding: 0 0.5rem 0 2.5rem;
-        background-color: transparent;
-        color: $black;
-        font-weight: 500;
-        box-shadow: none;
-        width: 7rem;
-        transition: width 0.5s;
-        @include font-size-small;
-        &:focus {
-          width: 12rem;
+    .search-bar {
+      position: absolute;
+      top: 6rem;
+      left: 0;
+      width: 100%;
+      height: 8.5rem;
+      background-color: $pickee-blue;
+      .widget_product_search {
+        float: left;
+        margin: 0;
+        form:before {
+          content: "";
+          display: none;
         }
-        &::placeholder {
-          color: $black;
+        input[type=search], input[type=text] {
+          //padding: 0 0.5rem 0 2.5rem;
+          background-color: transparent;
+          color: #ffffff;
+          font-weight: 500;
+          box-shadow: none;
+          height: 8.5rem;
+          padding-left: 4rem;
+          line-height: 8.5rem;
+          transition: width 0.5s;
+          font-size: 3rem;
+          &::placeholder {
+            color: #ffffff;
+          }
         }
       }
     }
+    .search-toggle-btn {
+      position: relative;
+      width: 1rem;
+      height: 1rem;
+      cursor: pointer;
+      &.hidden {
+        svg {
+          display :none;
+        }
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+        .line {
+          stroke-width: 2px;
+          stroke: $black;
+        }
+      }
+      &::after {
+        content:'';
+        display:block;
+        width:0;
+        height:0;
+        position:absolute;
+
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid $pickee-blue;
+        top: 4rem;
+      }
+    }
+    /*
     .search-clear-btn {
       float: right;
       margin-right: 0.75rem;
@@ -168,7 +206,7 @@ body.cart-open {
         }
       }
     }
-  }
+  }*/
 
   .header-menu-button {
     float: left;
@@ -205,7 +243,7 @@ body.cart-open {
     }
     .header-menu-back {
       position: absolute;
-      height: 4em;
+      height: 3.5rem;
       padding-left: 1em;
       line-height: 4em;
       z-index: 1003;
@@ -224,8 +262,8 @@ body.cart-open {
     }
     .header-menu-close {
       position: absolute;
-      height: 4em;
-      width: 4em;
+      height: 3.5rem;
+      width: 3.5rem;
       top: 0;
       right: 0;
       cursor: pointer;
@@ -243,15 +281,79 @@ body.cart-open {
       }
     }
     .header-menu-header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 4em;
+      height: 3.5rem;
       width: 100%;
       line-height: 1.5em;
       background: #ffffff;
       font-size: 1em;
       border-bottom: solid 1px $pickee-blue;
+    }
+    .search-toggle {
+      float: left;
+      position: relative;
+      height: 3.5rem;
+      padding: 0.4rem 1rem 0 1rem;
+      line-height: 3.5rem;
+      z-index: 1003;
+      cursor: pointer;
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+      &::after {
+        display: block;
+        visibility: hidden;
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 0;
+        left: 1.25rem;
+        border-left: 0.625rem solid transparent;
+        border-right: 0.625rem solid transparent;
+        border-bottom: 0.625rem solid $pickee-blue;
+        transition: visibility 0.15s;
+      }
+      &.hidden {
+        display: none;
+      }
+      &.expand::after {
+        visibility: visible;
+      }
+    }
+    .search-bar {
+      width: 100%;
+      height: 0rem;
+      background-color: $pickee-blue;
+      transition: height 0.3s;
+      &.visible {
+        height: 4rem;
+      }
+      .widget_product_search {
+        float: left;
+        margin: 0;
+        max-height: 100%;
+        width: 100%;
+        form {
+          margin-bottom: 0;
+        }
+        form:before {
+          content: "";
+          display: none;
+        }
+        input[type=search], input[type=text] {
+          background-color: transparent;
+          height: 4rem;
+          padding-left: 2rem;
+          line-height: 4rem;
+          box-shadow: none;
+          color: #ffffff;
+          font-weight: 500;
+          &::placeholder {
+            color: #ffffff;
+          }
+        }
+      }
     }
     .header-menu-footer {
       position: absolute;
@@ -274,9 +376,8 @@ body.cart-open {
     }
     .handheld-navigation {
       position: relative;
-      margin-top: 4em;
       max-height: 100%;
-      height: calc(100% - 8em);
+      height: 100%;
       overflow: hidden;
       background-color: #eeeeee;
       ul {
@@ -285,7 +386,7 @@ body.cart-open {
         overflow-y: scroll;
       }
       > ul {
-        height: calc(100% - 4em);
+        height: calc(100% - 3.5em);
         background-color: rgba(255,255,255,1);
         transition: 0.3s;
         transition-delay: 0.1s;
@@ -307,6 +408,9 @@ body.cart-open {
       ul.menu {
         li {
           position: static;
+          button {
+            display: none;
+          }
         }
         .sub-menu {
           // override the original settings

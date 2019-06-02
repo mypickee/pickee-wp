@@ -11,16 +11,46 @@
       $('body').toggleClass('cart-open');
       e.preventDefault();
     });
+
     $('.header-menu').on('click', 'li.menu-item-has-children > a', function(e) {
       e.preventDefault();
       $(this).siblings('ul.sub-menu').addClass('expand');
-      $('.header-menu-back').addClass('visible');
-      $(this).closest('ul').addClass('expand');
+      $(this).closest('ul.menu').addClass('expand');
+      toggle_handheled_menu_header();
     });
-    $('.header-menu .header-menu-back').click( function(e) {
+
+    $('#header-menu-back').click( function(e) {
       $('.header-menu ul').removeClass('expand');
-      $(this).removeClass('visible');
-      $(this).closest('ul').addClass('covered');
+      toggle_handheled_menu_header();
+    });
+
+    function toggle_handheled_menu_header()
+    {
+      $('#header-menu-back').toggleClass('visible');
+      $('#handheld-search-toggle').toggleClass('hidden');
+      close_handheld_search_bar();
+    }
+
+    function close_handheld_search_bar()
+    {
+      $('#handheld-search-bar').removeClass('visible');
+      $('#handheld-search-bar').find(':input.search-field')[0].blur();
+      $('#handheld-search-toggle').removeClass('expand');
+    }
+
+    function expand_handheld_search_bar()
+    {
+      $('#handheld-search-bar').addClass('visible');
+      $('#handheld-search-bar').find(':input.search-field')[0].focus();
+      $('#handheld-search-toggle').addClass('expand');
+    }
+
+    $('#header-menu').on('click', '.search-toggle', function(e){
+      if ($(this).hasClass('expand')) {
+        close_handheld_search_bar();
+      } else {
+        expand_handheld_search_bar();
+      }
     });
 
     $('.site-header .site-search').focusin(function(e) {

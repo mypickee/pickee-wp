@@ -44,13 +44,13 @@ if (!function_exists('site_branding_svg')) {
 }
 
 
-if (!function_exists('header_handles_menu_button')) {
+if (!function_exists('header_handheld_menu_button')) {
   /**
-   * Display handles_menu_button in header
+   * Display handheld_menu_button in header
    *
    * @return void
    */
-  function header_handles_menu_button() {
+  function header_handheld_menu_button() {
     ?>
       <div id="header-menu-button" class="header-menu-button header-menu-toggle">
         <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/header_nav.svg"); ?>
@@ -59,22 +59,28 @@ if (!function_exists('header_handles_menu_button')) {
   }
 }
 
-if (!function_exists('header_handles_menu')) {
+if (!function_exists('header_handheld_menu')) {
   /**
-   * Display handles_menu_button in header
+   * Display handheld_menu_button in header
    *
    * @return void
    */
-  function header_handles_menu() {
+  function header_handheld_menu() {
     ?>
       <div id="header-menu" class="header-menu">
-        <div class="header-menu-back">
-          BACK
-        </div>
-        <div class="header-menu-close header-menu-toggle">
-          <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?>
-        </div>
         <div class="header-menu-header">
+          <div id="header-menu-back" class="header-menu-back">
+            BACK
+          </div>
+          <div id="handheld-search-toggle" class="search-toggle">
+            <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/search.svg"); ?>
+          </div>
+          <div class="header-menu-close header-menu-toggle">
+            <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?>
+          </div>
+        </div>
+        <div id="handheld-search-bar" class="search-bar">
+          <?php the_widget('WC_Widget_Product_Search', 'title='); ?>
         </div>
         <?php
           wp_nav_menu(array(
@@ -228,12 +234,12 @@ if (!function_exists('init_header')) {
     remove_action('storefront_header', 'storefront_header_cart', 60);
 
     # Add site header components
-    add_action('storefront_header', 'header_handles_menu_button', 10);
-    add_action('storefront_header', 'header_handles_menu', 15);
+    add_action('storefront_header', 'header_handheld_menu_button', 10);
+    add_action('storefront_header', 'header_handheld_menu', 15);
     add_action('storefront_header', 'site_branding_svg', 20);
     add_action('storefront_header', 'header_cart', 70);
     add_action('storefront_header', 'header_product_search', 80);
-    add_action('storefront_header', 'header_login', 90);
+    add_action('storefront_header', 'header_login', 90); 
   }
 }
 
