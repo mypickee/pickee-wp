@@ -44,37 +44,64 @@ if (!function_exists('site_branding_svg')) {
 }
 
 
-if (!function_exists('header_handles_menu_button')) {
+if (!function_exists('header_handheld_menu_button')) {
   /**
-   * Display handles_menu_button in header
+   * Display handheld_menu_button in header
    *
    * @return void
    */
-  function header_handles_menu_button() {
+  function header_handheld_menu_button() {
     ?>
       <div id="header-menu-button" class="header-menu-button header-menu-toggle">
-        Menu
+        <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/header_nav.svg"); ?>
       </div>
     <?php
   }
 }
 
-if (!function_exists('header_handles_menu')) {
+if (!function_exists('header_handheld_menu')) {
   /**
-   * Display handles_menu_button in header
+   * Display handheld_menu_button in header
    *
    * @return void
    */
-  function header_handles_menu() {
+  function header_handheld_menu() {
     ?>
       <div id="header-menu" class="header-menu">
-        <div class="header-menu-back">
-          BACK
-        </div>
-        <div class="header-menu-close header-menu-toggle">
-          <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?>
-        </div>
         <div class="header-menu-header">
+          <div id="header-menu-back" class="header-menu-back">
+            BACK
+          </div>
+          <?php if (is_user_logged_in()) : ?>
+            <div id="handheld-account-toggle" class="account-toggle">
+              <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/account.svg"); ?>
+            </div>
+          <?php else: ?>
+            <a class="handheld-sign-in" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" title="<?php _e('Login / Register','woothemes'); ?>"><?php _e('Sign in','woothemes'); ?></a>
+          <?php endif; ?>
+          <div id="handheld-search-toggle" class="search-toggle">
+            <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/search.svg"); ?>
+          </div>
+          <div class="header-menu-close header-menu-toggle">
+            <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?>
+          </div>
+        </div>
+        <div id="handheld-account-dropdown" class="account-dropdown">
+          <div class="account-info">
+            <?php
+              $user = wp_get_current_user();
+              echo '<div class="name">'.$user->display_name.'</b></div>';
+            ?>
+            <ul class="account-links">
+              <li><a href="/my-account">Account Details</a></li>
+              <li><a href="/my-account/orders">Orders</a></li>
+              <li><a href="/my-account/payment-methods">Payment Methods</a></li>
+              <li><a class="logout" href="<?php echo esc_url(wc_logout_url());?>"><b>Log out</b></a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="handheld-search-bar" class="search-bar">
+          <?php the_widget('WC_Widget_Product_Search', 'title='); ?>
         </div>
         <?php
           wp_nav_menu(array(
@@ -82,18 +109,6 @@ if (!function_exists('header_handles_menu')) {
             'container_class' => 'handheld-navigation',
           ));
         ?>
-        <div class="header-menu-footer">
-          <?php if (is_user_logged_in()) : ?>
-            <?php
-              $user = wp_get_current_user();
-              echo '<span><b>Hi, '.$user->display_name.'</b></span>|';
-            ?>
-            <span><a href="<?php echo wp_logout_url(get_permalink(woocommerce_get_page_id('myaccount')));?>">Sign Out</a><span>|
-            <span><a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" title="<?php _e('My Account','woothemes'); ?>"><?php _e('My Account','woothemes'); ?></a></span>
-          <?php else : ?>
-            <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" title="<?php _e('Login / Register','woothemes'); ?>"><?php _e('Login / Register','woothemes'); ?></a>
-          <?php endif;?>
-        </div>
       </div>
     <?php
   }
@@ -138,9 +153,24 @@ if (!function_exists('header_product_search')) {
   function header_product_search() {
     ?>
       <div class="site-search">
-        <?php the_widget('WC_Widget_Product_Search', 'title='); ?>
-        <div class="search-clear-btn hidden"><?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?></div>
+        <div class="search-toggle-btn"><?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?></div>
       </div>
+    <?php
+  }
+}
+
+if (!function_exists('header_product_search_bar')) {
+  /**
+   * Display header product search
+   *
+   * @return void
+   */
+  function header_product_search_bar() {
+    ?>
+      <div class="search-bar">
+        <?php the_widget('WC_Widget_Product_Search', 'title='); ?>
+      </div>
+      <div class="search-clear-btn"><?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?></div>
     <?php
   }
 }
@@ -228,8 +258,8 @@ if (!function_exists('init_header')) {
     remove_action('storefront_header', 'storefront_header_cart', 60);
 
     # Add site header components
-    add_action('storefront_header', 'header_handles_menu_button', 10);
-    add_action('storefront_header', 'header_handles_menu', 15);
+    add_action('storefront_header', 'header_handheld_menu_button', 10);
+    add_action('storefront_header', 'header_handheld_menu', 15);
     add_action('storefront_header', 'site_branding_svg', 20);
     add_action('storefront_header', 'header_cart', 70);
     add_action('storefront_header', 'header_product_search', 80);
