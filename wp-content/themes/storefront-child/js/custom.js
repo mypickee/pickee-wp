@@ -26,7 +26,7 @@
     function toggle_handheled_menu_header()
     {
       $('#header-menu-back').toggleClass('visible');
-      $('#handheld-search-toggle').toggleClass('hidden');
+      $('#handheld-search-toggle, .handheld-sign-in, #handheld-account-toggle').toggleClass('hidden');
       close_handheld_search_bar();
     }
 
