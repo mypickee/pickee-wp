@@ -11,6 +11,29 @@
       e.preventDefault();
     });
 
+    $('#header-search-toggle').on('click', function(e){
+      if ($(this).hasClass('expand')) {
+        close_header_search_bar();
+      } else {
+        expand_header_search_bar();
+      }
+    });
+
+    function close_header_search_bar()
+    {
+      $('#header-search-bar').removeClass('visible');
+      $('#header-search-bar').find(':input.search-field')[0].blur();
+      $('#header-search-toggle').removeClass('expand');
+    }
+
+    function expand_header_search_bar()
+    {
+      close_handheld_account_dropdown();
+      $('#header-search-bar').addClass('visible');
+      $('#header-search-bar').find(':input.search-field')[0].focus();
+      $('#header-search-toggle').addClass('expand');
+    }
+
     $('.header-menu').on('click', 'li.menu-item-has-children > a', function(e) {
       e.preventDefault();
       $(this).siblings('ul.sub-menu').addClass('expand');

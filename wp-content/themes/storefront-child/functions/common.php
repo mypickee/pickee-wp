@@ -153,28 +153,14 @@ if (!function_exists('header_product_search')) {
   function header_product_search() {
     ?>
       <div class="site-search">
-        <div class="search-toggle-btn"><?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?></div>
+        <div id="header-search-toggle" class="search-toggle"><?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/search.svg"); ?></div>
+        <div id="header-search-bar" class="search-bar">
+          <?php the_widget('WC_Widget_Product_Search', 'title='); ?>
+        </div>
       </div>
     <?php
   }
 }
-
-if (!function_exists('header_product_search_bar')) {
-  /**
-   * Display header product search
-   *
-   * @return void
-   */
-  function header_product_search_bar() {
-    ?>
-      <div class="search-bar">
-        <?php the_widget('WC_Widget_Product_Search', 'title='); ?>
-      </div>
-      <div class="search-clear-btn"><?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/close_icon.svg"); ?></div>
-    <?php
-  }
-}
-
 
 if (!function_exists('header_cart_link')) {
   /**
