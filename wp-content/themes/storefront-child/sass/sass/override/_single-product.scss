@@ -323,3 +323,20 @@ p.comment-form-comment {
     }
   }
 }
+
+.storefront-sticky-add-to-cart__content-title {
+  color: $black;
+  display: inline-block;
+}
+.storefront-sticky-add-to-cart__content-price {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  color: $black;
+  opacity: unset;
+}
+@include breakpoint($screen-md) {
+  .storefront-sticky-add-to-cart {
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.05);
+  }
+}
