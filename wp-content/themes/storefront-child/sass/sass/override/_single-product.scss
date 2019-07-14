@@ -336,7 +336,7 @@ p.comment-form-comment {
   opacity: unset;
 }
 @include breakpoint($screen-md) {
-  .storefront-sticky-add-to-cart {
+  .storefront-sticky-add-to-cart--slideInDown {
     box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.05);
   }
 }
