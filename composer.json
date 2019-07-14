@@ -13,8 +13,8 @@
     "wpackagist-plugin/akismet": "~4.1.0",
     "wpackagist-plugin/perfect-woocommerce-brands": "~1.7.0",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1.11.4",
-    "wpackagist-plugin/woocommerce": "~3.5.2",
-    "wpackagist-plugin/woocommerce-gateway-stripe": "~4.1.13",
+    "wpackagist-plugin/woocommerce": "~3.6.5",
+    "wpackagist-plugin/woocommerce-gateway-stripe": "~4.2.2",
     "wpackagist-theme/storefront": "~2.3.5"
   },
   "scripts": {
