@@ -72,52 +72,118 @@ body.cart-open {
       padding: 0 1rem;
     }
   }
-
-  ul.links {
+  .header-account {
+    position: relative;
+    display: none;
+    float: right;
+    clear: none;
+    height: 3rem;
+    padding: 0.75rem;
+    color: $pickee-blue;
     @include breakpoint($screen-md) {
       display: block;
     }
-    display: none;
-    list-style: none;
-    float: right;
-    padding: 1rem 0 0 0;
-    line-height: 1rem;
-    margin: 0;
-    li {
-      float: right;
+    .account-toggle {
       position: relative;
-      display: block;
-      height: 1rem;
-      list-style: none;
-      padding: 0 0.75em;
-      color: $black;
-      font-weight: 500;
-      a {
-        color: $black;
-        font-weight: 500;
-        line-height: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      cursor: pointer;
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
       }
-      /*&:before {
-        content: "";
-        display: block;
-        width: 1px;
-        height: 0.8rem;
-        background-color: $black;
+      &::after {
+        content:'';
         position: absolute;
-        top: 0.2rem;
-        right: 0;
-      }*/
+        display: block;
+        top: 3.25rem;
+        left: 0.25rem;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid $pickee-blue;
+        visibility: hidden;
+      }
+      &.expand::after {
+        visibility: visible;
+      }
+    }
+    .account-dropdown {
+      position: absolute;
+      top: 4.5rem;
+      left: -11rem;
+      width: 15rem;
+      height: 0rem;
+      background-color: $pickee-blue;
+      transition: height 0.3s;
+      overflow: hidden;
+      color: #ffffff;
+      &.visible {
+        height: 12.5rem;
+      }
+      .account-info {
+        padding: 0.375rem 1.5rem 1.5rem 1.5rem;
+      }
+      .name {
+        font-weight: bold;
+        min-height: 3rem;
+        line-height: 3rem;
+        border-bottom: solid 1px #ffffff;
+      }
+      ul.account-links {
+        list-style: none;
+        margin: 1rem 0 0 0;
+        a {
+          display: inline-block;
+          font-weight: normal;
+          color: #ffffff;
+          line-height: 1.5rem;
+          &.logout {
+            margin-top: 0.5rem;
+            font-weight: 500;
+          }
+        }
+      }
+      &.visible {
+        height: 12rem;
+      }
+    }
+    ul.links {
+      @include breakpoint($screen-md) {
+        display: block;
+      }
+      display: none;
+      list-style: none;
+      float: right;
+      padding: 0.25rem 0 0 0;
+      line-height: 1rem;
+      margin: 0;
+      li {
+        float: right;
+        position: relative;
+        display: block;
+        height: 1rem;
+        padding: 0;
+        list-style: none;
+        color: $black;
+        a {
+          color: $pickee-blue;
+          font-weight: bold;
+          line-height: 1rem;
+        }
+      }
     }
   }
 
   .site-search {
     float: right;
-    width: auto;
     clear: none;
     margin-bottom: 0;
-    padding: 0.5rem 1rem;
+    margin-right: 0.8rem;
+    width: 3rem;
     height: 3rem;
-    line-height: 3rem;
+    padding: 0.75rem;
     color: $pickee-blue;
     @include breakpoint($screen-md) {
       display: block;
@@ -165,16 +231,13 @@ body.cart-open {
       svg {
         width: 1.5rem;
         height: 1.5rem;
-        .line {
-          stroke-width: 2px;
-          stroke: $black;
-        }
       }
       &::after {
         content:'';
-        position:absolute;
-        display:block;
-        top: 4rem;
+        position: absolute;
+        display: block;
+        top: 3.25rem;
+        left: 0.25rem;
         width: 0;
         height: 0;
         border-left: 8px solid transparent;
