@@ -1278,7 +1278,7 @@ p.comment-form-comment {
 
 @media (min-width: 768px) {
   /* line 339, sass/sass/override/_single-product.scss */
-  .storefront-sticky-add-to-cart {
+  .storefront-sticky-add-to-cart--slideInDown {
     box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.05);
   }
 }
