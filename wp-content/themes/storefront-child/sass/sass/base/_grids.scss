@@ -49,9 +49,12 @@ $desktop: (
 }
 
 @mixin container {
-  margin-right:auto;
-  margin-left:auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
   @include breakpoint($screen-md) {
+    padding: 0;
     width: 750px;
   }
   @include breakpoint($screen-lg) {
