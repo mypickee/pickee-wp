@@ -54,8 +54,9 @@ $desktop: (
   margin-right: auto;
   margin-left: auto;
   @include breakpoint($screen-md) {
-    padding: 0;
     width: 750px;
+    padding-left: 0;
+    padding-right: 0;
   }
   @include breakpoint($screen-lg) {
     width: 970px;
