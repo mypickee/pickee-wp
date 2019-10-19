@@ -299,11 +299,8 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add
 //Remove rating from product loop
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
 
-add_action( 'init', 'storefront_remove_storefront_breadcrumbs' );
-
-function storefront_remove_storefront_breadcrumbs() {
-   remove_action( 'storefront_before_content', 'woocommerce_breadcrumb', 10 );
-}
+//Remove breadcrumb
+remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
 
 //Remove sale tag flash from product loop
 add_filter('woocommerce_sale_flash', 'woocommerce_custom_hide_sales_flash');
