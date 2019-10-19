@@ -196,7 +196,9 @@ body.cart-open {
       position: absolute;
       top: 6rem;
       left: 0;
-      width: 100%;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
       height: 0rem;
       background-color: $pickee-blue;
       transition: height 0.3s;
