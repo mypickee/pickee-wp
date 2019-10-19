@@ -263,7 +263,6 @@ if (!function_exists('init_header')) {
     add_action('storefront_header', 'header_login', 90);
   }
 }
-
 add_action('init', 'init_header', 10);
 
 function remove_breadcrumbs() {
@@ -271,13 +270,10 @@ function remove_breadcrumbs() {
 }
 add_action('init', 'remove_breadcrumbs');
 
-function init_homepage() {
-  if (is_front_page()) {
+function remove_page_header() {
     remove_action('storefront_page', 'storefront_page_header', 10);
-  }
 }
-//Initialize homepage rendering
-add_action('wp', 'init_homepage', 10);
+add_action('init', 'remove_page_header');
 
 # Remove button which link to check out page directly in mini-cart
 remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20);
