@@ -1,0 +1,31 @@
+.site-content {
+  > .col-full {
+    > .woocommerce {
+      .woocommerce-error, .woocommerce-info, .woocommerce-message {
+        &:first-child {
+          width: 100vw;
+          margin-left: calc(-50vw + 50%);
+          margin-right: calc(-50vw + 50%);
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+  padding: 0.46875rem ;
+  background-color: $pickee-blue;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  clear: both;
+  .button {
+    display: none;
+  }
+}
+
+.woocommerce-error {
+  background-color: $warning-red;
+}

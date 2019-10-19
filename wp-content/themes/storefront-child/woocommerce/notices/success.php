@@ -28,9 +28,11 @@ if ( ! $messages ) {
 <div class="message-wrapper">
 <?php foreach ( $messages as $message ) : ?>
 	<div class="woocommerce-message" role="alert">
+		<div class="container">
 		<?php
 			echo wc_kses_notice( $message );
 		?>
+		</div>
 	</div>
 <?php endforeach; ?>
 </div>

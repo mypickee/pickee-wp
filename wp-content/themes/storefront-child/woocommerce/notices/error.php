@@ -25,11 +25,13 @@ if ( ! $messages ) {
 
 ?>
 <ul class="woocommerce-error" role="alert">
-	<?php foreach ( $messages as $message ) : ?>
-		<li>
-			<?php
-				echo wc_kses_notice( $message );
-			?>
-		</li>
-	<?php endforeach; ?>
+	<div class="container">
+		<?php foreach ( $messages as $message ) : ?>
+			<li>
+				<?php
+					echo wc_kses_notice( $message );
+				?>
+			</li>
+		<?php endforeach; ?>
+	</div>
 </ul>
