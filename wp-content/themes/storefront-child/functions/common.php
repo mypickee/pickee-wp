@@ -263,16 +263,17 @@ if (!function_exists('init_header')) {
     add_action('storefront_header', 'header_login', 90);
   }
 }
-
 add_action('init', 'init_header', 10);
 
-function init_homepage() {
-  if (is_front_page()) {
-    remove_action('storefront_page', 'storefront_page_header', 10);
-  }
+function remove_breadcrumbs() {
+    remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
 }
-//Initialize homepage rendering
-add_action('wp', 'init_homepage', 10);
+add_action('init', 'remove_breadcrumbs');
+
+function remove_page_header() {
+    remove_action('storefront_page', 'storefront_page_header', 10);
+}
+add_action('init', 'remove_page_header');
 
 # Remove button which link to check out page directly in mini-cart
 remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20);
@@ -293,6 +294,9 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add
 
 //Remove rating from product loop
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+
+//Remove breadcrumb
+remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
 
 //Remove sale tag flash from product loop
 add_filter('woocommerce_sale_flash', 'woocommerce_custom_hide_sales_flash');

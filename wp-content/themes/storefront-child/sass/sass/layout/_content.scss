@@ -38,6 +38,11 @@
   @include content-container;
 }
 
+.col-full {
+  @include container;
+  max-width: none;
+}
+
 .homepage-category-block1 {
   margin-top: 2.5rem;
   .category-image-1 {
