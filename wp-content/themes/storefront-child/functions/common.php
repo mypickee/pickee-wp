@@ -266,14 +266,21 @@ if (!function_exists('init_header')) {
 add_action('init', 'init_header', 10);
 
 function remove_breadcrumbs() {
-    remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
+  remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
 }
 add_action('init', 'remove_breadcrumbs');
 
 function remove_page_header() {
-    remove_action('storefront_page', 'storefront_page_header', 10);
+  remove_action('storefront_page', 'storefront_page_header', 10);
 }
 add_action('init', 'remove_page_header');
+
+function remove_customizer_css() {
+  add_filter('storefront_customizer_css', '__return_false');
+  add_filter('storefront_customizer_woocommerce_css', '__return_false');
+  add_filter('storefront_gutenberg_customizer_css', '__return_false');
+}
+add_action('init', 'remove_customizer_css');
 
 # Remove button which link to check out page directly in mini-cart
 remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20);

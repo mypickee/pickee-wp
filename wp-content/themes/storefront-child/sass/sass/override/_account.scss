@@ -1,3 +1,7 @@
+.hentry .entry-content .woocommerce-MyAccount-navigation ul li {
+  border-bottom: none;
+}
+
 .account-jumbotron {
   @include full-width-block;
   background-color: $pickee-blue;
@@ -29,8 +33,6 @@
   }
   ul {
     display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     -ms-flex-pack: center!important;
     justify-content: center!important;
     padding-left: 0;
@@ -38,20 +40,21 @@
     list-style: none;
     border-top: none;
     li {
-      border-bottom: 4px solid $light-gray;
       a {
         @include font-size-small;
         display: block;
+        margin: 0 1.25rem;
         padding: 1rem 1rem;
         color: $black;
         font-weight: 500;
+        border-bottom: 4px solid $light-gray;
         &:before {
           display: none;
         }
       }
       &.is-active {
-        border-bottom: 4px solid $pickee-red;
         a {
+          border-bottom: 4px solid $pickee-red;
           color: $pickee-red;
         }
       }
