@@ -138,7 +138,7 @@ do_action( 'woocommerce_before_cart' ); ?>
           <div class="input-group">
             <input type="text" class="form-control">
             <div class="input-group-append">
-              <input type="submit" class="button btn btn-primary" name="apply_coupon" value="<?php esc_attr_e( 'Apply', 'woocommerce' ); ?>" />
+              <input type="submit" class="button btn btn-primary btn-sm" name="apply_coupon" value="<?php esc_attr_e( 'Apply', 'woocommerce' ); ?>" />
             </div>
           </div>
         </div>
