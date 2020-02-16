@@ -73,7 +73,7 @@
     }
     .carousel-controls-wrap {
       width: 100%;
-      background-color: $light-gray;
+      background-color: $gray-lighter;
       @include self_clear;
       @include breakpoint($screen-lg) {
         position: absolute;

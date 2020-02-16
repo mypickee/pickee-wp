@@ -29,7 +29,7 @@
   @include breakpoint($screen-md) {
     width: auto;
     float: none;
-    background-color: $light-gray;
+    background-color: $gray-lighter;
   }
   ul {
     display: flex;
@@ -47,7 +47,7 @@
         padding: 1rem 1rem;
         color: $black;
         font-weight: 500;
-        border-bottom: 4px solid $light-gray;
+        border-bottom: 4px solid $gray-lighter;
         &:before {
           display: none;
         }

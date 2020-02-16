@@ -1,3 +1,7 @@
+.hentry .entry-content a:not(.button) {
+  text-decoration: none;
+}
+
 .entry-content > p:first-child {
   margin: 0;
 }

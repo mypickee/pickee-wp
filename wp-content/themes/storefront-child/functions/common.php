@@ -70,6 +70,7 @@ if (!function_exists('header_handheld_menu')) {
       <div id="header-menu" class="header-menu">
         <div class="header-menu-header">
           <div id="header-menu-back" class="header-menu-back">
+            <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/back_arrow_darkgreen.svg"); ?>
             BACK
           </div>
           <?php if (is_user_logged_in()) : ?>
@@ -182,6 +183,10 @@ if (!function_exists('header_cart_link')) {
   function header_cart_link() {
     ?>
       <div class="header-cart-content cart-contents" title="<?php esc_attr_e('View your shopping cart', 'storefront' ); ?>">
+        <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/shopping_bag.svg"); ?>
+        <?php if (WC()->cart->get_cart_contents_count() > 0) : ?>
+          <div class="hinter"></div>
+        <?php endif; ?>
         <span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span> <span class="count"><?php echo wp_kses_data(sprintf(WC()->cart->get_cart_contents_count())); ?></span>
       </div>
     <?php
@@ -246,6 +251,50 @@ if (!function_exists('header_cart')) {
   }
 }
 
+if (!function_exists('header_tablet_bar')) {
+  function header_tablet_bar() {
+    ?>
+    <div class="header-tablet-bar">
+      <div class="wrap">
+        <div class="site-search">
+          <div id="tablet-search-toggle" class="search-toggle"><?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/search.svg"); ?></div>
+          <div id="tablet-search-bar" class="search-bar">
+            <?php the_widget('WC_Widget_Product_Search', 'title='); ?>
+          </div>
+        </div>
+        <div class="header-account">
+          <?php if (is_user_logged_in()) : ?>
+            <div id="tablet-account-toggle" class="account-toggle">
+              <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/account.svg"); ?>
+            </div>
+            <div id="tablet-account-dropdown" class="account-dropdown">
+              <div class="account-info">
+                <?php
+                  $user = wp_get_current_user();
+                  echo '<div class="name">'.$user->display_name.'</b></div>';
+                ?>
+                <ul class="account-links">
+                  <li><a href="/my-account">Account Details</a></li>
+                  <li><a href="/my-account/orders">Orders</a></li>
+                  <li><a href="/my-account/payment-methods">Payment Methods</a></li>
+                  <li><a class="logout" href="<?php echo esc_url(wc_logout_url());?>"><b>Log out</b></a></li>
+                </ul>
+              </div>
+            </div>
+          <?php else : ?>
+            <ul class="links">
+              <li>
+                <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Sign in','woothemes'); ?>"><?php _e('Sign in','woothemes'); ?></a>
+              </li>
+              </ul>
+          <?php endif;?>
+        </div>
+      </div>
+    </div>
+    <?php
+  }
+}
+
 if (!function_exists('init_header')) {
   # Initialize header rendering
   function init_header() {
@@ -255,6 +304,7 @@ if (!function_exists('init_header')) {
     remove_action('storefront_header', 'storefront_header_cart', 60);
 
     # Add site header components
+    add_action('storefront_header', 'header_tablet_bar', -1);
     add_action('storefront_header', 'header_handheld_menu_button', 10);
     add_action('storefront_header', 'header_handheld_menu', 15);
     add_action('storefront_header', 'site_branding_svg', 20);
