@@ -76,3 +76,12 @@
     padding: 0.5625rem 2.25rem;
   }
 }
+
+button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .added_to_cart.alt, .widget-area .widget a.button.alt, .added_to_cart, .widget a.button.checkout {
+  background-color: $green-dark;
+  border-color: $green-dark;
+  &:hover {
+    background-color: $green;
+    border-color: $green;
+  }
+}
