@@ -19,11 +19,11 @@ $mobile: (
   ),
 );
 $desktop: (
-  gutter-position: inside-static,
+  gutter-position: after,
   container: 100%,
   columns: 12,
-  column-width: 120px, // it doesn't matter what number this is...
-  gutters: 30px/120px,
+  column-width: 70px, // it doesn't matter what number this is...
+  gutters: 30px/70px,
   debug: (
     image: show,
   ),
