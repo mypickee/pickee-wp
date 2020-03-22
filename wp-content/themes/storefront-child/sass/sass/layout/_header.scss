@@ -76,6 +76,29 @@ body.cart-open {
       color: $green-dark;
       font-weight: bold;
     }
+    ul ul {
+      padding-top: 1.5rem;
+      li {
+        background-color: $green;
+        &:first-child {
+          ::before {
+            content:'';
+            position: absolute;
+            display: block;
+            top: -8px;
+            left: 24px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid $green;
+          }
+        }
+      }
+      a {
+        color: #ffffff;
+      }
+    }
   }
   .header-account {
     position: relative;
