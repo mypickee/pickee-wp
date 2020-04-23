@@ -315,6 +315,11 @@ if (!function_exists('init_header')) {
 }
 add_action('init', 'init_header', 10);
 
+function remove_storefront_handheld_footer_bar() {
+  remove_action('storefront_footer', 'storefront_handheld_footer_bar', 999);
+}
+add_action('init', 'remove_storefront_handheld_footer_bar');
+
 function remove_breadcrumbs() {
   remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
 }
