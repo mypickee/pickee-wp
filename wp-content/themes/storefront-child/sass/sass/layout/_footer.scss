@@ -1,3 +1,27 @@
-.storefront-handheld-footer-bar {
-  display: none;
+.site-footer {
+  background-color: #ffffff;
+  padding: 0;
+  .footer-widgets {
+    border-bottom: none;
+    .widget {
+      margin-bottom: 2rem;
+    }
+    ul.menu {
+      li {
+        display: inline-block;
+        padding: 0 3rem 0 0;
+        &::before {
+          display: none;
+        }
+      }
+    }
+    .widget.widget_text {
+      .textwidget {
+        text-align: right;
+      }
+    }
+  }
+  .site-info {
+    display: none;
+  }
 }

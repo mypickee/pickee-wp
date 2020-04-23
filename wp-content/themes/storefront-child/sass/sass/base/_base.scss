@@ -2,8 +2,12 @@ img {
   border-radius: 0;
 }
 a {
-  color: $pickee-blue;
-  &:hover{
-    color: $pickee-blue-dark;
+  color: $green;
+  text-decoration: none !important;
+  &:hover {
+    color: $green-dark;
+  }
+  &:active {
+    color: $green;
   }
 }
