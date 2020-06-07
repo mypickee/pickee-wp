@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "240a30aa80c28ba97ab45bfa0a739aaf",
+    "content-hash": "75586db8b684fe410ef46e8bd826b498",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1752,6 +1752,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/sendgrid-email-delivery-simplified/"
+        },
+        {
+            "name": "wpackagist-plugin/smart-slider-3",
+            "version": "3.4.1.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/smart-slider-3/",
+                "reference": "tags/3.4.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/smart-slider-3.3.4.1.7.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/smart-slider-3/"
         },
         {
             "name": "wpackagist-plugin/woocommerce",
