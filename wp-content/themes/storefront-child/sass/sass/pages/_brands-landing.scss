@@ -67,6 +67,9 @@
       @include span(2 of $mobile);
       @include breakpoint($screen-lg) {
         @include span(3 of $desktop);
+        &:nth-child(4n) {
+          @include span(last 3 of $desktop);
+        }
       }
       > h4 {
         margin: 0;
