@@ -3,22 +3,69 @@
   padding: 0;
   .footer-widgets {
     border-bottom: none;
+
     .widget {
-      margin-bottom: 2rem;
+      margin: 0;
     }
-    ul.menu {
-      li {
-        display: inline-block;
-        padding: 0 3rem 0 0;
-        &::before {
-          display: none;
+
+    .block.footer-widget-1 {
+      margin-bottom: 0;
+      ul.menu {
+        text-align: center;
+        li {
+          display: inline-block;
+          padding: 0 1.5rem;
+          font-size: $font-size-small;
+          &::before {
+            display: none;
+          }
         }
       }
     }
-    .widget.widget_text {
-      .textwidget {
-        text-align: right;
+
+    .block.footer-widget-2 {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    @include breakpoint($screen-md)  {
+      &.col-2 .block {
+        float: none;
+        width: inherit;
+        margin-right: 0;
       }
+      &.col-2 .block.footer-widget-2 {
+        float: none;
+      }
+    }
+
+    @include breakpoint($screen-lg) {
+      &.col-2 .block {
+        float: left;
+        width: auto;
+        margin-bottom: 1rem;
+      }
+      &.col-2 .block.footer-widget-2 {
+        float: right;
+        margin-bottom: 1rem;
+      }
+
+      ul.menu {
+        li {
+          display: inline-block;
+          padding: 0 3rem 0 0;
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      .widget.widget_text {
+        .textwidget {
+          text-align: right;
+        }
+      }
+
     }
   }
   .site-info {
