@@ -11,17 +11,16 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.3.0
+ * @version 3.7.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-  exit;
-}
+defined( 'ABSPATH' ) || exit;
 
-if ( ! $order = wc_get_order( $order_id ) ) {
-  return;
+$order = wc_get_order( $order_id ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
+
+if ( ! $order ) {
+	return;
 }
 
 $order_items           = $order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
@@ -31,9 +30,14 @@ $downloads             = $order->get_downloadable_items();
 $show_downloads        = $order->has_downloadable_item() && $order->is_download_permitted();
 
 if ( $show_downloads ) {
-  wc_get_template( 'order/order-downloads.php', array( 'downloads' => $downloads, 'show_title' => true ) );
+	wc_get_template(
+		'order/order-downloads.php',
+		array(
+			'downloads'  => $downloads,
+			'show_title' => true,
+		)
+	);
 }
-
 ?>
 <section class="woocommerce-order-details">
   <?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
@@ -77,15 +81,15 @@ if ( $show_downloads ) {
             <td></td>
             <td></td>
             <td scope="row"><?php echo $total['label']; ?></td>
-            <td><?php echo $total['value']; ?></td>
+            <td><?php echo ( 'payment_method' === $key ) ? esc_html( $total['value'] ) : wp_kses_post( $total['value'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></td>
           </tr>
           <?php
         }
       ?>
       <?php if ( $order->get_customer_note() ) : ?>
         <tr>
-          <th><?php _e( 'Note:', 'woocommerce' ); ?></th>
-          <td><?php echo wptexturize( $order->get_customer_note() ); ?></td>
+          <th><?php esc_html_e( 'Note:', 'woocommerce' ); ?></th>
+          <td><?php echo wp_kses_post( nl2br( wptexturize( $order->get_customer_note() ) ) ); ?></td>
         </tr>
       <?php endif; ?>
     </tfoot>
