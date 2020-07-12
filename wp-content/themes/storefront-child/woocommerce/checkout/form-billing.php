@@ -11,17 +11,12 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.9
+ * @version 3.6.0
+ * @global WC_Checkout $checkout
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
-
-/** @global WC_Checkout $checkout */
-
+defined( 'ABSPATH' ) || exit;
 ?>
 <div class="woocommerce-billing-fields">
 	<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
@@ -42,9 +37,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$fields = $checkout->get_checkout_fields( 'billing' );
 
 			foreach ( $fields as $key => $field ) {
-				if ( isset( $field['country_field'], $fields[ $field['country_field'] ] ) ) {
-					$field['country'] = $checkout->get_value( $field['country_field'] );
-				}
 				woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
 			}
 		?>
@@ -75,7 +67,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php endforeach; ?>
 				<div class="clear"></div>
 			</div>
-
 		<?php endif; ?>
 
 		<?php do_action( 'woocommerce_after_checkout_registration_form', $checkout ); ?>
