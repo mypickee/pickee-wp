@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center center;
   @include breakpoint($screen-lg) {
-    height: 400px;
+    height: 500px;
   }
   .bar-position {
     position: absolute;
@@ -60,16 +60,21 @@
 }
 .brands-list-block {
   @include container;
+  max-width: 960px;
   margin-top: 64px;
   text-align: center;
   .row {
     .brands-list-col {
       @include span(2 of $mobile);
       @include breakpoint($screen-lg) {
-        @include span(3 of $desktop);
-        &:nth-child(4n) {
-          @include span(last 3 of $desktop);
+        @include span(4 of $desktop);
+        &:nth-child(3n) {
+          @include span(last 4 of $desktop);
         }
+      }
+      img {
+        width: 150px;
+        margin: 0 auto;
       }
       > h4 {
         margin: 0;
