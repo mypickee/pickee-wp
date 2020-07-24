@@ -16,6 +16,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install GD PHP extension
+          command: sudo docker-php-ext-install gd
+      - run:
           name: Install MySQL client
           command: sudo apt-get install mysql-client
       - run:
