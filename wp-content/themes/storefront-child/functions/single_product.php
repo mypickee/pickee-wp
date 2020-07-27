@@ -76,8 +76,11 @@ function single_product_discription()
     </div>
   <?php
 }
+/*
+ * Hide product review block in single product page temporarily
+ */
+# add_action( 'woocommerce_after_single_product_summary', 'single_product_reviews', 10);
 
-//add_action( 'woocommerce_after_single_product_summary', 'single_product_reviews', 10);
 /*
  * Reference to woocommerc/templates/single-product-reviews
  */
