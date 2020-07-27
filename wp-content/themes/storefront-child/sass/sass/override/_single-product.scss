@@ -46,6 +46,9 @@
     .pwb-single-product-brands
     {
       margin-bottom: 1rem;
+      span.pwb-text-before-brands-links {
+        display: none;
+      }
       a {
         color: $black;
         font-size: 1rem;

@@ -37,7 +37,7 @@ function single_product_discription()
             $attributes = array_filter($product->get_attributes(), 'wc_attributes_array_filter_visible');
           ?>
           <?php if ($attributes) : ?>
-          <h4>SPEC</h4>
+          <h4>Spec</h4>
           <div class="attribute-list">
             <!-- <?php $attributes_count = 1;?>
             <div class="row clearfix"> -->
@@ -66,7 +66,7 @@ function single_product_discription()
           </div>
           <?php endif;?>
           <?php if ($post->post_excerpt) : ?>
-            <h4>USE&amp;CARE</h4>
+            <h4>Use&amp;Care</h4>
             <div>
               <?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt); ?>
             </div>

@@ -19,6 +19,9 @@
           &::before {
             display: none;
           }
+          a {
+            color: $black;
+          }
         }
       }
     }
