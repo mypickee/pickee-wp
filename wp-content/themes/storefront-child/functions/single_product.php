@@ -1,4 +1,15 @@
 <?php
+ /* Set product image to 768 * 768 cropped square image
+  * Note: If image's original size is less than 768 * 768, no cropped image will be generated,
+  * the original image will be shown.
+  */
+add_filter('woocommerce_get_image_size_single', function($size) {
+  return [
+    'width' => 768,
+    'height' => 768,
+    'crop' => 1,
+  ];
+});
 
 //Set thumbnail column number to 1 in single-product page.
 add_filter('storefront_product_thumbnail_columns', 'custom_storefront_product_thumbnail_columns');
