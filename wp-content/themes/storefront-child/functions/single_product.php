@@ -1,12 +1,12 @@
 <?php
- /* Set product image to 768 * 768 cropped square image
-  * Note: If image's original size is less than 768 * 768, no cropped image will be generated,
+ /* Set product image to 600 * 600 cropped square image
+  * Note: If image's original size is less than 600 * 600, no cropped image will be generated,
   * the original image will be shown.
   */
 add_filter('woocommerce_get_image_size_single', function($size) {
   return [
-    'width' => 768,
-    'height' => 768,
+    'width' => 600,
+    'height' => 600,
     'crop' => 1,
   ];
 });
