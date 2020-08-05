@@ -19,10 +19,11 @@
     "wpackagist-plugin/wp-user-avatar": "^2.2.5",
     "wpackagist-plugin/smart-slider-3": "^3.4.1",
     "wpackagist-theme/storefront": "^2.3.5",
-    "wpackagist-plugin/all-in-one-wp-migration": "^7.24"
+    "wpackagist-plugin/all-in-one-wp-migration": "^7.24",
+    "wpackagist-plugin/regenerate-thumbnails": "3.1.3"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate akismet sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate akismet sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
