@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c91740afc7dbba611794d516f5a9f9b",
+    "content-hash": "3bbc18db82aa32f67ce39854453a5d95",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1781,6 +1781,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+        },
+        {
+            "name": "wpackagist-plugin/resize-image-after-upload",
+            "version": "1.8.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/resize-image-after-upload/",
+                "reference": "tags/1.8.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/resize-image-after-upload.1.8.6.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/resize-image-after-upload/"
         },
         {
             "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
