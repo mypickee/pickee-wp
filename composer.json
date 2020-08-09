@@ -24,7 +24,7 @@
     "wpackagist-plugin/resize-image-after-upload": "1.8.6"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate akismet sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate akismet sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
