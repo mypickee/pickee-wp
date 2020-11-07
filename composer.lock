@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83b051ac67a2d95ca430f3ad417b4b67",
+    "content-hash": "c856aeb03b4d0cfd96cd069ecf000e62",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1753,6 +1753,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/insert-html-snippet/"
+        },
+        {
+            "name": "wpackagist-plugin/official-mailerlite-sign-up-forms",
+            "version": "1.4.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/official-mailerlite-sign-up-forms/",
+                "reference": "tags/1.4.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/official-mailerlite-sign-up-forms.1.4.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/official-mailerlite-sign-up-forms/"
         },
         {
             "name": "wpackagist-plugin/perfect-woocommerce-brands",
