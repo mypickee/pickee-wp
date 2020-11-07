@@ -7,7 +7,7 @@
   ],
   "require": {
     "ext-gd": "*",
-    "php": "~7.2.0",
+    "php": "~7.4.0",
     "wp-cli/wp-cli": "~0.22",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "2.4.1",
     "wpackagist-plugin/insert-html-snippet": "^1.2.5",
