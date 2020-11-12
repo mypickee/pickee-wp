@@ -22,9 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $upsells ) : ?>
 
-	<section class="up-sells upsells products">
+	<section class="up-sells upsells products products-carousel-wrap">
 
-		<h2><?php esc_html_e( 'You may also like&hellip;', 'woocommerce' ) ?></h2>
+		<h1><?php esc_html_e( 'You may also like&hellip;', 'woocommerce' ) ?></h1>
 
     <?php if (count($upsells) > 1):?>
     <div class="hidden-sm-down">
@@ -43,23 +43,17 @@ if ( $upsells ) : ?>
 			<?php endforeach; ?>
 
 		<?php woocommerce_product_loop_end(); ?>
+
     <?php if (count($upsells) > 1):?>
     </div>
 
     <ul class="products-carousel">
-
       <?php foreach ( $upsells as $upsell ) : ?>
-
         <?php
           $post_object = get_post( $upsell->get_id() );
-
           setup_postdata( $GLOBALS['post'] =& $post_object );
-
           wc_get_template_part( 'content', 'product' ); ?>
-
       <?php endforeach; ?>
-
-
     </ul>
 
     <?php endif;?>

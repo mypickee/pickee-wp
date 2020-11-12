@@ -1,0 +1,78 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/pickee-wp
+    docker:
+      - image: circleci/php:7.2-apache-stretch-node-browsers
+        environment:
+          DATABASE_URL: mysql://pickee_wp_admin:password@127.0.0.1/pickee_wp_test
+      - image: mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: root_password
+          MYSQL_DATABASE: pickee_wp_test
+          MYSQL_USER: pickee_wp_admin
+          MYSQL_PASSWORD: password
+    steps:
+      - checkout
+      - run:
+          name: Install Libpng
+          command: sudo apt-get install libpng-dev
+      - run:
+          name: Install GD PHP extension
+          command: sudo docker-php-ext-install gd
+      - run:
+          name: Install MySQL client
+          command: sudo apt-get install mysql-client
+      - run:
+          name: Install MySQL PHP extension
+          command: sudo docker-php-ext-install mysqli
+      - run:
+          name: Wait for db
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      - run:
+          name: Install wp-cli
+          command: |
+            curl -O "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar"
+            chmod +x wp-cli.phar
+            sudo mv wp-cli.phar /usr/local/bin/wp
+      - run:
+          name: Install Wordpress
+          command: |
+            wp core install --admin_user=pickee_wp_admin \
+                            --admin_password=password \
+                            --admin_email=info@mypickee.com \
+                            --url=127.0.0.1 \
+                            --title=Pickee
+      - restore_cache:
+          keys:
+            - composer-v1-{{ checksum "composer.lock" }}
+            - composer-v1-
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+      - run: composer test
+
+  deploy_staging:
+    working_directory: ~/pickee-wp
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Deploy master to Heroku
+          command: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/pickee-wp-staging.git master
+
+workflows:
+  version: 2
+  build_deploy:
+    jobs:
+      - build
+      - deploy_staging:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

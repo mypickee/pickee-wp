@@ -4,6 +4,68 @@
 @import "susy";
 
 $susy: (
-  columns: 24,
+  columns: 12,
   gutters: 1/4,
 );
+
+$mobile: (
+  gutter-position: inside-static,
+  container: 100%,
+  columns: 4,
+  column-width: 120px, // it doesn't matter what number this is...
+  gutters: 30px/120px,
+  debug: (
+    image: show,
+  ),
+);
+$desktop: (
+  gutter-position: after,
+  container: 100%,
+  columns: 12,
+  column-width: 70px, // it doesn't matter what number this is...
+  gutters: 30px/70px,
+  debug: (
+    image: show,
+  ),
+);
+@include border-box-sizing;
+
+@mixin row {
+  @include breakpoint($screen-lg) {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  &:after, &:before {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear:both;
+  }
+}
+
+.row {
+  @include row;
+}
+
+@mixin container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @include breakpoint($screen-md) {
+    width: 696px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @include breakpoint($screen-lg) {
+    width: 970px;
+  }
+  @include breakpoint($screen-xl) {
+    width: 1170px;
+  }
+}
+
+.container {
+  @include container;
+}

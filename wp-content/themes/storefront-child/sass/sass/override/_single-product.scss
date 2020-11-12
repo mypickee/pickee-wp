@@ -1,25 +1,27 @@
 .storefront-full-width-content.single-product div.product {
+  margin-top: 1.5rem;
   overflow: inherit;
   .woocommerce-product-gallery {
+    margin-bottom: 2rem;
     img {
       width: 100%;
     }
-    @include breakpoint($screen-sm) {
-      @include span(7 of 12);
+    @include breakpoint($screen-md) {
+      @include span(6 of $desktop);
     }
     .flex-control-thumbs {
-      float: left;
+      width: 100%;
       li {
         @include span(1 of 5);
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.625rem;
         img.flex-active {
           box-sizing: border-box;
           border-bottom: 2px solid $pickee-red;
         }
       }
-      @include breakpoint($screen-sm) {
-        @include layout(7 1/2);
-        @include span(1 of 7);
+      @include breakpoint($screen-md) {
+        @include layout(6 of $desktop);
+        @include span(1 of 6);
         li {
           @include span(1 of 1);
         }
@@ -28,33 +30,39 @@
 
     .flex-viewport {
       margin-bottom: 1rem;
-      @include breakpoint($screen-sm) {
-        float: right;
-        @include layout(7 1/2);
-        @include span(last 6 of 7);
+      @include breakpoint($screen-md) {
+        @include layout(6 of $desktop);
+        @include span(last 5 of 6);
       }
     }
   }
   .summary {
-    @include breakpoint($screen-sm) {
-      @include span(last 5 of 12);
-    }
-    padding-top: 4rem;
+    padding-top: 0;
     text-align: center;
-    .pwb-single-product-brands a {
-      color: #000000;
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0;
+    @include breakpoint($screen-md) {
+      @include span(isolate 4 of $desktop at 2);
+      padding-top: 4rem;
+    }
+    .pwb-single-product-brands
+    {
+      margin-bottom: 1rem;
+      span.pwb-text-before-brands-links {
+        display: none;
+      }
+      a {
+        color: $black;
+        font-size: 1rem;
+        font-weight: 600;
+      }
     }
     p.price {
       @include span(1 of 2);
       text-align: left;
-      margin-top: 0.5rem;
+      margin-top: 0;
       margin-bottom: 1rem;
-      font-size: 2rem;
-      font-weight: 100;
-      @include breakpoint($screen-sm) {
+      font-size: 1.25rem;
+      font-weight: bold;
+      @include breakpoint($screen-md) {
         @include span(1 of 1);
         text-align: center;
       }
@@ -65,7 +73,7 @@
         text-align: right;
         overflow: auto;
         margin-bottom: 1rem;
-        @include breakpoint($screen-sm) {
+        @include breakpoint($screen-md) {
           @include span(1 of 1);
           text-align: center;
         }
@@ -73,8 +81,7 @@
       button {
         display: block;
         width: 100%;
-        background-color: $pickee-blue;
-        @include breakpoint($screen-sm) {
+        @include breakpoint($screen-md) {
           display: inline-block;
           width: auto;
         }
@@ -83,9 +90,9 @@
   }
 
   .woocommerce-product-rating {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+    margin-top: 0;
     .hearts {
-      padding: 0.5rem 0 0;
       line-height: 2rem;
       display: inline-block;
       svg {
@@ -96,9 +103,20 @@
       }
     }
     .woocommerce-review-link {
+      @include font-size-small;
+      color: $black;
+      font-weight: 500;
       text-decoration: none;
-      color: #333333;
-      font-size: 1.2rem;
+    }
+  }
+
+  .product_meta {
+    border-top: none;
+    .sku_wrapper {
+      display: none;
+    }
+    .tagged_as {
+      display: none;
     }
   }
 
@@ -106,37 +124,20 @@
     clear: both;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-    background-color: $pickee-blue;
+    background-color: #f6f6f6;
     padding: 3rem 0;
-    color: #ffffff;
     h4 {
-      color: #ffffff;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: bold;
       margin-top: 1.5rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 1rem;
     }
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       .description-left {
-        @include span(6 of 12);
+        @include span(6 of $desktop);
       }
       .description-right {
-        @include span(last 6 of 12);
-      }
-    }
-    .attribute-list {
-      .attribute-item {
-        display: flex;
-        float: left;
-        width: 100%;
-        @include breakpoint($screen-sm) {
-          width: 50%;
-        }
-        .attribute-name {
-          margin-right: 0.5em;
-        }
-        &.full-width {
-          width: 100%;
-        }
+        @include span(last 6 of $desktop);
       }
     }
     .attribute-column {
@@ -150,16 +151,17 @@
   }
 }
 
-#reviews {
+.storefront-full-width-content.single-product #reviews {
   text-align: center;
-  @include breakpoint($screen-sm) {
+  @include breakpoint($screen-md) {
     text-align: left;
   }
-  h2 {
-    margin-top: 3rem;
+  .review-form-toggle {
     display: block;
-    font-size: 2rem;
+    width: 200px;
+    margin: 0 auto;
     text-align: center;
+    @include font-size-small;
   }
   .commentlist {
     margin-top: 2rem;
@@ -167,22 +169,47 @@
       display: block;
       float: left;
       width: 100%;
-      @include breakpoint($screen-sm) {
-        width: 50%;
-      }
       clear: none;
-      padding: 1rem;
       text-align: left;
-      p.meta {
-        margin-bottom: 0;
+      @include breakpoint($screen-md) {
+        @include span(6 of $desktop);
+      }
+      &:nth-child(even) {
+        @include last;
+      }
+      .avatar {
+        @include layout(6 of $desktop);
+        @include span(1 of 6);
+        max-width: 64px;
+      }
+      .comment_container .comment-text {
+        @include layout(6 of $desktop);
+        @include span(last 5 of 6);
+        p.meta {
+          margin-bottom: 0;
+          .woocommerce-review__author {
+            display: inline-block;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+          }
+          em {
+            display: none;
+          }
+          time {
+            display: block;
+            color: $black;
+            opacity: 1;
+            letter-spacing: 0.1px;
+          }
+        }
       }
       .hearts {
-        line-height: 2rem;
+        line-height: 2.5rem;
         display: inline-block;
         svg {
           display: inline-block;
           width: 1rem;
-          margin-right: 0.5rem;
+          margin-right: 0.75rem;
           vertical-align: middle;
         }
       }
@@ -195,6 +222,7 @@
     margin-right: 1.5rem;
   }
 }
+
 #review-form-trigger {
   display: inline-block;
   height: 3rem;
@@ -207,7 +235,7 @@
   clear: both;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  background-color: $light-gray;
+  background-color: $gray-lighter;
   padding: 1rem 0;
   &.hidden {
     display: none;
@@ -235,16 +263,16 @@
 #review_form {
   margin: 0 auto;
   width: 100%;
-  @include breakpoint($screen-sm) {
-    width: 600px;
-  }
   @include breakpoint($screen-md) {
     width: 600px;
   }
   @include breakpoint($screen-lg) {
-    width: 768px;
+    width: 600px;
   }
   @include breakpoint($screen-xl) {
+    width: 768px;
+  }
+  @include breakpoint($screen-xxl) {
     width: 960px;
   }
   textarea {
@@ -299,48 +327,40 @@ p.comment-form-comment {
 }
 
 .storefront-full-width-content.single-product {
-  .related, .upsells {
-    margin-bottom: 2rem;
-    h2, &.products>h2:first-child {
+  #reviews, .related, .upsells {
+    h1 {
+      margin-top: 5.625rem;
       text-align: center;
-      @include breakpoint($screen-sm) {
-        text-align: left;
-      }
     }
-    li.product {
-      img {
-        width: 100%;
-      }
-      h2 {
-        text-align: center;
-      }
+    h2 {
+      margin-top: 3rem;
+      display: block;
+      font-size: 1.75rem;
+      text-align: center;
     }
-    .products-carousel {
-      @include breakpoint($screen-sm) {
-        display: none;
-      }
-      li.product {
-        margin: 0 20px;
-      }
+    .products li h2 {
+      margin-top: 0;
+      display: block;
+      text-align: center;
     }
-    ul.products {
-      width: 60%;
-      margin: 0 auto;
-      @include breakpoint($screen-sm) {
-        width: 100%;
-      }
-      li.product {
-        width: 100%;
-        margin: 0;
-        @include breakpoint($screen-sm) {
-          width: 22% !important;
-          float: left;
-          margin-right: 4%;
-          &.last {
-            margin-right: 0!important;
-          }
-        }
-      }
-    }
+  }
+}
+.storefront-sticky-add-to-cart {
+  background-color: #ffffff;
+}
+.storefront-sticky-add-to-cart__content-title {
+  color: $black;
+  display: inline-block;
+}
+.storefront-sticky-add-to-cart__content-price {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  color: $black;
+  opacity: unset;
+}
+@include breakpoint($screen-md) {
+  .storefront-sticky-add-to-cart--slideInDown {
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.05);
   }
 }

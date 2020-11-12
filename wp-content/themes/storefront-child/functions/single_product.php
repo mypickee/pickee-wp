@@ -1,4 +1,15 @@
 <?php
+ /* Set product image to 600 * 600 cropped square image
+  * Note: If image's original size is less than 600 * 600, no cropped image will be generated,
+  * the original image will be shown.
+  */
+add_filter('woocommerce_get_image_size_single', function($size) {
+  return [
+    'width' => 600,
+    'height' => 600,
+    'crop' => 1,
+  ];
+});
 
 //Set thumbnail column number to 1 in single-product page.
 add_filter('storefront_product_thumbnail_columns', 'custom_storefront_product_thumbnail_columns');
@@ -37,13 +48,13 @@ function single_product_discription()
             $attributes = array_filter($product->get_attributes(), 'wc_attributes_array_filter_visible');
           ?>
           <?php if ($attributes) : ?>
-          <h4>SPEC</h4>
+          <h4>Spec</h4>
           <div class="attribute-list">
-            <?php $attributes_count = 1;?>
-            <div class="row clearfix">
+            <!-- <?php $attributes_count = 1;?>
+            <div class="row clearfix"> -->
               <?php foreach ($attributes as $attribute) : ?>
-                <div class="attribute-item <?php if (count($attributes) === 1) {echo 'full-width';}?>">
-                  <strong class="attribute-name"><?php echo wc_attribute_label( $attribute->get_name() ); ?></strong>
+                <div class="attribute-item <?php // if (count($attributes) === 1) {echo 'full-width';}?>">
+                  <span class="attribute-name"><?php echo wc_attribute_label( $attribute->get_name() ); ?></span>
                   <span class="attribute-content">
                     <?php
                       $values = $attribute->get_options();
@@ -55,17 +66,18 @@ function single_product_discription()
                   </span>
                 </div>
                 <?php
-                  if ($attributes_count % 2 === 0) {
+                  /* if ($attributes_count % 2 === 0) {
                     echo '</div><div class="row clearfix">';
                   }
                   $attributes_count++;
+                  */
                 ?>
               <?php endforeach; ?>
-            </div>
+            <!-- </div> -->
           </div>
           <?php endif;?>
           <?php if ($post->post_excerpt) : ?>
-            <h4>USE&amp;CARE</h4>
+            <h4>Use&amp;Care</h4>
             <div>
               <?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt); ?>
             </div>
@@ -75,8 +87,11 @@ function single_product_discription()
     </div>
   <?php
 }
+/*
+ * Hide product review block in single product page temporarily
+ */
+# add_action( 'woocommerce_after_single_product_summary', 'single_product_reviews', 10);
 
-add_action( 'woocommerce_after_single_product_summary', 'single_product_reviews', 10);
 /*
  * Reference to woocommerc/templates/single-product-reviews
  */
@@ -93,16 +108,24 @@ function single_product_reviews()
 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
 
-//Move review rating hearts form "woocommerce_review_before_comment_meta" to "woocommerce_review_meta"
+// Move review rating hearts form "woocommerce_review_before_comment_meta" to "woocommerce_review_meta"
 remove_action('woocommerce_review_before_comment_meta', 'woocommerce_review_display_rating');
 add_action('woocommerce_review_meta', 'woocommerce_review_display_rating', 20);
 
-//remove product data tabs from single-product page.
+// Remove product data tabs from single-product page.
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs');
 
 //Change related products number to 4
 add_filter('woocommerce_output_related_products_args', 'related_products_args', 20);
 function related_products_args($args) {
+  $args['posts_per_page'] = 4;
+  $args['columns'] = 4;
+  return $args;
+}
+
+//Change upsells products number to 4
+add_filter('woocommerce_upsell_display_args', 'upsells_args', 20);
+function upsells_args($args) {
   $args['posts_per_page'] = 4;
   $args['columns'] = 4;
   return $args;

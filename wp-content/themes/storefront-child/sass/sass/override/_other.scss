@@ -1,3 +1,9 @@
+a:focus, input:focus, textarea:focus, button:focus {
+  outline: none;
+}
+#wpadminbar {
+  z-index: 100;
+}
 .woocommerce-breadcrumb {
   margin-bottom: 1em;
 }
