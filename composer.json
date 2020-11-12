@@ -12,10 +12,11 @@
     "wpackagist-plugin/woocommerce": "~3.2.1",
     "wpackagist-theme/storefront": "~2.2.5",
     "wpackagist-plugin/insert-html-snippet": "^1.2",
-    "wpackagist-plugin/perfect-woocommerce-brands": "^1.5"
+    "wpackagist-plugin/perfect-woocommerce-brands": "^1.5",
+    "wpackagist-plugin/filebird": "^4.1"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands filebird; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
