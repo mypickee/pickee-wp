@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/pickee-wp
     docker:
-      - image: circleci/php:7.2-apache-stretch-node-browsers
+      - image: circleci/php:7.4.2-apache
         environment:
           DATABASE_URL: mysql://pickee_wp_admin:password@127.0.0.1/pickee_wp_test
       - image: mysql:5.7
@@ -16,6 +16,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Update package index
+          command: sudo apt-get update
+      - run:
           name: Install Libpng
           command: sudo apt-get install libpng-dev
       - run:
@@ -23,7 +26,7 @@ jobs:
           command: sudo docker-php-ext-install gd
       - run:
           name: Install MySQL client
-          command: sudo apt-get install mysql-client
+          command: sudo apt-get install default-mysql-client
       - run:
           name: Install MySQL PHP extension
           command: sudo docker-php-ext-install mysqli
