@@ -1,4 +1,7 @@
-version: 2
+version: 2.1
+
+orbs:
+  heroku: circleci/heroku@1.2.3
 
 jobs:
   build_and_test:
@@ -58,40 +61,26 @@ jobs:
             - vendor
       - run: composer test
 
-  deploy_staging:
-    working_directory: ~/pickee-wp
-    docker:
-      - image: buildpack-deps:trusty
-    steps:
-      - checkout
-      - run:
-          name: Deploy master to staging
-          command: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/pickee-wp-staging.git master
-
-  deploy_production:
-    working_directory: ~/pickee-wp
-    docker:
-      - image: buildpack-deps:trusty
-    steps:
-      - checkout
-      - run:
-          name: Deploy release to production
-          command: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/pickee-wp-production.git release
-
 workflows:
   version: 2
   build_deploy:
     jobs:
       - build_and_test
-      - deploy_staging:
+      - heroku/deploy-via-git:
+          name: Deploy to Staging
           requires:
             - build_and_test
           filters:
             branches:
               only: master
-      - deploy_production:
+          pre-deploy:
+            - run: echo 'export HEROKU_APP_NAME="pickee-wp-staging"' >> $BASH_ENV
+      - heroku/deploy-via-git:
+          name: Deploy to Production
           requires:
             - build_and_test
           filters:
             branches:
               only: release
+          pre-deploy:
+            - run: echo 'export HEROKU_APP_NAME="pickee-wp-production"' >> $BASH_ENV
