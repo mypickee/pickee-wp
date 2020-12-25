@@ -124,6 +124,11 @@ define('AS3CF_SETTINGS', serialize(array(
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
+// Only redirect requests if it's not already HTTPS. Note that this has to
+// come before `require_once(ABSPATH . 'wp-settings.php');`
+// https://stackoverflow.com/questions/27193575/wordpress-cloudfront-flexible-ssl-ends-up-in-redirect-loop-https/27193576#27193576
+if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') $_SERVER['HTTPS'] = 'on';
+
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
 
