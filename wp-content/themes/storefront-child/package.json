@@ -11,6 +11,7 @@
     "susy": "2.2.14"
   },
   "scripts": {
-    "compile:css": "sass sass/sass/style.scss style.css --style=compressed --watch"
+    "compile:css": "sass sass/sass/style.scss style.css --style=compressed",
+    "compile:css:watch": "yarn compile:css --watch"
   }
 }
