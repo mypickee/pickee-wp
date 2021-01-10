@@ -21,3 +21,5 @@ config/nginx/pickee-wp
 config/php-fpm/php-fpm.conf
 
 .sass-cache
+
+node_modules/
