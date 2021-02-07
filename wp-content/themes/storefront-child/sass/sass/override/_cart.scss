@@ -130,27 +130,36 @@ body.woocommerce-cart {
       }
     }
   }
-  .coupon-block {
-    @include self-clear;
-    padding: 2rem 0;
+
+  .update-and-coupon {
+    padding: 1rem 0;
     border-bottom: 1px solid #000000;
-    @include breakpoint($screen-md) {
-      @include span(5 of 12);
-      border-bottom: 0px;
+    .update-cart {
+      text-align: right;
+      @include breakpoint($screen-md) {
+        @include span(last 4 at 8 of 12);
+      }
+      .btn-link {
+        padding: 1rem 0;
+      }
     }
-    @include breakpoint($screen-lg) {
-      @include span(4 of 12);
-    }
-    @include breakpoint($screen-xl) {
-      @include span(3 of 12);
-    }
-    input[name="update_cart"] {
-      margin-left: 1rem;
-    }
-    div.coupon {
-      margin-top: 0.5rem;
+
+    .coupon-block {
+      @include self-clear;
+      padding: 0.5rem 0;
+      .coupon-label {
+        line-height: 2.5rem;
+        margin-right: 1rem;
+      }
+      @include breakpoint($screen-md) {
+        @include span(8 of 12);
+        .coupon-label, .coupon {
+          float: left;
+        }
+      }
     }
   }
+
   .cart-collaterals {
     padding: 2rem 0;
     @include breakpoint($screen-md) {
@@ -207,4 +216,15 @@ body.woocommerce-cart {
   h1 {
     margin-bottom: 0;
   }
+}
+
+.cart-empty.woocommerce-info {
+  margin-top: 50px;
+  background-color: unset;
+  color: black;
+  text-align: center;
+}
+
+.return-to-shop {
+  text-align: center;
 }
