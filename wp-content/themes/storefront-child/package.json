@@ -1,0 +1,17 @@
+{
+  "name": "storefront-child",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "pickee",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "sass": "^1.30.0",
+    "susy": "2.2.14"
+  },
+  "scripts": {
+    "compile:css": "sass sass/sass/style.scss style.css --style=compressed",
+    "compile:css:watch": "yarn compile:css --watch"
+  }
+}

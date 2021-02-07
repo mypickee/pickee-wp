@@ -281,3 +281,85 @@ body.brand-page {
     align-items: center;
   }
 }
+
+.fullscreen-split {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+
+  header,
+  footer,
+  .site-main {
+    text-align: center;
+  }
+
+  header {
+    padding: 20px 0;
+    line-height: 1;
+    svg {
+      width: 100px;
+    }
+  }
+
+  footer {
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #999;
+  }
+
+  .hero-container {
+    position: relative;
+    width: 100%;
+    height: 40%;
+  }
+
+  .hero {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    &.fade-in { opacity: 1; }
+  }
+
+  .site-main {
+    padding: 50px 0;
+    margin: 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .hero-container {
+      order: -1;
+      height: 100%;
+      width: 50%;
+    }
+
+    header,
+    footer,
+    .site-main {
+      width: 50%;
+    }
+
+    header {
+      margin-top: 30px;
+    }
+
+    .site-main {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
