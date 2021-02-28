@@ -1,8 +1,11 @@
-$font: Maax, "Source Sans Pro", HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font: TTChocolates, "Source Sans Pro", HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 .ml-subscribe-form {
   h4, input, button, p {
     font-family: $font !important;
+  }
+  h4 {
+    font-weight: 600 !important;
   }
   .horizontal-fields {
     padding-right: 0   !important;
