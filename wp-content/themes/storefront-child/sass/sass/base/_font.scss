@@ -1,31 +1,32 @@
 @font-face {
-  font-family: Maax;
-  src:  url("/wp-content/themes/storefront-child/assets/font/Maax-Regular.ttf") format("truetype");
+  font-family: TTChocolates;
+  src: url("/wp-content/themes/storefront-child/assets/font/TTChocolatesRegular/font.woff2") format("woff2"),
+       url("/wp-content/themes/storefront-child/assets/font/TTChocolatesRegular/font.woff") format("woff");
   font-weight: 400;
 }
-/*
+
 @font-face {
-  font-family: Maax;
-  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Light.ttf") format("truetype");
-  font-weight: 300;
-}*/
-@font-face {
-  font-family: Maax;
-  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Medium.ttf") format("truetype");
+  font-family: TTChocolates;
+  src: url("/wp-content/themes/storefront-child/assets/font/TTChocolatesMedium/font.woff2") format("woff2"),
+       url("/wp-content/themes/storefront-child/assets/font/TTChocolatesMedium/font.woff") format("woff");
   font-weight: 500;
 }
+
 @font-face {
-  font-family: Maax;
-  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Bold.ttf") format("truetype");
+  font-family: TTChocolates;
+  src: url("/wp-content/themes/storefront-child/assets/font/TTChocolatesDemiBold/font.woff2") format("woff2"),
+       url("/wp-content/themes/storefront-child/assets/font/TTChocolatesDemiBold/font.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: TTChocolates;
+  src: url("/wp-content/themes/storefront-child/assets/font/TTChocolatesBold/font.woff2") format("woff2"),
+       url("/wp-content/themes/storefront-child/assets/font/TTChocolatesBold/font.woff") format("woff");
   font-weight: 700;
 }
-/*
-@font-face {
-  font-family: Maax;
-  src: url("/wp-content/themes/storefront-child/assets/font/Maax-Black.ttf") format("truetype");
-  font-weight: 900;
-}*/
+
 body, button, input, textarea {
   color: $black;
-  font-family: Maax, "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-family: TTChocolates, "Source Sans Pro", HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
