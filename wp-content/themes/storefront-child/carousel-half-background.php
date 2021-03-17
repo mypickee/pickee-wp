@@ -49,12 +49,22 @@
         endwhile;
       ?>
     </main><!-- #main -->
+
+    <div id="social" class="social" style="display: none;">
+      <a class="ig" href="https://instagram.com/mypickee?igshid=ksusixav50gx">
+        <?php echo file_get_contents(get_stylesheet_directory()."/assets/svg/instagram.svg"); ?>
+        <span class="social-label">mypickee</span>
+      </a>
+    </div>
+
     <footer>&copy; Pickee 2021</footer>
   </div><!-- #primary -->
 
   <script>
     window.addEventListener("load", () => {
       setInterval(() => fadeInNextHero("hero", "fade-in"), 3000)
+
+      appendSocial("ml-form-successContent")
     })
 
     function fadeInNextHero(heroClass, fadeInClass) {
@@ -64,6 +74,16 @@
 
       if (current) { current.classList.remove(fadeInClass) }
       next.classList.add(fadeInClass)
+    }
+
+    function appendSocial(destClass) {
+      const social = document.querySelector("#social")
+      const dest = document.querySelector(`.${destClass}`)
+
+      if (dest) {
+        dest.appendChild(social)
+        social.style.display = ""
+      }
     }
   </script>
 <?php
