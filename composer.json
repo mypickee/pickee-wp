@@ -12,6 +12,8 @@
     "wpackagist-plugin/akismet": "^4.1.0",
     "wpackagist-plugin/all-in-one-wp-migration": "^7.24",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "2.4.1",
+    "wpackagist-plugin/filebird": "^4.1",
+    "wpackagist-plugin/google-site-kit": "^1.29",
     "wpackagist-plugin/insert-html-snippet": "^1.2.5",
     "wpackagist-plugin/official-mailerlite-sign-up-forms": "^1.4",
     "wpackagist-plugin/perfect-woocommerce-brands": "^1.7.0",
@@ -22,11 +24,10 @@
     "wpackagist-plugin/woocommerce": "4.3.1",
     "wpackagist-plugin/woocommerce-gateway-stripe": "^4.2.2",
     "wpackagist-plugin/wp-user-avatar": "^2.2.5",
-    "wpackagist-theme/storefront": "^2.3.5",
-    "wpackagist-plugin/filebird": "^4.1"
+    "wpackagist-theme/storefront": "^2.3.5"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate akismet sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload filebird official-mailerlite-sign-up-forms; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate akismet sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload filebird official-mailerlite-sign-up-forms google-site-kit; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
