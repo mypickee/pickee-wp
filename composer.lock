@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14353e21b3a17e371f7901ea0b2b7e6e",
+    "content-hash": "3d1d71c2c348da7ffb94ec30fd2e80f0",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1753,6 +1753,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/filebird/"
+        },
+        {
+            "name": "wpackagist-plugin/google-site-kit",
+            "version": "1.29.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/google-site-kit/",
+                "reference": "tags/1.29.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/google-site-kit.1.29.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/google-site-kit/"
         },
         {
             "name": "wpackagist-plugin/insert-html-snippet",
