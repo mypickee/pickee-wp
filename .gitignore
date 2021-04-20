@@ -13,9 +13,15 @@
 
 /vendor
 /wp-content/*
-!/wp-content/themes
+!/wp-content/themes/
 /wp-content/themes/storefront
 !/wp-content/themes/storefront-child
+
+/wp-content/*
+!/wp-content/plugins/
+
+/wp-content/plugins/*
+!/wp-content/plugins/wc-tree-table-rate-shipping
 
 config/nginx/pickee-wp
 config/php-fpm/php-fpm.conf
