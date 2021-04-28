@@ -251,12 +251,12 @@
   }
   .brand-image-3 {
     display: none;
+    margin-top: 4rem;
     @include breakpoint($screen-md) {
-    @include span(4 at 8 of 12);
       display: block;
+      @include span(isolate 3 at 2.5 of 12);
       img {
         position: relative;
-        top: -3rem;
       }
     }
   }
