@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
   <g fill="none">
     <g transform="translate(8 3)">
-      <path d="M13 5C13 2.2 10.8 0 8 0 5.2 0 3 2.2 3 5" style="stroke-width:3;stroke:#1E382D"/>
-      <line x1="3" y1="5" x2="3" y2="11.5" style="stroke-width:3;stroke:#1E382D"/>
-      <line x1="13" y1="5" x2="13" y2="11.5" style="stroke-width:3;stroke:#1E382D"/>
+      <path d="M13 5C13 2.2 10.8 0 8 0 5.2 0 3 2.2 3 5" style="stroke-width:3;stroke:#222222"/>
+      <line x1="3" y1="5" x2="3" y2="11.5" style="stroke-width:3;stroke:#222222"/>
+      <line x1="13" y1="5" x2="13" y2="11.5" style="stroke-width:3;stroke:#222222"/>
     </g>
-    <rect x="5" y="9" width="22" height="19" rx="3" style="stroke-width:3;stroke:#1E382D"/>
+    <rect x="5" y="9" width="22" height="19" rx="3" style="stroke-width:3;stroke:#222222"/>
   </g>
 </svg>
