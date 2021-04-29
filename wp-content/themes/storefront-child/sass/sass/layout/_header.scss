@@ -73,7 +73,7 @@ body.cart-open {
     ul.menu > li > a, ul.nav-menu > li > a {
       line-height: 3rem;
       padding: 0 1rem;
-      color: $green-dark;
+      color: $black;
       font-weight: bold;
     }
     ul ul {
@@ -108,7 +108,7 @@ body.cart-open {
     height: 3rem;
     padding: 0.5rem;
     margin-right: 0.25rem;
-    color: $green-dark;
+    color: $black;
     @include breakpoint($screen-lg) {
       display: block;
     }
@@ -200,7 +200,7 @@ body.cart-open {
         list-style: none;
         color: $black;
         a {
-          color: $green-dark;
+          color: $black;
           font-weight: bold;
           line-height: 2rem;
         }
@@ -217,7 +217,7 @@ body.cart-open {
     width: 3rem;
     height: 3rem;
     padding: 0.5rem;
-    color: $green-dark;
+    color: $black;
     @include breakpoint($screen-lg) {
       display: block;
     }
@@ -327,7 +327,7 @@ body.cart-open {
       line-height: 4em;
       z-index: 1003;
       cursor: pointer;
-      color: $green-dark;
+      color: $black;
       font-size: 1em;
       font-weight: 600;
       visibility: hidden;
@@ -358,7 +358,7 @@ body.cart-open {
         height: 1.4em;
         .line {
           stroke-width: 2px;
-          stroke: $green-dark;
+          stroke: $black;
         }
       }
     }
@@ -369,7 +369,7 @@ body.cart-open {
       line-height: 1.5em;
       background: #ffffff;
       font-size: 1em;
-      border-bottom: solid 1px $green-dark;
+      border-bottom: solid 1px $black;
     }
 
     .handheld-sign-in {
@@ -381,6 +381,7 @@ body.cart-open {
       z-index: 1003;
       font-weight: bold;
       cursor: pointer;
+      color: $black;
       &.hidden {
         display: none;
       }
@@ -522,7 +523,8 @@ body.cart-open {
         line-height: 4rem;
         text-align: center;
         font-size: 1rem;
-        border-bottom: solid 1px $green-dark;
+        color: $black;
+        border-bottom: solid 1px $black;
         &:focus {
           outline-style: none;
         }
@@ -678,7 +680,7 @@ body.cart-open {
       right: 0;
       cursor: pointer;
       z-index: 1103;
-      background-color: $green-dark;
+      background-color: $black;
       svg {
         position: absolute;
         top: 1rem;
