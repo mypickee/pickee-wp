@@ -22,6 +22,9 @@
 
 /wp-content/plugins/*
 !/wp-content/plugins/wc-tree-table-rate-shipping
+!/wp-content/plugins/twocheckout
+!/wp-content/plugins/twocheckout-convert-plus
+!/wp-content/plugins/twocheckout-inline
 
 config/nginx/pickee-wp
 config/php-fpm/php-fpm.conf
