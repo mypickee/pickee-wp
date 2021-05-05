@@ -337,6 +337,14 @@ function remove_customizer_css() {
 }
 add_action('init', 'remove_customizer_css');
 
+function remove_sorting() {
+  remove_action('woocommerce_after_shop_loop', 'storefront_sorting_wrapper', 9); //.storefront-sorting opening after products loop
+  remove_action('woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10);
+  remove_action('woocommerce_after_shop_loop', 'woocommerce_result_count', 20);
+  remove_action('woocommerce_after_shop_loop', 'storefront_sorting_wrapper_close', 31); //.storefront-sorting closing after products loop
+}
+add_action('after_setup_theme', 'remove_sorting');
+
 # Remove button which link to check out page directly in mini-cart
 remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20);
 
