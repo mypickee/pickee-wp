@@ -144,7 +144,7 @@ do_action( 'woocommerce_before_cart' ); ?>
             <div class="coupon-label fw-500">Promo Code</div>
             <div class="coupon">
               <div class="input-group">
-                <input type="text" class="form-control">
+                <input type="text" name="coupon_code" class="form-control" id="coupon_code" value="">
                 <div class="input-group-append">
                   <input type="submit" class="button btn btn-primary btn-sm" name="apply_coupon" value="<?php esc_attr_e( 'Apply', 'woocommerce' ); ?>" />
                 </div>
