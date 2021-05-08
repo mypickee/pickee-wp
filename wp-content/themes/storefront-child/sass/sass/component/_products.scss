@@ -1,7 +1,14 @@
 .page-template-template-fullwidth-php, .page-template-template-homepage-php, .storefront-full-width-content {
   .site-main {
     ul.products.columns-4 {
+      :nth-child(odd) {
+        clear: left;
+        @include breakpoint($screen-md) {
+          clear:none;
+        }
+      }
       li.product {
+        @include span(2 of $mobile);
         @include breakpoint($screen-md) {
           @include span(3 of $desktop);
         }
