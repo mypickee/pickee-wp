@@ -1,0 +1,73 @@
+.page-template-template-fullwidth-php, .page-template-template-homepage-php, .storefront-full-width-content {
+  .site-main {
+    ul.products.columns-4 {
+      :nth-child(odd) {
+        clear: left;
+        @include breakpoint($screen-md) {
+          clear:none;
+        }
+      }
+      li.product {
+        @include span(2 of $mobile);
+        @include breakpoint($screen-md) {
+          @include span(3 of $desktop);
+        }
+        margin: 0;
+        text-align: center;
+        img {
+          width: 100%;
+        }
+        h2 {
+          text-align: center;
+          @include font-size-small; // 0.875rem, 14px
+          font-weight: 500;
+        }
+        .price {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.products-carousel {
+  @include hidden-md-up;
+  ul.products {
+    clear: both;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    li.product {
+      margin: 0 20px;
+    }
+    .control-btn {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width : 20%;
+      display: block;
+      z-index: 100;
+      background-color: transparent;
+      &.btn-prev {
+        left: 0;
+      }
+      &.btn-next {
+        right: 0;
+      }
+    }
+  }
+}
+
+.products-block {
+  h3 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.brands-in-loop {
+  height: 1.5rem;
+  @include font-size-xs;
+  a {
+    color: $black;
+  }
+}

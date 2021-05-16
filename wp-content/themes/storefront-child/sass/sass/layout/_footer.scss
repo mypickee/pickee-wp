@@ -1,65 +1,77 @@
-.storefront-handheld-footer-bar {
-  visibility: hidden;
-  height: 0;
-  &.visible {
-    ul li.search .site-search {
-      visibility: visible;
-      opacity: 1;
-      @include breakpoint($screen-sm) {
-        visibility: hidden;
-        opacity: 0;
+.site-footer {
+  background-color: #ffffff;
+  padding: 0;
+  .footer-widgets {
+    border-bottom: none;
+
+    .widget {
+      margin: 0;
+    }
+
+    .block.footer-widget-1 {
+      margin-bottom: 0;
+      ul.menu {
+        text-align: center;
+        li {
+          display: inline-block;
+          padding: 0 1.5rem;
+          font-size: $font-size-small;
+          &::before {
+            display: none;
+          }
+          a {
+            color: $black;
+          }
+        }
       }
+    }
+
+    .block.footer-widget-2 {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    @include breakpoint($screen-md)  {
+      &.col-2 .block {
+        float: none;
+        width: inherit;
+        margin-right: 0;
+      }
+      &.col-2 .block.footer-widget-2 {
+        float: none;
+      }
+    }
+
+    @include breakpoint($screen-lg) {
+      &.col-2 .block {
+        float: left;
+        width: auto;
+        margin-bottom: 1rem;
+      }
+      &.col-2 .block.footer-widget-2 {
+        float: right;
+        margin-bottom: 1rem;
+      }
+
+      ul.menu {
+        li {
+          display: inline-block;
+          padding: 0 3rem 0 0;
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      .widget.widget_text {
+        .textwidget {
+          text-align: right;
+        }
+      }
+
     }
   }
-  ul li.search .site-search {
-    visibility: hidden;
-    opacity: 0;
-    font-size: 1em;
-    height: 4em;
-    bottom: 0;
-    padding: 0;
-    background: $pickee-blue;
-
-    form:before {
-      top: 0.8em;
-      left: 0.75em;
-      width: 1em;
-      height: 1em;
-      color: #ffffff;
-      font-size: 1.6em;
-    }
-
-    input[type=search], input[type=text] {
-      margin: 0.5rem 1rem;
-      background-color: transparent;
-      color: #ffffff;
-      box-shadow: none;
-      transition: width 0.5s;
-      &::placeholder {
-        color: #ffffff;
-      }
-    }
-
-    .search-clear-btn {
-      position: absolute;
-      right: 0.5em;
-      top: 0.5em;
-      width: 3em;
-      height: 3em;
-      padding: 0.9em;
-      cursor: pointer;
-      &.hidden {
-        svg {
-          display :none;
-        }
-      }
-      svg {
-        width: 1.2em;
-        height: 1.2em;
-        .line {
-          stroke:#ffffff;
-        }
-      }
-    }
+  .site-info {
+    display: none;
   }
 }

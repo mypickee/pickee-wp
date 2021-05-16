@@ -1,0 +1,92 @@
+.brands-landing-top-image, .brand-page-top-image {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+  @include breakpoint($screen-lg) {
+    height: 500px;
+  }
+  .bar-position {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include container;
+    .bar-wrapper {
+      @include span(4 of $mobile);
+      @include breakpoint($screen-lg) {
+        @include span(10 at 2 of $desktop isolate);
+      }
+      .bar {
+        height: 32px;
+        background-color: #ffffff;
+        @include breakpoint($screen-lg) {
+          height: 64px;
+        }
+      }
+    }
+  }
+}
+
+.brands-landing-heading {
+  @include container;
+  margin-top: 16px;
+  text-align: center;
+  h2 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+.pwb-all-brands {
+  @include container;
+  margin-top: 64px;
+  text-align: center;
+  .pwb-brands-cols-outer {
+    .pwb-brands-col3 {
+      width: 25%;
+      > p {
+        font-size: $font-size-small;
+        font-weight: 500;
+        > small {
+          display: none;
+        }
+      }
+    }
+  }
+  .pwb-pagination-wrapper {
+    border-top: none;
+  }
+}
+.brands-list-block {
+  @include container;
+  max-width: 960px;
+  margin-top: 64px;
+  text-align: center;
+  .row {
+    .brands-list-col {
+      @include span(2 of $mobile);
+      @include breakpoint($screen-lg) {
+        @include span(4 of $desktop);
+        &:nth-child(3n) {
+          @include span(last 4 of $desktop);
+        }
+      }
+      img {
+        width: 150px;
+        margin: 0 auto;
+      }
+      > h4 {
+        margin: 0;
+        height: 4.375rem;
+        a {
+          color: $black;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .pwb-pagination-wrapper {
+    border-top: none;
+  }
+}

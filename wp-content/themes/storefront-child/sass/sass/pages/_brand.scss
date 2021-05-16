@@ -1,0 +1,28 @@
+.brand-page-content {
+  @include span(4 of $mobile);
+  @include breakpoint($screen-lg) {
+    @include span(8 at 3 of $desktop isolate);
+  }
+  .brand-page-heading {
+    text-align: center;
+    h1 {
+      font-size: 1rem;
+      margin-top: 1rem;
+      @include breakpoint($screen-lg) {
+        margin-top: 0;
+      }
+    }
+    h2 {
+      margin-bottom: 1.5rem;
+      @include breakpoint($screen-lg) {
+        margin-bottom: 1.625rem;
+      }
+    }
+  }
+}
+
+.brand-best-sellers {
+  margin-top: 5.5rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}

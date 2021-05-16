@@ -1,0 +1,86 @@
+version: 2.1
+
+orbs:
+  heroku: circleci/heroku@1.2.3
+
+jobs:
+  build_and_test:
+    working_directory: ~/pickee-wp
+    docker:
+      - image: circleci/php:7.4.2-apache
+        environment:
+          DATABASE_URL: mysql://pickee_wp_admin:password@127.0.0.1/pickee_wp_test
+      - image: mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: root_password
+          MYSQL_DATABASE: pickee_wp_test
+          MYSQL_USER: pickee_wp_admin
+          MYSQL_PASSWORD: password
+    steps:
+      - checkout
+      - run:
+          name: Update package index
+          command: sudo apt-get update
+      - run:
+          name: Install Libpng
+          command: sudo apt-get install libpng-dev
+      - run:
+          name: Install GD PHP extension
+          command: sudo docker-php-ext-install gd
+      - run:
+          name: Install MySQL client
+          command: sudo apt-get install default-mysql-client
+      - run:
+          name: Install MySQL PHP extension
+          command: sudo docker-php-ext-install mysqli
+      - run:
+          name: Wait for db
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      - run:
+          name: Install wp-cli
+          command: |
+            curl -O "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar"
+            chmod +x wp-cli.phar
+            sudo mv wp-cli.phar /usr/local/bin/wp
+      - run:
+          name: Install Wordpress
+          command: |
+            wp core install --admin_user=pickee_wp_admin \
+                            --admin_password=password \
+                            --admin_email=info@mypickee.com \
+                            --url=127.0.0.1 \
+                            --title=Pickee
+      - restore_cache:
+          keys:
+            - composer-v1-{{ checksum "composer.lock" }}
+            - composer-v1-
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+      - run: composer test
+
+workflows:
+  version: 2
+  build_deploy:
+    jobs:
+      - build_and_test
+      - heroku/deploy-via-git:
+          name: Deploy to Staging
+          requires:
+            - build_and_test
+          filters:
+            branches:
+              only: master
+          pre-deploy:
+            - run: echo 'export HEROKU_APP_NAME="pickee-wp-staging"' >> $BASH_ENV
+      - heroku/deploy-via-git:
+          name: Deploy to Production
+          requires:
+            - build_and_test
+          filters:
+            branches:
+              only: release
+          pre-deploy:
+            - run: echo 'export HEROKU_APP_NAME="pickee-wp-production"' >> $BASH_ENV

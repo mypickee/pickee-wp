@@ -1,11 +1,108 @@
-.hidden-sm-down {
-  display: none;
-  @include breakpoint($screen-sm) {
-    display: block;
+@mixin hidden-xs-up {
+  display: none !important;
+}
+
+
+@mixin hidden-xs-down {
+  @media (max-width: $screen-sm - 1px) {
+    display: none !important;
   }
 }
-.hidden-md-up {
-  @include breakpoint($screen-sm) {
-    display: none;
+
+@mixin hidden-sm-up {
+  @media (min-width: $screen-sm) {
+    display: none !important;
   }
+}
+
+@mixin hidden-sm-down {
+  @media (max-width: $screen-md - 1px) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-md-up {
+  @media (min-width: $screen-md) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-md-down {
+  @media (max-width: $screen-lg - 1px) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-lg-up {
+  @media (min-width: $screen-lg) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-lg-down {
+  @media (max-width: $screen-xl - 1px) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-xl-up {
+  @media (min-width: $screen-xl) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-xl-down {
+  @media (max-width: $screen-xxl - 1px) {
+    display: none !important;
+  }
+}
+
+@mixin hidden-xxl-up {
+  @media (min-width: $screen-xxl) {
+    display: none !important;
+  }
+}
+
+.hidden-xs-up {
+  @include hidden-xs-up;
+}
+
+.hidden-xs-down {
+  @include hidden-xs-down;
+}
+
+.hidden-sm-up {
+  @include hidden-sm-up;
+}
+
+.hidden-sm-down {
+  @include hidden-sm-down;
+}
+
+.hidden-md-up {
+  @include hidden-md-up;
+}
+
+.hidden-md-down {
+  @include hidden-md-down;
+}
+
+.hidden-lg-up {
+  @include hidden-lg-up;
+}
+
+.hidden-lg-down {
+  @include hidden-lg-down;
+}
+
+.hidden-xl-up {
+  @include hidden-xl-up;
+}
+
+.hidden-xl-down {
+  @include hidden-xl-down;
+}
+
+.hidden-xxl-up {
+  @include hidden-xxl-up;
 }

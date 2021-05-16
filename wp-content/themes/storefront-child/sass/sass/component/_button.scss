@@ -1,26 +1,87 @@
-.btn {
+.added_to_cart, .button, button, input[type=button], input[type=reset], input[type=submit], .btn {
+  padding: 1.0625rem 4rem;
   display: inline-block;
-  font-weight: 600;
+  line-height: $line-height-small;
+  font-size: $font-size-small;
+  font-weight: 700;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 2px solid transparent;
-  padding: 0.8rem 2rem;
-  font-size: 0.8rem;
-  line-height: 1.25;
   transition: all .15s ease-in-out;
-  text-transform: uppercase;
-  &.btn-primary {
-    padding: 0.8rem 2rem;
-    background-color: $pickee-blue;
+  text-transform: none;
+  background-color: $green-dark;
+  color: #ffffff;
+  &:hover {
+    background-color: $green;
     color: #ffffff;
   }
-  &.btn-secondary {
-    border: 2px solid $pickee-blue;
-    color: $pickee-blue;
+  &:active {
+    background-color: $green-dark;
+  }
+  &.disabled, &:disabled {
+    background-color: $gray-light;
+  }
+  &.btn-block {
+    display: block;
+    width: 100%;
+  }
+  &.btn-arrow, &.single_add_to_cart_button {
+    &::after {
+      position: absolute;
+      content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow.svg);
+      padding-left: 0.5rem;
+      transition: all .15s ease-in-out;
+    }
+    &:hover::after {
+      padding-left: 1rem;
+    }
+     &:active::after{
+      padding-left: 0.5rem;
+    }
+  }
+  &.btn-link {
+    &.no-padding {
+      padding: 0;
+    }
+    background-color: transparent;
+    color: $green;
+    &:hover {
+      color: $green-dark;
+    }
+    &:active {
+      color: $green;
+    }
+    &.btn-arrow {
+      &::after {
+        content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_green.svg);
+      }
+      &:hover::after {
+        content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_darkgreen.svg);
+      }
+      &:active::after {
+        content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_green.svg);
+      }
+    }
+    &.disabled, &:disabled {
+      color: $gray-light;
+      &.btn-arrow::after {
+        content: url(/wp-content/themes/storefront-child/assets/svg/button_arrow_gray.svg);
+      }
+    }
+  }
+  &.btn-sm {
+    padding: 0.5625rem 2.25rem;
+  }
+}
+
+button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .added_to_cart.alt, .widget-area .widget a.button.alt, .added_to_cart, .widget a.button.checkout {
+  background-color: $green-dark;
+  border-color: $green-dark;
+  &:hover {
+    background-color: $green;
+    border-color: $green;
   }
 }

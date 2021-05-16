@@ -20,46 +20,45 @@
 * Install MySQL via Homebrew:
   ```
   brew install mysql
-  brew services list
+  brew services start mysql # Start MySQL at login
   mysql -V
   mysqladmin -u root password # Set your root password
   ```
 
 * Create a user and database for our Wordpress site:
   ```
-  mysql> CREATE DATABASE pickee_wp_development;
-  Query OK, 1 row affected (0.03 sec)
-
-  mysql> CREATE USER pickee_wp_admin@localhost IDENTIFIED BY 'password';
-  Query OK, 0 rows affected (0.01 sec)
-
-  mysql> GRANT ALL PRIVILEGES ON pickee_wp_development.* TO pickee_wp_admin@localhost;
-  Query OK, 0 rows affected (0.01 sec)
-
-  mysql> FLUSH PRIVILEGES;
-  Query OK, 0 rows affected (0.01 sec)
-
-  mysql> exit
-  Bye
+  mysql -u root -p -e "
+  CREATE DATABASE pickee_wp_development;
+  CREATE USER pickee_wp_admin@localhost IDENTIFIED BY 'password';
+  GRANT ALL PRIVILEGES ON pickee_wp_development.* TO pickee_wp_admin@localhost;
+  FLUSH PRIVILEGES;"
   ```
 
 ### Install PHP
 
 * Install PHP via Homebrew:
   ```
-  brew install php70 --with-debug
+  brew install php@7.2
+  ```
+
+* Verify the right version. You might want to open a new terminal window and pick up the new `PATH`.
+  ```
   php -v
   php-fpm -v
   ```
 
-  If `php-fpm` doesn't output php 7, make sure `/usr/local/sbin` is before `/usr/sbin`.
+  If they don't output PHP 7.2, make sure `/usr/local/sbin` is before `/usr/sbin` in your `PATH`.
 
-* We will use our own [config files](config/php-fpm) for running php-fpm locally.
+* Run `php --ini` to list config files. We will use our own [config files](config/php-fpm) for running php-fpm locally.
 
 * Allow environment variables to reach FPM worker processes by making sure `clear_env` is
   set to `no` in `config/php-fpm/php-fpm.d/www.conf`.
   ```
   clear_env = no
+
+* Default log files
+  ```
+  /usr/local/var/log/php-fpm.log
   ```
 
 ### Install nginx
@@ -71,22 +70,14 @@
 
 * We will use our own [config files](config/nginx) for running nginx locally.
 
-#### Notes
-
-* Log files
+* Default log files
   ```
-  /usr/local/var/log/php-fpm.log
   /usr/local/var/log/nginx/access.log
   /usr/local/var/log/nginx/error.log
   ```
 
-* Config files
-  ```
-  /usr/local/etc/php/7.0/php.ini
-  ```
-
 ### Fork and clone this repo
-TODO
+_TODO_
 
 ### Configure
 * Copy over `.env.example` to `.env` and make necessary changes:
@@ -95,7 +86,7 @@ TODO
   # Make necessary changes
   ```
 
-* Start FPM and nginx in non-daemon mode:
+* Start PHP-FPM and nginx in non-daemon mode:
   ```
   foreman start -f Procfile.dev
   ```

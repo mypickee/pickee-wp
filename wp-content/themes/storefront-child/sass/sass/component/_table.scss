@@ -1,0 +1,11 @@
+table {
+  @include font-size-small;
+}
+table th {
+  background-color: transparent;
+  font-weight: 500;
+}
+table thead th {
+  border-top: 4px solid $black;
+  border-bottom: 1px solid $black;
+}

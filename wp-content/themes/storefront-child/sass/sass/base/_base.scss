@@ -1,0 +1,13 @@
+img {
+  border-radius: 0;
+}
+a {
+  color: $green;
+  text-decoration: none !important;
+  &:hover {
+    color: $green-dark;
+  }
+  &:active {
+    color: $green;
+  }
+}

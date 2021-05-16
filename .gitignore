@@ -13,9 +13,24 @@
 
 /vendor
 /wp-content/*
-!/wp-content/themes
+!/wp-content/themes/
 /wp-content/themes/storefront
 !/wp-content/themes/storefront-child
 
+/wp-content/*
+!/wp-content/plugins/
+
+/wp-content/plugins/*
+!/wp-content/plugins/wc-tree-table-rate-shipping
+!/wp-content/plugins/twocheckout
+!/wp-content/plugins/twocheckout-convert-plus
+!/wp-content/plugins/twocheckout-inline
+
 config/nginx/pickee-wp
 config/php-fpm/php-fpm.conf
+
+.sass-cache
+
+node_modules/
+
+.DS_Store

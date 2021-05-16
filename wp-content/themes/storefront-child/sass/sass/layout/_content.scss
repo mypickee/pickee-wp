@@ -1,144 +1,221 @@
-body.home .site-content .col-full {
-  max-width: inherit;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px;
-  box-sizing: content-box;
+.entry-content > p:first-child {
+  margin: 0;
 }
 .content-section {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 4rem 0;
+  padding: 5rem 0 0;
   background-color: #ffffff;
   &.alt-background {
     background-color: #f9f9f9;
   }
 }
-.content-container {
+@mixin content-container {
   margin-left: auto;
   margin-right: auto;
-  padding: 0 2.5em;
-  color: #333333;
-  @include breakpoint($screen-sm) {
+  color: $black;
+  @include breakpoint($screen-md) {
     width: 100%;
-  }
-  @include breakpoint($screen-lg) {
-    width: 960px;
+    padding: 0 1rem;
   }
   @include breakpoint($screen-xl) {
-    width: 1064px;
+    padding: 0;
+    width: 960px;
+  }
+  @include breakpoint($screen-xxl) {
+    width: 1170px;
+  }
+  .category-text {
+    padding: 0 1rem;
+    @include breakpoint($screen-xl) {
+      padding: 0;
+    }
   }
 }
+
+.content-container {
+  @include content-container;
+}
+
+.col-full {
+  @include container;
+  max-width: none;
+}
+
 .homepage-category-block1 {
+  margin-top: 2.5rem;
   .category-image-1 {
-    @include breakpoint($screen-sm) {
-      @include span(6 of 10);
+    margin-bottom: 2rem;
+    img {
+      margin: 0 auto;
+      width: 66.66666%;
     }
-  }
-  .category-caption {
-    @include breakpoint($screen-sm) {
-      @include span(4 of 10 last);
-    }
-    padding: 2rem;
-    padding-top: 2rem;
-    line-height: 2rem;
-    font-size: 2rem;
-    font-weight: 100;
-    h3 {
-      font-size: 1rem;
-      font-weight: 600;
+    @include breakpoint($screen-md) {
+      margin-top: 4rem;
       margin-bottom: 0;
-    }
-    .content-link {
-      margin-top: 1rem;
+      @include span(7 of 12);
+      img {
+        width: 100%;
+      }
     }
   }
-  .category-description {
+  p {
+    margin-bottom: 1rem;
     display: none;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       display: block;
     }
-    @include span(6 of 10);
-    padding: 4em;
-    font-size: 1.2rem;
+  }
+  .category-text-1 {
+    padding-bottom: 4rem;
+    @include breakpoint($screen-md) {
+      @include span(4 at 7 of 12);
+      margin-top: 10rem;
+    }
+    @include breakpoint($screen-xl) {
+      @include span(4 of 12 last);
+    }
+
+  }
+  .category-text-2 {
+    padding-bottom: 4rem;
+    display: none;
+    @include breakpoint($screen-md) {
+      display: block;
+      @include span(isolate 4 at 2 of 12);
+      padding: 4rem 0;
+    }
+    @include font-size-big();
   }
   .category-image-2 {
+    margin-bottom: 0.75rem;
     display: none;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       display: block;
+      padding-bottom: 4rem;
+      @include span(isolate 5 at 7 of 12);
+      img {
+        position: relative;
+      }
     }
-    @include span(4 of 10 last);
-    img {
-      position: relative;
-      top: -100px;
+    @include breakpoint($screen-lg) {
+      img {
+        top: -2rem;
+      }
+    }
+    @include breakpoint($screen-xl) {
+      img {
+        top: -4rem;
+      }
+    }
+    @include breakpoint($screen-xxl) {
+      padding-bottom: 0;
+      img {
+        top: -10rem;
+      }
+    }
+  }
+  .category-image-3 {
+    display: none;
+    margin-top: 4rem;
+    @include breakpoint($screen-md) {
+      display: block;
+      @include span(isolate 3 at 2.5 of 12);
+      img {
+        position: relative;
+      }
     }
   }
 }
 
 .homepage-category-block2 {
   .category-image-1 {
-    @include breakpoint($screen-sm) {
-      @include span(6 of 10 last);
+    margin-bottom: 2rem;
+    img {
+      margin: 0 auto;
+      width: 75%;
+    }
+    @include breakpoint($screen-md) {
+      margin-top: 4rem;
+      margin-bottom: 0;
+      @include span(7 of 12 last);
+      img {
+        width: 100%;
+      }
     }
   }
-  .category-caption {
-    @include breakpoint($screen-sm) {
-      @include span(4 of 10);
+  .category-text-1 {
+    @include breakpoint($screen-md) {
+      margin-top: 8rem;
+      @include span(isolate 4 at 2 of 12);
     }
-    padding: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-    line-height: 2rem;
-    font-size: 2rem;
-    font-weight: 100;
-    h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0;
+    @include breakpoint($screen-xl) {
+      @include span(4 of 12);
     }
-    .content-link {
-      margin-top: 1rem;
-    }
+    padding-bottom: 4rem;
   }
   .category-image-2 {
+    margin-bottom: 0.75rem;
     display: none;
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       display: block;
+      @include span(isolate 5 at 2 of 12);
+      img {
+        position: relative;
+      }
     }
-    @include span(4 of 10);
-    img {
-      position: relative;
-      right: -50px;
+    @include breakpoint($screen-lg) {
+      img {
+        top: -2rem;
+      }
+    }
+    @include breakpoint($screen-xl) {
+      img {
+        top: -4rem;
+      }
+    }
+    @include breakpoint($screen-xxl) {
+      img {
+        top: -10rem;
+      }
     }
   }
-  .category-description {
+  .category-image-3 {
     display: none;
-    @include breakpoint($screen-sm) {
+    margin-top: 4rem;
+    @include breakpoint($screen-md) {
       display: block;
+      @include span(isolate 3 at 8.5 of 12);
+      img {
+        position: relative;
+      }
     }
-    @include span(5 of 10 last);
-    padding: 4rem;
-    padding-right: 2rem;
-    font-size: 1.2rem;
+  }
+  .category-text-2 {
+    display: none;
+    @include breakpoint($screen-md) {
+      display: block;
+      @include span(isolate 4 at 8 of 12);
+      padding-top: 4rem;
+    }
+    @include font-size-big();
   }
 }
 
+.homepage-product-picks {
+  padding-bottom: 4rem;
+}
 .brand-section {
   .brand-main {
-    @include breakpoint($screen-sm) {
-      @include span(4 of 10);
-    }
     text-align: center;
-    padding-top: 2rem;
-    h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0;
-      color: $pickee-blue;
+    padding: 4rem 0 3rem;
+    @include breakpoint($screen-md) {
+      @include span(5 of 12);
+      padding-top: 7.5rem;
     }
     .brand-logo {
-      height: 8rem;
+      height: 10rem;
       margin: 1rem 0;
       img {
         max-width: 100%;
@@ -147,7 +224,7 @@ body.home .site-content .col-full {
       }
     }
     .brand-description {
-      padding: 0 1rem;
+      padding: 0 2rem;
       .content-link {
         margin-top: 1rem;
         margin-bottom: 2rem;
@@ -156,67 +233,34 @@ body.home .site-content .col-full {
   }
 
   .brand-image-1 {
-    @include breakpoint($screen-sm) {
-      @include span(6 of 10 last);
+    @include breakpoint($screen-md) {
+      @include span(7 of 12 last);
+      margin-top: 2.5rem;
     }
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
   }
   .brand-row-2 {
     margin-top: 40px;
   }
   .brand-image-2 {
-    @include span(6 of 10);
-    position: relative;
-    left: -20px;
-    @include breakpoint($screen-sm) {
-      @include span(5 of 10);
-      left: auto;
+    display: none;
+    @include breakpoint($screen-md) {
+      display: block;
+      @include span(6 of 12);
     }
   }
   .brand-image-3 {
-    @include span(4 of 10 last);
-    position: relative;
-    top: -20px;
-    right: -20px;
-    @include breakpoint($screen-sm) {
-      @include span(isolate 3 at 2 of 10);
-      top: -40px;
-      left: auto;
-    }
-    img {
-      margin: 0 auto;
-    }
-    .image-caption {
-      margin-top: 2rem;
-      padding: 1rem;
-      display: none;
-      @include breakpoint($screen-sm) {
-        display: block;
+    display: none;
+    margin-top: 4rem;
+    @include breakpoint($screen-md) {
+      display: block;
+      @include span(isolate 3 at 2.5 of 12);
+      img {
+        position: relative;
       }
-      h4 {
-        font-weight: 300;
-      }
-      a {
-        font-size: 1rem;
-        color: $pickee-blue;
-      }
-    }
-  }
-  .image-caption-mobile {
-    padding: 1rem;
-    @include breakpoint($screen-sm) {
-      display: none;
-    }
-    h4 {
-      font-weight: 300;
-    }
-    a {
-      font-size: 1rem;
-      color: $pickee-blue;
     }
   }
 }
-
 body.brand-page {
   .entry-header {
     display: none;
@@ -244,6 +288,113 @@ body.brand-page {
       font-size: 1.4rem;
       margin-top: 2rem;
       font-weight: 800;
+    }
+  }
+}
+
+// Used in Fullscreen Background template
+.fullscreen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  &, .site-main {
+    margin: 0;
+    height: 100%;
+  }
+  .site-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.fullscreen-split {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+
+  header,
+  footer,
+  .site-main {
+    text-align: center;
+  }
+
+  header {
+    padding: 10px 0;
+    line-height: 1;
+    svg {
+      width: 100px;
+    }
+  }
+
+  footer {
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #999;
+  }
+
+  .hero-container {
+    position: relative;
+    width: 100%;
+    height: 40%;
+  }
+
+  .hero {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    &.fade-in { opacity: 1; }
+  }
+
+  .site-main {
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .page {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .hero-container {
+      order: -1;
+      height: 100%;
+      width: 50%;
+    }
+
+    header,
+    footer,
+    .site-main {
+      width: 50%;
+    }
+
+    header {
+      margin-top: 30px;
+      padding: 20px 0;
+    }
+
+    .site-main {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }
