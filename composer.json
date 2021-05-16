@@ -18,7 +18,6 @@
     "wpackagist-plugin/perfect-woocommerce-brands": "^1.7.0",
     "wpackagist-plugin/regenerate-thumbnails": "3.1.3",
     "wpackagist-plugin/resize-image-after-upload": "1.8.6",
-    "wpackagist-plugin/sendgrid-email-delivery-simplified": "^1.11.4",
     "wpackagist-plugin/smart-slider-3": "^3.4.1",
     "wpackagist-plugin/woocommerce": "4.3.1",
     "wpackagist-plugin/woocommerce-gateway-stripe": "^4.2.2",
@@ -27,7 +26,7 @@
     "wpackagist-plugin/woocommerce-delivery-notes": "^4.6"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate akismet sendgrid-email-delivery-simplified woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload filebird official-mailerlite-sign-up-forms woocommerce-delivery-notes; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate akismet woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload filebird official-mailerlite-sign-up-forms woocommerce-delivery-notes; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
