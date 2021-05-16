@@ -141,7 +141,7 @@ do_action( 'woocommerce_before_cart' ); ?>
         </div>
         <div class="coupon-block">
           <?php if ( wc_coupons_enabled() ) { ?>
-            <div class="coupon-label fw-500">Promo Code</div>
+            <div class="coupon-label fw-500">Coupon Code</div>
             <div class="coupon">
               <div class="input-group">
                 <input type="text" name="coupon_code" class="form-control" id="coupon_code" value="">
