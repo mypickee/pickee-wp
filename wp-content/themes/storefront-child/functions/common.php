@@ -401,17 +401,20 @@ if (!function_exists('my_show_brands_in_loop')) {
   function my_show_brands_in_loop() {
     global $product;
     $product_id = $product->get_id();
+    $product_url = get_permalink($product_id);
     $product_brands =  wp_get_post_terms($product_id, 'pwb-brand');
+    echo '</a>';
     if (!empty($product_brands)) {
       echo '<div class="brands-in-loop">';
       foreach ($product_brands as $brand) {
+        $brand_link = get_term_link($brand->term_id, 'pwb-brand');
         echo '<span>';
-        $url = get_permalink($product_id);
-        echo '<a href="'.$url.'">'.$brand->name.'</a>';
+        echo '<a href="'.$brand_link.'">'.$brand->name.'</a>';
         echo '</span>';
       }
       echo '</div>';
     }
+    echo '<a href="'.$product_url.'">';
   }
 }
 
