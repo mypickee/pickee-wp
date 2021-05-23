@@ -1,13 +1,16 @@
 .storefront-full-width-content.single-product div.product {
-  margin-top: 1.5rem;
   overflow: inherit;
+  @include breakpoint($screen-md) {
+    margin-top: 1.5rem;
+  }
   .woocommerce-product-gallery {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     img {
       width: 100%;
     }
     @include breakpoint($screen-md) {
       @include span(6 of $desktop);
+      margin-bottom: 2rem;
     }
     .flex-control-thumbs {
       width: 100%;
@@ -57,7 +60,7 @@
     }
     p.price {
       margin-top: 0;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
       font-size: 1.25rem;
       font-weight: bold;
     }
@@ -351,5 +354,12 @@ p.comment-form-comment {
 @include breakpoint($screen-md) {
   .storefront-sticky-add-to-cart--slideInDown {
     box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+@include breakpoint($screen-md) {
+  .storefront-product-pagination a {
+    z-index: 800;
+    background-color: #ffffff;
   }
 }

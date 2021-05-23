@@ -5,10 +5,13 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 5rem 0 0;
+  padding: 2rem 0 0;
   background-color: #ffffff;
   &.alt-background {
     background-color: #f9f9f9;
+  }
+  @include breakpoint($screen-md) {
+    padding: 5rem 0 0;
   }
 }
 @mixin content-container {
@@ -44,16 +47,16 @@
 }
 
 .homepage-category-block1 {
-  margin-top: 2.5rem;
   .category-image-1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
     img {
       margin: 0 auto;
-      width: 66.66666%;
     }
     @include breakpoint($screen-md) {
       margin-top: 4rem;
       margin-bottom: 0;
+      padding: 0;
       @include span(7 of 12);
       img {
         width: 100%;
@@ -68,7 +71,7 @@
     }
   }
   .category-text-1 {
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     @include breakpoint($screen-md) {
       @include span(4 at 7 of 12);
       margin-top: 10rem;
@@ -131,14 +134,15 @@
 
 .homepage-category-block2 {
   .category-image-1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
     img {
       margin: 0 auto;
-      width: 75%;
     }
     @include breakpoint($screen-md) {
       margin-top: 4rem;
       margin-bottom: 0;
+      padding: 0;
       @include span(7 of 12 last);
       img {
         width: 100%;
@@ -153,7 +157,7 @@
     @include breakpoint($screen-xl) {
       @include span(4 of 12);
     }
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
   }
   .category-image-2 {
     margin-bottom: 0.75rem;
@@ -204,12 +208,15 @@
 }
 
 .homepage-product-picks {
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
+  @include breakpoint($screen-md) {
+    padding-bottom: 5rem;
+  }
 }
 .brand-section {
   .brand-main {
     text-align: center;
-    padding: 4rem 0 3rem;
+    padding: 1.5rem 0 3rem;
     @include breakpoint($screen-md) {
       @include span(5 of 12);
       padding-top: 7.5rem;
@@ -233,11 +240,12 @@
   }
 
   .brand-image-1 {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
     @include breakpoint($screen-md) {
       @include span(7 of 12 last);
       margin-top: 2.5rem;
     }
-    margin-bottom: 6rem;
   }
   .brand-row-2 {
     margin-top: 40px;
