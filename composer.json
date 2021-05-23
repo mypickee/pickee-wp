@@ -8,7 +8,6 @@
   "require": {
     "ext-gd": "*",
     "php": "~7.4.0",
-    "wp-cli/wp-cli": "~0.22",
     "wpackagist-plugin/akismet": "^4.1.0",
     "wpackagist-plugin/all-in-one-wp-migration": "^7.24",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "2.4.1",
@@ -24,7 +23,8 @@
     "wpackagist-plugin/wp-user-avatar": "^2.2.5",
     "wpackagist-theme/storefront": "^2.3.5",
     "wpackagist-plugin/woocommerce-delivery-notes": "^4.6",
-    "wpackagist-plugin/mailin": "^3.1"
+    "wpackagist-plugin/mailin": "^3.1",
+    "wp-cli/wp-cli-bundle": "^2.5"
   },
   "scripts": {
     "post-install-cmd": "wp plugin activate akismet woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload filebird official-mailerlite-sign-up-forms woocommerce-delivery-notes mailin; wp theme activate storefront-child",
