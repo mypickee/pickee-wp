@@ -8,7 +8,7 @@
   "require": {
     "ext-gd": "*",
     "php": "~7.4.0",
-    "wp-cli/wp-cli": "~0.22",
+    "wp-cli/wp-cli": "~2.5",
     "wpackagist-plugin/akismet": "^4.1.0",
     "wpackagist-plugin/all-in-one-wp-migration": "^7.24",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "2.4.1",
