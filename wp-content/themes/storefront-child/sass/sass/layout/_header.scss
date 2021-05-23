@@ -35,7 +35,7 @@ body.cart-open {
   .site-branding {
     float: none !important;
     position: absolute;
-    left: -3.34rem;
+    left: -4.0625rem;
     width: 8.125rem;
     height: 3rem;
     margin-left: 50%;
@@ -612,7 +612,13 @@ body.cart-open {
       display: none;
     }
     .count {
-      display: none;
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 100%;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-align: center;
     }
     .hinter {
       position: absolute;
