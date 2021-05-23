@@ -13,7 +13,8 @@ a:focus, input:focus, textarea:focus, button:focus {
 
 .storefront-full-width-content .woocommerce-products-header {
   text-align: center;
-  padding: 0 0 2rem;
+  padding: 0;
+  margin-bottom: 1rem;
   h1 {
     line-height: 3rem;
   }
