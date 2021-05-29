@@ -24,10 +24,11 @@
     "wpackagist-theme/storefront": "^2.3.5",
     "wpackagist-plugin/woocommerce-delivery-notes": "^4.6",
     "wpackagist-plugin/mailin": "^3.1",
-    "wp-cli/wp-cli-bundle": "^2.5"
+    "wp-cli/wp-cli-bundle": "^2.5",
+    "wpackagist-plugin/simple-banner": "^2.10"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate akismet woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload filebird official-mailerlite-sign-up-forms woocommerce-delivery-notes mailin; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate akismet woocommerce insert-html-snippet perfect-woocommerce-brands woocommerce-gateway-stripe amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload filebird official-mailerlite-sign-up-forms woocommerce-delivery-notes mailin simple-banner; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
