@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6a89b23b6267a0ea7b2b6e6cfbb24a0",
+    "content-hash": "4721b00d9d841805ba42c3c023cb0b37",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -4501,6 +4501,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/smart-slider-3/"
+        },
+        {
+            "name": "wpackagist-plugin/woo-advanced-shipment-tracking",
+            "version": "3.2.4.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woo-advanced-shipment-tracking/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woo-advanced-shipment-tracking.zip?timestamp=1621854602"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woo-advanced-shipment-tracking/"
         },
         {
             "name": "wpackagist-plugin/woocommerce",
