@@ -28,10 +28,12 @@
 
     .block.footer-widget-2 {
       text-align: center;
-      margin-bottom: 2.5rem;
     }
-
+    p {
+      margin-bottom: 0;
+    }
     @include breakpoint($screen-md)  {
+      padding-top: 2rem;
       &.col-2 .block {
         float: none;
         width: inherit;

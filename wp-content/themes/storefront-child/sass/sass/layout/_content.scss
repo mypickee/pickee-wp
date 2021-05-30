@@ -63,13 +63,6 @@
       }
     }
   }
-  p {
-    margin-bottom: 1rem;
-    display: none;
-    @include breakpoint($screen-md) {
-      display: block;
-    }
-  }
   .category-text-1 {
     padding-bottom: 2rem;
     @include breakpoint($screen-md) {
@@ -79,7 +72,12 @@
     @include breakpoint($screen-xl) {
       @include span(4 of 12 last);
     }
-
+    p {
+      margin-bottom: 0.5rem;
+      @include breakpoint($screen-md) {
+        margin-bottom: 1rem;
+      }
+    }
   }
   .category-text-2 {
     padding-bottom: 4rem;
@@ -150,14 +148,20 @@
     }
   }
   .category-text-1 {
+    padding-bottom: 2rem;
     @include breakpoint($screen-md) {
-      margin-top: 8rem;
       @include span(isolate 4 at 2 of 12);
+      margin-top: 8rem;
     }
     @include breakpoint($screen-xl) {
       @include span(4 of 12);
     }
-    padding-bottom: 2rem;
+    p {
+      margin-bottom: 0.5rem;
+      @include breakpoint($screen-md) {
+        margin-bottom: 1rem;
+      }
+    }
   }
   .category-image-2 {
     margin-bottom: 0.75rem;
@@ -241,31 +245,27 @@
 
   .brand-image-1 {
     padding: 0 1rem;
-    margin-bottom: 2rem;
     @include breakpoint($screen-md) {
       @include span(7 of 12 last);
-      margin-top: 2.5rem;
+      margin-top: 5rem;
+      margin-bottom: 2rem;
     }
   }
   .brand-row-2 {
-    margin-top: 40px;
-  }
-  .brand-image-2 {
     display: none;
     @include breakpoint($screen-md) {
       display: block;
-      @include span(6 of 12);
+      margin-top: 40px;
     }
   }
+  .brand-image-2 {
+    @include span(6 of 12);
+  }
   .brand-image-3 {
-    display: none;
+    @include span(isolate 3 at 2.5 of 12);
     margin-top: 4rem;
-    @include breakpoint($screen-md) {
-      display: block;
-      @include span(isolate 3 at 2.5 of 12);
-      img {
-        position: relative;
-      }
+    img {
+      position: relative;
     }
   }
 }
