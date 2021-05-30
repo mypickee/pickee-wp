@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "824d1b6cc703abdb49bcab315a91fe06",
+    "content-hash": "4721b00d9d841805ba42c3c023cb0b37",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -4467,6 +4467,24 @@
             "homepage": "https://wordpress.org/plugins/resize-image-after-upload/"
         },
         {
+            "name": "wpackagist-plugin/simple-banner",
+            "version": "2.10.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/simple-banner/",
+                "reference": "tags/2.10.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-banner.2.10.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simple-banner/"
+        },
+        {
             "name": "wpackagist-plugin/smart-slider-3",
             "version": "3.4.1.8",
             "source": {
@@ -4483,6 +4501,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/smart-slider-3/"
+        },
+        {
+            "name": "wpackagist-plugin/woo-advanced-shipment-tracking",
+            "version": "3.2.4.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woo-advanced-shipment-tracking/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woo-advanced-shipment-tracking.zip?timestamp=1621854602"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woo-advanced-shipment-tracking/"
         },
         {
             "name": "wpackagist-plugin/woocommerce",
