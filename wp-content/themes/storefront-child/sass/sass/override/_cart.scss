@@ -169,6 +169,7 @@ body.woocommerce-cart {
       @include span(last 4 of 12);
     }
     .shop_table {
+      margin-bottom: 0.75rem;
       th {
         padding: 0.5rem 0;
         background-color: transparent;
@@ -183,8 +184,10 @@ body.woocommerce-cart {
       }
       tr.order-total {
         th, td {
-          padding-top: 2rem;
+          padding: 1rem 0 0;
           border-top: 2px solid #222222;
+          font-size: 1.25rem;
+          font-weight: bold;
         }
       }
       span.selection {
@@ -193,6 +196,10 @@ body.woocommerce-cart {
       tr:nth-child(2n) td {
         background-color: transparent;
       }
+    }
+    .free-shipping-message {
+      margin-bottom: 1rem;
+      font-size: $font-size-small;
     }
   }
   .cart-collaterals .cart_totals,
