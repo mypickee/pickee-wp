@@ -53,6 +53,34 @@ $text_lighter_40 = wc_hex_lighter( $text, 40 );
 // !important; is a gmail hack to prevent styles being stripped if it doesn't like something.
 // body{padding: 0;} ensures proper scale/positioning of the email in the iOS native email app.
 ?>
+@font-face {
+  font-family: TTChocolates;
+  src: url("/wp-content/themes/storefront-child/assets/font/TTChocolatesRegular/font.woff2") format("woff2"),
+       url("/wp-content/themes/storefront-child/assets/font/TTChocolatesRegular/font.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: TTChocolates;
+  src: url("/wp-content/themes/storefront-child/assets/font/TTChocolatesMedium/font.woff2") format("woff2"),
+       url("/wp-content/themes/storefront-child/assets/font/TTChocolatesMedium/font.woff") format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: TTChocolates;
+  src: url("/wp-content/themes/storefront-child/assets/font/TTChocolatesDemiBold/font.woff2") format("woff2"),
+       url("/wp-content/themes/storefront-child/assets/font/TTChocolatesDemiBold/font.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: TTChocolates;
+  src: url("/wp-content/themes/storefront-child/assets/font/TTChocolatesBold/font.woff2") format("woff2"),
+       url("/wp-content/themes/storefront-child/assets/font/TTChocolatesBold/font.woff") format("woff");
+  font-weight: 700;
+}
+
 body {
 	padding: 0;
 }
@@ -80,7 +108,7 @@ body {
 	font-weight: bold;
 	line-height: 100%;
 	vertical-align: middle;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: TTChocolates, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
 #template_header h1,
@@ -101,7 +129,7 @@ body {
 #template_footer #credit {
 	border: 0;
 	color: <?php echo esc_attr( $text_lighter_40 ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: TTChocolates, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 12px;
 	line-height: 150%;
 	text-align: center;
@@ -150,7 +178,7 @@ body {
 
 #body_content_inner {
 	color: <?php echo esc_attr( $text ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: TTChocolates, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 150%;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
@@ -170,7 +198,7 @@ body {
 
 .text {
 	color: <?php echo esc_attr( $text ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: TTChocolates, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
 .link {
@@ -184,7 +212,7 @@ body {
 
 h1 {
 	color: <?php echo esc_attr( $text ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: TTChocolates, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 30px;
 	font-weight: 300;
 	line-height: 150%;
@@ -196,7 +224,7 @@ h1 {
 h2 {
 	color: <?php echo esc_attr( $text ); ?>;
 	display: block;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: TTChocolates, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 18px;
 	font-weight: bold;
 	line-height: 130%;
@@ -207,7 +235,7 @@ h2 {
 h3 {
 	color: <?php echo esc_attr( $text ); ?>;
 	display: block;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: TTChocolates, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 16px;
 	font-weight: bold;
 	line-height: 130%;
