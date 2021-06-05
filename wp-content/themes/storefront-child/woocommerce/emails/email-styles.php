@@ -20,18 +20,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Load colors.
+/*
 $bg        = get_option( 'woocommerce_email_background_color' );
 $body      = get_option( 'woocommerce_email_body_background_color' );
 $base      = get_option( 'woocommerce_email_base_color' );
 $base_text = wc_light_or_dark( $base, '#202020', '#ffffff' );
 $text      = get_option( 'woocommerce_email_text_color' );
+*/
+
+$bg 	    = '#F7F7F7';
+$body       = '#FFFFFF';
+$base       = '#1E382D';
+$base_text  = '#FFFFFF';
+$text       = '#222222';
+$link_color = '#4D745C';
+
 
 // Pick a contrasting color for links.
-$link_color = wc_hex_is_light( $base ) ? $base : $base_text;
+//$link_color = wc_hex_is_light( $base ) ? $base : $base_text;
 
-if ( wc_hex_is_light( $body ) ) {
+/* if ( wc_hex_is_light( $body ) ) {
 	$link_color = wc_hex_is_light( $base ) ? $base_text : $base;
-}
+} */
 
 $bg_darker_10    = wc_hex_darker( $bg, 10 );
 $body_darker_10  = wc_hex_darker( $body, 10 );
@@ -139,7 +149,7 @@ body {
 }
 
 #body_content_inner {
-	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
+	color: <?php echo esc_attr( $text ); ?>;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 150%;
@@ -147,14 +157,14 @@ body {
 }
 
 .td {
-	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
+	color: <?php echo esc_attr( $text ); ?>;
 	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
 	vertical-align: middle;
 }
 
 .address {
 	padding: 12px;
-	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
+	color: <?php echo esc_attr( $text ); ?>;
 	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
 }
 
@@ -164,7 +174,7 @@ body {
 }
 
 .link {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: <?php echo esc_attr( $link_color ); ?>;
 }
 
 #header_wrapper {
@@ -173,7 +183,7 @@ body {
 }
 
 h1 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: <?php echo esc_attr( $text ); ?>;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 30px;
 	font-weight: 300;
@@ -184,7 +194,7 @@ h1 {
 }
 
 h2 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: <?php echo esc_attr( $text ); ?>;
 	display: block;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 18px;
@@ -195,7 +205,7 @@ h2 {
 }
 
 h3 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: <?php echo esc_attr( $text ); ?>;
 	display: block;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 16px;
