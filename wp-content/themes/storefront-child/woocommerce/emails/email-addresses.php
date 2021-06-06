@@ -34,7 +34,7 @@ $shipping   = $order->get_formatted_shipping_address();
 					<br/><?php echo wc_make_phone_clickable( $order->get_billing_phone() ); ?>
 				<?php endif; ?>
 				<?php if ( $order->get_billing_email() ) : ?>
-					<br/><?php echo esc_html( $order->get_billing_email() ); ?>
+					<br/><a href="mailto:<?php echo esc_html( $order->get_billing_email() ); ?>"><?php echo esc_html( $order->get_billing_email() ); ?></a>
 				<?php endif; ?>
 			</address>
 		</td>
