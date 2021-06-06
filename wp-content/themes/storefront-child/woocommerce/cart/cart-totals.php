@@ -24,8 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
-
-	<table cellspacing="0" class="shop_table shop_table_responsive">
+		<table cellspacing="0" class="shop_table shop_table_responsive">
 
 		<tr class="cart-subtotal">
 			<th><?php _e( 'Subtotal', 'woocommerce' ); ?></th>
@@ -94,7 +93,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
 
 	</table>
-
+	<div class="free-shipping-message">
+		<?php 
+			$threshold = 250;
+			$current = WC()->cart->subtotal;
+		
+			if ( $current < $threshold ) {
+				$added_text = 'Get free shipping if you order ' . wc_price( $threshold - $current ) . ' more!';
+				echo $added_text;
+			}
+		?>
+	</div>
 	<div class="wc-proceed-to-checkout">
 		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 	</div>
