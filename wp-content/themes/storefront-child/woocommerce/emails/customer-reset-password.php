@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( $additional_content ) {
 	echo wp_kses_post( wpautop( wptexturize( $additional_content ) ) );
 } else {
-	echo 'Thanks for using <a href="'.site_url().'">'.get_bloginfo('name').'</a>';
+	echo 'Thanks for using <a href="'.site_url().'">'.get_bloginfo('name').'</a>!';
 }
 
 do_action( 'woocommerce_email_footer', $email );
