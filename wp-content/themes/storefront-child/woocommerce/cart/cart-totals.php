@@ -94,10 +94,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</table>
 	<div class="free-shipping-message">
-		<?php 
-			$threshold = 250;
+		<?php
+			$threshold = 150;
 			$current = WC()->cart->subtotal;
-		
+
 			if ( $current < $threshold ) {
 				$added_text = 'Get free shipping if you order ' . wc_price( $threshold - $current ) . ' more!';
 				echo $added_text;
