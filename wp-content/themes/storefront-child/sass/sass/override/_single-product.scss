@@ -66,6 +66,16 @@
     }
     form.cart {
       margin-bottom: 0;
+      table.variations td {
+        @include font-size-normal;
+        text-align: center;
+        select {
+          text-align: center;
+        }
+      }
+      a.reset_variations {
+        display: none !important;
+      }
       .quantity {
         @include span(1 of 1);
         overflow: auto;

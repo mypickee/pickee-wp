@@ -33,6 +33,9 @@ h1, h2, h3, h4, h5, h6 {
 @mixin font-size-small {
   font-size: $font-size-small; // 0.875rem, 14px
 }
+@mixin font-size-normal {
+  font-size: $font-size-normal; // 1rem, 16px
+}
 @mixin font-size-big {
   font-size: $font-size-big; // 1.125rem, 18px
 }
