@@ -21,11 +21,12 @@ textarea {
 }
 
 select {
-  background-color: transparent;
-  color: $black;
-  box-shadow: none;
   padding: 0.71875rem;
   line-height: 1.25;
+  color: $black;
+  box-shadow: none;
+  background-color: transparent;
+  border: solid 1px #000000;
   &:focus {
     background-color: transparent;
   }
