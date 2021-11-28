@@ -20,6 +20,20 @@ textarea {
   }
 }
 
+select {
+  background-color: transparent;
+  color: $black;
+  box-shadow: none;
+  padding: 0.71875rem;
+  line-height: 1.25;
+  &:focus {
+    background-color: transparent;
+  }
+  &:focus-visible {
+    outline: none;
+  }
+}
+
 /* Hide arrows from number input */
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
