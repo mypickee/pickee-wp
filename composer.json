@@ -25,10 +25,11 @@
     "wpackagist-plugin/mailin": "^3.1",
     "wp-cli/wp-cli-bundle": "^2.5",
     "wpackagist-plugin/simple-banner": "^2.10",
-    "wpackagist-plugin/woo-advanced-shipment-tracking": "3.2.4.1"
+    "wpackagist-plugin/woo-advanced-shipment-tracking": "3.2.4.1",
+    "wpackagist-plugin/facebook-for-woocommerce": "^2.6"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate akismet woocommerce insert-html-snippet perfect-woocommerce-brands amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload filebird official-mailerlite-sign-up-forms woocommerce-delivery-notes mailin simple-banner woo-advanced-shipment-tracking; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate akismet woocommerce insert-html-snippet perfect-woocommerce-brands amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload facebook-for-woocommerce filebird official-mailerlite-sign-up-forms woocommerce-delivery-notes mailin simple-banner woo-advanced-shipment-tracking; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
