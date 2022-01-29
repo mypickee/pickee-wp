@@ -29,7 +29,6 @@ wp-content/plugins/*
 !wp-content/plugins/twocheckout
 !wp-content/plugins/twocheckout-convert-plus
 !wp-content/plugins/twocheckout-inline
-!wp-content/plugins/facebook-for-woocommerce
 
 config/nginx/pickee-wp
 config/php-fpm/php-fpm.conf
