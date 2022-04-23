@@ -26,13 +26,19 @@
     "wp-cli/wp-cli-bundle": "^2.5",
     "wpackagist-plugin/simple-banner": "^2.10",
     "wpackagist-plugin/woo-advanced-shipment-tracking": "3.2.4.1",
-    "wpackagist-plugin/facebook-for-woocommerce": "^2.6"
+    "wpackagist-plugin/facebook-for-woocommerce": "^2.6",
+    "wpackagist-plugin/yith-paypal-express-checkout-for-woocommerce": "^1.13"
   },
   "scripts": {
-    "post-install-cmd": "wp plugin activate akismet woocommerce insert-html-snippet perfect-woocommerce-brands amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload facebook-for-woocommerce filebird official-mailerlite-sign-up-forms woocommerce-delivery-notes mailin simple-banner woo-advanced-shipment-tracking; wp theme activate storefront-child",
+    "post-install-cmd": "wp plugin activate akismet woocommerce insert-html-snippet perfect-woocommerce-brands amazon-s3-and-cloudfront wp-user-avatar smart-slider-3 regenerate-thumbnails resize-image-after-upload facebook-for-woocommerce filebird official-mailerlite-sign-up-forms woocommerce-delivery-notes mailin simple-banner woo-advanced-shipment-tracking yith-paypal-express-checkout-for-woocommerce; wp theme activate storefront-child",
     "test": "phpunit -v tests"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.5.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
   }
 }

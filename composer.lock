@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "472da45db672ab49db1051b8577452d3",
+    "content-hash": "dcbabddeee20f6a30bff722e390fb099",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -4696,6 +4696,24 @@
             "homepage": "https://wordpress.org/plugins/wp-user-avatar/"
         },
         {
+            "name": "wpackagist-plugin/yith-paypal-express-checkout-for-woocommerce",
+            "version": "1.13.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/yith-paypal-express-checkout-for-woocommerce/",
+                "reference": "tags/1.13.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/yith-paypal-express-checkout-for-woocommerce.1.13.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/yith-paypal-express-checkout-for-woocommerce/"
+        },
+        {
             "name": "wpackagist-theme/storefront",
             "version": "2.9.0",
             "source": {
@@ -6352,5 +6370,5 @@
         "php": "~7.4.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }
