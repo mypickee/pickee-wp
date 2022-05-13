@@ -94,6 +94,19 @@ form.checkout {
   padding-top: 1.5rem;
   border-top: solid 4px #222222;
   .payment_methods {
+    &.no-selection {
+      label {
+        margin: 0;
+        img {
+          float: none;
+          max-height: 5rem;
+          margin: 1rem;
+        }
+      }
+      label:before {
+        display: none;
+      }
+    }
     > li:not(.woocommerce-notice) {
       background-color: transparent;
       &:hover {
@@ -118,5 +131,18 @@ form.checkout {
   .place-order {
     padding: 0;
     background-color: transparent;
+    .button.with-icon {
+      padding-top: 0.5rem;
+      padding-bottom: 0.8rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      .icon {
+        position: relative;
+        top: 0.15em;
+        width: 6rem;
+        margin-left: 0.5rem;
+        vertical-align: bottom;
+      }
+    }
   }
 }
