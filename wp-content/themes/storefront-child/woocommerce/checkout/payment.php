@@ -24,7 +24,7 @@ if ( ! is_ajax() ) {
 <div id="payment" class="woocommerce-checkout-payment">
   <h3>Payment</h3>
 	<?php if ( WC()->cart->needs_payment() ) : ?>
-		<ul class="wc_payment_methods payment_methods methods">
+		<ul class="wc_payment_methods payment_methods methods <?php if (sizeof($available_gateways) == 1) { echo 'no-selection';} # hide radio button when only one payment method. ?> ">
 			<?php
 				if ( ! empty( $available_gateways ) ) {
 					foreach ( $available_gateways as $gateway ) {
@@ -49,7 +49,10 @@ if ( ! is_ajax() ) {
 
 		<?php do_action( 'woocommerce_review_order_before_submit' ); ?>
 
-		<?php echo apply_filters( 'woocommerce_order_button_html', '<input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '" />' ); ?>
+
+		<!-- <?php echo apply_filters( 'woocommerce_order_button_html', '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . file_get_contents(get_stylesheet_directory().'/assets/svg/paypal-logo-white.svg') . '</button>' ); // @codingStandardsIgnoreLine ?> -->
+		<!-- Above is the original button -->
+		<?php echo apply_filters( 'woocommerce_order_button_html', '<button type="submit" class="button alt with-icon" name="woocommerce_checkout_place_order" id="place_order_customized" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( "Place order with " ) . file_get_contents(get_stylesheet_directory().'/assets/svg/paypal_logo.svg') . '</button>' ); // @codingStandardsIgnoreLine ?>
 
 		<?php do_action( 'woocommerce_review_order_after_submit' ); ?>
 
