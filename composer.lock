@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dcbabddeee20f6a30bff722e390fb099",
+    "content-hash": "7e4bd46d59a6b2e4e27d9bc978e54816",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -4445,15 +4445,15 @@
         },
         {
             "name": "wpackagist-plugin/facebook-for-woocommerce",
-            "version": "2.6.9",
+            "version": "3.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/facebook-for-woocommerce/",
-                "reference": "tags/2.6.9"
+                "reference": "tags/3.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/facebook-for-woocommerce.2.6.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/facebook-for-woocommerce.3.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -4643,15 +4643,15 @@
         },
         {
             "name": "wpackagist-plugin/woocommerce",
-            "version": "5.7.0",
+            "version": "7.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/woocommerce/",
-                "reference": "tags/5.7.0"
+                "reference": "tags/7.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce.5.7.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/woocommerce.7.1.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
