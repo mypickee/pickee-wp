@@ -26,7 +26,7 @@
     "wp-cli/wp-cli-bundle": "^2.5",
     "wpackagist-plugin/simple-banner": "^2.10",
     "wpackagist-plugin/woo-advanced-shipment-tracking": "3.2.4.1",
-    "wpackagist-plugin/facebook-for-woocommerce": "^2.6",
+    "wpackagist-plugin/facebook-for-woocommerce": "^3.0",
     "wpackagist-plugin/yith-paypal-express-checkout-for-woocommerce": "^1.13"
   },
   "scripts": {

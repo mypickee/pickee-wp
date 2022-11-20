@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6af44efc2d6e3524641a7c221c9eddfd",
+    "content-hash": "7e4bd46d59a6b2e4e27d9bc978e54816",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -4445,15 +4445,15 @@
         },
         {
             "name": "wpackagist-plugin/facebook-for-woocommerce",
-            "version": "2.6.9",
+            "version": "3.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/facebook-for-woocommerce/",
-                "reference": "tags/2.6.9"
+                "reference": "tags/3.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/facebook-for-woocommerce.2.6.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/facebook-for-woocommerce.3.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
